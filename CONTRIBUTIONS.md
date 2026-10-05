@@ -9,7 +9,7 @@ A live public record of upstream open-source work tracked by CoreFoundry.
   ![closed / retained](https://img.shields.io/badge/closed%20%2F%20retained-1-6e7781)
 </p>
 
-> **Last synchronized:** 2026-10-05 14:13 UTC
+> **Last synchronized:** 2026-10-05 14:15 UTC
 
 ## Canonical-source policy
 
@@ -20,25 +20,25 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 - contributor forks, local branches, staging repositories, and research harnesses are never required to reconstruct the public record;
 - narrative metadata is curated, while PR state is synchronized automatically from GitHub.
 
-\`\`\`mermaid
+```mermaid
 flowchart LR
     A["Research"] --> B["Draft PR"]
     B --> C["Open / Review"]
     C --> D["Merged"]
     C --> E["Closed / lesson retained"]
-\`\`\`
+```
 
 ## 🚀 Merged upstream work
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
-| **[bloomberg/memray #1035](https://github.com/bloomberg/memray/pull/1035)**<br><sub>[merge commit \`d0c34e8\`](https://github.com/bloomberg/memray/commit/d0c34e8d6c341bf5e415220203e0a2563c9d65ff)</sub> | Python memory profiling and allocation-analysis infrastructure | Reduced high-contention Tracker synchronization overhead on Linux/glibc | Up to 28% runtime reduction at 256 threads | Profiling infrastructure should observe workloads without becoming a major bottleneck |
-| **[Blosc/c-blosc2 #805](https://github.com/Blosc/c-blosc2/pull/805)**<br><sub>[merge commit \`89dffce\`](https://github.com/Blosc/c-blosc2/commit/89dffce3066e5b40e41ca506efb61596f863bc9a)</sub> | High-performance compression infrastructure | Avoided unnecessary parallel startup and worker wakeups for small jobs | 35.86 μs → 2.02 μs on a targeted 64-byte workload | Small workloads should not pay parallel execution costs they cannot amortize |
-| **[urllib3/urllib3 #5287](https://github.com/urllib3/urllib3/pull/5287)**<br><sub>[merge commit \`796d200\`](https://github.com/urllib3/urllib3/commit/796d200d3070ead69ec3a5d848fecf52a2249b59)</sub> | Core HTTP infrastructure used throughout Python | Optimized the common single-value header path | ~9–13% faster in representative request-construction workloads | Foundational HTTP improvements can propagate across a large number of Python applications |
-| **[Blosc/python-blosc2 #728](https://github.com/Blosc/python-blosc2/pull/728)**<br><sub>[merge commit \`3ce2a39\`](https://github.com/Blosc/python-blosc2/commit/3ce2a390a244ab2c6563d25da7f5b15e6583d24b)</sub> | Python interface to high-performance compressed-data infrastructure | Removed redundant full-block zeroing in a NumPy miniexpr gather path | ~2–15% improvement in tested workloads | Avoiding unnecessary memory work improves throughput without adding compute |
-| **[numpy/numpy #32802](https://github.com/numpy/numpy/pull/32802)**<br><sub>[merge commit \`24f3c80\`](https://github.com/numpy/numpy/commit/24f3c807bd4397315028fce096ff939e577c13ed)</sub> | Foundational numerical-computing library | Fixed undefined shift behavior in the rational test dtype | Correctness fix | Low-level correctness bugs can affect a very large downstream dependency graph |
-| **[Blosc/python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)**<br><sub>[merge commit \`bf8ae3c\`](https://github.com/Blosc/python-blosc2/commit/bf8ae3c57f06700b8e664df3534bf0990ab5f7ee)</sub> | Compressed-array and data infrastructure | Fixed two NDArray thread-safety bugs blocking free-threaded Python support | Concurrency correctness / free-threading readiness | Infrastructure must remain correct as Python moves toward broader free-threaded execution |
-| **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)**<br><sub>[merge commit \`35cf9df\`](https://github.com/scipy/scipy/commit/35cf9df1a24bd2e97598edaf56e0545b992508ba)</sub> | Scientific-computing algorithms and numerical methods | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics | Reliable solver accounting improves correctness and observability |
+| **[bloomberg/memray #1035](https://github.com/bloomberg/memray/pull/1035)**<br><sub>[merge commit `d0c34e8`](https://github.com/bloomberg/memray/commit/d0c34e8d6c341bf5e415220203e0a2563c9d65ff)</sub> | Python memory profiling and allocation-analysis infrastructure | Reduced high-contention Tracker synchronization overhead on Linux/glibc | Up to 28% runtime reduction at 256 threads | Profiling infrastructure should observe workloads without becoming a major bottleneck |
+| **[Blosc/c-blosc2 #805](https://github.com/Blosc/c-blosc2/pull/805)**<br><sub>[merge commit `89dffce`](https://github.com/Blosc/c-blosc2/commit/89dffce3066e5b40e41ca506efb61596f863bc9a)</sub> | High-performance compression infrastructure | Avoided unnecessary parallel startup and worker wakeups for small jobs | 35.86 μs → 2.02 μs on a targeted 64-byte workload | Small workloads should not pay parallel execution costs they cannot amortize |
+| **[urllib3/urllib3 #5287](https://github.com/urllib3/urllib3/pull/5287)**<br><sub>[merge commit `796d200`](https://github.com/urllib3/urllib3/commit/796d200d3070ead69ec3a5d848fecf52a2249b59)</sub> | Core HTTP infrastructure used throughout Python | Optimized the common single-value header path | ~9–13% faster in representative request-construction workloads | Foundational HTTP improvements can propagate across a large number of Python applications |
+| **[Blosc/python-blosc2 #728](https://github.com/Blosc/python-blosc2/pull/728)**<br><sub>[merge commit `3ce2a39`](https://github.com/Blosc/python-blosc2/commit/3ce2a390a244ab2c6563d25da7f5b15e6583d24b)</sub> | Python interface to high-performance compressed-data infrastructure | Removed redundant full-block zeroing in a NumPy miniexpr gather path | ~2–15% improvement in tested workloads | Avoiding unnecessary memory work improves throughput without adding compute |
+| **[numpy/numpy #32802](https://github.com/numpy/numpy/pull/32802)**<br><sub>[merge commit `24f3c80`](https://github.com/numpy/numpy/commit/24f3c807bd4397315028fce096ff939e577c13ed)</sub> | Foundational numerical-computing library | Fixed undefined shift behavior in the rational test dtype | Correctness fix | Low-level correctness bugs can affect a very large downstream dependency graph |
+| **[Blosc/python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)**<br><sub>[merge commit `bf8ae3c`](https://github.com/Blosc/python-blosc2/commit/bf8ae3c57f06700b8e664df3534bf0990ab5f7ee)</sub> | Compressed-array and data infrastructure | Fixed two NDArray thread-safety bugs blocking free-threaded Python support | Concurrency correctness / free-threading readiness | Infrastructure must remain correct as Python moves toward broader free-threaded execution |
+| **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)**<br><sub>[merge commit `35cf9df`](https://github.com/scipy/scipy/commit/35cf9df1a24bd2e97598edaf56e0545b992508ba)</sub> | Scientific-computing algorithms and numerical methods | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics | Reliable solver accounting improves correctness and observability |
 
 ## 🟢 Open / in review
 
@@ -49,7 +49,7 @@ flowchart LR
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | Low-level C++ infrastructure and foundational libraries | Removed an unreachable stale AIX semaphore-policy branch | Maintenance / compatibility cleanup with current configurations validated | Removing unreachable platform logic reduces maintenance surface and future ambiguity |
 | **[bloomberg/blazingmq #1806](https://github.com/bloomberg/blazingmq/pull/1806)** | Enterprise messaging infrastructure | Separated key-building storage from final canonical-string storage | Most targeted PR2-vs-PR1 comparisons improved in final staged validation | Allocator growth history can create hidden performance cliffs even after obvious temporary allocations are removed |
 | **[bloomberg/blazingmq #1803](https://github.com/bloomberg/blazingmq/pull/1803)** | Enterprise messaging infrastructure | Removed temporary schema-key string construction | 120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation | Temporary allocation on a repeated schema path can dominate otherwise small work |
-| **[numpy/numpy #32787](https://github.com/numpy/numpy/pull/32787)** | numpy | BUG: preserve BitGenerator state after failed reinitialization | — | — |
+| **[numpy/numpy #32787](https://github.com/numpy/numpy/pull/32787)** | Foundational numerical-computing and random-number infrastructure | Preserved BitGenerator state when reinitialization fails | Correctness / state-integrity fix | Failed initialization should not leave foundational random-number state partially mutated |
 | **[dateutil/dateutil #1590](https://github.com/dateutil/dateutil/pull/1590)** | Date/time, recurrence, and timezone infrastructure | Used binary search for deep queries over already-ordered completed recurrence caches | ~4,500–5,700× faster on tested deep 200k-cache queries | An existing ordering invariant can collapse repeated linear scans into logarithmic lookup |
 | **[scipy/scipy #26226](https://github.com/scipy/scipy/pull/26226)** | Scientific-computing algorithms and signal-processing infrastructure | Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure | Correctness fix; targeted tests passed | Small edge cases in foundational numerical routines should fail predictably rather than recurse indefinitely |
 | **[python-attrs/attrs #1636](https://github.com/python-attrs/attrs/pull/1636)** | Widely used Python object-model infrastructure | Avoided redundant attrs detection for exact atomic values in nested sequences | Up to ~3.33× faster in the tested list[int] workload | Facts established at one layer should not be rediscovered repeatedly deeper in the runtime path |
@@ -78,10 +78,10 @@ flowchart LR
 
 ## How this page is maintained
 
-This file is generated by \`.github/workflows/sync-contributions.yml\` from:
+This file is generated by `.github/workflows/sync-contributions.yml` from:
 
 1. public upstream PR state from GitHub;
-2. curated display metadata in \`data/contribution_metadata.json\`.
+2. curated display metadata in `data/contribution_metadata.json`.
 
 New public upstream PRs authored by the tracked contributor are discovered automatically. Closed-but-unmerged work is included only when explicitly retained in metadata.
 
