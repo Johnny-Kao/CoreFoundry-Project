@@ -102,7 +102,7 @@ If you share this view, there are two useful ways to help:
 | **[SciPy #26225](https://github.com/scipy/scipy/pull/26225)** | Scientific-computing algorithms and numerical methods | Improved bracketing-solver iteration statistics | **More accurate solver accounting** | Better internal accounting improves reliability and makes behavior easier to reason about |
 | **[python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)** | Compressed-array and data infrastructure | Improved free-threaded Python correctness | **Concurrency readiness** | Infrastructure must remain correct as Python moves toward broader free-threaded execution |
 
-**[View the full contribution ledger →](MERGED_IMPACT.md)**
+**[View the live contribution ledger →](CONTRIBUTIONS.md)**
 
 ---
 
