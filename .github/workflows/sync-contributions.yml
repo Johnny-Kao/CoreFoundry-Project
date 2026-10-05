@@ -38,7 +38,7 @@ jobs:
 
       - name: Commit ledger changes
         run: |
-          if git diff --quiet -- CONTRIBUTIONS.md; then
+          if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md)" ]; then
             echo "Contribution ledger is already current."
             exit 0
           fi
