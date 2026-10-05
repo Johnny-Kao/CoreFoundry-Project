@@ -159,6 +159,12 @@
     },
     "bloomberg/memray#1038": {
       "include": false
+    },
+    "numpy/numpy#32787": {
+      "what_it_is": "Foundational numerical-computing and random-number infrastructure",
+      "what_changed": "Preserved BitGenerator state when reinitialization fails",
+      "evidence": "Correctness / state-integrity fix",
+      "why_it_matters": "Failed initialization should not leave foundational random-number state partially mutated"
     }
   }
 }
