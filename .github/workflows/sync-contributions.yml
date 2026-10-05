@@ -1,0 +1,50 @@
+name: Sync contribution ledger
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/sync_contributions.py"
+      - "data/contribution_metadata.json"
+      - ".github/workflows/sync-contributions.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-contribution-ledger
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Generate live contribution ledger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR_TO_TRACK: Johnny-Kao
+        run: python scripts/sync_contributions.py
+
+      - name: Commit ledger changes
+        run: |
+          if git diff --quiet -- CONTRIBUTIONS.md; then
+            echo "Contribution ledger is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CONTRIBUTIONS.md
+          git commit -m "chore: sync contribution ledger"
+          git push
