@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "tracked_author": "Johnny-Kao",
+  "entries": {
+    "urllib3/urllib3#5287": {
+      "what_it_is": "Core HTTP infrastructure used throughout Python",
+      "what_changed": "Optimized the common single-value header path",
+      "evidence": "~9–13% faster in representative request-construction workloads",
+      "why_it_matters": "Foundational HTTP improvements can propagate across a large number of Python applications",
+      "highlight": true
+    },
+    "bloomberg/memray#1035": {
+      "what_it_is": "Python memory profiling and allocation-analysis infrastructure",
+      "what_changed": "Reduced high-contention Tracker synchronization overhead on Linux/glibc",
+      "evidence": "Up to 28% runtime reduction at 256 threads",
+      "why_it_matters": "Profiling infrastructure should observe workloads without becoming a major bottleneck",
+      "highlight": true
+    },
+    "Blosc/c-blosc2#805": {
+      "what_it_is": "High-performance compression infrastructure",
+      "what_changed": "Avoided unnecessary parallel startup and worker wakeups for small jobs",
+      "evidence": "35.86 μs → 2.02 μs on a targeted 64-byte workload",
+      "why_it_matters": "Small workloads should not pay parallel execution costs they cannot amortize",
+      "highlight": true
+    },
+    "Blosc/python-blosc2#728": {
+      "what_it_is": "Python interface to high-performance compressed-data infrastructure",
+      "what_changed": "Removed redundant full-block zeroing in a NumPy miniexpr gather path",
+      "evidence": "~2–15% improvement in tested workloads",
+      "why_it_matters": "Avoiding unnecessary memory work improves throughput without adding compute",
+      "highlight": true
+    },
+    "numpy/numpy#32802": {
+      "what_it_is": "Foundational numerical-computing library",
+      "what_changed": "Fixed undefined shift behavior in the rational test dtype",
+      "evidence": "Correctness fix",
+      "why_it_matters": "Low-level correctness bugs can affect a very large downstream dependency graph"
+    },
+    "scipy/scipy#26225": {
+      "what_it_is": "Scientific-computing algorithms and numerical methods",
+      "what_changed": "Initialized bracketing-solver iteration counts on early-return paths",
+      "evidence": "Correct zero-iteration solver statistics",
+      "why_it_matters": "Reliable solver accounting improves correctness and observability"
+    },
+    "Blosc/python-blosc2#713": {
+      "what_it_is": "Compressed-array and data infrastructure",
+      "what_changed": "Fixed two NDArray thread-safety bugs blocking free-threaded Python support",
+      "evidence": "Concurrency correctness / free-threading readiness",
+      "why_it_matters": "Infrastructure must remain correct as Python moves toward broader free-threaded execution"
+    },
+    "numpy/numpy#32869": {
+      "what_it_is": "Foundational numerical-computing infrastructure",
+      "what_changed": "Added a locality-aware fast path to typed searchsorted",
+      "evidence": "~5.3–5.8× faster on tested strong-locality workloads",
+      "why_it_matters": "Reusing already-computed coarse state can remove search work without adding another O(Q) pass"
+    },
+    "pandas-dev/pandas#69916": {
+      "what_it_is": "Core data-processing and conversion infrastructure",
+      "what_changed": "Skipped impossible per-element NA membership work when na_values is empty",
+      "evidence": "~17–25% faster in targeted maybe_convert_numeric benchmarks",
+      "why_it_matters": "A loop invariant can eliminate repeated Python object-protocol work on a common path"
+    },
+    "pypa/packaging#1429": {
+      "what_it_is": "Foundational Python packaging and requirement-parsing infrastructure",
+      "what_changed": "Avoided ast.literal_eval for plain quoted marker strings",
+      "evidence": "~13% faster on the representative Requirement corpus",
+      "why_it_matters": "Common marker values should not pay for a general-purpose literal parser"
+    },
+    "pypa/packaging#1431": {
+      "what_it_is": "Foundational Python packaging and requirement-parsing infrastructure",
+      "what_changed": "Hardened the marker fast-path invariants",
+      "evidence": "~9.5% faster than baseline while retaining stronger defensive checks",
+      "why_it_matters": "Performance fast paths need explicit boundaries that survive future parser changes"
+    },
+    "python-hyper/h11#207": {
+      "what_it_is": "Pure-Python HTTP/1.1 protocol infrastructure",
+      "what_changed": "Removed redundant normalization and intermediate representation work in parsed wire headers",
+      "evidence": "~3.3–11.7% faster across targeted parsing workloads",
+      "why_it_matters": "Protocol parsing can remove duplicate work while preserving exact validation order"
+    },
+    "python-cffi/cffi#282": {
+      "what_it_is": "Python ↔ C foreign-function interface infrastructure",
+      "what_changed": "Specialized fixed-signature cdata calls while preserving the generic fallback",
+      "evidence": "~25–30% faster for targeted scalar signatures",
+      "why_it_matters": "Native-boundary overhead can be reduced without replacing the mature general path"
+    },
+    "kjd/idna#279": {
+      "what_it_is": "Unicode domain-name / IDNA infrastructure",
+      "what_changed": "Added a standards-preserving fast path for ordinary non-ACE ASCII labels",
+      "evidence": "~80–85% lower execution time for tested ordinary ASCII domains",
+      "why_it_matters": "Locally provable ASCII invariants can avoid unnecessary Unicode validation work"
+    },
+    "python-attrs/attrs#1636": {
+      "what_it_is": "Widely used Python object-model infrastructure",
+      "what_changed": "Avoided redundant attrs detection for exact atomic values in nested sequences",
+      "evidence": "Up to ~3.33× faster in the tested list[int] workload",
+      "why_it_matters": "Facts established at one layer should not be rediscovered repeatedly deeper in the runtime path"
+    },
+    "dateutil/dateutil#1590": {
+      "what_it_is": "Date/time, recurrence, and timezone infrastructure",
+      "what_changed": "Used binary search for deep queries over already-ordered completed recurrence caches",
+      "evidence": "~4,500–5,700× faster on tested deep 200k-cache queries",
+      "why_it_matters": "An existing ordering invariant can collapse repeated linear scans into logarithmic lookup"
+    },
+    "bloomberg/blazingmq#1803": {
+      "what_it_is": "Enterprise messaging infrastructure",
+      "what_changed": "Removed temporary schema-key string construction",
+      "evidence": "120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation",
+      "why_it_matters": "Temporary allocation on a repeated schema path can dominate otherwise small work"
+    },
+    "bloomberg/blazingmq#1806": {
+      "what_it_is": "Enterprise messaging infrastructure",
+      "what_changed": "Separated key-building storage from final canonical-string storage",
+      "evidence": "Most targeted PR2-vs-PR1 comparisons improved in final staged validation",
+      "why_it_matters": "Allocator growth history can create hidden performance cliffs even after obvious temporary allocations are removed"
+    },
+    "bloomberg/bde#317": {
+      "what_it_is": "Low-level C++ infrastructure and foundational libraries",
+      "what_changed": "Preserved an already-known path length instead of rescanning through c_str()",
+      "evidence": "Targeted appendRaw/popLeaf latency reductions of ~14–73%",
+      "why_it_matters": "Already-known metadata should not be discarded and recomputed on hot paths"
+    },
+    "bloomberg/bde#315": {
+      "what_it_is": "Low-level C++ infrastructure and foundational libraries",
+      "what_changed": "Removed an unreachable stale AIX semaphore-policy branch",
+      "evidence": "Maintenance / compatibility cleanup with current configurations validated",
+      "why_it_matters": "Removing unreachable platform logic reduces maintenance surface and future ambiguity"
+    },
+    "scipy/scipy#26226": {
+      "what_it_is": "Scientific-computing algorithms and signal-processing infrastructure",
+      "what_changed": "Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure",
+      "evidence": "Correctness fix; targeted tests passed",
+      "why_it_matters": "Small edge cases in foundational numerical routines should fail predictably rather than recurse indefinitely"
+    },
+    "apple/container#2292": {
+      "what_it_is": "Apple container runtime infrastructure",
+      "what_changed": "Prevented container stop from silently succeeding against an orphaned live runtime",
+      "evidence": "End-to-end orphaned-runtime behavior validated on macOS",
+      "why_it_matters": "Control-plane state should not report success when the underlying runtime remains alive"
+    },
+    "apple/container#2293": {
+      "what_it_is": "Apple container runtime infrastructure",
+      "what_changed": "Reconciled persisted container state with still-running runtimes after apiserver restart",
+      "evidence": "End-to-end state recovery and stop/kill behavior validated on macOS",
+      "why_it_matters": "Crash recovery requires reconstructing authoritative runtime state instead of trusting stale in-memory state"
+    },
+    "urllib3/urllib3#5304": {
+      "what_it_is": "Core HTTP and content-decoding infrastructure used throughout Python",
+      "what_changed": "Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression",
+      "evidence": "~26–27 μs saved per MiB of decoded output in tested single-output cases",
+      "why_it_matters": "Already-produced output should not be rematerialized when accumulation is unnecessary"
+    },
+    "pandas-dev/pandas#69776": {
+      "include_closed": true,
+      "what_it_is": "Core data-processing and CSV parsing infrastructure",
+      "what_changed": "Investigated preservation of the distinction between pd.NA and IEEE NaN across parser paths",
+      "evidence": "Closed / unmerged",
+      "why_it_matters": "The work exposed where information can be lost across parser and Arrow conversion boundaries"
+    },
+    "bloomberg/memray#1038": {
+      "include": false
+    }
+  }
+}
