@@ -1,77 +1,87 @@
-# CoreFoundry Project
+<h1 align="center">⚙️ CoreFoundry Project</h1>
 
-> **The next phase of AI will demand far more compute, memory, networking, and software infrastructure.  
-> Before we answer that demand with more resources, I believe we should first remove the work our systems never needed to do.**
+<p align="center">
+  <strong>Improve the foundations before increasing the resources.</strong>
+</p>
 
-Modern infrastructure was not designed for an unlimited increase in software agents, models, services, data movement, and online execution.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-2ea44f" alt="Status: Active">
+  <img src="https://img.shields.io/badge/focus-upstream%20infrastructure-blue" alt="Focus: Upstream infrastructure">
+  <img src="https://img.shields.io/badge/approach-zero--incremental--resource-orange" alt="Approach: Zero incremental resource">
+  <img src="https://img.shields.io/badge/funding-open-ea4aaa" alt="Funding: Open">
+</p>
 
-As AI systems scale, many small costs that once looked acceptable can be multiplied across enormous numbers of workloads: unnecessary initialization, repeated computation, avoidable synchronization, redundant memory movement, expensive control paths, and work that has already been paid for somewhere else.
+> **The next phase of AI will demand far more compute, memory, networking, and software infrastructure.**
 
-If those costs remain embedded in foundational infrastructure, we may eventually constrain the next generation of computing with the architecture we inherited from the last one.
+Modern infrastructure was not built for an unlimited increase in agents, models, services, data movement, and online execution.
 
-My long-term goal is simple:
+As AI-scale workloads grow, small inefficiencies compound:
 
-> **Improve the foundations before increasing the resources.**
+- 🔁 repeated computation;
+- 🧠 unnecessary memory work;
+- 🔒 avoidable synchronization;
+- 🧵 parallel startup costs that cannot be amortized;
+- 🌐 networking and protocol overhead;
+- 🧱 historical architectural assumptions that no longer scale well.
 
-I focus on lower-level open-source infrastructure because improvements there can propagate broadly — through applications, data centers, networks, Python workloads, C libraries, runtimes, and operating systems.
+My view is simple:
+
+> **Before adding more hardware, remove the work that never needed to happen.**
 
 ```mermaid
 flowchart LR
-    A["🤖 AI & software<br/>scale"] --> B["⚙️ More compute<br/>demand"]
-    B --> C["📈 Hidden costs<br/>compound"]
-    C --> D["🧱 Improve the<br/>foundations"]
-    D --> E["🌍 Broader<br/>downstream gain"]
+    A["🤖 AI & software<br/>scale"] --> B["⚙️ Resource<br/>pressure"]
+    B --> C["📈 Small costs<br/>compound"]
+    C --> D["🧱 Fix the<br/>foundations"]
+    D --> E["🌍 Broad<br/>downstream gain"]
 ```
 
-## What I do
+---
 
-I independently research and contribute to widely used open-source infrastructure, with a focus on performance, correctness, concurrency, and **zero-incremental-resource optimization**.
+## 🧭 What I do
 
-I am not a mathematician, and I am not a full-time systems engineer. My background spans consulting, finance, exchanges, blockchain, data, and software systems.
+I independently work on lower-level open-source infrastructure where a relatively small upstream change can benefit many downstream workloads.
 
-That gives me a different way of looking at infrastructure problems.
+My background spans consulting, finance, exchanges, blockchain, data, and software systems. I use that cross-domain perspective to look beyond isolated code paths and ask what a system is **really paying for**.
 
-I do not only ask:
+```mermaid
+flowchart LR
+    A["Cross-domain<br/>background"] --> B["System-level<br/>cost lens"]
+    B --> C["Low-level<br/>infrastructure"]
+    C --> D["Evidence &<br/>validation"]
+    D --> E["Upstream<br/>change"]
+```
 
-> **Can this code run faster?**
+I do not only ask **“Can this code run faster?”**
 
 I also ask:
 
 - Why does this work exist at all?
 - Who ultimately pays for it?
 - Has the same cost already been paid somewhere else?
+- Does a local optimization create a larger system-level cost?
 - What happens when this inefficiency is multiplied across millions of workloads?
-- Is a local optimization creating a larger system-level cost?
-
-I believe mature infrastructure engineering is not only about writing faster code. It is about understanding the **full cost of a system**.
 
 ---
 
-## ❤️ Support the work
-
-If you share this view, you can support the research and upstream work directly:
+## ❤️ Support CoreFoundry
 
 <p align="center">
   <a href="https://github.com/sponsors/Johnny-Kao">
-    <img src="https://img.shields.io/badge/Sponsor%20my%20upstream%20OSS%20work-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor my upstream OSS work">
+    <img src="https://img.shields.io/badge/SPONSOR%20COREFOUNDRY-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor CoreFoundry">
+  </a>
+  &nbsp;
+  <a href="https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal">
+    <img src="https://img.shields.io/badge/SHARE%20YOUR%20TOP%203-Infrastructure%20Priorities-0969da?style=for-the-badge&logo=github&logoColor=white" alt="Share infrastructure priorities">
   </a>
 </p>
 
-Funding increases the amount of independent upstream engineering capacity I can sustain:
+If you share this view, there are two useful ways to help:
 
-- more time for research and implementation;
-- benchmarking, CI, compute, and multi-platform validation;
-- AI-assisted engineering and research tooling;
-- reproducing difficult performance and concurrency behavior;
-- turning validated findings into upstream-quality patches.
+- **Sponsor the work** — funding increases the time, compute, CI, tooling, and validation capacity available for independent upstream engineering.
+- **Send a priority signal** — tell me the three infrastructure bottlenecks, libraries, or recurring costs your organization thinks deserve more optimization attention.
 
-> Sponsorship supports the broader research program. It does not buy roadmap control, priority support, or guaranteed work on a specific request.
-
-If funding is not a fit, there is another useful way to help:
-
-> **Tell me the three infrastructure bottlenecks, libraries, or recurring costs your organization believes deserve much more optimization attention over the next few years.**
-
-Real demand signals help me decide where independent upstream research is most likely to matter.
+> Sponsorship supports the broader program. It does not buy roadmap control, priority support, or guaranteed work on a specific request.
 
 ---
 
@@ -79,28 +89,54 @@ Real demand signals help me decide where independent upstream research is most l
 
 | Project / PR | What it is | What changed | Measured impact | Why this matters |
 |---|---|---|---:|---|
-| **[urllib3 #5287](https://github.com/urllib3/urllib3/pull/5287)** | Core HTTP infrastructure used throughout the Python ecosystem | Optimized the common single-value header path | **~9–13%** faster in representative request-construction workloads | Small improvements in foundational HTTP code can propagate across a large number of Python applications |
-| **[Memray #1035](https://github.com/bloomberg/memray/pull/1035)** | Python memory profiling and allocation-analysis infrastructure | Reduced high-contention synchronization overhead on Linux/glibc | **Up to 28%** runtime reduction at 256 threads | Profiling infrastructure should observe workloads without becoming a major source of contention itself |
+| **[urllib3 #5287](https://github.com/urllib3/urllib3/pull/5287)** | Core HTTP infrastructure used throughout Python | Optimized the common single-value header path | **~9–13%** faster in representative request-construction workloads | Foundational HTTP improvements can propagate across a large number of Python applications |
+| **[Memray #1035](https://github.com/bloomberg/memray/pull/1035)** | Python memory profiling and allocation-analysis infrastructure | Reduced high-contention synchronization overhead on Linux/glibc | **Up to 28%** runtime reduction at 256 threads | Profiling should observe workloads without becoming a major bottleneck itself |
 | **[c-blosc2 #805](https://github.com/Blosc/c-blosc2/pull/805)** | High-performance compression infrastructure | Avoided unnecessary parallel startup and worker wakeups for small jobs | **35.86 μs → 2.02 μs** on a targeted 64-byte workload | Small workloads should not pay parallel execution costs they cannot amortize |
-| **[python-blosc2 #728](https://github.com/Blosc/python-blosc2/pull/728)** | Python interface to high-performance compressed data infrastructure | Removed redundant full-block zeroing in a NumPy miniexpr gather path | **~2–15%** improvement in tested workloads | Avoiding unnecessary memory work can improve throughput without adding compute |
+| **[python-blosc2 #728](https://github.com/Blosc/python-blosc2/pull/728)** | Python interface to high-performance compressed-data infrastructure | Removed redundant full-block zeroing in a NumPy miniexpr gather path | **~2–15%** improvement in tested workloads | Avoiding unnecessary memory work improves throughput without adding compute |
 
-## Other selected upstream work
+## 🧩 Other selected upstream work
 
 | Project / PR | What it is | What changed | Measured / practical impact | Why this matters |
 |---|---|---|---:|---|
-| **[NumPy #32802](https://github.com/numpy/numpy/pull/32802)** | Foundational numerical computing library for the Python ecosystem | Fixed undefined shift behavior | **Correctness fix** | Low-level correctness bugs can affect a very large downstream dependency graph |
-| **[SciPy #26225](https://github.com/scipy/scipy/pull/26225)** | Scientific computing algorithms and numerical methods | Improved bracketing-solver iteration statistics | **More accurate solver accounting** | Better internal accounting improves reliability and makes behavior easier to reason about |
-| **[python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)** | Compressed array and data infrastructure | Improved free-threaded Python correctness | **Concurrency readiness** | Infrastructure needs to remain correct as Python moves toward broader free-threaded execution |
+| **[NumPy #32802](https://github.com/numpy/numpy/pull/32802)** | Foundational numerical-computing library | Fixed undefined shift behavior | **Correctness fix** | Low-level correctness bugs can affect a very large downstream dependency graph |
+| **[SciPy #26225](https://github.com/scipy/scipy/pull/26225)** | Scientific-computing algorithms and numerical methods | Improved bracketing-solver iteration statistics | **More accurate solver accounting** | Better internal accounting improves reliability and makes behavior easier to reason about |
+| **[python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)** | Compressed-array and data infrastructure | Improved free-threaded Python correctness | **Concurrency readiness** | Infrastructure must remain correct as Python moves toward broader free-threaded execution |
 
 **[View the full contribution ledger →](MERGED_IMPACT.md)**
 
 ---
 
-## 🧭 Where I work in the stack
+## 🗺️ CoreFoundry project map
 
-The projects may look unrelated at first glance. They are not.
+CoreFoundry is not a collection of unrelated PRs. The work follows a deliberate path from scientific/data infrastructure toward more general Python infrastructure, protocol/native boundaries, and eventually system-level infrastructure.
 
-The common thread is that they sit in foundational layers where relatively small changes can affect many downstream workloads.
+```mermaid
+flowchart LR
+    A["✅ Current depth<br/>NumPy · SciPy · pandas<br/>Blosc2 · urllib3"]
+    B["🟡 Expanding now<br/>packaging · h11 · idna<br/>cffi · dateutil · attrs"]
+    C["🔭 Candidate frontier<br/>certifi · charset-normalizer<br/>pycparser · typing-extensions"]
+    D["🌐 Long-term systems<br/>Linux · cloud-init<br/>OS / AI infrastructure"]
+
+    A --> B --> C --> D
+```
+
+### Project groups
+
+| Group | Projects | Role |
+|---|---|---|
+| **Scientific & data infrastructure** | NumPy, SciPy, pandas, python-blosc2, c-blosc2 | Numerical computing, arrays, compression, data movement |
+| **General Python infrastructure** | urllib3, packaging, python-dateutil, attrs | Widely reused runtime and packaging foundations |
+| **Protocol / trust / native boundaries** | h11, idna, certifi, cffi | HTTP, naming, TLS trust, Python↔C boundary |
+| **Candidate infrastructure frontier** | charset-normalizer, pycparser, typing-extensions, six | Broader foundational dependency surface |
+| **Long-term systems direction** | Linux distribution, cloud-init, OS/runtime infrastructure | Deeper system layers and AI-era infrastructure |
+
+> Status matters: projects in the final two rows are **directional targets or candidates**, not claims of existing contribution.
+
+---
+
+## 🧱 Where the work sits
+
+The common thread is leverage: work lower in the stack can propagate upward into many downstream workloads.
 
 ```mermaid
 flowchart LR
@@ -110,26 +146,16 @@ flowchart LR
     D["Runtime & Concurrency<br/>Threads · Scheduling"]
     E["System & Hardware<br/>OS · CPU · GPU"]
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
+    A --> B --> C --> D --> E
 ```
 
-Current areas of interest include:
-
-- scientific and data infrastructure;
-- networking and HTTP hot paths;
-- memory and profiling;
-- compression and data movement;
-- concurrency and free-threaded Python;
-- runtime scheduling and heterogeneous compute.
+That is why CoreFoundry deliberately prioritizes foundational infrastructure instead of isolated application-level optimization.
 
 ---
 
-## Work connected to specific infrastructure organizations
+## 🏢 Organization-linked open-source work
 
-Some open-source projects are maintained by companies or foundations. I track those relationships because they help infrastructure teams quickly see work relevant to their ecosystem.
+Some projects are maintained by companies or foundations. These are grouped separately so infrastructure teams can quickly find work relevant to their ecosystem.
 
 ### Bloomberg-maintained open source
 
@@ -137,26 +163,20 @@ Some open-source projects are maintained by companies or foundations. I track th
 |---|---|---|---:|
 | **[Memray #1035](https://github.com/bloomberg/memray/pull/1035)** | Python memory profiling infrastructure | Reduced contention overhead | **Up to 28%** at 256 threads |
 
-> Listing a company or project here does not imply sponsorship, endorsement, or representation of this research program. It refers only to public open-source work.
-
-Additional organization-specific groupings can be added as the contribution record grows.
+> Listing an organization or project here refers only to public open-source work. It does not imply sponsorship, endorsement, or representation of CoreFoundry.
 
 ---
 
-## 🎯 How I prioritize research
-
-I do not treat every optimization opportunity equally.
-
-Research priority comes from the intersection of **strategic importance, research curiosity, real-world demand, technical leverage, and upstream feasibility**.
+## 🎯 How I choose what to work on
 
 ```mermaid
 flowchart LR
-    A["Strategic<br/>importance"]
-    B["Research<br/>curiosity"]
-    C["Industry<br/>demand"]
+    A["🧭 Strategic<br/>importance"]
+    B["🔬 Research<br/>curiosity"]
+    C["🏢 Industry<br/>demand"]
 
-    D["Technical leverage<br/>+ feasibility"]
-    E["Research<br/>priority"]
+    D["⚡ Technical leverage<br/>+ feasibility"]
+    E["🎯 Research<br/>priority"]
 
     A --> D
     B --> D
@@ -164,30 +184,14 @@ flowchart LR
     D --> E
 ```
 
-### Strategic priorities
+I prioritize opportunities where several factors overlap:
 
-I am especially interested in:
-
-- foundational infrastructure used broadly and repeatedly;
-- unnecessary work on common hot paths;
-- costs that have already been paid and can be reused safely;
-- synchronization, initialization, or data-movement overhead;
-- free-threaded and highly concurrent execution;
-- infrastructure pressure created by AI-scale workloads.
-
-### Curiosity-driven research
-
-Some investigations start with a simpler question:
-
-> **Why is the system paying for this at all?**
-
-Unexpected scaling behavior, duplicated work, strange initialization costs, and inherited architectural assumptions can all be useful starting points.
-
-### Industry priorities
-
-Signals from real infrastructure users matter because they reveal where recurring costs are already being paid at scale.
-
-Companies do not control the roadmap, but they can help identify which problems deserve more attention.
+- broad infrastructure reach;
+- a measurable recurring cost;
+- strong technical leverage;
+- realistic upstream acceptance;
+- clear correctness boundaries;
+- real-world demand or a compelling research question.
 
 ---
 
@@ -197,46 +201,35 @@ Companies do not control the roadmap, but they can help identify which problems 
 
 ```mermaid
 flowchart LR
-    A["Observe<br/>the cost"] --> B["Ask why<br/>it exists"] --> C["Check whether<br/>it was already paid"]
-    C --> D["Remove or<br/>reuse safely"] --> E["Measure &<br/>validate"] --> F["Upstream the<br/>smallest change"]
+    A["👀 Observe<br/>the cost"] --> B["❓ Ask why<br/>it exists"] --> C["♻️ Already<br/>paid?"]
+    C --> D["✂️ Remove or<br/>reuse safely"] --> E["📏 Measure &<br/>validate"] --> F["⬆️ Upstream the<br/>smallest change"]
 ```
 
-The principle is simple:
+The principle is **zero-incremental-resource optimization**:
 
-**remove unnecessary work before adding more resources.**
+> Extract more useful work from the resources already being used before asking for additional ones.
 
-That usually means:
-
-- reducing CPU, memory, synchronization, or execution overhead;
-- reusing work that has already been paid for when it is safe;
-- preferring small, reviewable, measurable changes;
-- starting in foundational layers where gains can propagate broadly.
-
-This is not a claim that optimization is literally free.
-
-It is a preference for extracting more useful work from existing resources before asking for additional ones.
+In practice, that means reducing unnecessary CPU, memory, synchronization, data movement, initialization, or control-path work while preserving correctness and maintainability.
 
 ---
 
-## Participate
-
-There are three useful ways to contribute to this research program:
+## 🤝 Participate
 
 | If you want to… | The useful action |
 |---|---|
-| Increase independent upstream capacity | **[Sponsor the work](https://github.com/sponsors/Johnny-Kao)** |
-| Influence where I look next | Share your **top three infrastructure bottlenecks or libraries** |
+| Increase independent upstream capacity | **[Sponsor CoreFoundry](https://github.com/sponsors/Johnny-Kao)** |
+| Influence where I look next | **[Share your top three infrastructure priorities](https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal)** |
 | Help validate an idea | Point me toward public benchmarks, reproducible workloads, or important open problems |
 
 <p align="center">
   <a href="https://github.com/sponsors/Johnny-Kao">
-    <img src="https://img.shields.io/badge/Support%20the%20research-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Support the research">
+    <img src="https://img.shields.io/badge/Support%20CoreFoundry-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Support CoreFoundry">
   </a>
 </p>
 
 ## Related research
 
-**[AlpenCat](https://github.com/Johnny-Kao/AlpenCat)** is one concrete research project exploring ultra-low-overhead execution routing under constrained compute.
+**[AlpenCat](https://github.com/Johnny-Kao/AlpenCat)** is one concrete systems-research project exploring ultra-low-overhead execution routing under constrained compute.
 
 ---
 
