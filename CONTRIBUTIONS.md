@@ -3,13 +3,13 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  ![merged](https://img.shields.io/badge/merged-7-2ea44f)
+  ![merged](https://img.shields.io/badge/merged-8-2ea44f)
   ![open](https://img.shields.io/badge/open-17-0969da)
-  ![draft](https://img.shields.io/badge/draft-1-d29922)
+  ![draft](https://img.shields.io/badge/draft-0-d29922)
   ![closed / retained](https://img.shields.io/badge/closed%20%2F%20retained-1-6e7781)
 </p>
 
-> **Last synchronized:** 2026-10-05 14:15 UTC
+> **Last synchronized:** 2026-10-06 06:30 UTC
 
 ## Canonical-source policy
 
@@ -32,6 +32,7 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[pypa/packaging #1429](https://github.com/pypa/packaging/pull/1429)**<br><sub>[merge commit `d17cfaf`](https://github.com/pypa/packaging/commit/d17cfaf0b77a5690f03087359e7c8d665a3c728d)</sub> | Foundational Python packaging and requirement-parsing infrastructure | Avoided ast.literal_eval for plain quoted marker strings | ~13% faster on the representative Requirement corpus | Common marker values should not pay for a general-purpose literal parser |
 | **[bloomberg/memray #1035](https://github.com/bloomberg/memray/pull/1035)**<br><sub>[merge commit `d0c34e8`](https://github.com/bloomberg/memray/commit/d0c34e8d6c341bf5e415220203e0a2563c9d65ff)</sub> | Python memory profiling and allocation-analysis infrastructure | Reduced high-contention Tracker synchronization overhead on Linux/glibc | Up to 28% runtime reduction at 256 threads | Profiling infrastructure should observe workloads without becoming a major bottleneck |
 | **[Blosc/c-blosc2 #805](https://github.com/Blosc/c-blosc2/pull/805)**<br><sub>[merge commit `89dffce`](https://github.com/Blosc/c-blosc2/commit/89dffce3066e5b40e41ca506efb61596f863bc9a)</sub> | High-performance compression infrastructure | Avoided unnecessary parallel startup and worker wakeups for small jobs | 35.86 μs → 2.02 μs on a targeted 64-byte workload | Small workloads should not pay parallel execution costs they cannot amortize |
 | **[urllib3/urllib3 #5287](https://github.com/urllib3/urllib3/pull/5287)**<br><sub>[merge commit `796d200`](https://github.com/urllib3/urllib3/commit/796d200d3070ead69ec3a5d848fecf52a2249b59)</sub> | Core HTTP infrastructure used throughout Python | Optimized the common single-value header path | ~9–13% faster in representative request-construction workloads | Foundational HTTP improvements can propagate across a large number of Python applications |
@@ -44,8 +45,10 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[numpy/numpy #32895](https://github.com/numpy/numpy/pull/32895)** | numpy | PERF: exploit insertion locality in batched searchsorted | — | — |
+| **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | memray | Write allocation records with one sink call | — | — |
+| **[urllib3/urllib3 #5304](https://github.com/urllib3/urllib3/pull/5304)** | Core HTTP and content-decoding infrastructure used throughout Python | Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression | ~26–27 μs saved per MiB of decoded output in tested single-output cases | Already-produced output should not be rematerialized when accumulation is unnecessary |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | Low-level C++ infrastructure and foundational libraries | Preserved an already-known path length instead of rescanning through c_str() | Targeted appendRaw/popLeaf latency reductions of ~14–73% | Already-known metadata should not be discarded and recomputed on hot paths |
-| **[numpy/numpy #32869](https://github.com/numpy/numpy/pull/32869)** | Foundational numerical-computing infrastructure | Added a locality-aware fast path to typed searchsorted | ~5.3–5.8× faster on tested strong-locality workloads | Reusing already-computed coarse state can remove search work without adding another O(Q) pass |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | Low-level C++ infrastructure and foundational libraries | Removed an unreachable stale AIX semaphore-policy branch | Maintenance / compatibility cleanup with current configurations validated | Removing unreachable platform logic reduces maintenance surface and future ambiguity |
 | **[bloomberg/blazingmq #1806](https://github.com/bloomberg/blazingmq/pull/1806)** | Enterprise messaging infrastructure | Separated key-building storage from final canonical-string storage | Most targeted PR2-vs-PR1 comparisons improved in final staged validation | Allocator growth history can create hidden performance cliffs even after obvious temporary allocations are removed |
 | **[bloomberg/blazingmq #1803](https://github.com/bloomberg/blazingmq/pull/1803)** | Enterprise messaging infrastructure | Removed temporary schema-key string construction | 120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation | Temporary allocation on a repeated schema path can dominate otherwise small work |
@@ -56,17 +59,13 @@ flowchart LR
 | **[kjd/idna #279](https://github.com/kjd/idna/pull/279)** | Unicode domain-name / IDNA infrastructure | Added a standards-preserving fast path for ordinary non-ACE ASCII labels | ~80–85% lower execution time for tested ordinary ASCII domains | Locally provable ASCII invariants can avoid unnecessary Unicode validation work |
 | **[python-cffi/cffi #282](https://github.com/python-cffi/cffi/pull/282)** | Python ↔ C foreign-function interface infrastructure | Specialized fixed-signature cdata calls while preserving the generic fallback | ~25–30% faster for targeted scalar signatures | Native-boundary overhead can be reduced without replacing the mature general path |
 | **[python-hyper/h11 #207](https://github.com/python-hyper/h11/pull/207)** | Pure-Python HTTP/1.1 protocol infrastructure | Removed redundant normalization and intermediate representation work in parsed wire headers | ~3.3–11.7% faster across targeted parsing workloads | Protocol parsing can remove duplicate work while preserving exact validation order |
-| **[pypa/packaging #1431](https://github.com/pypa/packaging/pull/1431)** | Foundational Python packaging and requirement-parsing infrastructure | Hardened the marker fast-path invariants | ~9.5% faster than baseline while retaining stronger defensive checks | Performance fast paths need explicit boundaries that survive future parser changes |
-| **[pypa/packaging #1429](https://github.com/pypa/packaging/pull/1429)** | Foundational Python packaging and requirement-parsing infrastructure | Avoided ast.literal_eval for plain quoted marker strings | ~13% faster on the representative Requirement corpus | Common marker values should not pay for a general-purpose literal parser |
 | **[pandas-dev/pandas #69916](https://github.com/pandas-dev/pandas/pull/69916)** | Core data-processing and conversion infrastructure | Skipped impossible per-element NA membership work when na_values is empty | ~17–25% faster in targeted maybe_convert_numeric benchmarks | A loop invariant can eliminate repeated Python object-protocol work on a common path |
 | **[apple/container #2293](https://github.com/apple/container/pull/2293)** | Apple container runtime infrastructure | Reconciled persisted container state with still-running runtimes after apiserver restart | End-to-end state recovery and stop/kill behavior validated on macOS | Crash recovery requires reconstructing authoritative runtime state instead of trusting stale in-memory state |
 | **[apple/container #2292](https://github.com/apple/container/pull/2292)** | Apple container runtime infrastructure | Prevented container stop from silently succeeding against an orphaned live runtime | End-to-end orphaned-runtime behavior validated on macOS | Control-plane state should not report success when the underlying runtime remains alive |
 
 ## 🟡 Draft / validating
 
-| Project / PR | What it is | What changed | Evidence / impact | Why this matters |
-|---|---|---|---:|---|
-| **[urllib3/urllib3 #5304](https://github.com/urllib3/urllib3/pull/5304)** | Core HTTP and content-decoding infrastructure used throughout Python | Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression | ~26–27 μs saved per MiB of decoded output in tested single-output cases | Already-produced output should not be rematerialized when accumulation is unnecessary |
+_No tracked entries in this state._
 
 ## ⚪ Closed / lessons retained
 
