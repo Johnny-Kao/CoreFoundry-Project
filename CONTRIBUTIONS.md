@@ -4,12 +4,12 @@ A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
   ![merged](https://img.shields.io/badge/merged-8-2ea44f)
-  ![open](https://img.shields.io/badge/open-17-0969da)
+  ![open](https://img.shields.io/badge/open-18-0969da)
   ![draft](https://img.shields.io/badge/draft-0-d29922)
   ![closed / retained](https://img.shields.io/badge/closed%20%2F%20retained-1-6e7781)
 </p>
 
-> **Last synchronized:** 2026-10-06 06:30 UTC
+> **Last synchronized:** 2026-10-07 06:08 UTC
 
 ## Canonical-source policy
 
@@ -46,6 +46,7 @@ flowchart LR
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
 | **[numpy/numpy #32895](https://github.com/numpy/numpy/pull/32895)** | numpy | PERF: exploit insertion locality in batched searchsorted | — | — |
+| **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | blog.scientific-python.org | BLOG: Finding Another Layer of Performance in np.searchsorted | — | — |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | memray | Write allocation records with one sink call | — | — |
 | **[urllib3/urllib3 #5304](https://github.com/urllib3/urllib3/pull/5304)** | Core HTTP and content-decoding infrastructure used throughout Python | Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression | ~26–27 μs saved per MiB of decoded output in tested single-output cases | Already-produced output should not be rematerialized when accumulation is unnecessary |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | Low-level C++ infrastructure and foundational libraries | Preserved an already-known path length instead of rescanning through c_str() | Targeted appendRaw/popLeaf latency reductions of ~14–73% | Already-known metadata should not be discarded and recomputed on hot paths |
