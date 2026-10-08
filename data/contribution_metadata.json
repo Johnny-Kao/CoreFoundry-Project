@@ -147,8 +147,8 @@
     "urllib3/urllib3#5304": {
       "what_it_is": "Core HTTP and content-decoding infrastructure used throughout Python",
       "what_changed": "Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression",
-      "evidence": "~26–27 μs saved per MiB of decoded output in tested single-output cases",
-      "why_it_matters": "Already-produced output should not be rematerialized when accumulation is unnecessary"
+      "evidence": "8 paired A/B rounds across 15 controlled HTTP scenarios: ~19–23% lower client CPU time for tested 32 MiB gzip responses; decoder-only tests: ~26–27 μs saved/MiB",
+      "why_it_matters": "Eliminating a redundant output copy cuts decompression and HTTP client CPU costs without changing public APIs; workload-specific results, not production-average savings"
     },
     "pandas-dev/pandas#69776": {
       "include_closed": true,
