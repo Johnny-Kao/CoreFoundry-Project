@@ -23,7 +23,7 @@ def sources_for(event):
     pr = core.api_get(f"/repos/{repo}/pulls/{number}")
     if pr["html_url"] != event["url"]:
         raise ValueError("PR identity mismatch")
-    sources = [{"url": pr["html_url"], "text": (pr.get("title") or "") + "\\n" + (pr.get("body") or "")}]
+    sources = [{"url": pr["html_url"], "text": (pr.get("title") or "") + "\n" + (pr.get("body") or "")}]
     for suffix in (f"/repos/{repo}/issues/{number}/comments",
                    f"/repos/{repo}/pulls/{number}/reviews",
                    f"/repos/{repo}/pulls/{number}/comments"):
@@ -50,7 +50,7 @@ def validate(candidate, sources):
         out[field] = value.strip()
     # Reject numerical claims whose explicit numbers never appear in supplied evidence.
     source_text = " ".join(x["text"] for x in sources)
-    numbers = re.findall(r"(?<![A-Za-z])\\d+(?:\\.\\d+)?%?", " ".join(out.values()))
+    numbers = re.findall(r"(?<![A-Za-z])\d+(?:\.\d+)?%?", " ".join(out.values()))
     for number in numbers:
         if number not in source_text:
             return None
@@ -73,7 +73,7 @@ def enrich(event, metadata, registry):
         "claims, or source URLs. If data is absent, keep the field empty or neutral. "
         "For closed-unmerged PRs describe verified learning objectively, not as merged. "
         "Each factual claim should have support in the supplied sources. "
-        "Use only supplied source URLs. English, concise.\\n"
+        "Use only supplied source URLs. English, concise.\n"
         + json.dumps({"event": event, "sources": sources}, ensure_ascii=False)[:35000]
     )
     result = subprocess.run(["copilot", "-sp", prompt], capture_output=True, text=True,
@@ -83,7 +83,7 @@ def enrich(event, metadata, registry):
         return False
     output = result.stdout.strip()
     if output.startswith("```"):
-        output = re.sub(r"^\`\`\`(?:json)?\\s*|\\s*\`\`\`$", "", output)
+        output = re.sub(r"^```(?:json)?\s*|\s*```$", "", output)
     try:
         candidate = json.loads(output)
     except json.JSONDecodeError:
@@ -124,8 +124,8 @@ def main():
         except (urllib.error.URLError, ValueError, TimeoutError, subprocess.TimeoutExpired) as exc:
             print(f"Defer {event['key']}: {type(exc).__name__}", file=sys.stderr)
     if success:
-        META.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\\n", encoding="utf-8")
-        REGISTRY.write_text(json.dumps(registry, indent=2, ensure_ascii=False, sort_keys=True) + "\\n", encoding="utf-8")
+        META.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        REGISTRY.write_text(json.dumps(registry, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     print(f"Enriched {success}/{len(events[:3])} events")
 
 
