@@ -40,6 +40,7 @@ jobs:
         run: python scripts/sync_contributions.py
 
       - name: Commit ledger changes
+        if: github.ref == 'refs/heads/main'
         run: |
           if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md README.md)" ]; then
             echo "Contribution ledger is already current."
