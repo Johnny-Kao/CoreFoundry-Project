@@ -58,11 +58,11 @@ jobs:
           PY
 
       - name: Install Copilot CLI only for eligible PR events
-        if: steps.gate.outputs.required == 'true'
+        if: github.ref == 'refs/heads/main' && steps.gate.outputs.required == 'true'
         run: npm install -g @github/copilot
 
       - name: Enrich from PR descriptions and discussion
-        if: steps.gate.outputs.required == 'true'
+        if: github.ref == 'refs/heads/main' && steps.gate.outputs.required == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
