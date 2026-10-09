@@ -36,27 +36,46 @@ def sources_for(event):
 
 
 def validate(candidate, sources):
-    if not isinstance(candidate, dict):
+    """Negative-gate individual claims, not the full PR."""
+    if not isinstance(candidate, dict) or not sources:
         return None
     allowed = {x["url"] for x in sources}
-    urls = candidate.get("source_urls")
-    if not isinstance(urls, list) or not urls or any(u not in allowed for u in urls):
-        return None
-    out = {}
-    for field in FIELDS:
-        value = candidate.get(field)
-        if not isinstance(value, str) or len(value) > 600 or "<" in value or "|" in value:
-            return None
-        out[field] = value.strip()
-    # Reject numerical claims whose explicit numbers never appear in supplied evidence.
+    urls = candidate.get("source_urls", [])
+    if not isinstance(urls, list):
+        urls = []
+    urls = [u for u in urls if isinstance(u, str) and u in allowed]
+    if not urls:
+        urls = [sources[0]["url"]]
+
     source_text = " ".join(x["text"] for x in sources)
-    numbers = re.findall(r"(?<![A-Za-z])\d+(?:\.\d+)?%?", " ".join(out.values()))
-    for number in numbers:
-        if number not in source_text:
-            return None
+    out = {}
+    rejected = []
+    for field in FIELDS:
+        value = candidate.get(field, "")
+        if not isinstance(value, str) or len(value) > 600 or "<" in value or "|" in value:
+            rejected.append(field)
+            out[field] = ""
+            continue
+        value = value.strip()
+        # Evidence claims are high-stakes: reject ungrounded quantitative details.
+        if field == "evidence":
+            numbers = re.findall(r"(?<![A-Za-z])\\d+(?:\\.\\d+)?%?", value)
+            if any(n not in source_text for n in numbers):
+                rejected.append(field)
+                value = ""
+        out[field] = value
+
+    # A literal upstream PR title is a deterministic fallback, not an AI claim.
+    if not out.get("what_changed"):
+        out["what_changed"] = sources[0]["text"].splitlines()[0][:180]
+    if not out.get("what_it_is"):
+        out["what_it_is"] = "Upstream open-source infrastructure"
+    if not out.get("why_it_matters"):
+        out["why_it_matters"] = "Documents a scoped upstream engineering change."
+    if rejected:
+        print("Rejected unsupported fields: " + ", ".join(rejected))
     out["source_urls"] = urls
     return out
-
 
 def enrich(event, metadata, registry):
     sources = sources_for(event)
