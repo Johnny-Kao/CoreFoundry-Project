@@ -53,7 +53,7 @@ jobs:
           with open("data/enrichment_queue.json", encoding="utf-8") as fh:
               required = bool(json.load(fh).get("events"))
           with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
-              fh.write(f"required={str(required).lower()}\\n")
+              fh.write(f"required={str(required).lower()}\n")
           print(f"Copilot required: {required}")
           PY
 
@@ -68,15 +68,6 @@ jobs:
         run: |
           python scripts/enrich_contributions.py
           python scripts/sync_contributions.py
-
-      - name: One-time Copilot authentication smoke test
-        if: github.ref == 'refs/heads/automation/negative-gate-ledger-v2'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          npm install -g @github/copilot
-          timeout 90s copilot -sp "Respond with exactly COREFOUNDRY_AUTH_OK." > /tmp/copilot-smoke.txt
-          grep -q COREFOUNDRY_AUTH_OK /tmp/copilot-smoke.txt
 
       - name: Commit ledger changes
         if: github.ref == 'refs/heads/main'
