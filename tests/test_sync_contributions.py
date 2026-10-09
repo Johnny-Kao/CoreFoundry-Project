@@ -57,6 +57,63 @@ class LedgerTests(unittest.TestCase):
                 sync.main()
                 self.assertEqual(first, {x: (root / x).read_bytes() for x in first})
 
+    def check_queue(self, previous=None, fresh=None, metadata=None):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "data").mkdir()
+            (root / "README.md").write_text(
+                "Header\\n\\n**[View the live contribution ledger →](CONTRIBUTIONS.md)**\\n",
+                encoding="utf-8"
+            )
+            (root / "data" / "contribution_metadata.json").write_text(
+                json.dumps({"entries": metadata or {}}), encoding="utf-8"
+            )
+            (root / "data" / "contribution_registry.json").write_text(
+                json.dumps({"schema_version": 1, "entries": previous or {}}), encoding="utf-8"
+            )
+            mock_item = {"repository_url": "https://api.github.com/repos/upstream/library", "number": 1}
+            with mock.patch.multiple(
+                    sync, ROOT=root,
+                    METADATA_PATH=root / "data" / "contribution_metadata.json",
+                    OUTPUT_PATH=root / "CONTRIBUTIONS.md",
+                    README_PATH=root / "README.md",
+                    REGISTRY_PATH=root / "data" / "contribution_registry.json"), \\
+                 mock.patch.object(sync, "discover_prs", return_value=[mock_item]), \\
+                 mock.patch.object(sync, "fetch_pr", return_value=("upstream/library", fresh or pr())):
+                sync.main()
+            return json.loads((root / "data" / "enrichment_queue.json").read_text())["events"]
+
+    def test_new_uncurated_pr_triggers_initial(self):
+        self.assertEqual(self.check_queue()[0]["phase"], "initial")
+
+    def test_existing_open_completed_skips_ai(self):
+        previous = {"upstream/library#1": {
+            "repo": "upstream/library", "pr": pr(),
+            "enrichment": {"initial": "completed"}}}
+        self.assertEqual(self.check_queue(previous=previous), [])
+
+    def test_terminal_merge_triggers_final(self):
+        previous = {"upstream/library#1": {
+            "repo": "upstream/library", "pr": pr(),
+            "enrichment": {"initial": "completed"}}}
+        events = self.check_queue(previous=previous, fresh=pr(merged=True))
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["phase"], "terminal")
+
+    def test_closed_without_merge_triggers_final(self):
+        previous = {"upstream/library#1": {
+            "repo": "upstream/library", "pr": pr(),
+            "enrichment": {"initial": "completed"}}}
+        closed = pr(state="closed")
+        closed["closed_at"] = "2026-10-09T00:00:00Z"
+        self.assertEqual(self.check_queue(previous=previous, fresh=closed)[0]["phase"], "terminal")
+
+    def test_curated_import_does_not_use_copilot(self):
+        meta = {"upstream/library#1": {
+            "what_changed": "Removed redundant allocations",
+            "why_it_matters": "Reduces unnecessary memory work"}}
+        self.assertEqual(self.check_queue(metadata=meta), [])
+
     def test_failed_pr_fetch_never_publishes(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
