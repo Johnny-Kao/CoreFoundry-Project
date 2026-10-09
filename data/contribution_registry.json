@@ -298,29 +298,6 @@
       },
       "repo": "bloomberg/memray"
     },
-    "bloomberg/memray#1038": {
-      "enrichment": {},
-      "pr": {
-        "base": {
-          "repo": {
-            "owner": {
-              "login": "bloomberg"
-            }
-          }
-        },
-        "closed_at": "2026-10-05T12:49:40Z",
-        "created_at": "2026-10-05T12:30:25Z",
-        "draft": true,
-        "html_url": "https://github.com/bloomberg/memray/pull/1038",
-        "merge_commit_sha": "b6558ac985acc16e388195638eb83f84c366ba02",
-        "merged_at": null,
-        "number": 1038,
-        "state": "closed",
-        "title": "Close due to error",
-        "updated_at": "2026-10-05T13:10:18Z"
-      },
-      "repo": "bloomberg/memray"
-    },
     "bloomberg/memray#1040": {
       "enrichment": {},
       "pr": {
