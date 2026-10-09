@@ -33,6 +33,9 @@ jobs:
       - name: Validate Python syntax
         run: python -m py_compile scripts/sync_contributions.py
 
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+
       - name: Generate live contribution ledger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
