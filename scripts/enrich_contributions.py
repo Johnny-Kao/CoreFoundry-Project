@@ -59,7 +59,7 @@ def validate(candidate, sources):
         value = value.strip()
         # Evidence claims are high-stakes: reject ungrounded quantitative details.
         if field == "evidence":
-            numbers = re.findall(r"(?<![A-Za-z])\\d+(?:\\.\\d+)?%?", value)
+            numbers = re.findall(r"(?<![A-Za-z])\d+(?:\.\d+)?%?", value)
             if any(n not in source_text for n in numbers):
                 rejected.append(field)
                 value = ""
