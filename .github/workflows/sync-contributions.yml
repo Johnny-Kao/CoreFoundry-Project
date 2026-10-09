@@ -34,7 +34,7 @@ jobs:
           python-version: "3.13"
 
       - name: Validate Python syntax
-        run: python -m py_compile scripts/sync_contributions.py
+        run: python -m py_compile scripts/sync_contributions.py scripts/enrich_contributions.py
 
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
@@ -68,6 +68,15 @@ jobs:
         run: |
           python scripts/enrich_contributions.py
           python scripts/sync_contributions.py
+
+      - name: One-time Copilot authentication smoke test
+        if: github.ref == 'refs/heads/automation/negative-gate-ledger-v2'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm install -g @github/copilot
+          timeout 90s copilot -sp "Respond with exactly COREFOUNDRY_AUTH_OK." > /tmp/copilot-smoke.txt
+          grep -q COREFOUNDRY_AUTH_OK /tmp/copilot-smoke.txt
 
       - name: Commit ledger changes
         if: github.ref == 'refs/heads/main'
