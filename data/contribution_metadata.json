@@ -165,6 +165,33 @@
       "what_changed": "Preserved BitGenerator state when reinitialization fails",
       "evidence": "Correctness / state-integrity fix",
       "why_it_matters": "Failed initialization should not leave foundational random-number state partially mutated"
+    },
+    "opencv/opencv#30177": {
+      "what_it_is": "A pull request proposing opt-in zero-copy BGRA retrieval for OpenCV’s macOS AVFoundation video capture path.",
+      "what_changed": "The BGRA path wraps the existing CVPixelBuffer pixels in a cv::Mat and retains the pixel buffer for frame lifetime. Existing BGR/RGB/GRAY/YUYV paths remain unchanged; UMat still copies. After review identified that BGRA retrieval consumed the grabbed frame and broke repeated retrieve() calls, the author updated the implementation to preserve the frame until the next grab and added a regression test.",
+      "why_it_matters": "Callers that can accept BGRA may avoid the color conversion and extra frame work inside retrieve(). The PR also notes a memory trade-off: retaining pixel buffers while callers keep frames alive can increase memory use.",
+      "source_urls": [
+        "https://github.com/opencv/opencv/pull/30177",
+        "https://github.com/opencv/opencv/pull/30177#discussion_r4228588212"
+      ]
+    },
+    "bloomberg/bde#319": {
+      "what_it_is": "A proposed optimization for BDE LoggerManager default-logger lookups: it caches a thread-local negative result ('this thread has no custom logger') so repeated lookups can skip lock-and-map work while preserving the existing fallback path.",
+      "what_changed": "The PR adds a fast path for the case where a thread repeatedly resolves the global default logger and has never set a custom logger. It remembers only the negative condition for the current thread, invalidates it when the thread changes logger or when a manager is recreated, and leaves the public class layout and existing behavior outside that path unchanged.",
+      "evidence": "The PR body says: 'remember a negative lookup for the current thread, reuse it while valid' and 'The cache remembers only that this thread has no custom logger. It never caches a custom Logger*.' It also reports that in the instrumented mixed workload, '55.6% of calls ... used the new fast path' and that paired CPU time was '53–56% lower' on three Ubuntu runners; it explicitly notes these are component-level results and not end-to-end logging performance.",
+      "why_it_matters": "It targets repeated low-level logger lookup overhead in mixed custom/default workloads without redesigning logger ownership or changing the public API. The author presents it as a focused review proposal rather than a universal optimization, with trade-offs around cache invalidation and extra TLS/atomic state.",
+      "source_urls": [
+        "https://github.com/bloomberg/bde/pull/319"
+      ]
+    },
+    "scientific-python/blog.scientific-python.org#277": {
+      "what_it_is": "A proposed Scientific Python blog article titled \"BLOG: Finding Another Layer of Performance in np.searchsorted,\" describing a performance investigation around reusing insertion-position locality in NumPy search behavior.",
+      "what_changed": "The PR adds article content that focuses on reusing information from prior searches, deciding when locality is useful, the 8 / 16 / 32 observation experiments, hardware-dependent activation behavior, and how reducing search work complements earlier batched-search optimization. The body also says the NumPy implementation of the experiment is under separate review and that the article centers on the performance idea, experimental process, and broader optimization insight.",
+      "why_it_matters": "It documents a performance-analysis idea in NumPy search optimization and signals that the blog should align with a separate upstream implementation review to reflect current changes.",
+      "source_urls": [
+        "https://github.com/scientific-python/blog.scientific-python.org/pull/277",
+        "https://github.com/scientific-python/blog.scientific-python.org/pull/277#issuecomment-6051414717"
+      ]
     }
   }
 }

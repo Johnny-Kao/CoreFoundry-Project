@@ -3,13 +3,10 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  ![merged](https://img.shields.io/badge/merged-9-2ea44f)
-  ![open](https://img.shields.io/badge/open-19-0969da)
-  ![draft](https://img.shields.io/badge/draft-0-d29922)
-  ![closed / retained](https://img.shields.io/badge/closed%20%2F%20retained-1-6e7781)
+  **Merged:** 9 | **Open:** 19 | **Closed:** 4
 </p>
 
-> **Last synchronized:** 2026-10-09 06:17 UTC
+> **Last synchronized:** 2026-10-09 09:27 UTC
 
 ## Canonical-source policy
 
@@ -46,10 +43,10 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
-| **[bloomberg/bde #319](https://github.com/bloomberg/bde/pull/319)** | bde | perf(ball): avoid repeated default-logger lookups | — | — |
-| **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | blog.scientific-python.org | BLOG: Finding Another Layer of Performance in np.searchsorted | — | — |
+| **[opencv/opencv #30177](https://github.com/opencv/opencv/pull/30177)** | A pull request proposing opt-in zero-copy BGRA retrieval for OpenCV’s macOS AVFoundation video capture path. | The BGRA path wraps the existing CVPixelBuffer pixels in a cv::Mat and retains the pixel buffer for frame lifetime. Existing BGR/RGB/GRAY/YUYV paths remain unchanged; UMat still copies. After review identified that BGRA retrieval consumed the grabbed frame and broke repeated retrieve() calls, the author updated the implementation to preserve the frame until the next grab and added a regression test. | — ([source](https://github.com/opencv/opencv/pull/30177)) | Callers that can accept BGRA may avoid the color conversion and extra frame work inside retrieve(). The PR also notes a memory trade-off: retaining pixel buffers while callers keep frames alive can increase memory use. |
+| **[bloomberg/bde #319](https://github.com/bloomberg/bde/pull/319)** | A proposed optimization for BDE LoggerManager default-logger lookups: it caches a thread-local negative result ('this thread has no custom logger') so repeated lookups can skip lock-and-map work while preserving the existing fallback path. | The PR adds a fast path for the case where a thread repeatedly resolves the global default logger and has never set a custom logger. It remembers only the negative condition for the current thread, invalidates it when the thread changes logger or when a manager is recreated, and leaves the public class layout and existing behavior outside that path unchanged. | The PR body says: 'remember a negative lookup for the current thread, reuse it while valid' and 'The cache remembers only that this thread has no custom logger. It never caches a custom Logger*.' It also reports that in the instrumented mixed workload, '55.6% of calls ... used the new fast path' and that paired CPU time was '53–56% lower' on three Ubuntu runners; it explicitly notes these are component-level results and not end-to-end logging performance. ([source](https://github.com/bloomberg/bde/pull/319)) | It targets repeated low-level logger lookup overhead in mixed custom/default workloads without redesigning logger ownership or changing the public API. The author presents it as a focused review proposal rather than a universal optimization, with trade-offs around cache invalidation and extra TLS/atomic state. |
+| **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | A proposed Scientific Python blog article titled "BLOG: Finding Another Layer of Performance in np.searchsorted," describing a performance investigation around reusing insertion-position locality in NumPy search behavior. | The PR adds article content that focuses on reusing information from prior searches, deciding when locality is useful, the 8 / 16 / 32 observation experiments, hardware-dependent activation behavior, and how reducing search work complements earlier batched-search optimization. The body also says the NumPy implementation of the experiment is under separate review and that the article centers on the performance idea, experimental process, and broader optimization insight. | — ([source](https://github.com/scientific-python/blog.scientific-python.org/pull/277)) | It documents a performance-analysis idea in NumPy search optimization and signals that the blog should align with a separate upstream implementation review to reflect current changes. |
 | **[numpy/numpy #32895](https://github.com/numpy/numpy/pull/32895)** | numpy | PERF: exploit insertion locality in batched searchsorted | — | — |
-| **[opencv/opencv #30177](https://github.com/opencv/opencv/pull/30177)** | opencv | videoio: add zero-copy BGRA retrieval for AVFoundation 🤖🤖🤖 | — | — |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | memray | Write allocation records with one sink call | — | — |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | Low-level C++ infrastructure and foundational libraries | Preserved an already-known path length instead of rescanning through c_str() | Targeted appendRaw/popLeaf latency reductions of ~14–73% | Already-known metadata should not be discarded and recomputed on hot paths |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | Low-level C++ infrastructure and foundational libraries | Removed an unreachable stale AIX semaphore-policy branch | Maintenance / compatibility cleanup with current configurations validated | Removing unreachable platform logic reduces maintenance surface and future ambiguity |
@@ -74,6 +71,9 @@ _No tracked entries in this state._
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[numpy/numpy #32869](https://github.com/numpy/numpy/pull/32869)** | Foundational numerical-computing infrastructure | Added a locality-aware fast path to typed searchsorted | ~5.3–5.8× faster on tested strong-locality workloads | Reusing already-computed coarse state can remove search work without adding another O(Q) pass |
+| **[pypa/packaging #1431](https://github.com/pypa/packaging/pull/1431)** | Foundational Python packaging and requirement-parsing infrastructure | Hardened the marker fast-path invariants | ~9.5% faster than baseline while retaining stronger defensive checks | Performance fast paths need explicit boundaries that survive future parser changes |
+| **[bloomberg/bde #313](https://github.com/bloomberg/bde/pull/313)** | bde | Opened by mistake | — | — |
 | **[pandas-dev/pandas #69776](https://github.com/pandas-dev/pandas/pull/69776)** | Core data-processing and CSV parsing infrastructure | Investigated preservation of the distinction between pd.NA and IEEE NaN across parser paths | Closed / unmerged | The work exposed where information can be lost across parser and Arrow conversion boundaries |
 
 ---

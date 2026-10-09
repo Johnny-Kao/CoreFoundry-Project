@@ -1,0 +1,1443 @@
+{
+  "entries": {
+    "Blosc/c-blosc2#805": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Blosc"
+            }
+          }
+        },
+        "closed_at": "2026-10-01T12:22:29Z",
+        "created_at": "2026-09-30T15:59:37Z",
+        "draft": false,
+        "html_url": "https://github.com/Blosc/c-blosc2/pull/805",
+        "merge_commit_sha": "89dffce3066e5b40e41ca506efb61596f863bc9a",
+        "merged_at": "2026-10-01T12:22:29Z",
+        "number": 805,
+        "state": "closed",
+        "title": "Avoid unused parallel work for small block counts",
+        "updated_at": "2026-10-02T04:45:22Z"
+      },
+      "repo": "Blosc/c-blosc2"
+    },
+    "Blosc/python-blosc2#713": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Blosc"
+            }
+          }
+        },
+        "closed_at": "2026-09-24T15:13:43Z",
+        "created_at": "2026-09-21T20:05:41Z",
+        "draft": false,
+        "html_url": "https://github.com/Blosc/python-blosc2/pull/713",
+        "merge_commit_sha": "bf8ae3c57f06700b8e664df3534bf0990ab5f7ee",
+        "merged_at": "2026-09-24T15:13:43Z",
+        "number": 713,
+        "state": "closed",
+        "title": "Fix two NDArray thread-safety bugs blocking free-threaded support (#555)",
+        "updated_at": "2026-10-01T06:16:37Z"
+      },
+      "repo": "Blosc/python-blosc2"
+    },
+    "Blosc/python-blosc2#728": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Blosc"
+            }
+          }
+        },
+        "closed_at": "2026-09-29T17:02:56Z",
+        "created_at": "2026-09-29T15:28:37Z",
+        "draft": false,
+        "html_url": "https://github.com/Blosc/python-blosc2/pull/728",
+        "merge_commit_sha": "3ce2a390a244ab2c6563d25da7f5b15e6583d24b",
+        "merged_at": "2026-09-29T17:02:56Z",
+        "number": 728,
+        "state": "closed",
+        "title": "Avoid zeroing full NumPy input blocks in miniexpr gather",
+        "updated_at": "2026-10-01T06:16:17Z"
+      },
+      "repo": "Blosc/python-blosc2"
+    },
+    "Johnny-Kao/AlpenCat#1": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T05:52:54Z",
+        "created_at": "2026-10-04T05:48:54Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/AlpenCat/pull/1",
+        "merge_commit_sha": "ed75b8a2fd635c26cb409906114de96f9466c225",
+        "merged_at": "2026-10-04T05:52:54Z",
+        "number": 1,
+        "state": "closed",
+        "title": "Converge AlpenCat architecture and add native validation probe",
+        "updated_at": "2026-10-04T05:52:57Z"
+      },
+      "repo": "Johnny-Kao/AlpenCat"
+    },
+    "Johnny-Kao/AlpenCat#2": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T06:19:05Z",
+        "created_at": "2026-10-04T06:16:50Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/AlpenCat/pull/2",
+        "merge_commit_sha": "db35faa36bea3a18d840fa3d2a1ccddd1da8c26b",
+        "merged_at": "2026-10-04T06:19:05Z",
+        "number": 2,
+        "state": "closed",
+        "title": "Fix boundary economics and declutter repository root",
+        "updated_at": "2026-10-04T06:19:45Z"
+      },
+      "repo": "Johnny-Kao/AlpenCat"
+    },
+    "Johnny-Kao/AlpenCat#3": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T07:14:43Z",
+        "created_at": "2026-10-04T07:03:35Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/AlpenCat/pull/3",
+        "merge_commit_sha": "d258104232449d6c7e00fa0eabda988eb073d0ab",
+        "merged_at": "2026-10-04T07:14:43Z",
+        "number": 3,
+        "state": "closed",
+        "title": "Prune AlpenCat to the converged minimal runtime",
+        "updated_at": "2026-10-04T07:14:44Z"
+      },
+      "repo": "Johnny-Kao/AlpenCat"
+    },
+    "Johnny-Kao/AlpenCat#4": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T07:51:02Z",
+        "created_at": "2026-10-04T07:48:04Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/AlpenCat/pull/4",
+        "merge_commit_sha": "2eece20027ba002c771ea78dd96a7b1f29c6a9a0",
+        "merged_at": "2026-10-04T07:51:02Z",
+        "number": 4,
+        "state": "closed",
+        "title": "Validate minimal runtime across heterogeneous and randomized workloads",
+        "updated_at": "2026-10-04T07:51:17Z"
+      },
+      "repo": "Johnny-Kao/AlpenCat"
+    },
+    "Johnny-Kao/AlpenCat#5": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T11:03:24Z",
+        "created_at": "2026-10-04T10:57:13Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/AlpenCat/pull/5",
+        "merge_commit_sha": "cda70a4dfc3317dbbfa8e5678f888794c156162d",
+        "merged_at": "2026-10-04T11:03:24Z",
+        "number": 5,
+        "state": "closed",
+        "title": "Harden native probe for one-shot partner validation",
+        "updated_at": "2026-10-04T11:03:25Z"
+      },
+      "repo": "Johnny-Kao/AlpenCat"
+    },
+    "Johnny-Kao/CoreFoundry-Project#1": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-09T09:22:45Z",
+        "created_at": "2026-10-09T07:25:43Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/CoreFoundry-Project/pull/1",
+        "merge_commit_sha": "8bee3d782dec23fa2fb08b60a851b3ec039bfc1a",
+        "merged_at": "2026-10-09T09:22:45Z",
+        "number": 1,
+        "state": "closed",
+        "title": "Automate CoreFoundry PR ledger, Copilot enrichment, and native README activity",
+        "updated_at": "2026-10-09T09:25:35Z"
+      },
+      "repo": "Johnny-Kao/CoreFoundry-Project"
+    },
+    "Johnny-Kao/bde#1": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T09:50:29Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/1",
+        "merge_commit_sha": "a9923834cda6a2d393d9eb962b6d89f9c74171c5",
+        "merged_at": null,
+        "number": 1,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:16Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#10": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:23Z",
+        "created_at": "2026-10-04T11:37:02Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/10",
+        "merge_commit_sha": "985801ef98da80e0409cd52e4364d3b2071dade0",
+        "merged_at": null,
+        "number": 10,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:27Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#11": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:24Z",
+        "created_at": "2026-10-04T11:37:11Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/11",
+        "merge_commit_sha": "4712408fd603b83e2b1d596b0a2fb11bfae429b4",
+        "merged_at": "2026-10-04T13:20:23Z",
+        "number": 11,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:28Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#12": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:23Z",
+        "created_at": "2026-10-04T12:06:01Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/12",
+        "merge_commit_sha": "e782545f510bfd3bf32834e1a557e204ca19f567",
+        "merged_at": null,
+        "number": 12,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:29Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#13": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:23Z",
+        "created_at": "2026-10-04T12:06:07Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/13",
+        "merge_commit_sha": "3de618069292c2fbc67cb75cf62cbd9bf8b2f8e2",
+        "merged_at": null,
+        "number": 13,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:30Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#14": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:23Z",
+        "created_at": "2026-10-04T12:06:13Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/14",
+        "merge_commit_sha": "ed09f12a47e16a4ebdd24a660b92c50af5d224e6",
+        "merged_at": null,
+        "number": 14,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:31Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#15": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:24Z",
+        "created_at": "2026-10-04T12:06:19Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/15",
+        "merge_commit_sha": "4712408fd603b83e2b1d596b0a2fb11bfae429b4",
+        "merged_at": "2026-10-04T13:20:23Z",
+        "number": 15,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:31Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#16": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:24Z",
+        "created_at": "2026-10-04T12:06:25Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/16",
+        "merge_commit_sha": "4712408fd603b83e2b1d596b0a2fb11bfae429b4",
+        "merged_at": "2026-10-04T13:20:23Z",
+        "number": 16,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:32Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#17": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:24Z",
+        "created_at": "2026-10-04T12:56:54Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/17",
+        "merge_commit_sha": "4712408fd603b83e2b1d596b0a2fb11bfae429b4",
+        "merged_at": "2026-10-04T13:20:23Z",
+        "number": 17,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:33Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#18": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-08T19:41:51Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/18",
+        "merge_commit_sha": "976512ef526bca688bad1c025ac31336443a964e",
+        "merged_at": null,
+        "number": 18,
+        "state": "open",
+        "title": "perf(ball): avoid repeated default-logger lookups",
+        "updated_at": "2026-10-08T19:46:38Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#2": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T09:50:55Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/2",
+        "merge_commit_sha": "82d658409aa39e8945f9fdd0444fdd9a977e6203",
+        "merged_at": null,
+        "number": 2,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:17Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#3": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T09:55:53Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/3",
+        "merge_commit_sha": "9671063e7ac2bf064671da56851c51f15219a4be",
+        "merged_at": null,
+        "number": 3,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:17Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#4": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T09:56:18Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/4",
+        "merge_commit_sha": "39d513cca2da1d4ef636bc4a0cf2a5cd2186f43b",
+        "merged_at": null,
+        "number": 4,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:22Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#5": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T10:00:40Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/5",
+        "merge_commit_sha": "92fa341921a51fe750685bd0a0c745b36c78b1c6",
+        "merged_at": null,
+        "number": 5,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:20Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#6": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:23Z",
+        "created_at": "2026-10-04T10:15:05Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/6",
+        "merge_commit_sha": "a5eee26598a2d56579f7283829cccfd550a184b5",
+        "merged_at": null,
+        "number": 6,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:23Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#7": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T10:27:05Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/7",
+        "merge_commit_sha": "384d9a4dca28fd956e54f1909d1c633b92dc5590",
+        "merged_at": null,
+        "number": 7,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:25Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#8": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:22Z",
+        "created_at": "2026-10-04T10:27:36Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/8",
+        "merge_commit_sha": "a55018ff6a7da6a3d2491b16ecdf589689d54e23",
+        "merged_at": null,
+        "number": 8,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:24Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/bde#9": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-04T13:20:23Z",
+        "created_at": "2026-10-04T11:36:49Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/bde/pull/9",
+        "merge_commit_sha": "60de47a3ea95d277c5f6bc8509490bb2bcac67ec",
+        "merged_at": null,
+        "number": 9,
+        "state": "closed",
+        "title": "Removed",
+        "updated_at": "2026-10-04T13:30:26Z"
+      },
+      "repo": "Johnny-Kao/bde"
+    },
+    "Johnny-Kao/dateutil#1": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-01T22:38:51Z",
+        "draft": false,
+        "html_url": "https://github.com/Johnny-Kao/dateutil/pull/1",
+        "merge_commit_sha": "502e36c3b3341cac0757b042d939267bba1aa549",
+        "merged_at": null,
+        "number": 1,
+        "state": "open",
+        "title": "Use ordered rrule cache for membership queries",
+        "updated_at": "2026-10-02T01:36:30Z"
+      },
+      "repo": "Johnny-Kao/dateutil"
+    },
+    "Johnny-Kao/memray-staging#1": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": "2026-10-05T11:46:10Z",
+        "created_at": "2026-10-05T11:43:25Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/memray-staging/pull/1",
+        "merge_commit_sha": "64aa7a419afac5f59aaaefc0a77c89e3e7a74766",
+        "merged_at": null,
+        "number": 1,
+        "state": "closed",
+        "title": "Research: benchmark contiguous AllocationRecord writes",
+        "updated_at": "2026-10-05T11:46:10Z"
+      },
+      "repo": "Johnny-Kao/memray-staging"
+    },
+    "Johnny-Kao/opencv-staging#1": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Johnny-Kao"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-07T13:28:39Z",
+        "draft": true,
+        "html_url": "https://github.com/Johnny-Kao/opencv-staging/pull/1",
+        "merge_commit_sha": "4636fa5d4c78b3bdf5fdb92573f688893f7101e4",
+        "merged_at": null,
+        "number": 1,
+        "state": "open",
+        "title": "videoio: add zero-copy BGRA retrieval for AVFoundation 🤖🤖🤖",
+        "updated_at": "2026-10-09T09:18:02Z"
+      },
+      "repo": "Johnny-Kao/opencv-staging"
+    },
+    "apple/container#2292": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "apple"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-09-21T12:52:36Z",
+        "draft": false,
+        "html_url": "https://github.com/apple/container/pull/2292",
+        "merge_commit_sha": "f999a9baefca3f70f4c3b864ba47f206e58cc149",
+        "merged_at": null,
+        "number": 2292,
+        "state": "open",
+        "title": "Fix container stop silently succeeding on an orphaned runtime after apiserver restart",
+        "updated_at": "2026-09-21T13:09:12Z"
+      },
+      "repo": "apple/container"
+    },
+    "apple/container#2293": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "apple"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-09-21T13:16:37Z",
+        "draft": false,
+        "html_url": "https://github.com/apple/container/pull/2293",
+        "merge_commit_sha": "16e6f1e8d66e48f63deb0169446a761645017dc6",
+        "merged_at": null,
+        "number": 2293,
+        "state": "open",
+        "title": "Reconcile container state with still-running runtimes after apiserver restart",
+        "updated_at": "2026-09-21T13:16:37Z"
+      },
+      "repo": "apple/container"
+    },
+    "bloomberg/bde#313": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": "2026-10-03T18:15:50Z",
+        "created_at": "2026-10-03T18:11:31Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/bde/pull/313",
+        "merge_commit_sha": "eaec2c3a1efd3bac9e60bf25ab82867c13d1a97f",
+        "merged_at": null,
+        "number": 313,
+        "state": "closed",
+        "title": "Opened by mistake",
+        "updated_at": "2026-10-03T18:18:47Z"
+      },
+      "repo": "bloomberg/bde"
+    },
+    "bloomberg/bde#315": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-03T20:26:03Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/bde/pull/315",
+        "merge_commit_sha": "718927bbbebc24c9151ef556ef4b9dffaed2f9be",
+        "merged_at": null,
+        "number": 315,
+        "state": "open",
+        "title": "bslmt_platform: remove stale AIX semaphore policy",
+        "updated_at": "2026-10-03T20:45:52Z"
+      },
+      "repo": "bloomberg/bde"
+    },
+    "bloomberg/bde#317": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-04T04:52:44Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/bde/pull/317",
+        "merge_commit_sha": "81ff1fd99b446a1d9ceeff762c23beecc795fa50",
+        "merged_at": null,
+        "number": 317,
+        "state": "open",
+        "title": "bdls_pathutil: preserve known path length in mutable path helpers",
+        "updated_at": "2026-10-04T05:22:10Z"
+      },
+      "repo": "bloomberg/bde"
+    },
+    "bloomberg/bde#319": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-08T19:48:23Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/bde/pull/319",
+        "merge_commit_sha": "777cd91db1d7e3ae31d7f07862893519ed35ebc5",
+        "merged_at": null,
+        "number": 319,
+        "state": "open",
+        "title": "perf(ball): avoid repeated default-logger lookups",
+        "updated_at": "2026-10-08T20:08:01Z"
+      },
+      "repo": "bloomberg/bde"
+    },
+    "bloomberg/blazingmq#1803": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-03T19:54:28Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
+        "merge_commit_sha": "b8de5d9bbb0f191c677ce5dba34371b26beca12c",
+        "merged_at": null,
+        "number": 1803,
+        "state": "open",
+        "title": "Perf[bmqp]: avoid temporary schema key strings",
+        "updated_at": "2026-10-03T20:10:08Z"
+      },
+      "repo": "bloomberg/blazingmq"
+    },
+    "bloomberg/blazingmq#1806": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-03T20:11:57Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
+        "merge_commit_sha": "ac390aec0ca545086967eeb1e0e46c658d7d6768",
+        "merged_at": null,
+        "number": 1806,
+        "state": "open",
+        "title": "Perf[bmqp]: stabilize schema key growth",
+        "updated_at": "2026-10-03T20:42:22Z"
+      },
+      "repo": "bloomberg/blazingmq"
+    },
+    "bloomberg/memray#1035": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": "2026-10-02T20:46:37Z",
+        "created_at": "2026-10-02T03:58:34Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/memray/pull/1035",
+        "merge_commit_sha": "d0c34e8d6c341bf5e415220203e0a2563c9d65ff",
+        "merged_at": "2026-10-02T20:46:37Z",
+        "number": 1035,
+        "state": "closed",
+        "title": "Use an adaptive Tracker mutex on glibc Linux",
+        "updated_at": "2026-10-03T03:46:16Z"
+      },
+      "repo": "bloomberg/memray"
+    },
+    "bloomberg/memray#1038": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": "2026-10-05T12:49:40Z",
+        "created_at": "2026-10-05T12:30:25Z",
+        "draft": true,
+        "html_url": "https://github.com/bloomberg/memray/pull/1038",
+        "merge_commit_sha": "b6558ac985acc16e388195638eb83f84c366ba02",
+        "merged_at": null,
+        "number": 1038,
+        "state": "closed",
+        "title": "Close due to error",
+        "updated_at": "2026-10-05T13:10:18Z"
+      },
+      "repo": "bloomberg/memray"
+    },
+    "bloomberg/memray#1040": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "bloomberg"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-05T15:50:52Z",
+        "draft": false,
+        "html_url": "https://github.com/bloomberg/memray/pull/1040",
+        "merge_commit_sha": "cbc09fab6f8ea26f506c9a2260d8e806cdc34069",
+        "merged_at": null,
+        "number": 1040,
+        "state": "open",
+        "title": "Write allocation records with one sink call",
+        "updated_at": "2026-10-05T17:16:48Z"
+      },
+      "repo": "bloomberg/memray"
+    },
+    "dateutil/dateutil#1590": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "dateutil"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-01T22:37:44Z",
+        "draft": false,
+        "html_url": "https://github.com/dateutil/dateutil/pull/1590",
+        "merge_commit_sha": "65d4a9570c6c200f42fdc628baf944aa9410ada1",
+        "merged_at": null,
+        "number": 1590,
+        "state": "open",
+        "title": "Optimize completed rrule cache queries",
+        "updated_at": "2026-10-01T23:00:08Z"
+      },
+      "repo": "dateutil/dateutil"
+    },
+    "kjd/idna#279": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "kjd"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-01T11:32:27Z",
+        "draft": false,
+        "html_url": "https://github.com/kjd/idna/pull/279",
+        "merge_commit_sha": "b0510910661eb14c2f0de1af6bbf15cc26d87d96",
+        "merged_at": null,
+        "number": 279,
+        "state": "open",
+        "title": "Optimize ordinary ASCII A-label encoding",
+        "updated_at": "2026-10-01T11:45:34Z"
+      },
+      "repo": "kjd/idna"
+    },
+    "numpy/numpy#32787": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "numpy"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-09-25T06:41:05Z",
+        "draft": false,
+        "html_url": "https://github.com/numpy/numpy/pull/32787",
+        "merge_commit_sha": "69ca9505360a3425c494f2042ff3930aa0589a85",
+        "merged_at": null,
+        "number": 32787,
+        "state": "open",
+        "title": "BUG: preserve BitGenerator state after failed reinitialization",
+        "updated_at": "2026-10-02T19:22:21Z"
+      },
+      "repo": "numpy/numpy"
+    },
+    "numpy/numpy#32802": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "numpy"
+            }
+          }
+        },
+        "closed_at": "2026-09-29T07:49:17Z",
+        "created_at": "2026-09-28T10:51:04Z",
+        "draft": false,
+        "html_url": "https://github.com/numpy/numpy/pull/32802",
+        "merge_commit_sha": "24f3c807bd4397315028fce096ff939e577c13ed",
+        "merged_at": "2026-09-29T07:49:17Z",
+        "number": 32802,
+        "state": "closed",
+        "title": "BUG: avoid undefined shift in rational test dtype",
+        "updated_at": "2026-10-01T06:16:26Z"
+      },
+      "repo": "numpy/numpy"
+    },
+    "numpy/numpy#32869": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "numpy"
+            }
+          }
+        },
+        "closed_at": "2026-10-05T18:40:19Z",
+        "created_at": "2026-10-04T04:47:51Z",
+        "draft": false,
+        "html_url": "https://github.com/numpy/numpy/pull/32869",
+        "merge_commit_sha": "df7b804d56e47fe419943620a247df5146c50995",
+        "merged_at": null,
+        "number": 32869,
+        "state": "closed",
+        "title": "PERF: exploit insertion locality in batched searchsorted",
+        "updated_at": "2026-10-05T18:59:03Z"
+      },
+      "repo": "numpy/numpy"
+    },
+    "numpy/numpy#32895": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "numpy"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-06T00:05:56Z",
+        "draft": false,
+        "html_url": "https://github.com/numpy/numpy/pull/32895",
+        "merge_commit_sha": "8df400e7b554d9dd2e21b66d25e43957b99a87b6",
+        "merged_at": null,
+        "number": 32895,
+        "state": "open",
+        "title": "PERF: exploit insertion locality in batched searchsorted",
+        "updated_at": "2026-10-08T03:11:54Z"
+      },
+      "repo": "numpy/numpy"
+    },
+    "opencv/opencv#30177": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "opencv"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-07T16:29:38Z",
+        "draft": false,
+        "html_url": "https://github.com/opencv/opencv/pull/30177",
+        "merge_commit_sha": "6d0540b812a9b4614c57e055e71c6ad85a3a0bbb",
+        "merged_at": null,
+        "number": 30177,
+        "state": "open",
+        "title": "videoio: add zero-copy BGRA retrieval for AVFoundation 🤖🤖🤖",
+        "updated_at": "2026-10-09T09:19:48Z"
+      },
+      "repo": "opencv/opencv"
+    },
+    "pandas-dev/pandas#69776": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "pandas-dev"
+            }
+          }
+        },
+        "closed_at": "2026-09-28T22:40:15Z",
+        "created_at": "2026-09-28T15:41:35Z",
+        "draft": false,
+        "html_url": "https://github.com/pandas-dev/pandas/pull/69776",
+        "merge_commit_sha": "6db49112e7b36c30192b848e74705b3893f50a30",
+        "merged_at": null,
+        "number": 69776,
+        "state": "closed",
+        "title": "BUG: preserve NaN and NA in nullable CSV floats",
+        "updated_at": "2026-09-28T22:40:16Z"
+      },
+      "repo": "pandas-dev/pandas"
+    },
+    "pandas-dev/pandas#69916": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "pandas-dev"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-09-29T11:33:18Z",
+        "draft": false,
+        "html_url": "https://github.com/pandas-dev/pandas/pull/69916",
+        "merge_commit_sha": "b3bc9b3f30ecce157f62066e5cd62b92956b2aee",
+        "merged_at": null,
+        "number": 69916,
+        "state": "open",
+        "title": "PERF: skip NA membership checks when na_values is empty",
+        "updated_at": "2026-09-30T01:31:54Z"
+      },
+      "repo": "pandas-dev/pandas"
+    },
+    "pypa/packaging#1429": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "pypa"
+            }
+          }
+        },
+        "closed_at": "2026-10-05T15:28:15Z",
+        "created_at": "2026-09-30T08:16:20Z",
+        "draft": false,
+        "html_url": "https://github.com/pypa/packaging/pull/1429",
+        "merge_commit_sha": "d17cfaf0b77a5690f03087359e7c8d665a3c728d",
+        "merged_at": "2026-10-05T15:28:14Z",
+        "number": 1429,
+        "state": "closed",
+        "title": "perf(parser): avoid literal_eval for plain marker strings",
+        "updated_at": "2026-10-05T15:29:09Z"
+      },
+      "repo": "pypa/packaging"
+    },
+    "pypa/packaging#1431": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "pypa"
+            }
+          }
+        },
+        "closed_at": "2026-10-05T15:28:46Z",
+        "created_at": "2026-09-30T09:55:07Z",
+        "draft": false,
+        "html_url": "https://github.com/pypa/packaging/pull/1431",
+        "merge_commit_sha": null,
+        "merged_at": null,
+        "number": 1431,
+        "state": "closed",
+        "title": "Harden marker literal fast path invariants",
+        "updated_at": "2026-10-05T15:28:47Z"
+      },
+      "repo": "pypa/packaging"
+    },
+    "python-attrs/attrs#1636": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "python-attrs"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-01T18:16:53Z",
+        "draft": false,
+        "html_url": "https://github.com/python-attrs/attrs/pull/1636",
+        "merge_commit_sha": "2fec0daabf6ec64090f7edf842678e6ffaf4a4b5",
+        "merged_at": null,
+        "number": 1636,
+        "state": "open",
+        "title": "Improve astuple performance for nested atomic sequences",
+        "updated_at": "2026-10-01T18:17:39Z"
+      },
+      "repo": "python-attrs/attrs"
+    },
+    "python-cffi/cffi#282": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "python-cffi"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-01T00:16:30Z",
+        "draft": false,
+        "html_url": "https://github.com/python-cffi/cffi/pull/282",
+        "merge_commit_sha": "a8e50fb3f2bc66576292b0c7e858306376646450",
+        "merged_at": null,
+        "number": 282,
+        "state": "open",
+        "title": "Optimize fixed-signature cdata calls",
+        "updated_at": "2026-10-01T00:27:30Z"
+      },
+      "repo": "python-cffi/cffi"
+    },
+    "python-hyper/h11#207": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "python-hyper"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-09-30T16:22:17Z",
+        "draft": false,
+        "html_url": "https://github.com/python-hyper/h11/pull/207",
+        "merge_commit_sha": "eb41aea31b4417cb32e898018a5c20fad8d67ebf",
+        "merged_at": null,
+        "number": 207,
+        "state": "open",
+        "title": "Avoid redundant normalization of parsed wire headers",
+        "updated_at": "2026-09-30T16:34:50Z"
+      },
+      "repo": "python-hyper/h11"
+    },
+    "scientific-python/blog.scientific-python.org#277": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "scientific-python"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-07T01:46:55Z",
+        "draft": false,
+        "html_url": "https://github.com/scientific-python/blog.scientific-python.org/pull/277",
+        "merge_commit_sha": "6cf713df801b863b853956158c2a4c13c6648366",
+        "merged_at": null,
+        "number": 277,
+        "state": "open",
+        "title": "BLOG: Finding Another Layer of Performance in np.searchsorted",
+        "updated_at": "2026-10-08T03:13:51Z"
+      },
+      "repo": "scientific-python/blog.scientific-python.org"
+    },
+    "scipy/scipy#26225": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "scipy"
+            }
+          }
+        },
+        "closed_at": "2026-09-23T09:48:25Z",
+        "created_at": "2026-09-21T17:01:55Z",
+        "draft": false,
+        "html_url": "https://github.com/scipy/scipy/pull/26225",
+        "merge_commit_sha": "35cf9df1a24bd2e97598edaf56e0545b992508ba",
+        "merged_at": "2026-09-23T09:48:24Z",
+        "number": 26225,
+        "state": "closed",
+        "title": "BUG: initialize bracketing solver iteration counts",
+        "updated_at": "2026-09-23T09:48:25Z"
+      },
+      "repo": "scipy/scipy"
+    },
+    "scipy/scipy#26226": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "scipy"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-09-21T17:16:56Z",
+        "draft": false,
+        "html_url": "https://github.com/scipy/scipy/pull/26226",
+        "merge_commit_sha": "d5b7053bc248267cbc6bd4e7b004fdef030769dc",
+        "merged_at": null,
+        "number": 26226,
+        "state": "open",
+        "title": "BUG: handle single coefficient in cspline1d_eval/qspline1d_eval",
+        "updated_at": "2026-10-01T19:00:15Z"
+      },
+      "repo": "scipy/scipy"
+    },
+    "urllib3/urllib3#5287": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "urllib3"
+            }
+          }
+        },
+        "closed_at": "2026-09-30T21:22:15Z",
+        "created_at": "2026-09-30T01:14:40Z",
+        "draft": false,
+        "html_url": "https://github.com/urllib3/urllib3/pull/5287",
+        "merge_commit_sha": "796d200d3070ead69ec3a5d848fecf52a2249b59",
+        "merged_at": "2026-09-30T21:22:15Z",
+        "number": 5287,
+        "state": "closed",
+        "title": "Speed up single-value header handling in HTTPConnection.putheader",
+        "updated_at": "2026-10-05T14:44:28Z"
+      },
+      "repo": "urllib3/urllib3"
+    },
+    "urllib3/urllib3#5304": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "urllib3"
+            }
+          }
+        },
+        "closed_at": "2026-10-08T15:33:43Z",
+        "created_at": "2026-10-05T12:08:25Z",
+        "draft": false,
+        "html_url": "https://github.com/urllib3/urllib3/pull/5304",
+        "merge_commit_sha": "5ebe9bf9f691646dcabdb259ffabfc6108ded5e8",
+        "merged_at": "2026-10-08T15:33:43Z",
+        "number": 5304,
+        "state": "closed",
+        "title": "Avoid unnecessary copy in single-output gzip decompression",
+        "updated_at": "2026-10-08T15:33:44Z"
+      },
+      "repo": "urllib3/urllib3"
+    }
+  },
+  "schema_version": 1
+}
