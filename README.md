@@ -4,12 +4,7 @@
   <strong>Improve the foundations before increasing the resources.</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/status-active-2ea44f" alt="Status: Active">
-  <img src="https://img.shields.io/badge/focus-upstream%20infrastructure-blue" alt="Focus: Upstream infrastructure">
-  <img src="https://img.shields.io/badge/approach-zero--incremental--resource-orange" alt="Approach: Zero incremental resource">
-  <img src="https://img.shields.io/badge/funding-open-ea4aaa" alt="Funding: Open">
-</p>
+**Status:** Active · **Focus:** Upstream infrastructure · **Approach:** Zero incremental resource · **Funding:** Open
 
 > **The next phase of AI will demand far more compute, memory, networking, and software infrastructure.**
 
@@ -66,15 +61,7 @@ I also ask:
 
 ## ❤️ Support CoreFoundry
 
-<p align="center">
-  <a href="https://github.com/sponsors/Johnny-Kao">
-    <img src="https://img.shields.io/badge/SPONSOR%20COREFOUNDRY-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor CoreFoundry">
-  </a>
-  &nbsp;
-  <a href="https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal">
-    <img src="https://img.shields.io/badge/SHARE%20YOUR%20TOP%203-Infrastructure%20Priorities-0969da?style=for-the-badge&logo=github&logoColor=white" alt="Share infrastructure priorities">
-  </a>
-</p>
+[Sponsor CoreFoundry](https://github.com/sponsors/Johnny-Kao) · [Share infrastructure priorities](https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal)
 
 If you share this view, there are two useful ways to help:
 
@@ -222,11 +209,7 @@ In practice, that means reducing unnecessary CPU, memory, synchronization, data 
 | Influence where I look next | **[Share your top three infrastructure priorities](https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal)** |
 | Help validate an idea | Point me toward public benchmarks, reproducible workloads, or important open problems |
 
-<p align="center">
-  <a href="https://github.com/sponsors/Johnny-Kao">
-    <img src="https://img.shields.io/badge/Support%20CoreFoundry-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Support CoreFoundry">
-  </a>
-</p>
+**Status:** Active · **Focus:** Upstream infrastructure · **Approach:** Zero incremental resource · **Funding:** Open
 
 ## Related research
 
