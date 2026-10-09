@@ -3,13 +3,13 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  ![merged](https://img.shields.io/badge/merged-8-2ea44f)
+  ![merged](https://img.shields.io/badge/merged-9-2ea44f)
   ![open](https://img.shields.io/badge/open-19-0969da)
   ![draft](https://img.shields.io/badge/draft-0-d29922)
   ![closed / retained](https://img.shields.io/badge/closed%20%2F%20retained-1-6e7781)
 </p>
 
-> **Last synchronized:** 2026-10-08 06:14 UTC
+> **Last synchronized:** 2026-10-09 06:17 UTC
 
 ## Canonical-source policy
 
@@ -32,6 +32,7 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[urllib3/urllib3 #5304](https://github.com/urllib3/urllib3/pull/5304)**<br><sub>[merge commit `5ebe9bf`](https://github.com/urllib3/urllib3/commit/5ebe9bf9f691646dcabdb259ffabfc6108ded5e8)</sub> | Core HTTP and content-decoding infrastructure used throughout Python | Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression | 8 paired A/B rounds across 15 controlled HTTP scenarios: ~19–23% lower client CPU time for tested 32 MiB gzip responses; decoder-only tests: ~26–27 μs saved/MiB | Eliminating a redundant output copy cuts decompression and HTTP client CPU costs without changing public APIs; workload-specific results, not production-average savings |
 | **[pypa/packaging #1429](https://github.com/pypa/packaging/pull/1429)**<br><sub>[merge commit `d17cfaf`](https://github.com/pypa/packaging/commit/d17cfaf0b77a5690f03087359e7c8d665a3c728d)</sub> | Foundational Python packaging and requirement-parsing infrastructure | Avoided ast.literal_eval for plain quoted marker strings | ~13% faster on the representative Requirement corpus | Common marker values should not pay for a general-purpose literal parser |
 | **[bloomberg/memray #1035](https://github.com/bloomberg/memray/pull/1035)**<br><sub>[merge commit `d0c34e8`](https://github.com/bloomberg/memray/commit/d0c34e8d6c341bf5e415220203e0a2563c9d65ff)</sub> | Python memory profiling and allocation-analysis infrastructure | Reduced high-contention Tracker synchronization overhead on Linux/glibc | Up to 28% runtime reduction at 256 threads | Profiling infrastructure should observe workloads without becoming a major bottleneck |
 | **[Blosc/c-blosc2 #805](https://github.com/Blosc/c-blosc2/pull/805)**<br><sub>[merge commit `89dffce`](https://github.com/Blosc/c-blosc2/commit/89dffce3066e5b40e41ca506efb61596f863bc9a)</sub> | High-performance compression infrastructure | Avoided unnecessary parallel startup and worker wakeups for small jobs | 35.86 μs → 2.02 μs on a targeted 64-byte workload | Small workloads should not pay parallel execution costs they cannot amortize |
@@ -45,9 +46,9 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[bloomberg/bde #319](https://github.com/bloomberg/bde/pull/319)** | bde | perf(ball): avoid repeated default-logger lookups | — | — |
 | **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | blog.scientific-python.org | BLOG: Finding Another Layer of Performance in np.searchsorted | — | — |
 | **[numpy/numpy #32895](https://github.com/numpy/numpy/pull/32895)** | numpy | PERF: exploit insertion locality in batched searchsorted | — | — |
-| **[urllib3/urllib3 #5304](https://github.com/urllib3/urllib3/pull/5304)** | Core HTTP and content-decoding infrastructure used throughout Python | Avoided an unnecessary bytes → bytearray → bytes copy for single-output gzip decompression | ~26–27 μs saved per MiB of decoded output in tested single-output cases | Already-produced output should not be rematerialized when accumulation is unnecessary |
 | **[opencv/opencv #30177](https://github.com/opencv/opencv/pull/30177)** | opencv | videoio: add zero-copy BGRA retrieval for AVFoundation 🤖🤖🤖 | — | — |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | memray | Write allocation records with one sink call | — | — |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | Low-level C++ infrastructure and foundational libraries | Preserved an already-known path length instead of rescanning through c_str() | Targeted appendRaw/popLeaf latency reductions of ~14–73% | Already-known metadata should not be discarded and recomputed on hot paths |
