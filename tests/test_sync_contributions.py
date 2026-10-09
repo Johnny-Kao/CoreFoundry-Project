@@ -62,7 +62,7 @@ class LedgerTests(unittest.TestCase):
             root = Path(temp)
             (root / "data").mkdir()
             (root / "README.md").write_text(
-                "Header\\n\\n**[View the live contribution ledger →](CONTRIBUTIONS.md)**\\n",
+                "Header\n\n**[View the live contribution ledger →](CONTRIBUTIONS.md)**\n",
                 encoding="utf-8"
             )
             (root / "data" / "contribution_metadata.json").write_text(
@@ -77,8 +77,8 @@ class LedgerTests(unittest.TestCase):
                     METADATA_PATH=root / "data" / "contribution_metadata.json",
                     OUTPUT_PATH=root / "CONTRIBUTIONS.md",
                     README_PATH=root / "README.md",
-                    REGISTRY_PATH=root / "data" / "contribution_registry.json"), \\
-                 mock.patch.object(sync, "discover_prs", return_value=[mock_item]), \\
+                    REGISTRY_PATH=root / "data" / "contribution_registry.json"), \
+                 mock.patch.object(sync, "discover_prs", return_value=[mock_item]), \
                  mock.patch.object(sync, "fetch_pr", return_value=("upstream/library", fresh or pr())):
                 sync.main()
             return json.loads((root / "data" / "enrichment_queue.json").read_text())["events"]
