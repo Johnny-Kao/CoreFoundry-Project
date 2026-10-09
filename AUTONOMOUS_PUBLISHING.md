@@ -42,5 +42,25 @@ Absent benchmark data, reviewer comments or quantitative results are **not failu
 - Search currently retrieves at most 1,000 recently updated PRs. Above this limit, discovery is incomplete. Entries outside the search window may be missed; the existing ledger must never be wiped because of this cap.
 - Log errors and schedule retry; a failure must not fabricate success.
 
-## Rollout status
-The Python sync engine implements PR discovery and basic README cross-linking. The AI enrichment stage is not active until Copilot CLI authentication (`COPILOT_GITHUB_TOKEN`) and an isolated, validated output workflow are configured and successfully tested. **Do not claim the system is fully autonomous before then.**
+## Runtime and cost guard
+
+- Daily schedule: GitHub Actions runs the Python discovery job without an AI model.
+- Gate: only initial enrichment for a new uncurated upstream PR, or a detected transition into merged / closed, enters the Copilot queue.
+- Initial import skips already-curated descriptions; at most three pending AI events per run.
+- Plain open/draft edits, new comments, and unrelated commits do not trigger Copilot.
+- Copilot CLI is installed only when the queue is nonempty, authenticated using the Actions GITHUB_TOKEN and `copilot-requests: write`. A one-time CLI smoke test succeeded on the feature branch.
+- Negative gate drops unsupported numeric claims while retaining other factual fields. Rejected fields fall back to neutral descriptions; source_urls must come from fetched PR/discussion links.
+- On API error, preserve the prior published ledger; on AI error, keep existing metadata and retry pending work later.
+- No external image/badge service (including Shields.io) is used. README activity is native Markdown with Open and Merged counts, five recent non-draft open upstream PRs, and Last data change.
+- GitHub Search currently exposes at most 1,000 most recently updated PRs. Existing registry snapshots are retained beyond this window, but entries first created outside the window cannot be discovered.
+- A no-change run leaves README, contribution ledger, and registry untouched; no commit merely to refresh a timestamp.
+
+## Publication boundaries
+The automated runner never writes to upstream repositories and never merges PRs outside this tracking repository. The bot commits only generated CoreFoundry data and the README's bracketed activity section on the main branch.
+
+## Validation checklist
+- Unit tests pass and the GitHub API discovery run completes successfully.
+- Zero-event run skips Copilot installation and inference.
+- Copilot login works with the built-in Actions token.
+- New PR and terminal transitions are tested; unsupported evidence is dropped without deleting PR entries.
+- Main remains unchanged until the staging workflow and PR are verified and merged.
