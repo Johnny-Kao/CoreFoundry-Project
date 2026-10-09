@@ -126,11 +126,18 @@ def repo_display(repo):
 
 
 def row_for(repo, pr, meta):
+    evidence = escape_cell(meta.get("evidence"))
+    refs = meta.get("source_urls") or []
+    if isinstance(refs, list):
+        evidence_ref = next((u for u in refs if isinstance(u, str)
+                             and u.startswith("https://github.com/")), None)
+        if evidence_ref:
+            evidence += f" ([source]({evidence_ref}))"
     return [
         pr_link(repo, pr),
         escape_cell(meta.get("what_it_is", repo_display(repo))),
         escape_cell(meta.get("what_changed", pr.get("title"))),
-        escape_cell(meta.get("evidence")),
+        evidence,
         escape_cell(meta.get("why_it_matters")),
     ]
 
@@ -182,10 +189,15 @@ def main():
             continue
 
         key = canonical_key(repo, pr["number"])
-        current[key] = {"repo": repo, "pr": {field: pr.get(field) for field in (
+        snapshot = {field: pr.get(field) for field in (
             "number", "html_url", "title", "merged_at", "merge_commit_sha",
-            "state", "draft", "updated_at", "closed_at", "created_at", "base"
-        )}, "enrichment": historic.get(key, {}).get("enrichment", {})}
+            "state", "draft", "updated_at", "closed_at", "created_at"
+        )}
+        base_repo = (pr.get("base") or {}).get("repo") or {}
+        owner = (base_repo.get("owner") or {}).get("login")
+        snapshot["base"] = {"repo": {"owner": {"login": owner}}}
+        current[key] = {"repo": repo, "pr": snapshot,
+                        "enrichment": historic.get(key, {}).get("enrichment", {})}
         if key in seen:
             continue
         seen.add(key)
