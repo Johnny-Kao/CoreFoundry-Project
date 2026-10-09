@@ -166,6 +166,7 @@ def main():
     buckets = {"merged": [], "open": [], "draft": [], "closed": []}
     seen = set()
     errors = 0
+    triggers = []
     registry = {"schema_version": 1, "entries": {}}
     if REGISTRY_PATH.exists():
         registry = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
@@ -184,7 +185,7 @@ def main():
         current[key] = {"repo": repo, "pr": {field: pr.get(field) for field in (
             "number", "html_url", "title", "merged_at", "merge_commit_sha",
             "state", "draft", "updated_at", "closed_at", "created_at", "base"
-        )}}
+        )}, "enrichment": historic.get(key, {}).get("enrichment", {})}
         if key in seen:
             continue
         seen.add(key)
@@ -192,7 +193,13 @@ def main():
         if not should_include(repo, pr, meta):
             continue
 
-        buckets[status_of(pr)].append((repo, pr, meta))
+        phase = status_of(pr)
+        old = historic.get(key)
+        if not old:
+            triggers.append({"key": key, "phase": "initial", "url": pr["html_url"]})
+        elif phase in {"merged", "closed"} and status_of(old["pr"]) != phase:
+            triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"]})
+        buckets[phase].append((repo, pr, meta))
 
     if errors:
         raise RuntimeError(f"{errors} PR fetches failed; refusing incomplete publication")
@@ -207,6 +214,11 @@ def main():
             buckets[status_of(pr)].append((repo, pr, meta))
             current[key] = record
 
+    queue_path = ROOT / "data" / "enrichment_queue.json"
+    queue = {"schema_version": 1, "events": triggers[:3], "deferred": max(0, len(triggers) - 3)}
+    queue_text = json.dumps(queue, indent=2, ensure_ascii=False, sort_keys=True) + "\n"
+    if not queue_path.exists() or queue_path.read_text(encoding="utf-8") != queue_text:
+        queue_path.write_text(queue_text, encoding="utf-8")
     for values in buckets.values():
         values.sort(key=sort_key, reverse=True)
 
@@ -221,7 +233,7 @@ def main():
         '<p align="center">',
         f"  {badge('merged', counts['merged'], '2ea44f')}",
         f"  {badge('open', counts['open'], '0969da')}",
-        f"  {badge('draft', counts['draft'], 'd29922')}",
+
         f"  {badge('closed / retained', counts['closed'], '6e7781')}",
         "</p>",
         "",
@@ -300,17 +312,24 @@ def main():
 
     # README's generated summary is derived from the same classified PR data.
     summary = [
-        START, "### Live upstream contribution summary", "",
-        f"**Merged:** {counts['merged']} · **Open:** {counts['open']} · "
-        f"**Draft:** {counts['draft']} · **Closed (retained):** {counts['closed']}",
-        "", "| Recent merged PR | Evidence / impact |", "|---|---|",
+        START, "### Live Upstream Activity", "",
+        f"**Open PRs:** {counts['open']} | **Merged PRs:** {counts['merged']}",
+        "", f"Last data change: {now.strftime('%Y-%m-%d %H:%M UTC')}", "",
+        "#### Recently Active PRs", "",
     ]
-    for repo, pr, meta in buckets["merged"][:5]:
-        summary.append(
-            f"| [{repo} #{pr['number']}]({pr['html_url']}) | "
-            f"{escape_cell(meta.get('evidence') or pr.get('title'))} |"
-        )
-    summary += ["", "[All upstream contributions](CONTRIBUTIONS.md)", END]
+    for repo, pr, meta in buckets["open"][:5]:
+        summary.append(f"- [{repo} #{pr['number']}: {escape_cell(pr.get('title'))}]({pr['html_url']})")
+    if not buckets["open"]:
+        summary.append("_No open upstream PRs._")
+    summary += ["", "[Full Contribution Ledger](CONTRIBUTIONS.md)", END]
+    # Preserve last-data-change timestamp if only the clock advanced.
+    readme_before = README_PATH.read_text(encoding="utf-8")
+    if START in readme_before and END in readme_before:
+        prior = readme_before.split(START, 1)[1].split(END, 1)[0]
+        import re as _re
+        scrub = lambda x: _re.sub(r"Last data change: [^\n]+", "Last data change: <unchanged>", x)
+        if scrub(prior) == scrub("\n".join(summary).split(START, 1)[1].split(END, 1)[0]):
+            summary = [START + prior + END]
     block = "\n".join(summary)
     readme = README_PATH.read_text(encoding="utf-8")
     if START in readme and END in readme:
