@@ -192,6 +192,33 @@
         "https://github.com/scientific-python/blog.scientific-python.org/pull/277",
         "https://github.com/scientific-python/blog.scientific-python.org/pull/277#issuecomment-6051414717"
       ]
+    },
+    "numpy/numpy#32895": {
+      "what_it_is": "A proposed NumPy optimization for batched `searchsorted` that reuses prior insertion-position information when consecutive query keys have strong locality, with a selector and a conservative activation threshold to avoid paying the added logic cost on less favorable workloads.",
+      "what_changed": "The PR adds a locality-aware fast path to batched `searchsorted`, uses 16 sampled intermediate positions from the existing batched binary-search computation to detect helpful locality, and adds a `Q >= 2^20` gate so the optimization is only used when the author judged the benefit large enough to justify the extra overhead. The author later refined the selector to reject adversarial patterns by comparing each sampled point with the value immediately before it, and added tests covering large-query cases, duplicate keys, NaN/NaT/complex NaN, disordered inputs, and focused ASV checks.",
+      "why_it_matters": "The work is relevant because it targets a real performance opportunity in NumPy's batched `searchsorted` path, but it also treats the problem as a hybrid algorithm with selector risk, machine-specific cost, and maintenance burden. The discussion shows the central tradeoff: a fast path can help strongly local workloads, but maintainers are concerned about degradation risk, the cost of complexity, and the need for broad benchmark and adversarial-case validation before accepting such a path.",
+      "source_urls": [
+        "https://github.com/numpy/numpy/pull/32895",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6008387330",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6010286456",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6011578777",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6012161847",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6014605435",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6019440957",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6031294429",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6035761704",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6043598608",
+        "https://github.com/numpy/numpy/pull/32895#issuecomment-6050943943"
+      ]
+    },
+    "bloomberg/memray#1040": {
+      "what_it_is": "A Memray pull request that optimizes allocation-record serialization by encoding one logical record into a fixed 32-byte stack buffer and writing it once through Sink::writeAll(), while preserving the existing wire format and behavior.",
+      "what_changed": "The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It removes repeated sink-entry overhead for one logical allocation record, keeps the same wire format, and adds validation for 32-bit/64-bit encoding, semantic equivalence, contention, and failed-I/O byte-boundary cases.",
+      "why_it_matters": "It reduces repeated abstraction overhead in a hot allocation-record path without introducing heap allocation, new caches, synchronization, syscalls, or persistent state. The PR also documents the 32-byte bound and notes that future wire-format growth would require updating that bound and boundary tests together.",
+      "source_urls": [
+        "https://github.com/bloomberg/memray/pull/1040",
+        "https://github.com/bloomberg/memray/pull/1040#issuecomment-5998182277"
+      ]
     }
   }
 }

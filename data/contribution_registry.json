@@ -299,7 +299,9 @@
       "repo": "bloomberg/memray"
     },
     "bloomberg/memray#1040": {
-      "enrichment": {},
+      "enrichment": {
+        "initial": "completed"
+      },
       "pr": {
         "base": {
           "repo": {
@@ -447,7 +449,9 @@
       "repo": "numpy/numpy"
     },
     "numpy/numpy#32895": {
-      "enrichment": {},
+      "enrichment": {
+        "initial": "completed"
+      },
       "pr": {
         "base": {
           "repo": {
