@@ -49,9 +49,20 @@ jobs:
         id: gate
         run: |
           python - <<'PY'
-          import json, os
+          import json, os, sys, urllib.error
+          sys.path.insert(0, "scripts")
+          from enrich_contributions import sources_for
           with open("data/enrichment_queue.json", encoding="utf-8") as fh:
-              required = bool(json.load(fh).get("events"))
+              events = json.load(fh).get("events", [])
+          required = False
+          for event in events:
+              try:
+                  sources = sources_for(event)
+                  if sum(len(x["text"].strip()) for x in sources) >= 120:
+                      required = True
+                      break
+              except (urllib.error.URLError, ValueError, KeyError) as exc:
+                  print(f"PR source precheck deferred: {type(exc).__name__}")
           with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
               fh.write(f"required={str(required).lower()}\n")
           print(f"Copilot required: {required}")
