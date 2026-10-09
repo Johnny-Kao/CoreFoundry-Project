@@ -52,7 +52,7 @@ class LedgerTests(unittest.TestCase):
                 sync.main()
                 ledger = (root / "CONTRIBUTIONS.md").read_text()
                 self.assertIn("upstream/library #45", ledger)
-                self.assertIn("Closed (retained):** 1", (root / "README.md").read_text())
+                self.assertIn("**Open PRs:** 0 | **Merged PRs:** 0", (root / "README.md").read_text())
                 first = {x: (root / x).read_bytes() for x in ("CONTRIBUTIONS.md", "README.md", "data/contribution_registry.json")}
                 sync.main()
                 self.assertEqual(first, {x: (root / x).read_bytes() for x in first})
