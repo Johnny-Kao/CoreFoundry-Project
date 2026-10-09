@@ -8,10 +8,13 @@ on:
     paths:
       - "scripts/sync_contributions.py"
       - "data/contribution_metadata.json"
+      - "tests/**"
+      - "scripts/enrich_contributions.py"
       - ".github/workflows/sync-contributions.yml"
 
 permissions:
   contents: write
+  copilot-requests: write
 
 concurrency:
   group: sync-contribution-ledger
@@ -30,21 +33,59 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Validate Python syntax
+        run: python -m py_compile scripts/sync_contributions.py scripts/enrich_contributions.py
+
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+
       - name: Generate live contribution ledger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTOR_TO_TRACK: Johnny-Kao
         run: python scripts/sync_contributions.py
 
-      - name: Commit ledger changes
+      - name: Check whether AI enrichment is required
+        id: gate
         run: |
-          if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md)" ]; then
+          python - <<'PY'
+          import json, os
+          with open("data/enrichment_queue.json", encoding="utf-8") as fh:
+              required = bool(json.load(fh).get("events"))
+          with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+              fh.write(f"required={str(required).lower()}\n")
+          print(f"Copilot required: {required}")
+          PY
+
+      - name: Install Copilot CLI only for eligible PR events
+        if: github.ref == 'refs/heads/main' && steps.gate.outputs.required == 'true'
+        run: npm install -g @github/copilot
+
+      - name: Enrich from PR descriptions and discussion
+        if: github.ref == 'refs/heads/main' && steps.gate.outputs.required == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/enrich_contributions.py
+          python scripts/sync_contributions.py
+
+      - name: Commit ledger changes
+        if: github.ref == 'refs/heads/main'
+        run: |
+          if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md README.md data/contribution_registry.json data/contribution_metadata.json data/enrichment_queue.json)" ]; then
             echo "Contribution ledger is already current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CONTRIBUTIONS.md
+          git add CONTRIBUTIONS.md README.md data/contribution_registry.json data/enrichment_queue.json
           git commit -m "chore: sync contribution ledger"
-          git push
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo "Unable to publish after 3 attempts" >&2
+          exit 1
