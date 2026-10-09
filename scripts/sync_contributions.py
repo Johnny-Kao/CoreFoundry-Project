@@ -64,6 +64,8 @@ def discover_prs():
         discovered.extend(items)
         if len(items) < 100:
             break
+    if len(discovered) >= 1000:
+        print("warning: 1,000-result search cap reached; discovery may be incomplete", file=sys.stderr)
     return discovered
 
 
@@ -98,7 +100,7 @@ def should_include(repo, pr, meta):
     status = status_of(pr)
     if status in {"merged", "open", "draft"}:
         return True
-    return bool(meta.get("include_closed"))
+    return True  # Retain closed, unmerged upstream work as historical records.
 
 
 def escape_cell(value):
