@@ -9,10 +9,12 @@ on:
       - "scripts/sync_contributions.py"
       - "data/contribution_metadata.json"
       - "tests/**"
+      - "scripts/enrich_contributions.py"
       - ".github/workflows/sync-contributions.yml"
 
 permissions:
   contents: write
+  copilot-requests: write
 
 concurrency:
   group: sync-contribution-ledger
@@ -43,10 +45,34 @@ jobs:
           GITHUB_ACTOR_TO_TRACK: Johnny-Kao
         run: python scripts/sync_contributions.py
 
+      - name: Check whether AI enrichment is required
+        id: gate
+        run: |
+          python - <<'PY'
+          import json, os
+          with open("data/enrichment_queue.json", encoding="utf-8") as fh:
+              required = bool(json.load(fh).get("events"))
+          with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+              fh.write(f"required={str(required).lower()}\\n")
+          print(f"Copilot required: {required}")
+          PY
+
+      - name: Install Copilot CLI only for eligible PR events
+        if: steps.gate.outputs.required == 'true'
+        run: npm install -g @github/copilot
+
+      - name: Enrich from PR descriptions and discussion
+        if: steps.gate.outputs.required == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/enrich_contributions.py
+          python scripts/sync_contributions.py
+
       - name: Commit ledger changes
         if: github.ref == 'refs/heads/main'
         run: |
-          if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md README.md data/contribution_registry.json data/enrichment_queue.json)" ]; then
+          if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md README.md data/contribution_registry.json data/contribution_metadata.json data/enrichment_queue.json)" ]; then
             echo "Contribution ledger is already current."
             exit 0
           fi
