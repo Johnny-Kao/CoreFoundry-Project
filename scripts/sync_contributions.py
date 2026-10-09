@@ -195,10 +195,19 @@ def main():
 
         phase = status_of(pr)
         old = historic.get(key)
-        if not old:
+        enrichment = current[key]["enrichment"]
+        has_curated_text = bool(meta.get("what_changed") and meta.get("why_it_matters"))
+        if not old and has_curated_text:
+            # Imported manual descriptions are not re-enriched during migration.
+            enrichment["initial"] = "curated"
+        elif not old or (not enrichment.get("initial") and not has_curated_text):
             triggers.append({"key": key, "phase": "initial", "url": pr["html_url"]})
-        elif phase in {"merged", "closed"} and status_of(old["pr"]) != phase:
-            triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"]})
+        terminal_revision = pr.get("merged_at") if phase == "merged" else pr.get("closed_at") if phase == "closed" else None
+        if old and terminal_revision and old["pr"].get("merged_at") != pr.get("merged_at") or (
+            old and terminal_revision and old["pr"].get("closed_at") != pr.get("closed_at")
+        ):
+            if enrichment.get("terminal_revision") != terminal_revision:
+                triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"], "revision": terminal_revision})
         buckets[phase].append((repo, pr, meta))
 
     if errors:
@@ -231,10 +240,7 @@ def main():
         "A live public record of upstream open-source work tracked by CoreFoundry.",
         "",
         '<p align="center">',
-        f"  {badge('merged', counts['merged'], '2ea44f')}",
-        f"  {badge('open', counts['open'], '0969da')}",
-
-        f"  {badge('closed / retained', counts['closed'], '6e7781')}",
+        f"  **Merged:** {counts['merged']} | **Open:** {counts['open']} | **Closed:** {counts['closed']}",
         "</p>",
         "",
         f"> **Last synchronized:** {now.strftime('%Y-%m-%d %H:%M UTC')}",
