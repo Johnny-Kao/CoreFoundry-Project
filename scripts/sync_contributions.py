@@ -196,8 +196,6 @@ def main():
         base_repo = (pr.get("base") or {}).get("repo") or {}
         owner = (base_repo.get("owner") or {}).get("login")
         snapshot["base"] = {"repo": {"owner": {"login": owner}}}
-        current[key] = {"repo": repo, "pr": snapshot,
-                        "enrichment": historic.get(key, {}).get("enrichment", {})}
         if key in seen:
             continue
         seen.add(key)
@@ -205,6 +203,9 @@ def main():
         if not should_include(repo, pr, meta):
             continue
 
+        # Never persist excluded personal research/staging PRs in public data.
+        current[key] = {"repo": repo, "pr": snapshot,
+                        "enrichment": historic.get(key, {}).get("enrichment", {})}
         phase = status_of(pr)
         old = historic.get(key)
         enrichment = current[key]["enrichment"]
