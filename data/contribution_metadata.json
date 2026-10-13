@@ -219,6 +219,15 @@
         "https://github.com/bloomberg/memray/pull/1040",
         "https://github.com/bloomberg/memray/pull/1040#issuecomment-5998182277"
       ]
+    },
+    "Blosc/blogsite#18": {
+      "what_it_is": "A guest-post contribution PR for the Blosc blog proposing an article titled 'When More Threads Make Things Slower' about the story behind C-Blosc2 PR #805, written to be accessible to a general technical audience.",
+      "what_changed": "The PR adds a Markdown article with Nikola metadata, four original SVG figures, benchmark-based explanations, and a public reproducibility repository. It also includes a short discussion of alternative approaches and trade-offs considered in the underlying work.",
+      "evidence": "The author states the article explores the idea that avoiding unnecessary work can be the best way to improve performance, and says the post includes benchmark results and visualizations. The PR body also notes that the Nikola website build and figure-reference checks passed in a GitHub Actions run, and that the article is intended to fit the Blosc blog with possible editorial adjustments.",
+      "why_it_matters": "It presents a performance-tuning topic in an accessible, non-implementation-heavy way and supports the narrative with reproducible measurements and visuals. The work is framed as explaining when adding threads or parallelism may not help and why workload matters.",
+      "source_urls": [
+        "https://github.com/Blosc/blogsite/pull/18"
+      ]
     }
   }
 }
