@@ -55,10 +55,17 @@
       "why_it_matters": "Reusing already-computed coarse state can remove search work without adding another O(Q) pass"
     },
     "pandas-dev/pandas#69916": {
-      "what_it_is": "Core data-processing and conversion infrastructure",
-      "what_changed": "Skipped impossible per-element NA membership work when na_values is empty",
+      "what_it_is": "A pandas performance optimization for maybe_convert_numeric that short-circuits the empty-na_values case while preserving the existing behavior for non-empty na_values; reviewer discussion also characterizes the change as a bugfix for an unhashable nested-tuple object case in to_numeric.",
+      "what_changed": "The PR computes a function-local boolean, use_na_values = len(na_values) > 0, and guards the per-element __hash__ + membership check with it so empty sets skip Python-level membership work. The author then adds the required regression test and whatsnew entry after review identified the unhashable nested-tuple case as an improvement and bugfix candidate.",
       "evidence": "~17–25% faster in targeted maybe_convert_numeric benchmarks",
-      "why_it_matters": "A loop invariant can eliminate repeated Python object-protocol work on a common path"
+      "why_it_matters": "It removes unnecessary per-element Python object work when na_values is empty, which improves the direct numeric-conversion hot path without changing the conversion rules for non-empty na_values. It also addresses a concrete edge case in object-dtype coercion that review flagged as a bugfix-worthy behavior change.",
+      "source_urls": [
+        "https://github.com/pandas-dev/pandas/pull/69916",
+        "https://github.com/pandas-dev/pandas/pull/69916#issuecomment-6146377089",
+        "https://github.com/pandas-dev/pandas/pull/69916#issuecomment-6148572618",
+        "https://github.com/pandas-dev/pandas/pull/69916#pullrequestreview-5475900471",
+        "https://github.com/pandas-dev/pandas/pull/69916#pullrequestreview-5476517572"
+      ]
     },
     "pypa/packaging#1429": {
       "what_it_is": "Foundational Python packaging and requirement-parsing infrastructure",
@@ -91,10 +98,15 @@
       "why_it_matters": "Locally provable ASCII invariants can avoid unnecessary Unicode validation work"
     },
     "python-attrs/attrs#1636": {
-      "what_it_is": "Widely used Python object-model infrastructure",
-      "what_changed": "Avoided redundant attrs detection for exact atomic values in nested sequences",
-      "evidence": "Up to ~3.33× faster in the tested list[int] workload",
-      "why_it_matters": "Facts established at one layer should not be rediscovered repeatedly deeper in the runtime path"
+      "what_it_is": "A performance improvement for `attrs.astuple()` when traversing nested sequences containing atomic values.",
+      "what_changed": "Sequence elements with exact types already known to be atomic now skip attrs detection via `has()`. Non-atomic values retain the existing fallback.",
+      "evidence": "The PR reports a local CPython 3.14 `list[int]` benchmark speedup of 1.76× for 10 elements, 2.95× for 100, and 3.33× for 1,000. It also reports 1,407 tests passed, 4 skipped, and 2 xfailed, and includes a CodSpeed benchmark for nested atomic sequences.",
+      "why_it_matters": "Avoiding attrs detection for atomic sequence elements reduces unnecessary work during `astuple()` traversal; the PR reports larger benchmark speedups as the list size increases.",
+      "source_urls": [
+        "https://github.com/python-attrs/attrs/pull/1636",
+        "https://github.com/python-attrs/attrs/pull/1636#issuecomment-6147132677",
+        "https://github.com/python-attrs/attrs/pull/1636#issuecomment-6147332668"
+      ]
     },
     "dateutil/dateutil#1590": {
       "what_it_is": "Date/time, recurrence, and timezone infrastructure",

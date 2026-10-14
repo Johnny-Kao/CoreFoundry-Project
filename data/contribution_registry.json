@@ -116,7 +116,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "bf4dc50a40a0e40327f79a84d5cfe00b99ea7095",
+        "merge_commit_sha": "d3fe4fd9fc67c6cab5d6e6bdc5d943c865bb0392",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -141,7 +141,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "334fa00625da5496b3616d9bd499aae2e2d65006",
+        "merge_commit_sha": "17a4d1b248c3dbab84781fbfe2f1d1ec8b50a7ea",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -189,7 +189,7 @@
         "created_at": "2026-10-03T20:26:03Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/315",
-        "merge_commit_sha": "5e60e6625f14bff3af9bcc1207bc88253aac1c5b",
+        "merge_commit_sha": "492bfcb3ce05a2c4dcc87e5fe35d7ce63aebbbe1",
         "merged_at": null,
         "number": 315,
         "state": "open",
@@ -214,7 +214,7 @@
         "created_at": "2026-10-04T04:52:44Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/317",
-        "merge_commit_sha": "1e6e2e2ca1b93d120b575dc4ecd93f522453eab0",
+        "merge_commit_sha": "b664ba7e29c45d23fb867f69bee5b603e0ea39af",
         "merged_at": null,
         "number": 317,
         "state": "open",
@@ -239,7 +239,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "bff1fff081581aa09b55a83cc3179b7f33d441d4",
+        "merge_commit_sha": "763b48f1da8c0928fbc3a482304077c461fb9d4b",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -264,7 +264,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "b8de5d9bbb0f191c677ce5dba34371b26beca12c",
+        "merge_commit_sha": "296feb2e25bf3e15b7ad879234bb87323bdf32e9",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -289,7 +289,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "ac390aec0ca545086967eeb1e0e46c658d7d6768",
+        "merge_commit_sha": "5b8e7e42fa35dbb6836b378c15fc59c99347ee0b",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -414,7 +414,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "6d9ae3a9848b5ee65cddcf5cd20cf6792ae48395",
+        "merge_commit_sha": "be04e50c889ceb469002e4d2c30cfd4042948627",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -487,14 +487,14 @@
         },
         "closed_at": null,
         "created_at": "2026-10-06T00:05:56Z",
-        "draft": true,
+        "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "814e32dc96479eb63638413207bed90271f2daaa",
+        "merge_commit_sha": "f14e8f7f4709d67b9f796d18c2a2205412b03c40",
         "merged_at": null,
         "number": 32895,
         "state": "open",
         "title": "PERF: reuse insertion result for equivalent searchsorted queries",
-        "updated_at": "2026-10-13T00:46:39Z"
+        "updated_at": "2026-10-13T12:24:28Z"
       },
       "repo": "numpy/numpy"
     },
@@ -550,7 +550,8 @@
     },
     "pandas-dev/pandas#69916": {
       "enrichment": {
-        "initial": "curated"
+        "initial": "curated",
+        "terminal_revision": "2026-10-13T15:03:15Z"
       },
       "pr": {
         "base": {
@@ -560,16 +561,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-13T15:03:15Z",
         "created_at": "2026-09-29T11:33:18Z",
         "draft": false,
         "html_url": "https://github.com/pandas-dev/pandas/pull/69916",
-        "merge_commit_sha": "b15953b6a11a21512d42e0233a3085c3b6ff2a93",
-        "merged_at": null,
+        "merge_commit_sha": "93ed0471db24c55359a9312c6b3dc6eecb6fa097",
+        "merged_at": "2026-10-13T15:03:15Z",
         "number": 69916,
-        "state": "open",
+        "state": "closed",
         "title": "PERF: skip NA membership checks when na_values is empty",
-        "updated_at": "2026-10-10T01:32:40Z"
+        "updated_at": "2026-10-13T15:03:24Z"
       },
       "repo": "pandas-dev/pandas"
     },
@@ -625,7 +626,8 @@
     },
     "python-attrs/attrs#1636": {
       "enrichment": {
-        "initial": "curated"
+        "initial": "curated",
+        "terminal_revision": "2026-10-13T13:56:18Z"
       },
       "pr": {
         "base": {
@@ -635,16 +637,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-13T13:56:19Z",
         "created_at": "2026-10-01T18:16:53Z",
         "draft": false,
         "html_url": "https://github.com/python-attrs/attrs/pull/1636",
-        "merge_commit_sha": "2fec0daabf6ec64090f7edf842678e6ffaf4a4b5",
-        "merged_at": null,
+        "merge_commit_sha": "8f76a5262b3b426bfb6a1127f12d49430d168c8b",
+        "merged_at": "2026-10-13T13:56:18Z",
         "number": 1636,
-        "state": "open",
+        "state": "closed",
         "title": "Improve astuple performance for nested atomic sequences",
-        "updated_at": "2026-10-01T18:17:39Z"
+        "updated_at": "2026-10-13T14:02:47Z"
       },
       "repo": "python-attrs/attrs"
     },
@@ -669,7 +671,7 @@
         "number": 282,
         "state": "open",
         "title": "Optimize fixed-signature cdata calls",
-        "updated_at": "2026-10-01T00:27:30Z"
+        "updated_at": "2026-10-14T01:08:23Z"
       },
       "repo": "python-cffi/cffi"
     },
@@ -694,7 +696,7 @@
         "number": 207,
         "state": "open",
         "title": "Avoid redundant normalization of parsed wire headers",
-        "updated_at": "2026-09-30T16:34:50Z"
+        "updated_at": "2026-10-14T01:06:06Z"
       },
       "repo": "python-hyper/h11"
     },
@@ -764,7 +766,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "38613aaec6d01b7787b2a30dc0776f6037ecae45",
+        "merge_commit_sha": "9612a114e1f3e2173e9701707eb59727aa21b2e7",
         "merged_at": null,
         "number": 26226,
         "state": "open",
