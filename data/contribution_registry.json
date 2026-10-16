@@ -2,7 +2,8 @@
   "entries": {
     "Blosc/blogsite#18": {
       "enrichment": {
-        "initial": "completed"
+        "initial": "completed",
+        "terminal_revision": "2026-10-15T09:11:02Z"
       },
       "pr": {
         "base": {
@@ -12,16 +13,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-15T09:11:02Z",
         "created_at": "2026-10-12T14:55:56Z",
         "draft": false,
         "html_url": "https://github.com/Blosc/blogsite/pull/18",
-        "merge_commit_sha": "ea34dd061da7c256523b3fa3b1b73b577b1303c6",
-        "merged_at": null,
+        "merge_commit_sha": "01cba31da6536807fc4b799739d3d42d8065f0f4",
+        "merged_at": "2026-10-15T09:11:02Z",
         "number": 18,
-        "state": "open",
+        "state": "closed",
         "title": "Guest post: When More Threads Make Things Slower (C-Blosc2 #805)",
-        "updated_at": "2026-10-12T14:55:56Z"
+        "updated_at": "2026-10-15T13:12:51Z"
       },
       "repo": "Blosc/blogsite"
     },
@@ -116,7 +117,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "d3fe4fd9fc67c6cab5d6e6bdc5d943c865bb0392",
+        "merge_commit_sha": "38bbc1cc8595f43fc024a337d782da8843159059",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -141,7 +142,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "17a4d1b248c3dbab84781fbfe2f1d1ec8b50a7ea",
+        "merge_commit_sha": "4d0ddfcb6c849f0ff0b513829654d53a2f42af05",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -189,7 +190,7 @@
         "created_at": "2026-10-03T20:26:03Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/315",
-        "merge_commit_sha": "492bfcb3ce05a2c4dcc87e5fe35d7ce63aebbbe1",
+        "merge_commit_sha": "5d9f7d93c6fae3a159cc874385259e9ad9dedd59",
         "merged_at": null,
         "number": 315,
         "state": "open",
@@ -214,7 +215,7 @@
         "created_at": "2026-10-04T04:52:44Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/317",
-        "merge_commit_sha": "b664ba7e29c45d23fb867f69bee5b603e0ea39af",
+        "merge_commit_sha": "431f6628c1f4de8adbb5f3f7fbdb0a4ac6c47b2f",
         "merged_at": null,
         "number": 317,
         "state": "open",
@@ -239,7 +240,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "763b48f1da8c0928fbc3a482304077c461fb9d4b",
+        "merge_commit_sha": "0ee2b93abc1966c1062bdacde2859f50128fd522",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -264,7 +265,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "296feb2e25bf3e15b7ad879234bb87323bdf32e9",
+        "merge_commit_sha": "7e5d95207daad85ee1f1a36d86789f9d1d75d98f",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -289,7 +290,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "5b8e7e42fa35dbb6836b378c15fc59c99347ee0b",
+        "merge_commit_sha": "188e5afc9794db5f1c9b7a47d9d303bb86414223",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -369,7 +370,7 @@
         "number": 1590,
         "state": "open",
         "title": "Optimize completed rrule cache queries",
-        "updated_at": "2026-10-01T23:00:08Z"
+        "updated_at": "2026-10-14T13:14:26Z"
       },
       "repo": "dateutil/dateutil"
     },
@@ -414,7 +415,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "be04e50c889ceb469002e4d2c30cfd4042948627",
+        "merge_commit_sha": "63a0dc5482b4d93303f1248977ebe4088912c868",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -489,7 +490,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "f14e8f7f4709d67b9f796d18c2a2205412b03c40",
+        "merge_commit_sha": "e1615b74748f9df7da85b6d8c91136e9973680cb",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -514,7 +515,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "474c76145e973a29110907c06b9104ecb2e31dcd",
+        "merge_commit_sha": "6ba68716447deece486b60ebcccbe922448080ee",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -766,7 +767,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "9612a114e1f3e2173e9701707eb59727aa21b2e7",
+        "merge_commit_sha": "e3b73834f39aafcdbf3c08bfd8dc367a7af6fe1f",
         "merged_at": null,
         "number": 26226,
         "state": "open",
