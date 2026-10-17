@@ -3,10 +3,10 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  **Merged:** 12 | **Open:** 17 | **Closed:** 4
+  **Merged:** 12 | **Open:** 18 | **Closed:** 4
 </p>
 
-> **Last synchronized:** 2026-10-16 04:41 UTC
+> **Last synchronized:** 2026-10-17 04:38 UTC
 
 ## Canonical-source policy
 
@@ -46,6 +46,7 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[serde-rs/json #1356](https://github.com/serde-rs/json/pull/1356)** | A proposed serde_json change to avoid allocating a temporary String when deserializing i128 and u128 values. | The author tried parsing by accumulating the value directly with checked arithmetic, aiming to preserve existing parsing behavior, overflow handling, and error positions. The PR notes that it keeps the current negative-zero behavior, which could interact with #1353. | The author reports isolated benchmarks showing ~1.5–2× faster parsing for longer 128-bit integers, zero temporary allocations versus 1–4 previously, and passing existing tests, feature checks, and added regression tests. ([source](https://github.com/serde-rs/json/pull/1356)) | If validated and accepted, the approach could reduce temporary allocations and improve parsing speed for longer 128-bit integers. |
 | **[dateutil/dateutil #1590](https://github.com/dateutil/dateutil/pull/1590)** | Date/time, recurrence, and timezone infrastructure | Used binary search for deep queries over already-ordered completed recurrence caches | ~4,500–5,700× faster on tested deep 200k-cache queries | An existing ordering invariant can collapse repeated linear scans into logarithmic lookup |
 | **[python-cffi/cffi #282](https://github.com/python-cffi/cffi/pull/282)** | Python ↔ C foreign-function interface infrastructure | Specialized fixed-signature cdata calls while preserving the generic fallback | ~25–30% faster for targeted scalar signatures | Native-boundary overhead can be reduced without replacing the mature general path |
 | **[python-hyper/h11 #207](https://github.com/python-hyper/h11/pull/207)** | Pure-Python HTTP/1.1 protocol infrastructure | Removed redundant normalization and intermediate representation work in parsed wire headers | ~3.3–11.7% faster across targeted parsing workloads | Protocol parsing can remove duplicate work while preserving exact validation order |
@@ -66,7 +67,9 @@ flowchart LR
 
 ## 🟡 Draft / validating
 
-_No tracked entries in this state._
+| Project / PR | What it is | What changed | Evidence / impact | Why this matters |
+|---|---|---|---:|---|
+| **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | A documentation-only pull request clarifying fail-closed behavior for ungated actions in mi-24. | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a matching rule without valid approval (block execution) and from failures in policy evaluation, action resolution, or approval-state determination (fail closed). | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check passed. ([source](https://github.com/finos/ai-governance-framework/pull/415)) | Clarifies that a confirmed non-gated action is different from a failed or indeterminate gating-policy evaluation. |
 
 ## ⚪ Closed / lessons retained
 

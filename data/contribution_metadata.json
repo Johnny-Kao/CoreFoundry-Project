@@ -244,6 +244,24 @@
         "https://github.com/Blosc/blogsite/pull/18#issuecomment-6168442156",
         "https://github.com/Blosc/blogsite/pull/18#pullrequestreview-5530729213"
       ]
+    },
+    "finos/ai-governance-framework#415": {
+      "what_it_is": "A documentation-only pull request clarifying fail-closed behavior for ungated actions in mi-24.",
+      "what_changed": "Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a matching rule without valid approval (block execution) and from failures in policy evaluation, action resolution, or approval-state determination (fail closed).",
+      "evidence": "The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check passed.",
+      "why_it_matters": "Clarifies that a confirmed non-gated action is different from a failed or indeterminate gating-policy evaluation.",
+      "source_urls": [
+        "https://github.com/finos/ai-governance-framework/pull/415"
+      ]
+    },
+    "serde-rs/json#1356": {
+      "what_it_is": "A proposed serde_json change to avoid allocating a temporary String when deserializing i128 and u128 values.",
+      "what_changed": "The author tried parsing by accumulating the value directly with checked arithmetic, aiming to preserve existing parsing behavior, overflow handling, and error positions. The PR notes that it keeps the current negative-zero behavior, which could interact with #1353.",
+      "evidence": "The author reports isolated benchmarks showing ~1.5–2× faster parsing for longer 128-bit integers, zero temporary allocations versus 1–4 previously, and passing existing tests, feature checks, and added regression tests.",
+      "why_it_matters": "If validated and accepted, the approach could reduce temporary allocations and improve parsing speed for longer 128-bit integers.",
+      "source_urls": [
+        "https://github.com/serde-rs/json/pull/1356"
+      ]
     }
   }
 }

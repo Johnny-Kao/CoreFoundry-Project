@@ -117,7 +117,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "38bbc1cc8595f43fc024a337d782da8843159059",
+        "merge_commit_sha": "e3ba6139660724b2f03ff0e74d3d9c15829bb533",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -142,7 +142,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "4d0ddfcb6c849f0ff0b513829654d53a2f42af05",
+        "merge_commit_sha": "d3fc3dba09ce3a736bf8a2af2e0b1cdea89778b7",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -340,7 +340,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "4d6f508021394cd6f252e990aef8cc1e4b71242b",
+        "merge_commit_sha": "81b044b9d853c317abb04e16404c1a6f88baba33",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -373,6 +373,31 @@
         "updated_at": "2026-10-14T13:14:26Z"
       },
       "repo": "dateutil/dateutil"
+    },
+    "finos/ai-governance-framework#415": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "finos"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-17T04:36:15Z",
+        "draft": true,
+        "html_url": "https://github.com/finos/ai-governance-framework/pull/415",
+        "merge_commit_sha": "c2743b8173c5ae3ca4f5d83970ab339e6f0108bd",
+        "merged_at": null,
+        "number": 415,
+        "state": "open",
+        "title": "docs(mi-24): Clarify fail-closed behavior for ungated actions",
+        "updated_at": "2026-10-17T04:36:15Z"
+      },
+      "repo": "finos/ai-governance-framework"
     },
     "kjd/idna#279": {
       "enrichment": {
@@ -415,7 +440,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "63a0dc5482b4d93303f1248977ebe4088912c868",
+        "merge_commit_sha": "e584cea9142670d639fd854ac26bf2f1ee9f7724",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -490,7 +515,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "e1615b74748f9df7da85b6d8c91136e9973680cb",
+        "merge_commit_sha": "6a0c092b28631d4d365530fe9ba71ee422423275",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -515,7 +540,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "6ba68716447deece486b60ebcccbe922448080ee",
+        "merge_commit_sha": "ec2153c84974e10cec66cb186a0d80ad0c5347a9",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -767,7 +792,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "e3b73834f39aafcdbf3c08bfd8dc367a7af6fe1f",
+        "merge_commit_sha": "b7ade099d32396cb47521c249b5ff90a4e03333c",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -775,6 +800,31 @@
         "updated_at": "2026-10-01T19:00:15Z"
       },
       "repo": "scipy/scipy"
+    },
+    "serde-rs/json#1356": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "serde-rs"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-16T09:37:44Z",
+        "draft": false,
+        "html_url": "https://github.com/serde-rs/json/pull/1356",
+        "merge_commit_sha": "b7a32cb257db54e1135a4cda6bdcf5d6438254a1",
+        "merged_at": null,
+        "number": 1356,
+        "state": "open",
+        "title": "Avoid temporary String allocation when parsing i128/u128",
+        "updated_at": "2026-10-16T14:23:50Z"
+      },
+      "repo": "serde-rs/json"
     },
     "urllib3/urllib3#5287": {
       "enrichment": {
