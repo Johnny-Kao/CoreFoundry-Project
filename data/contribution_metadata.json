@@ -262,6 +262,15 @@
       "source_urls": [
         "https://github.com/serde-rs/json/pull/1356"
       ]
+    },
+    "seanmonstar/reqwest#3116": {
+      "what_it_is": "A reqwest pull request proposing to avoid cloning request headers during dispatch.",
+      "what_changed": "Moves the `HeaderMap` into the outgoing request and removes the no-longer-used field from `PendingRequest`.",
+      "evidence": "The author reports workload-dependent throughput gains in local HTTP/1.1 tests, including +2.0–3.0% for 16 sequential headers on Linux x86-64 and +8.5% on Linux ARM64. The author also reports that 39/39 jobs passed on their fork.",
+      "why_it_matters": "The change removes an unnecessary header-map clone without adding dependencies; the reported performance gains vary by workload and architecture.",
+      "source_urls": [
+        "https://github.com/seanmonstar/reqwest/pull/3116"
+      ]
     }
   }
 }

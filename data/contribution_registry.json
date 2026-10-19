@@ -340,7 +340,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "81b044b9d853c317abb04e16404c1a6f88baba33",
+        "merge_commit_sha": "814232dc6935a7fd6ab9f7893be7e0f12c9ad0d0",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -440,7 +440,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "a76f78a9d775d5d7e06dec90eda724c4657cd8fc",
+        "merge_commit_sha": "3995425dd196655a96c18e6412d55d7586257160",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -515,7 +515,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "22b731046543a04e78f621c6f1747e48f85776b6",
+        "merge_commit_sha": "4081f41aabec2bcb387dbc823749f0e866b25c58",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -596,7 +596,7 @@
         "number": 69916,
         "state": "closed",
         "title": "PERF: skip NA membership checks when na_values is empty",
-        "updated_at": "2026-10-13T15:03:24Z"
+        "updated_at": "2026-10-19T04:22:04Z"
       },
       "repo": "pandas-dev/pandas"
     },
@@ -672,7 +672,7 @@
         "number": 1636,
         "state": "closed",
         "title": "Improve astuple performance for nested atomic sequences",
-        "updated_at": "2026-10-13T14:02:47Z"
+        "updated_at": "2026-10-19T04:22:56Z"
       },
       "repo": "python-attrs/attrs"
     },
@@ -792,7 +792,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "b7ade099d32396cb47521c249b5ff90a4e03333c",
+        "merge_commit_sha": "d6c66a651b796f498aac1666990c3c88147442b4",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -800,6 +800,31 @@
         "updated_at": "2026-10-01T19:00:15Z"
       },
       "repo": "scipy/scipy"
+    },
+    "seanmonstar/reqwest#3116": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "seanmonstar"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-19T04:20:41Z",
+        "draft": false,
+        "html_url": "https://github.com/seanmonstar/reqwest/pull/3116",
+        "merge_commit_sha": "0b267533636f97dffc6bc0930cf03899d8d46071",
+        "merged_at": null,
+        "number": 3116,
+        "state": "open",
+        "title": "perf: avoid unnecessary HeaderMap clones when dispatching requests",
+        "updated_at": "2026-10-19T04:24:41Z"
+      },
+      "repo": "seanmonstar/reqwest"
     },
     "serde-rs/json#1356": {
       "enrichment": {
@@ -872,7 +897,7 @@
         "number": 5304,
         "state": "closed",
         "title": "Avoid unnecessary copy in single-output gzip decompression",
-        "updated_at": "2026-10-08T15:33:44Z"
+        "updated_at": "2026-10-19T04:22:31Z"
       },
       "repo": "urllib3/urllib3"
     }

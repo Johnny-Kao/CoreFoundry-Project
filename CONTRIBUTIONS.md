@@ -3,10 +3,10 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  **Merged:** 12 | **Open:** 19 | **Closed:** 4
+  **Merged:** 12 | **Open:** 20 | **Closed:** 4
 </p>
 
-> **Last synchronized:** 2026-10-18 04:43 UTC
+> **Last synchronized:** 2026-10-19 04:52 UTC
 
 ## Canonical-source policy
 
@@ -46,6 +46,7 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[seanmonstar/reqwest #3116](https://github.com/seanmonstar/reqwest/pull/3116)** | A reqwest pull request proposing to avoid cloning request headers during dispatch. | Moves the `HeaderMap` into the outgoing request and removes the no-longer-used field from `PendingRequest`. | The author reports workload-dependent throughput gains in local HTTP/1.1 tests, including +2.0–3.0% for 16 sequential headers on Linux x86-64 and +8.5% on Linux ARM64. The author also reports that 39/39 jobs passed on their fork. ([source](https://github.com/seanmonstar/reqwest/pull/3116)) | The change removes an unnecessary header-map clone without adding dependencies; the reported performance gains vary by workload and architecture. |
 | **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | A documentation-only pull request clarifying fail-closed behavior for ungated actions in mi-24. | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a matching rule without valid approval (block execution) and from failures in policy evaluation, action resolution, or approval-state determination (fail closed). | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check passed. ([source](https://github.com/finos/ai-governance-framework/pull/415)) | Clarifies that a confirmed non-gated action is different from a failed or indeterminate gating-policy evaluation. |
 | **[serde-rs/json #1356](https://github.com/serde-rs/json/pull/1356)** | A proposed serde_json change to avoid allocating a temporary String when deserializing i128 and u128 values. | The author tried parsing by accumulating the value directly with checked arithmetic, aiming to preserve existing parsing behavior, overflow handling, and error positions. The PR notes that it keeps the current negative-zero behavior, which could interact with #1353. | The author reports isolated benchmarks showing ~1.5–2× faster parsing for longer 128-bit integers, zero temporary allocations versus 1–4 previously, and passing existing tests, feature checks, and added regression tests. ([source](https://github.com/serde-rs/json/pull/1356)) | If validated and accepted, the approach could reduce temporary allocations and improve parsing speed for longer 128-bit integers. |
 | **[dateutil/dateutil #1590](https://github.com/dateutil/dateutil/pull/1590)** | Date/time, recurrence, and timezone infrastructure | Used binary search for deep queries over already-ordered completed recurrence caches | ~4,500–5,700× faster on tested deep 200k-cache queries | An existing ordering invariant can collapse repeated linear scans into logarithmic lookup |
