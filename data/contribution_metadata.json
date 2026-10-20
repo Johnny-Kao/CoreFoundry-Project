@@ -265,11 +265,21 @@
     },
     "seanmonstar/reqwest#3116": {
       "what_it_is": "A reqwest pull request proposing to avoid cloning request headers during dispatch.",
-      "what_changed": "Moves the `HeaderMap` into the outgoing request and removes the no-longer-used field from `PendingRequest`.",
+      "what_changed": "The author moves the HeaderMap into the outgoing request and removes its unused copy from PendingRequest. The PR reports workload-dependent throughput improvements in local HTTP/1.1 benchmarks and says the change adds no dependencies.",
       "evidence": "The author reports workload-dependent throughput gains in local HTTP/1.1 tests, including +2.0–3.0% for 16 sequential headers on Linux x86-64 and +8.5% on Linux ARM64. The author also reports that 39/39 jobs passed on their fork.",
-      "why_it_matters": "The change removes an unnecessary header-map clone without adding dependencies; the reported performance gains vary by workload and architecture.",
+      "why_it_matters": "The change aims to avoid an unnecessary header-map clone; the reported benchmark results vary by architecture and workload.",
       "source_urls": [
-        "https://github.com/seanmonstar/reqwest/pull/3116"
+        "https://github.com/seanmonstar/reqwest/pull/3116",
+        "https://github.com/seanmonstar/reqwest/pull/3116#pullrequestreview-5578176230"
+      ]
+    },
+    "python-attrs/attrs#1646": {
+      "what_it_is": "A pull request proposing a performance improvement to attrs' astuple() when processing dictionaries.",
+      "what_changed": "The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes.",
+      "evidence": "The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14 upstream native CI jobs passing on a staging fork.",
+      "why_it_matters": "The reported benchmarks indicate faster astuple() processing for dictionaries, especially when their keys and values are atomic.",
+      "source_urls": [
+        "https://github.com/python-attrs/attrs/pull/1646"
       ]
     }
   }

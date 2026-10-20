@@ -117,12 +117,12 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "e3ba6139660724b2f03ff0e74d3d9c15829bb533",
+        "merge_commit_sha": "74345da37edfd5012afb248d87d5bd1e81cf61da",
         "merged_at": null,
         "number": 2292,
         "state": "open",
         "title": "Fix container stop silently succeeding on an orphaned runtime after apiserver restart",
-        "updated_at": "2026-09-21T13:09:12Z"
+        "updated_at": "2026-10-19T17:05:18Z"
       },
       "repo": "apple/container"
     },
@@ -142,7 +142,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "d3fc3dba09ce3a736bf8a2af2e0b1cdea89778b7",
+        "merge_commit_sha": "958b933a4fb06070f5a1bc6c6db6d68b04da35cb",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -190,7 +190,7 @@
         "created_at": "2026-10-03T20:26:03Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/315",
-        "merge_commit_sha": "5d9f7d93c6fae3a159cc874385259e9ad9dedd59",
+        "merge_commit_sha": "49108b8dcef772ba857c6f3c573a189deb0ec6d8",
         "merged_at": null,
         "number": 315,
         "state": "open",
@@ -215,7 +215,7 @@
         "created_at": "2026-10-04T04:52:44Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/317",
-        "merge_commit_sha": "431f6628c1f4de8adbb5f3f7fbdb0a4ac6c47b2f",
+        "merge_commit_sha": "b91c8eb1aced4f188257d125195fce7837f05805",
         "merged_at": null,
         "number": 317,
         "state": "open",
@@ -240,7 +240,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "0ee2b93abc1966c1062bdacde2859f50128fd522",
+        "merge_commit_sha": "0b6cfd59f58f9f2f972a44bab381960baef83251",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -265,7 +265,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "7e5d95207daad85ee1f1a36d86789f9d1d75d98f",
+        "merge_commit_sha": "8d561fc52ae8be64195ac576c86f0599717ad9bd",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -290,7 +290,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "188e5afc9794db5f1c9b7a47d9d303bb86414223",
+        "merge_commit_sha": "206a1630b71166d8e7314b6722454b8101bc539a",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -365,7 +365,7 @@
         "created_at": "2026-10-01T22:37:44Z",
         "draft": false,
         "html_url": "https://github.com/dateutil/dateutil/pull/1590",
-        "merge_commit_sha": "65d4a9570c6c200f42fdc628baf944aa9410ada1",
+        "merge_commit_sha": "358983a5242c1a4c6de4e14aea5a2939b8c96482",
         "merged_at": null,
         "number": 1590,
         "state": "open",
@@ -420,7 +420,7 @@
         "number": 279,
         "state": "open",
         "title": "Optimize ordinary ASCII A-label encoding",
-        "updated_at": "2026-10-01T11:45:34Z"
+        "updated_at": "2026-10-19T17:04:14Z"
       },
       "repo": "kjd/idna"
     },
@@ -440,12 +440,12 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "3995425dd196655a96c18e6412d55d7586257160",
+        "merge_commit_sha": "ef2a823520285b83c0b403bbedabe48dc9b9c58f",
         "merged_at": null,
         "number": 32787,
         "state": "open",
         "title": "BUG: preserve BitGenerator state after failed reinitialization",
-        "updated_at": "2026-10-02T19:22:21Z"
+        "updated_at": "2026-10-19T16:54:40Z"
       },
       "repo": "numpy/numpy"
     },
@@ -515,12 +515,12 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "4081f41aabec2bcb387dbc823749f0e866b25c58",
+        "merge_commit_sha": "45b2c2a45932793e9613f17abeca9c75a7e4ca72",
         "merged_at": null,
         "number": 32895,
         "state": "open",
         "title": "PERF: reuse insertion result for equivalent searchsorted queries",
-        "updated_at": "2026-10-13T12:24:28Z"
+        "updated_at": "2026-10-19T16:53:53Z"
       },
       "repo": "numpy/numpy"
     },
@@ -540,12 +540,12 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "ec2153c84974e10cec66cb186a0d80ad0c5347a9",
+        "merge_commit_sha": "117d9ec90de659b20268ae4a493804afa7c7a7c1",
         "merged_at": null,
         "number": 30177,
         "state": "open",
         "title": "videoio: add zero-copy BGRA retrieval for AVFoundation 🤖🤖🤖",
-        "updated_at": "2026-10-10T04:43:52Z"
+        "updated_at": "2026-10-19T16:54:13Z"
       },
       "repo": "opencv/opencv"
     },
@@ -676,6 +676,31 @@
       },
       "repo": "python-attrs/attrs"
     },
+    "python-attrs/attrs#1646": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "python-attrs"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-20T02:35:17Z",
+        "draft": false,
+        "html_url": "https://github.com/python-attrs/attrs/pull/1646",
+        "merge_commit_sha": "7eb4a5911185122842005d43b710917e1df60be0",
+        "merged_at": null,
+        "number": 1646,
+        "state": "open",
+        "title": "Improve astuple performance for atomic dictionary keys and values",
+        "updated_at": "2026-10-20T02:42:55Z"
+      },
+      "repo": "python-attrs/attrs"
+    },
     "python-cffi/cffi#282": {
       "enrichment": {
         "initial": "curated"
@@ -692,7 +717,7 @@
         "created_at": "2026-10-01T00:16:30Z",
         "draft": false,
         "html_url": "https://github.com/python-cffi/cffi/pull/282",
-        "merge_commit_sha": "a8e50fb3f2bc66576292b0c7e858306376646450",
+        "merge_commit_sha": "8871d4d775820cf7a277786b18bb8d007b6d5009",
         "merged_at": null,
         "number": 282,
         "state": "open",
@@ -792,7 +817,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "d6c66a651b796f498aac1666990c3c88147442b4",
+        "merge_commit_sha": "ea145e05ebab6c43595f97c6827a71f9e5e38fee",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -803,7 +828,8 @@
     },
     "seanmonstar/reqwest#3116": {
       "enrichment": {
-        "initial": "completed"
+        "initial": "completed",
+        "terminal_revision": "2026-10-19T21:47:54Z"
       },
       "pr": {
         "base": {
@@ -813,16 +839,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-19T21:47:54Z",
         "created_at": "2026-10-19T04:20:41Z",
         "draft": false,
         "html_url": "https://github.com/seanmonstar/reqwest/pull/3116",
-        "merge_commit_sha": "0b267533636f97dffc6bc0930cf03899d8d46071",
-        "merged_at": null,
+        "merge_commit_sha": "8e1c8061e5dd936762dcef08a64ef2cff584b295",
+        "merged_at": "2026-10-19T21:47:54Z",
         "number": 3116,
-        "state": "open",
+        "state": "closed",
         "title": "perf: avoid unnecessary HeaderMap clones when dispatching requests",
-        "updated_at": "2026-10-19T04:24:41Z"
+        "updated_at": "2026-10-19T21:47:54Z"
       },
       "repo": "seanmonstar/reqwest"
     },
