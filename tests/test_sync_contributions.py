@@ -65,6 +65,20 @@ class LedgerTests(unittest.TestCase):
                 sync.main()
                 self.assertEqual(first, (root / "CONTRIBUTIONS.md").read_bytes())
 
+    def test_related_coauthored_commit_on_merged_pr(self):
+        merged = pr(repo="python-attrs/attrs", number=1636, merged=True)
+        meta = {"related_upstream_commits": [{
+            "repo": "python-attrs/attrs",
+            "commit": "0a08cee06960e415f735dec4cf2fb91d669e2433",
+            "label": "co-authored benchmark"
+        }]}
+        self.assertEqual(sync.status_of(merged), "merged")
+        cell = sync.pr_link("python-attrs/attrs", merged, meta)
+        self.assertIn("merge commit", cell)
+        self.assertIn("co-authored benchmark", cell)
+        self.assertIn("/python-attrs/attrs/commit/0a08cee", cell)
+        self.assertEqual(cell.count("co-authored benchmark"), 1)
+
     def test_state_classification(self):
         self.assertEqual(sync.status_of(pr(merged=True)), "merged")
         self.assertEqual(sync.status_of(pr(draft=True)), "draft")
