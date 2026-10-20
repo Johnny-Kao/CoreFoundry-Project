@@ -135,8 +135,18 @@
     "bloomberg/bde#315": {
       "what_it_is": "Low-level C++ infrastructure and foundational libraries",
       "what_changed": "Removed an unreachable stale AIX semaphore-policy branch",
-      "evidence": "Maintenance / compatibility cleanup with current configurations validated",
-      "why_it_matters": "Removing unreachable platform logic reduces maintenance surface and future ambiguity"
+      "evidence": "Original PR and upstream commit have identical patches (1 addition, 14 deletions); final commit credits Johnny Kao as co-author.",
+      "why_it_matters": "Removing unreachable platform logic reduces maintenance surface and future ambiguity",
+      "upstream_integration": {
+        "commit": "97e399a397287a6fadf63322983c5fb7a8b012e2",
+        "original_patch": "identical",
+        "credit": "Original patch author: Johnny Kao; upstream commit author: Oleg Subbotin; Co-authored-by: Johnny Kao.",
+        "via": "Internal PR #6034"
+      },
+      "source_urls": [
+        "https://github.com/bloomberg/bde/pull/315",
+        "https://github.com/bloomberg/bde/commit/97e399a397287a6fadf63322983c5fb7a8b012e2"
+      ]
     },
     "scipy/scipy#26226": {
       "what_it_is": "Scientific-computing algorithms and signal-processing infrastructure",
