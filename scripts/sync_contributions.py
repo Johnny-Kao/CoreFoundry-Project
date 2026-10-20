@@ -110,7 +110,19 @@ def escape_cell(value):
     return str(value).replace("|", "\\|").replace("\n", " ").strip() or "—"
 
 
-def pr_link(repo, pr):
+def integrated_upstream(pr, meta):
+    """A closed PR separately integrated by an upstream commit."""
+    record = meta.get("upstream_integration")
+    if not isinstance(record, dict) or status_of(pr) != "closed":
+        return None
+    sha = record.get("commit")
+    if (not isinstance(sha, str) or len(sha) != 40
+            or any(c not in "0123456789abcdef" for c in sha)):
+        return None
+    return record
+
+
+def pr_link(repo, pr, meta=None):
     number = pr["number"]
     url = pr["html_url"]
     cell = f"**[{repo} #{number}]({url})**"
@@ -118,6 +130,10 @@ def pr_link(repo, pr):
         sha = pr["merge_commit_sha"]
         commit_url = f"https://github.com/{repo}/commit/{sha}"
         cell += f"<br><sub>[merge commit `{sha[:7]}`]({commit_url})</sub>"
+    integration = integrated_upstream(pr, meta or {})
+    if integration:
+        sha = integration["commit"]
+        cell += f"<br><sub>[integrated upstream `{sha[:7]}`](https://github.com/{repo}/commit/{sha})</sub>"
     return cell
 
 
@@ -134,7 +150,7 @@ def row_for(repo, pr, meta):
         if evidence_ref:
             evidence += f" ([source]({evidence_ref}))"
     return [
-        pr_link(repo, pr),
+        pr_link(repo, pr, meta),
         escape_cell(meta.get("what_it_is", repo_display(repo))),
         escape_cell(meta.get("what_changed", pr.get("title"))),
         evidence,
@@ -170,7 +186,7 @@ def main():
     metadata_doc = load_metadata()
     metadata = metadata_doc.get("entries", {})
 
-    buckets = {"merged": [], "open": [], "draft": [], "closed": []}
+    buckets = {"merged": [], "integrated": [], "open": [], "draft": [], "closed": []}
     seen = set()
     errors = 0
     triggers = []
@@ -221,7 +237,7 @@ def main():
         ):
             if enrichment.get("terminal_revision") != terminal_revision:
                 triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"], "revision": terminal_revision})
-        buckets[phase].append((repo, pr, meta))
+        buckets["integrated" if integrated_upstream(pr, meta) else phase].append((repo, pr, meta))
 
     if errors:
         raise RuntimeError(f"{errors} PR fetches failed; refusing incomplete publication")
@@ -233,7 +249,7 @@ def main():
         repo, pr = record["repo"], record["pr"]
         meta = metadata.get(key, {})
         if should_include(repo, pr, meta):
-            buckets[status_of(pr)].append((repo, pr, meta))
+            buckets["integrated" if integrated_upstream(pr, meta) else status_of(pr)].append((repo, pr, meta))
             current[key] = record
 
     queue_path = ROOT / "data" / "enrichment_queue.json"
@@ -253,7 +269,7 @@ def main():
         "A live public record of upstream open-source work tracked by CoreFoundry.",
         "",
         '<p align="center">',
-        f"  **Merged:** {counts['merged']} | **Open:** {counts['open']} | **Closed:** {counts['closed']}",
+        f"  **Merged PRs:** {counts['merged']} | **Integrated separately:** {counts['integrated']} | **Open:** {counts['open']} | **Closed:** {counts['closed']}",
         "</p>",
         "",
         f"> **Last synchronized:** {now.strftime('%Y-%m-%d %H:%M UTC')}",
@@ -266,6 +282,7 @@ def main():
         "- merged entries also retain the upstream merge-commit link when GitHub exposes one;",
         "- contributor forks, local branches, staging repositories, and research harnesses are never required to reconstruct the public record;",
         "- narrative metadata is curated, while PR state is synchronized automatically from GitHub.",
+        "- closed PRs integrated via another upstream commit are tracked separately, not counted as merged PRs.",
         "",
         "```mermaid",
         "flowchart LR",
@@ -279,6 +296,7 @@ def main():
 
     sections = [
         ("merged", "🚀 Merged upstream work"),
+        ("integrated", "🔗 Integrated upstream via separate commit (original PR closed)"),
         ("open", "🟢 Open / in review"),
         ("draft", "🟡 Draft / validating"),
         ("closed", "⚪ Closed / lessons retained"),
@@ -304,6 +322,7 @@ def main():
             "",
             "1. public upstream PR state from GitHub;",
             "2. curated display metadata in `data/contribution_metadata.json`.",
+            "3. separately integrated upstream commit evidence.",
             "",
             "New public upstream PRs authored by the tracked contributor are discovered automatically. "
             "Closed-but-unmerged work is included only when explicitly retained in metadata.",
@@ -332,7 +351,7 @@ def main():
     # README's generated summary is derived from the same classified PR data.
     summary = [
         START, "### Live Upstream Activity", "",
-        f"**Open PRs:** {counts['open']} | **Merged PRs:** {counts['merged']}",
+        f"**Open PRs:** {counts['open']} | **Merged PRs:** {counts['merged']} | **Integrated separately:** {counts['integrated']}",
         "", f"Last data change: {now.strftime('%Y-%m-%d %H:%M UTC')}", "",
         "#### Recently Active PRs", "",
     ]
