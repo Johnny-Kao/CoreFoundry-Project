@@ -140,6 +140,19 @@ def pr_link(repo, pr, meta=None):
         sha = integration["commit"]
         target_repo = integration["repo"]
         cell += f"<br><sub>[integrated in {target_repo} `{sha[:7]}`](https://github.com/{target_repo}/commit/{sha})</sub>"
+    extra = (meta or {}).get("related_upstream_commits", [])
+    for record in extra:
+        if not isinstance(record, dict):
+            continue
+        target_repo, sha = record.get("repo"), record.get("commit")
+        if (not isinstance(target_repo, str) or len(target_repo.split("/")) != 2
+                or any(not part or not all(ch.isalnum() or ch in "-_." for ch in part)
+                       for part in target_repo.split("/"))
+                or not isinstance(sha, str) or len(sha) != 40
+                or any(ch not in "0123456789abcdef" for ch in sha)):
+            continue
+        label = escape_cell(record.get("label", "related upstream commit"))
+        cell += f"<br><sub>[{label} in {target_repo} `{sha[:7]}`](https://github.com/{target_repo}/commit/{sha})</sub>"
     return cell
 
 
