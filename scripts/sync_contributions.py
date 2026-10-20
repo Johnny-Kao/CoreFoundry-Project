@@ -115,6 +115,11 @@ def integrated_upstream(pr, meta):
     record = meta.get("upstream_integration")
     if not isinstance(record, dict) or status_of(pr) != "closed":
         return None
+    target_repo = record.get("repo")
+    if (not isinstance(target_repo, str) or len(target_repo.split("/")) != 2
+            or any(not part or not all(c.isalnum() or c in "-_." for c in part)
+                   for part in target_repo.split("/"))):
+        return None
     sha = record.get("commit")
     if (not isinstance(sha, str) or len(sha) != 40
             or any(c not in "0123456789abcdef" for c in sha)):
@@ -133,7 +138,8 @@ def pr_link(repo, pr, meta=None):
     integration = integrated_upstream(pr, meta or {})
     if integration:
         sha = integration["commit"]
-        cell += f"<br><sub>[integrated upstream `{sha[:7]}`](https://github.com/{repo}/commit/{sha})</sub>"
+        target_repo = integration["repo"]
+        cell += f"<br><sub>[integrated in {target_repo} `{sha[:7]}`](https://github.com/{target_repo}/commit/{sha})</sub>"
     return cell
 
 
