@@ -141,7 +141,8 @@
         "commit": "97e399a397287a6fadf63322983c5fb7a8b012e2",
         "original_patch": "identical",
         "credit": "Original patch author: Johnny Kao; upstream commit author: Oleg Subbotin; Co-authored-by: Johnny Kao.",
-        "via": "Internal PR #6034"
+        "via": "Internal PR #6034",
+        "repo": "bloomberg/bde"
       },
       "source_urls": [
         "https://github.com/bloomberg/bde/pull/315",
