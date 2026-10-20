@@ -176,7 +176,8 @@
     },
     "bloomberg/bde#315": {
       "enrichment": {
-        "initial": "curated"
+        "initial": "curated",
+        "terminal_revision": "2026-10-20T19:29:10Z"
       },
       "pr": {
         "base": {
@@ -186,16 +187,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-20T19:29:10Z",
         "created_at": "2026-10-03T20:26:03Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/315",
-        "merge_commit_sha": "49108b8dcef772ba857c6f3c573a189deb0ec6d8",
+        "merge_commit_sha": "207aeeb472834fe43096aa7ef5b9606f93e64533",
         "merged_at": null,
         "number": 315,
-        "state": "open",
+        "state": "closed",
         "title": "bslmt_platform: remove stale AIX semaphore policy",
-        "updated_at": "2026-10-03T20:45:52Z"
+        "updated_at": "2026-10-20T19:29:11Z"
       },
       "repo": "bloomberg/bde"
     },
@@ -215,12 +216,12 @@
         "created_at": "2026-10-04T04:52:44Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/317",
-        "merge_commit_sha": "b91c8eb1aced4f188257d125195fce7837f05805",
+        "merge_commit_sha": "adfdb782c7fd3505747fea5713ab2d942c8f366e",
         "merged_at": null,
         "number": 317,
         "state": "open",
         "title": "bdls_pathutil: preserve known path length in mutable path helpers",
-        "updated_at": "2026-10-04T05:22:10Z"
+        "updated_at": "2026-10-20T22:05:41Z"
       },
       "repo": "bloomberg/bde"
     },
@@ -240,7 +241,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "0b6cfd59f58f9f2f972a44bab381960baef83251",
+        "merge_commit_sha": "b3a82d65a7b88d7544827b8af0d2e5dfd0344c95",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -265,7 +266,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "8d561fc52ae8be64195ac576c86f0599717ad9bd",
+        "merge_commit_sha": "b549c60bf47a202e269ec2e95669d780777d5b3f",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -290,7 +291,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "206a1630b71166d8e7314b6722454b8101bc539a",
+        "merge_commit_sha": "cd5200a42ac3961cbb73c81d8680fa5dae6da6b6",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -365,7 +366,7 @@
         "created_at": "2026-10-01T22:37:44Z",
         "draft": false,
         "html_url": "https://github.com/dateutil/dateutil/pull/1590",
-        "merge_commit_sha": "358983a5242c1a4c6de4e14aea5a2939b8c96482",
+        "merge_commit_sha": "963d8896b5a479e8f41cd90fb78008ade94e1661",
         "merged_at": null,
         "number": 1590,
         "state": "open",
@@ -395,7 +396,7 @@
         "number": 415,
         "state": "open",
         "title": "docs(mi-24): Clarify fail-closed behavior for ungated actions",
-        "updated_at": "2026-10-17T04:40:50Z"
+        "updated_at": "2026-10-20T11:08:38Z"
       },
       "repo": "finos/ai-governance-framework"
     },
@@ -440,7 +441,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "ef2a823520285b83c0b403bbedabe48dc9b9c58f",
+        "merge_commit_sha": "ac721884ac26f63db76c28cffdaf3d75207ee04c",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -515,7 +516,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "45b2c2a45932793e9613f17abeca9c75a7e4ca72",
+        "merge_commit_sha": "12aacd862068d35e8072e52e2648b8d3d14cebae",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -540,7 +541,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "117d9ec90de659b20268ae4a493804afa7c7a7c1",
+        "merge_commit_sha": "a5c2ad151cbabd677df60b0739d8f87336168d4c",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -596,7 +597,7 @@
         "number": 69916,
         "state": "closed",
         "title": "PERF: skip NA membership checks when na_values is empty",
-        "updated_at": "2026-10-19T04:22:04Z"
+        "updated_at": "2026-10-20T07:43:04Z"
       },
       "repo": "pandas-dev/pandas"
     },
@@ -817,7 +818,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "ea145e05ebab6c43595f97c6827a71f9e5e38fee",
+        "merge_commit_sha": "bf562a711e4d7fc0d5c71fb690a0f40f739fec8d",
         "merged_at": null,
         "number": 26226,
         "state": "open",

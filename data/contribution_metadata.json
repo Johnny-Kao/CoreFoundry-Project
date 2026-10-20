@@ -133,10 +133,10 @@
       "why_it_matters": "Already-known metadata should not be discarded and recomputed on hot paths"
     },
     "bloomberg/bde#315": {
-      "what_it_is": "Low-level C++ infrastructure and foundational libraries",
-      "what_changed": "Removed an unreachable stale AIX semaphore-policy branch",
-      "evidence": "Original PR and upstream commit have identical patches (1 addition, 14 deletions); final commit credits Johnny Kao as co-author.",
-      "why_it_matters": "Removing unreachable platform logic reduces maintenance surface and future ambiguity",
+      "what_it_is": "A pull request to remove the obsolete AIX semaphore-policy branch from BDE’s bslmt_platform.h.",
+      "what_changed": "The proposed change removes the AIX-specific CountedSemaphore selection and its macros. Darwin and generic POSIX policy selection remain unchanged. The PR reports no behavior change for current supported/generated configurations; manually forcing the removed AIX macro changes policy selection.",
+      "evidence": "The author reports passing Linux and macOS policy, large-count (100,000), and 32-waiter contention checks. Full bslmt tests passed on Linux; macOS full-package failures were reproduced on the unmodified baseline. A comment says the PR will be merged via an internal repository; the supplied sources do not confirm that merge.",
+      "why_it_matters": "The cleanup aligns semaphore policy selection with the removal of AIX detection from bsls_platform and reduces obsolete compatibility logic. The author describes the benefit as maintenance-oriented, not a runtime performance improvement.",
       "upstream_integration": {
         "commit": "97e399a397287a6fadf63322983c5fb7a8b012e2",
         "original_patch": "identical",
@@ -146,7 +146,7 @@
       },
       "source_urls": [
         "https://github.com/bloomberg/bde/pull/315",
-        "https://github.com/bloomberg/bde/commit/97e399a397287a6fadf63322983c5fb7a8b012e2"
+        "https://github.com/bloomberg/bde/pull/315#issuecomment-6299476918"
       ]
     },
     "scipy/scipy#26226": {
