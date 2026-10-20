@@ -23,11 +23,11 @@ def pr(repo="upstream/library", number=1, state="open", merged=False, draft=Fals
 class LedgerTests(unittest.TestCase):
     def test_separate_upstream_integration(self):
         closed = pr(repo="bloomberg/bde", number=315, state="closed")
-        meta = {"upstream_integration": {"commit": "97e399a397287a6fadf63322983c5fb7a8b012e2"}}
+        meta = {"upstream_integration": {"repo": "bloomberg/bde", "commit": "97e399a397287a6fadf63322983c5fb7a8b012e2"}}
         self.assertEqual(sync.status_of(closed), "closed")
         self.assertIsNotNone(sync.integrated_upstream(closed, meta))
         cell = sync.pr_link("bloomberg/bde", closed, meta)
-        self.assertIn("integrated upstream", cell)
+        self.assertIn("integrated in bloomberg/bde", cell)
         self.assertIn("97e399a", cell)
         self.assertNotIn("merge commit", cell)
         self.assertIsNone(sync.integrated_upstream(pr(), meta))
@@ -42,7 +42,7 @@ class LedgerTests(unittest.TestCase):
                 encoding="utf-8")
             meta = {"upstream/library#45": {
                 "what_changed": "Cleanup", "why_it_matters": "Maintenance",
-                "upstream_integration": {"commit": "a" * 40}}}
+                "upstream_integration": {"repo": "upstream/library", "commit": "a" * 40}}}
             (root / "data" / "contribution_metadata.json").write_text(
                 json.dumps({"entries": meta}))
             closed = pr(number=45, state="closed")
@@ -58,7 +58,7 @@ class LedgerTests(unittest.TestCase):
                  mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 first = (root / "CONTRIBUTIONS.md").read_bytes()
-                self.assertIn(b"integrated upstream", first)
+                self.assertIn(b"integrated in upstream/library", first)
                 self.assertIn(b"Integrated separately:** 1", first)
                 self.assertIn(b"Merged PRs:** 0", first)
                 sync.main()
