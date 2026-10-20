@@ -21,6 +21,49 @@ def pr(repo="upstream/library", number=1, state="open", merged=False, draft=Fals
 
 
 class LedgerTests(unittest.TestCase):
+    def test_separate_upstream_integration(self):
+        closed = pr(repo="bloomberg/bde", number=315, state="closed")
+        meta = {"upstream_integration": {"commit": "97e399a397287a6fadf63322983c5fb7a8b012e2"}}
+        self.assertEqual(sync.status_of(closed), "closed")
+        self.assertIsNotNone(sync.integrated_upstream(closed, meta))
+        cell = sync.pr_link("bloomberg/bde", closed, meta)
+        self.assertIn("integrated upstream", cell)
+        self.assertIn("97e399a", cell)
+        self.assertNotIn("merge commit", cell)
+        self.assertIsNone(sync.integrated_upstream(pr(), meta))
+        self.assertIsNone(sync.integrated_upstream(closed, {"upstream_integration": {"commit": "bad"}}))
+
+    def test_separate_integration_survives_regeneration(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "data").mkdir()
+            (root / "README.md").write_text(
+                "Header\\n\\n**[View the live contribution ledger →](CONTRIBUTIONS.md)**\\n",
+                encoding="utf-8")
+            meta = {"upstream/library#45": {
+                "what_changed": "Cleanup", "why_it_matters": "Maintenance",
+                "upstream_integration": {"commit": "a" * 40}}}
+            (root / "data" / "contribution_metadata.json").write_text(
+                json.dumps({"entries": meta}))
+            closed = pr(number=45, state="closed")
+            registry = {"schema_version": 1, "entries": {
+                "upstream/library#45": {"repo": "upstream/library", "pr": closed}}}
+            (root / "data" / "contribution_registry.json").write_text(
+                json.dumps(registry))
+            with mock.patch.multiple(sync, ROOT=root,
+                                     METADATA_PATH=root / "data" / "contribution_metadata.json",
+                                     OUTPUT_PATH=root / "CONTRIBUTIONS.md",
+                                     README_PATH=root / "README.md",
+                                     REGISTRY_PATH=root / "data" / "contribution_registry.json"), \\
+                 mock.patch.object(sync, "discover_prs", return_value=[]):
+                sync.main()
+                first = (root / "CONTRIBUTIONS.md").read_bytes()
+                self.assertIn(b"integrated upstream", first)
+                self.assertIn(b"Integrated separately:** 1", first)
+                self.assertIn(b"Merged PRs:** 0", first)
+                sync.main()
+                self.assertEqual(first, (root / "CONTRIBUTIONS.md").read_bytes())
+
     def test_state_classification(self):
         self.assertEqual(sync.status_of(pr(merged=True)), "merged")
         self.assertEqual(sync.status_of(pr(draft=True)), "draft")
