@@ -38,7 +38,7 @@ class LedgerTests(unittest.TestCase):
             root = Path(temp)
             (root / "data").mkdir()
             (root / "README.md").write_text(
-                "Header\\n\\n**[View the live contribution ledger →](CONTRIBUTIONS.md)**\\n",
+                "Header\n\n**[View the live contribution ledger →](CONTRIBUTIONS.md)**\n",
                 encoding="utf-8")
             meta = {"upstream/library#45": {
                 "what_changed": "Cleanup", "why_it_matters": "Maintenance",
@@ -50,12 +50,13 @@ class LedgerTests(unittest.TestCase):
                 "upstream/library#45": {"repo": "upstream/library", "pr": closed}}}
             (root / "data" / "contribution_registry.json").write_text(
                 json.dumps(registry))
-            with mock.patch.multiple(sync, ROOT=root,
-                                     METADATA_PATH=root / "data" / "contribution_metadata.json",
-                                     OUTPUT_PATH=root / "CONTRIBUTIONS.md",
-                                     README_PATH=root / "README.md",
-                                     REGISTRY_PATH=root / "data" / "contribution_registry.json"), \\
-                 mock.patch.object(sync, "discover_prs", return_value=[]):
+            with mock.patch.multiple(
+                    sync, ROOT=root,
+                    METADATA_PATH=root / "data" / "contribution_metadata.json",
+                    OUTPUT_PATH=root / "CONTRIBUTIONS.md",
+                    README_PATH=root / "README.md",
+                    REGISTRY_PATH=root / "data" / "contribution_registry.json"
+            ), mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 first = (root / "CONTRIBUTIONS.md").read_bytes()
                 self.assertIn(b"integrated in upstream/library", first)
