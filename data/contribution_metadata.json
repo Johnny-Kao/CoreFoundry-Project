@@ -106,6 +106,15 @@
         "https://github.com/python-attrs/attrs/pull/1636",
         "https://github.com/python-attrs/attrs/pull/1636#issuecomment-6147132677",
         "https://github.com/python-attrs/attrs/pull/1636#issuecomment-6147332668"
+      ],
+      "related_upstream_commits": [
+        {
+          "repo": "python-attrs/attrs",
+          "commit": "0a08cee06960e415f735dec4cf2fb91d669e2433",
+          "label": "co-authored benchmark",
+          "credit": "Hynek Schlawack authored the upstream benchmark commit and credited Johnny Kao as co-author.",
+          "what_changed": "Added a nested atomic sequence benchmark exercising attrs.astuple, the path optimized in PR #1636."
+        }
       ]
     },
     "dateutil/dateutil#1590": {
