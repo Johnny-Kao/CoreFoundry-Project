@@ -3,10 +3,10 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  **Merged PRs:** 13 | **Integrated separately:** 1 | **Open:** 19 | **Closed:** 4
+  **Merged PRs:** 13 | **Integrated separately:** 1 | **Open:** 20 | **Closed:** 4
 </p>
 
-> **Last synchronized:** 2026-10-20 22:47 UTC
+> **Last synchronized:** 2026-10-22 05:00 UTC
 
 ## Canonical-source policy
 
@@ -54,6 +54,7 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | A proposed NGINX change addressing excessive memory allocation when an upstream sends too many HTTP 103 Early Hints responses. | The PR adds an early return of NGX_HTTP_UPSTREAM_INVALID_HEADER when the configured buffer limit is exceeded, handing the response to existing upstream error handling and retry logic. | The author reports that the official 4,691-test suite and additional boundary and retry tests passed. In the described stress test, the original version showed 183,208 KiB of RSS growth; the patched version showed 44 KiB and stopped after 81 hints. The author notes this is an observed test result, not a universal memory bound. ([source](https://github.com/nginx/nginx/pull/1889)) | The proposed change aims to stop processing oversized Early Hints responses early, avoiding the continued request-pool allocations described in the PR and improving resilience to unexpected upstream behavior. |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | Low-level C++ infrastructure and foundational libraries | Preserved an already-known path length instead of rescanning through c_str() | Targeted appendRaw/popLeaf latency reductions of ~14–73% | Already-known metadata should not be discarded and recomputed on hot paths |
 | **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | A documentation-only pull request clarifying fail-closed behavior for ungated actions in mi-24. | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a matching rule without valid approval (block execution) and from failures in policy evaluation, action resolution, or approval-state determination (fail closed). | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check passed. ([source](https://github.com/finos/ai-governance-framework/pull/415)) | Clarifies that a confirmed non-gated action is different from a failed or indeterminate gating-policy evaluation. |
 | **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | A pull request proposing a performance improvement to attrs' astuple() when processing dictionaries. | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14 upstream native CI jobs passing on a staging fork. ([source](https://github.com/python-attrs/attrs/pull/1646)) | The reported benchmarks indicate faster astuple() processing for dictionaries, especially when their keys and values are atomic. |

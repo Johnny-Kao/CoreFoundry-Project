@@ -117,7 +117,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "74345da37edfd5012afb248d87d5bd1e81cf61da",
+        "merge_commit_sha": "3f2049ac711da670579f39b5949db069c37bf01f",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -142,7 +142,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "958b933a4fb06070f5a1bc6c6db6d68b04da35cb",
+        "merge_commit_sha": "7b0cfc957a305487554ea6f4aa20c3344242c6c8",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -196,7 +196,7 @@
         "number": 315,
         "state": "closed",
         "title": "bslmt_platform: remove stale AIX semaphore policy",
-        "updated_at": "2026-10-20T19:29:11Z"
+        "updated_at": "2026-10-21T11:16:51Z"
       },
       "repo": "bloomberg/bde"
     },
@@ -216,7 +216,7 @@
         "created_at": "2026-10-04T04:52:44Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/317",
-        "merge_commit_sha": "adfdb782c7fd3505747fea5713ab2d942c8f366e",
+        "merge_commit_sha": "a673bc41aa04c48a55428c540110f70abf0a3b71",
         "merged_at": null,
         "number": 317,
         "state": "open",
@@ -241,7 +241,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "b3a82d65a7b88d7544827b8af0d2e5dfd0344c95",
+        "merge_commit_sha": "865adc2da8f70738310f9e81c8c567ce4a1d2b10",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -266,7 +266,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "b549c60bf47a202e269ec2e95669d780777d5b3f",
+        "merge_commit_sha": "8762b0d22b44ded8a793761ba17e32d2b73ff1dc",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -291,7 +291,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "cd5200a42ac3961cbb73c81d8680fa5dae6da6b6",
+        "merge_commit_sha": "4866e25f859aa9fd651ad37aa88561d7b95a9e23",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -366,7 +366,7 @@
         "created_at": "2026-10-01T22:37:44Z",
         "draft": false,
         "html_url": "https://github.com/dateutil/dateutil/pull/1590",
-        "merge_commit_sha": "963d8896b5a479e8f41cd90fb78008ade94e1661",
+        "merge_commit_sha": null,
         "merged_at": null,
         "number": 1590,
         "state": "open",
@@ -391,7 +391,7 @@
         "created_at": "2026-10-17T04:36:15Z",
         "draft": false,
         "html_url": "https://github.com/finos/ai-governance-framework/pull/415",
-        "merge_commit_sha": "c2743b8173c5ae3ca4f5d83970ab339e6f0108bd",
+        "merge_commit_sha": "f0d8f74be781500ed3ee243f3404c74e5a40a111",
         "merged_at": null,
         "number": 415,
         "state": "open",
@@ -425,6 +425,31 @@
       },
       "repo": "kjd/idna"
     },
+    "nginx/nginx#1889": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "nginx"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-22T02:34:41Z",
+        "draft": false,
+        "html_url": "https://github.com/nginx/nginx/pull/1889",
+        "merge_commit_sha": "289995d0a92978878c42744afb0a612c1673e586",
+        "merged_at": null,
+        "number": 1889,
+        "state": "open",
+        "title": "Upstream: reject early hints beyond the configured buffer",
+        "updated_at": "2026-10-22T02:39:12Z"
+      },
+      "repo": "nginx/nginx"
+    },
     "numpy/numpy#32787": {
       "enrichment": {
         "initial": "curated"
@@ -441,7 +466,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "ac721884ac26f63db76c28cffdaf3d75207ee04c",
+        "merge_commit_sha": "8f8591802c64c974dc6bb47eff3f9e8aefed1d24",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -516,7 +541,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "12aacd862068d35e8072e52e2648b8d3d14cebae",
+        "merge_commit_sha": "b6a9c23824d250c7504cb8772563ababda0c2001",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -541,7 +566,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "a5c2ad151cbabd677df60b0739d8f87336168d4c",
+        "merge_commit_sha": "7d193b54ee665b7cc00cfcff55551b77849eb75a",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -818,7 +843,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "bf562a711e4d7fc0d5c71fb690a0f40f739fec8d",
+        "merge_commit_sha": "da730859bb398363014ea44eb986b29d8469ed4d",
         "merged_at": null,
         "number": 26226,
         "state": "open",
