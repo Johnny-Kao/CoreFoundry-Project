@@ -416,12 +416,12 @@
         "created_at": "2026-10-01T11:32:27Z",
         "draft": false,
         "html_url": "https://github.com/kjd/idna/pull/279",
-        "merge_commit_sha": "b0510910661eb14c2f0de1af6bbf15cc26d87d96",
+        "merge_commit_sha": "1ae30f03a18edaf0af3ec32ef44cdbe70e88ec06",
         "merged_at": null,
         "number": 279,
         "state": "open",
         "title": "Optimize ordinary ASCII A-label encoding",
-        "updated_at": "2026-10-19T17:04:14Z"
+        "updated_at": "2026-10-22T09:13:16Z"
       },
       "repo": "kjd/idna"
     },
@@ -466,7 +466,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "8f8591802c64c974dc6bb47eff3f9e8aefed1d24",
+        "merge_commit_sha": "438d34400398fd49eb45ef6d90013b000dce5899",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -566,7 +566,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "7d193b54ee665b7cc00cfcff55551b77849eb75a",
+        "merge_commit_sha": "aaa9de701e5f5e87937b211ac7424c18fdc65bb7",
         "merged_at": null,
         "number": 30177,
         "state": "open",
