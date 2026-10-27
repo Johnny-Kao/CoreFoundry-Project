@@ -312,6 +312,15 @@
         "https://github.com/nginx/nginx/pull/1889#issuecomment-6331297703",
         "https://github.com/nginx/nginx/pull/1889#issuecomment-6331320364"
       ]
+    },
+    "aws/aws-lc#3700": {
+      "what_it_is": "A pull request proposing a faster Linux fork-generation check in AWS-LC.",
+      "what_changed": "Uses shared C11 atomics on the common Linux fast path, retains the write lock for generation updates, and falls back to the original implementation where the required atomics are not lock-free. The PR says it does not change public APIs, the DRBG, entropy sources, or the underlying fork-detection mechanism.",
+      "evidence": "The author reports 14.5% lower time per operation for RAND_bytes(32) with 4 threads and 94.9% lower time for the fork-generation check with 4 threads, based on the median of seven paired runs on a 4-vCPU Linux runner. AWS-LC Minimal and Go tests, concurrent generation checks, and ThreadSanitizer tests passed in the validated scenarios. The author notes that an uncoordinated multithreaded fork stress test stalled intermittently in both builds and was not counted as passing evidence; testing does not prove every fork/VM-clone interleaving.",
+      "why_it_matters": "The proposed change aims to reduce synchronization overhead on a frequently used fork-generation check, including during concurrent RAND_bytes calls.",
+      "source_urls": [
+        "https://github.com/aws/aws-lc/pull/3700"
+      ]
     }
   }
 }

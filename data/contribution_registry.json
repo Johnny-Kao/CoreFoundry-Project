@@ -151,6 +151,31 @@
       },
       "repo": "apple/container"
     },
+    "aws/aws-lc#3700": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "aws"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-27T01:29:36Z",
+        "draft": false,
+        "html_url": "https://github.com/aws/aws-lc/pull/3700",
+        "merge_commit_sha": "0558ebec602ca2081bd031fd34eed5dbff0308a5",
+        "merged_at": null,
+        "number": 3700,
+        "state": "open",
+        "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
+        "updated_at": "2026-10-27T02:00:33Z"
+      },
+      "repo": "aws/aws-lc"
+    },
     "bloomberg/bde#313": {
       "enrichment": {},
       "pr": {
@@ -366,7 +391,7 @@
         "created_at": "2026-10-01T22:37:44Z",
         "draft": false,
         "html_url": "https://github.com/dateutil/dateutil/pull/1590",
-        "merge_commit_sha": "0c5e7a4bace7be4670062a911acc9d7f93cd3efa",
+        "merge_commit_sha": "4251ca11a519b5707fdf8a2b98427e18ff0b734e",
         "merged_at": null,
         "number": 1590,
         "state": "open",
@@ -391,12 +416,12 @@
         "created_at": "2026-10-17T04:36:15Z",
         "draft": false,
         "html_url": "https://github.com/finos/ai-governance-framework/pull/415",
-        "merge_commit_sha": "f0d8f74be781500ed3ee243f3404c74e5a40a111",
+        "merge_commit_sha": "6267bde32c9a576af26f1b5effb4dd5e66015c72",
         "merged_at": null,
         "number": 415,
         "state": "open",
         "title": "docs(mi-24): Clarify fail-closed behavior for ungated actions",
-        "updated_at": "2026-10-20T11:08:38Z"
+        "updated_at": "2026-10-27T05:13:08Z"
       },
       "repo": "finos/ai-governance-framework"
     },
@@ -466,7 +491,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "85dad3a318edfc01f53fd799caac64b8a197c29f",
+        "merge_commit_sha": "6970fc0716fae7c8aa1e1beba3b949b79877418b",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -843,7 +868,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "24bb446340139dbef317320389ed247cf2efbf2c",
+        "merge_commit_sha": "041af31801a7e7ce83476931065924798797c3ba",
         "merged_at": null,
         "number": 26226,
         "state": "open",
