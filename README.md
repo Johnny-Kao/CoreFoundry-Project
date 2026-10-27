@@ -1,4 +1,6 @@
-<h1 align="center">⚙️ CoreFoundry Project</h1>
+<p align="center">
+  <img src="assets/corefoundry-readme-banner.jpg" alt="CoreFoundry — Independent open-source contributions: performance, reliability, and security" width="100%">
+</p>
 
 <p align="center">
   <strong>Improve the foundations before increasing the resources.</strong>
