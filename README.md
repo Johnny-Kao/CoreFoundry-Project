@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/corefoundry-readme-banner.jpg" alt="CoreFoundry — Independent open-source contributions: performance, reliability, and security" width="100%">
+  <img src="assets/corefoundry-readme-banner.jpg" alt="CoreFoundry Project — Independent open-source infrastructure contributions focused on software performance, reliability, cybersecurity, and resilient computing systems." width="100%">
 </p>
 
 <p align="center">
