@@ -85,6 +85,12 @@ If you share this view, there are two useful ways to help:
 
 **LZ4 attribution and evidence:** Johnny Kao authored and publicly supplied the exact merged code in [lz4 issue #1858](https://github.com/lz4/lz4/issues/1858), with his original cross-platform benchmark measurements. Another contributor submitted that code unchanged as [PR #1927](https://github.com/lz4/lz4/pull/1927), which was merged upstream. The [public attribution note](https://github.com/lz4/lz4/pull/1927#issuecomment-6406029416) records this provenance. Johnny is **not** claimed as the PR submitter or a Git commit co-author. The measurements above are from Johnny's original tests, not a universal production speedup. No temporary research repository or CI-run links are needed to preserve this record.
 
+## 🔐 Security vulnerability discoveries
+
+**[CVE-2026-115529 — curl Schannel TLS session resumption](SECURITY_RESEARCH.md)** — **Originally discovered and reported by Johnny Kao** on 2026-10-22. Johnny provided reproducible Schannel/TLS test evidence and identified the 8.12.0 regression. curl accepted the report, assigned a CVE, and committed a fix with explicit `Reported-by: Johnny Kao` credit. Severity: Low (upstream assessment). The HackerOne report was fully disclosed on 2026-10-26; formal advisory and curl 8.24.0 remain scheduled for 2026-12-09. [Original report](https://hackerone.com/reports/4136767) · [Upstream fix](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) · [Advisory draft](https://github.com/curl/curl-www/pull/665).
+
+---
+
 ## 🧩 Other selected upstream work
 
 | Project / PR | What it is | What changed | Measured / practical impact | Why this matters |
