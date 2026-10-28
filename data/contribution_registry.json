@@ -167,7 +167,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "0558ebec602ca2081bd031fd34eed5dbff0308a5",
+        "merge_commit_sha": "3d2195f1f49d71dafa50a0201c2be2bd5b67232a",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -227,7 +227,8 @@
     },
     "bloomberg/bde#317": {
       "enrichment": {
-        "initial": "curated"
+        "initial": "curated",
+        "terminal_revision": "2026-10-28T04:35:53Z"
       },
       "pr": {
         "base": {
@@ -237,16 +238,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-28T04:35:53Z",
         "created_at": "2026-10-04T04:52:44Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/317",
-        "merge_commit_sha": "02453eff9248c47a57e8c171f475f05bc7b5d45a",
+        "merge_commit_sha": "57cc43bfda19b26999d01a6bf222934f984d2a83",
         "merged_at": null,
         "number": 317,
-        "state": "open",
+        "state": "closed",
         "title": "bdls_pathutil: preserve known path length in mutable path helpers",
-        "updated_at": "2026-10-20T22:05:41Z"
+        "updated_at": "2026-10-28T04:35:53Z"
       },
       "repo": "bloomberg/bde"
     },
@@ -266,7 +267,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "0d36ca53cd662a240c99606c46f6dabc794daa14",
+        "merge_commit_sha": "19ef40297969aec1d179262f2142e7b63c6ab817",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -366,7 +367,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "814232dc6935a7fd6ab9f7893be7e0f12c9ad0d0",
+        "merge_commit_sha": "c1f458e85a446ea40035fac3dbecb06d08f339ea",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -466,7 +467,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "f8a6f023b447d6135819b083dfdc948ca27a8988",
+        "merge_commit_sha": "98133ac5c333685bb07fb5691dd11ec55499146c",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -566,7 +567,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "5c49781b8a034bc502bc9b3c98cd46f4fc65a1c6",
+        "merge_commit_sha": "7317b6f5eec68caeb410b6890b5f347352cc7dfa",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -591,12 +592,12 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "321a1f6e29e68d29b55cf07ed17b78a6e03489fd",
+        "merge_commit_sha": "6bc52987028ef2dfd3bf8ad3e31fa32b0af41690",
         "merged_at": null,
         "number": 30177,
         "state": "open",
         "title": "videoio: add zero-copy BGRA retrieval for AVFoundation 🤖🤖🤖",
-        "updated_at": "2026-10-19T16:54:13Z"
+        "updated_at": "2026-10-27T14:53:44Z"
       },
       "repo": "opencv/opencv"
     },
@@ -768,7 +769,7 @@
         "created_at": "2026-10-01T00:16:30Z",
         "draft": false,
         "html_url": "https://github.com/python-cffi/cffi/pull/282",
-        "merge_commit_sha": "b62221f595212255351c1da582faabab98d52c76",
+        "merge_commit_sha": "bf169c33b4338194cc3b1c1f4caefd565d69f0cf",
         "merged_at": null,
         "number": 282,
         "state": "open",

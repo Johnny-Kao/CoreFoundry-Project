@@ -136,10 +136,17 @@
       "why_it_matters": "Allocator growth history can create hidden performance cliffs even after obvious temporary allocations are removed"
     },
     "bloomberg/bde#317": {
-      "what_it_is": "Low-level C++ infrastructure and foundational libraries",
-      "what_changed": "Preserved an already-known path length instead of rescanning through c_str()",
-      "evidence": "Targeted appendRaw/popLeaf latency reductions of ~14–73%",
-      "why_it_matters": "Already-known metadata should not be discarded and recomputed on hot paths"
+      "what_it_is": "A small optimization to BDE's bdls_pathutil mutable path helpers.",
+      "what_changed": "The appendRaw and popLeaf helpers now preserve the path string's known length when calling hasLeaf, rather than passing c_str() and triggering a length rescan. The PR reports no public API or ABI change. Review discussion suggested simplifying the calls by passing the string directly; the author confirmed the length-aware conversion and revised accordingly.",
+      "evidence": "The PR reports median latency reductions of 14–65% for appendRaw and 38–73% for popLeaf across tested path lengths and root modes; these are microbenchmark results, not end-to-end application speedups. It also reports Ubuntu bdls package tests (15/15) and a Windows regression passing. A reviewer asked about passing the string directly, and the author confirmed revising the calls as suggested. A comment says the change was merged via an internal repository.",
+      "why_it_matters": "Avoiding a redundant path-length scan reduces work in both helpers, with larger reported gains on longer paths. The change also aligns these calls with length-aware parsing and avoids the prior embedded-NUL inconsistency described in the PR.",
+      "source_urls": [
+        "https://github.com/bloomberg/bde/pull/317",
+        "https://github.com/bloomberg/bde/pull/317#discussion_r4329441132",
+        "https://github.com/bloomberg/bde/pull/317#discussion_r4330818475",
+        "https://github.com/bloomberg/bde/pull/317#issuecomment-6302814084",
+        "https://github.com/bloomberg/bde/pull/317#issuecomment-6460765970"
+      ]
     },
     "bloomberg/bde#315": {
       "what_it_is": "A pull request to remove the obsolete AIX semaphore-policy branch from BDE’s bslmt_platform.h.",
