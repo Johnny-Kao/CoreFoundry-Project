@@ -354,13 +354,16 @@
       ]
     },
     "quickfix-j/quickfixj#1363": {
-      "what_it_is": "A QuickFIX/J pull request fixing synchronous writes being reported as successful when the underlying write fails.",
-      "what_changed": "Checks MINA’s WriteFuture.isWritten() after awaiting completion before returning true. The author says asynchronous behavior and timeout handling are unchanged.",
-      "evidence": "The author describes the failure case and says a regression test was added for a completed but failed write. They report all 9 GitHub Actions test configurations passed; a reviewer said, “Looks fine.”",
-      "why_it_matters": "Callers of synchronous send() can avoid treating a failed write as successful.",
+      "what_it_is": "FIX financial-messaging transport in QuickFIX/J; merged upstream correctness fix.",
+      "what_changed": "After a synchronous MINA WriteFuture finishes awaiting, IoSessionResponder.send() now checks isWritten() before reporting success. A completed-but-failed write returns false; asynchronous and timeout paths remain unchanged.",
+      "evidence": "Targeted regression test checks a completed-but-failed write. The author reports 9/9 successful fork Maven CI jobs on Ubuntu, Windows and macOS 15 with Java 8/11/21. Reviewed and approved by the-thing; merged by chrjohn on 2026-10-29 UTC. No production incident rate, remote-peer receipt proof or performance gain measured.",
+      "why_it_matters": "The synchronous send result now reflects local write success rather than mere Future completion, preserving the caller-facing result contract with a three-line implementation change.",
       "source_urls": [
         "https://github.com/quickfix-j/quickfixj/pull/1363",
-        "https://github.com/quickfix-j/quickfixj/pull/1363#pullrequestreview-5696376949"
+        "https://github.com/quickfix-j/quickfixj/commit/b25838e4245b332951cc13f32b6cf3b00d4ac9ed",
+        "https://github.com/quickfix-j/quickfixj/pull/1363#pullrequestreview-5696376949",
+        "https://github.com/Johnny-Kao/quickfixj/actions/runs/40845131391",
+        "https://github.com/quickfix-j/quickfixj/pull/1363#issuecomment-6502776204"
       ]
     },
     "finos/FDC3#2341": {
