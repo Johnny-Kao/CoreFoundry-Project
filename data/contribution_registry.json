@@ -267,7 +267,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "19ef40297969aec1d179262f2142e7b63c6ab817",
+        "merge_commit_sha": "8928f1566052eced0d76372b7ee471555109dd9e",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -831,7 +831,8 @@
     },
     "quickfix-j/quickfixj#1363": {
       "enrichment": {
-        "initial": "completed"
+        "initial": "completed",
+        "terminal_revision": "2026-10-29T16:20:38Z"
       },
       "pr": {
         "base": {
@@ -841,16 +842,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-29T16:20:38Z",
         "created_at": "2026-10-29T09:53:45Z",
         "draft": false,
         "html_url": "https://github.com/quickfix-j/quickfixj/pull/1363",
-        "merge_commit_sha": "b561ed3aba17f68adc9724e7e01f6b17dc9bc7ad",
-        "merged_at": null,
+        "merge_commit_sha": "b25838e4245b332951cc13f32b6cf3b00d4ac9ed",
+        "merged_at": "2026-10-29T16:20:38Z",
         "number": 1363,
-        "state": "open",
+        "state": "closed",
         "title": "Fix failed synchronous writes being reported as successful",
-        "updated_at": "2026-10-29T10:40:16Z"
+        "updated_at": "2026-10-29T16:46:19Z"
       },
       "repo": "quickfix-j/quickfixj"
     },
