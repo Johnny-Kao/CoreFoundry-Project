@@ -92,10 +92,26 @@
       "why_it_matters": "Native-boundary overhead can be reduced without replacing the mature general path"
     },
     "kjd/idna#279": {
-      "what_it_is": "Unicode domain-name / IDNA infrastructure",
-      "what_changed": "Added a standards-preserving fast path for ordinary non-ACE ASCII labels",
-      "evidence": "~80–85% lower execution time for tested ordinary ASCII domains",
-      "why_it_matters": "Locally provable ASCII invariants can avoid unnecessary Unicode validation work"
+      "what_it_is": "IDNA domain-label validation and ASCII fast-path research",
+      "what_changed": "Proposed and extensively validated an alabel() fast path for ordinary non-ACE ASCII LDH labels. The maintainer separately reimplemented the underlying idea in check_label() via #287 (also crediting #286), merged 2026-10-29. Original #279 was closed without merge; its patch was not incorporated.",
+      "evidence": "Original #279 candidate: 79.5–85.1% lower execution time for two tested ordinary ASCII encode() workloads; differential and boundary testing found no behavioral mismatches. The numbers are not measurements of the merged #287.",
+      "why_it_matters": "A documented hot-path optimization was incorporated upstream through a simpler maintainer-authored implementation, showing both the value of verified performance research and the maintenance trade-off between fast-path placement and code simplicity.",
+      "include_closed": true,
+      "source_urls": [
+        "https://github.com/kjd/idna/pull/279",
+        "https://github.com/kjd/idna/pull/279#issuecomment-6498679666",
+        "https://github.com/kjd/idna/pull/287",
+        "https://github.com/kjd/idna/commit/605884450001cb08c71ab04433c2581f25ca347c"
+      ],
+      "related_upstream_commits": [
+        {
+          "repo": "kjd/idna",
+          "commit": "605884450001cb08c71ab04433c2581f25ca347c",
+          "label": "related maintainer-authored fast path",
+          "credit": "Maintainer's independent #287 implementation explicitly cites the optimization sought by #279 and #286. Original #279 was closed unmerged; no authorship of #287 is claimed.",
+          "what_changed": "Added an early return for plain lowercase LDH labels inside check_label(), rather than using #279's alabel() patch."
+        }
+      ]
     },
     "python-attrs/attrs#1636": {
       "what_it_is": "A performance improvement for `attrs.astuple()` when traversing nested sequences containing atomic values.",
