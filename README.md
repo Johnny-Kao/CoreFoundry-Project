@@ -100,6 +100,7 @@ If you share this view, there are two useful ways to help:
 
 | Project / PR | What it is | What changed | Measured / practical impact | Why this matters |
 |---|---|---|---:|---|
+| **[QuickFIX/J #1363](https://github.com/quickfix-j/quickfixj/pull/1363)** | FIX financial-messaging transport | Corrected synchronous `IoSessionResponder.send()` to distinguish a completed MINA `WriteFuture` from a successfully written one | **Merged correctness fix**; regression coverage and **9/9 fork CI jobs passed** (Java 8/11/21 × Linux/Windows/macOS) | Prevents completed-but-failed synchronous writes from being reported as successful, without changing asynchronous or timeout behavior |
 | **[NumPy #32802](https://github.com/numpy/numpy/pull/32802)** | Foundational numerical-computing library | Fixed undefined shift behavior | **Correctness fix** | Low-level correctness bugs can affect a very large downstream dependency graph |
 | **[SciPy #26225](https://github.com/scipy/scipy/pull/26225)** | Scientific-computing algorithms and numerical methods | Improved bracketing-solver iteration statistics | **More accurate solver accounting** | Better internal accounting improves reliability and makes behavior easier to reason about |
 | **[python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)** | Compressed-array and data infrastructure | Improved free-threaded Python correctness | **Concurrency readiness** | Infrastructure must remain correct as Python moves toward broader free-threaded execution |
