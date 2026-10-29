@@ -328,6 +328,15 @@
       "source_urls": [
         "https://github.com/aws/aws-lc/pull/3700"
       ]
+    },
+    "scionproto/scion#5011": {
+      "what_it_is": "A proposed SCION Gateway optimization to packet five-tuple hashing.",
+      "what_changed": "Replaces a temporary slice with a fixed-size stack buffer while retaining CRC64 hashing and path selection.",
+      "evidence": "The author reports controlled encoder tests reduced allocations from 4 to 1 per packet and wall time by about 9–11% across tested workloads. IPv4/IPv6 regression tests, Linux Gateway tests, the race detector, and Go vet passed. The benchmarks cover SIG frame encoding, not end-to-end network throughput.",
+      "why_it_matters": "The change targets avoidable heap allocations in the multi-path packet-processing path without changing packet behavior or wire format.",
+      "source_urls": [
+        "https://github.com/scionproto/scion/pull/5011"
+      ]
     }
   }
 }

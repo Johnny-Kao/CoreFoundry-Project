@@ -142,7 +142,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "576e09dde431b9c2967c6766323725e6ad0cfbaf",
+        "merge_commit_sha": "3807f92671a40449e828f5296986cb61086a9724",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -167,7 +167,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "3d2195f1f49d71dafa50a0201c2be2bd5b67232a",
+        "merge_commit_sha": "d1728ddda794b5a26556f6993d9794c641e4887e",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -367,7 +367,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "c1f458e85a446ea40035fac3dbecb06d08f339ea",
+        "merge_commit_sha": "cfbe9c47e493239c3508ff1d419f9c72458ba5b4",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -467,7 +467,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "98133ac5c333685bb07fb5691dd11ec55499146c",
+        "merge_commit_sha": "bf81de18960bf3960fc8333ebeffe77277780d59",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -592,7 +592,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "6bc52987028ef2dfd3bf8ad3e31fa32b0af41690",
+        "merge_commit_sha": "1aeb45d1b1a506e85c40d332a8e985bcb4e8b5b5",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -827,6 +827,31 @@
         "updated_at": "2026-10-08T03:13:51Z"
       },
       "repo": "scientific-python/blog.scientific-python.org"
+    },
+    "scionproto/scion#5011": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "scionproto"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-28T22:23:02Z",
+        "draft": false,
+        "html_url": "https://github.com/scionproto/scion/pull/5011",
+        "merge_commit_sha": "70f68fdf31ebadecbda4867dd59464609e82155f",
+        "merged_at": null,
+        "number": 5011,
+        "state": "open",
+        "title": "gateway: avoid allocations in packet flow hashing",
+        "updated_at": "2026-10-28T23:31:35Z"
+      },
+      "repo": "scionproto/scion"
     },
     "scipy/scipy#26225": {
       "enrichment": {
