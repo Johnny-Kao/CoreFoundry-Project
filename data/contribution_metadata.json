@@ -160,8 +160,16 @@
         "https://github.com/bloomberg/bde/pull/317#discussion_r4329441132",
         "https://github.com/bloomberg/bde/pull/317#discussion_r4330818475",
         "https://github.com/bloomberg/bde/pull/317#issuecomment-6302814084",
-        "https://github.com/bloomberg/bde/pull/317#issuecomment-6460765970"
-      ]
+        "https://github.com/bloomberg/bde/pull/317#issuecomment-6460765970",
+        "https://github.com/bloomberg/bde/commit/76f43d2b2b6b327095a24ff839277b1c655a1775"
+      ],
+      "upstream_integration": {
+        "commit": "76f43d2b2b6b327095a24ff839277b1c655a1775",
+        "original_patch": "identical",
+        "credit": "Co-authored-by: Johnny Kao; identical source patch verified against original PR #317",
+        "via": "Internal PR #6035",
+        "repo": "bloomberg/bde"
+      }
     },
     "bloomberg/bde#315": {
       "what_it_is": "A pull request to remove the obsolete AIX semaphore-policy branch from BDE’s bslmt_platform.h.",
