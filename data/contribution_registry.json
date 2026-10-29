@@ -401,6 +401,31 @@
       },
       "repo": "dateutil/dateutil"
     },
+    "finos/FDC3#2341": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "finos"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-29T06:42:07Z",
+        "draft": false,
+        "html_url": "https://github.com/finos/FDC3/pull/2341",
+        "merge_commit_sha": "7c28a94b4eb84547ad954db30caa1b9dc70dd3f0",
+        "merged_at": null,
+        "number": 2341,
+        "state": "open",
+        "title": "fix(get-agent): allow retry after failover rejection",
+        "updated_at": "2026-10-29T07:02:43Z"
+      },
+      "repo": "finos/FDC3"
+    },
     "finos/ai-governance-framework#415": {
       "enrichment": {
         "initial": "completed"
@@ -428,7 +453,8 @@
     },
     "kjd/idna#279": {
       "enrichment": {
-        "initial": "curated"
+        "initial": "curated",
+        "terminal_revision": "2026-10-29T14:20:12Z"
       },
       "pr": {
         "base": {
@@ -438,16 +464,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-10-29T14:20:12Z",
         "created_at": "2026-10-01T11:32:27Z",
         "draft": false,
         "html_url": "https://github.com/kjd/idna/pull/279",
         "merge_commit_sha": "1ae30f03a18edaf0af3ec32ef44cdbe70e88ec06",
         "merged_at": null,
         "number": 279,
-        "state": "open",
+        "state": "closed",
         "title": "Optimize ordinary ASCII A-label encoding",
-        "updated_at": "2026-10-22T09:13:16Z"
+        "updated_at": "2026-10-29T14:26:14Z"
       },
       "repo": "kjd/idna"
     },
@@ -802,6 +828,31 @@
         "updated_at": "2026-10-14T01:06:06Z"
       },
       "repo": "python-hyper/h11"
+    },
+    "quickfix-j/quickfixj#1363": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "quickfix-j"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-29T09:53:45Z",
+        "draft": false,
+        "html_url": "https://github.com/quickfix-j/quickfixj/pull/1363",
+        "merge_commit_sha": "b561ed3aba17f68adc9724e7e01f6b17dc9bc7ad",
+        "merged_at": null,
+        "number": 1363,
+        "state": "open",
+        "title": "Fix failed synchronous writes being reported as successful",
+        "updated_at": "2026-10-29T10:40:16Z"
+      },
+      "repo": "quickfix-j/quickfixj"
     },
     "scientific-python/blog.scientific-python.org#277": {
       "enrichment": {

@@ -92,16 +92,15 @@
       "why_it_matters": "Native-boundary overhead can be reduced without replacing the mature general path"
     },
     "kjd/idna#279": {
-      "what_it_is": "IDNA domain-label validation and ASCII fast-path research",
-      "what_changed": "Proposed and extensively validated an alabel() fast path for ordinary non-ACE ASCII LDH labels. The maintainer separately reimplemented the underlying idea in check_label() via #287 (also crediting #286), merged 2026-10-29. Original #279 was closed without merge; its patch was not incorporated.",
-      "evidence": "Original #279 candidate: 79.5–85.1% lower execution time for two tested ordinary ASCII encode() workloads; differential and boundary testing found no behavioral mismatches. The numbers are not measurements of the merged #287.",
-      "why_it_matters": "A documented hot-path optimization was incorporated upstream through a simpler maintainer-authored implementation, showing both the value of verified performance research and the maintenance trade-off between fast-path placement and code simplicity.",
+      "what_it_is": "A proposal to speed up ordinary ASCII domain-label encoding in kjd/idna.",
+      "what_changed": "The PR adds a fast path in alabel() for non-ACE ASCII labels containing only letters, digits, and hyphens, with length and hyphen checks. Other labels continue through the existing validation path.",
+      "evidence": "The author reports 79.5–85.1% lower execution time on two ordinary ASCII encode workloads and no behavioral mismatches in differential testing. The maintainer said they would not accept this PR as-is, describing it as overly complicated, and implemented the underlying concept in #287.",
+      "why_it_matters": "The proposal aims to avoid unnecessary Unicode validation for ordinary ASCII labels while preserving the existing path for ACE, Unicode, and other inputs. The maintainer's response indicates the concept was carried forward in a separate implementation.",
       "include_closed": true,
       "source_urls": [
         "https://github.com/kjd/idna/pull/279",
-        "https://github.com/kjd/idna/pull/279#issuecomment-6498679666",
-        "https://github.com/kjd/idna/pull/287",
-        "https://github.com/kjd/idna/commit/605884450001cb08c71ab04433c2581f25ca347c"
+        "https://github.com/kjd/idna/pull/279#issuecomment-5930607674",
+        "https://github.com/kjd/idna/pull/279#issuecomment-6498679666"
       ],
       "related_upstream_commits": [
         {
@@ -352,6 +351,25 @@
       "why_it_matters": "The change targets avoidable heap allocations in the multi-path packet-processing path without changing packet behavior or wire format.",
       "source_urls": [
         "https://github.com/scionproto/scion/pull/5011"
+      ]
+    },
+    "quickfix-j/quickfixj#1363": {
+      "what_it_is": "A QuickFIX/J pull request fixing synchronous writes being reported as successful when the underlying write fails.",
+      "what_changed": "Checks MINA’s WriteFuture.isWritten() after awaiting completion before returning true. The author says asynchronous behavior and timeout handling are unchanged.",
+      "evidence": "The author describes the failure case and says a regression test was added for a completed but failed write. They report all 9 GitHub Actions test configurations passed; a reviewer said, “Looks fine.”",
+      "why_it_matters": "Callers of synchronous send() can avoid treating a failed write as successful.",
+      "source_urls": [
+        "https://github.com/quickfix-j/quickfixj/pull/1363",
+        "https://github.com/quickfix-j/quickfixj/pull/1363#pullrequestreview-5696376949"
+      ]
+    },
+    "finos/FDC3#2341": {
+      "what_it_is": "A fix for retrying getAgent() after a failover function rejects.",
+      "what_changed": "Clears the cached promise after failover rejection, so a later call can retry. Adds a regression test and updates CHANGELOG.md.",
+      "evidence": "The PR reports a failure-then-success retry test and passing local build, TypeScript, Vitest, and ESLint checks.",
+      "why_it_matters": "A rejected failover no longer leaves subsequent getAgent() calls blocked by the cached rejected promise.",
+      "source_urls": [
+        "https://github.com/finos/FDC3/pull/2341"
       ]
     }
   }
