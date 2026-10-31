@@ -379,6 +379,33 @@
       "source_urls": [
         "https://github.com/finos/FDC3/pull/2341"
       ]
+    },
+    "PX4/PX4-Autopilot#29537": {
+      "what_it_is": "A PX4-Autopilot fix for mission-upload timeout handling.",
+      "what_changed": "The upload timestamp is now updated only after checking that the MISSION_COUNT sender matches the active upload, so rejected counts from another sender do not refresh its timeout.",
+      "evidence": "The PR reports that disarmed PX4 SITL testing on GitHub Actions reproduced the issue before the patch and verified timeout recovery and a new upload afterward.",
+      "why_it_matters": "A different sender repeatedly transmitting mission counts could otherwise keep a stalled upload alive beyond the 5-second timeout and block new uploads.",
+      "source_urls": [
+        "https://github.com/PX4/PX4-Autopilot/pull/29537"
+      ]
+    },
+    "lballabio/QuantLib#2980": {
+      "what_it_is": "A change to avoid duplicate kernel evaluations in QuantLib's KernelInterpolation.",
+      "what_changed": "KernelInterpolation::value() reuses each kernel value for both the weighted sum and normalization, reducing evaluations from 2N to N without changing the public API or interpolation formula.",
+      "evidence": "The PR reports that staging builds and interpolation tests passed on Linux, macOS, and Windows, and that the full QuantLib test suite passed on Linux. It also reports benchmark speedups of 1.70x (5 nodes), 1.83x (10), 1.91x (20), and 1.94x (40), using 100,000 evaluations per run and the five-run median.",
+      "why_it_matters": "Reusing kernel values avoids repeated calculations while preserving the existing interpolation behavior and API.",
+      "source_urls": [
+        "https://github.com/lballabio/QuantLib/pull/2980"
+      ]
+    },
+    "nasa/fprime#6292": {
+      "what_it_is": "A pull request proposing a fix for aggregate high-water mark tracking in F Prime's PriorityMemQueue.",
+      "what_changed": "The change tracks shared queue occupancy across priorities, updates the high-water mark on enqueue and dequeue, checks that total configured capacity fits in U32, and adds regression tests for multiple priorities and concurrent producers.",
+      "evidence": "The author says the existing behavior could report 4 messages when two priorities hold 3 and 4, rather than the aggregate 7. The author reports 7/7 jobs passed in both Framework CI and Reference CI, including TSan and Linux/macOS integration tests, while noting that passing tests do not establish exhaustive concurrency correctness.",
+      "why_it_matters": "The author says underreporting makes the high-water mark less useful for capacity monitoring; per-priority sampling can also be unreliable when sends and receives overlap.",
+      "source_urls": [
+        "https://github.com/nasa/fprime/pull/6292"
+      ]
     }
   }
 }

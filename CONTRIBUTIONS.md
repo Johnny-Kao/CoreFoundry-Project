@@ -3,10 +3,10 @@
 A live public record of upstream open-source work tracked by CoreFoundry.
 
 <p align="center">
-  **Merged PRs:** 14 | **Integrated separately:** 2 | **Open:** 21 | **Closed:** 5
+  **Merged PRs:** 14 | **Integrated separately:** 2 | **Open:** 25 | **Closed:** 5
 </p>
 
-> **Last synchronized:** 2026-10-30 05:57 UTC
+> **Last synchronized:** 2026-10-31 05:54 UTC
 
 ## Canonical-source policy
 
@@ -56,6 +56,10 @@ flowchart LR
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
 |---|---|---|---:|---|
+| **[PX4/PX4-Autopilot #29537](https://github.com/PX4/PX4-Autopilot/pull/29537)** | A PX4-Autopilot fix for mission-upload timeout handling. | The upload timestamp is now updated only after checking that the MISSION_COUNT sender matches the active upload, so rejected counts from another sender do not refresh its timeout. | The PR reports that disarmed PX4 SITL testing on GitHub Actions reproduced the issue before the patch and verified timeout recovery and a new upload afterward. ([source](https://github.com/PX4/PX4-Autopilot/pull/29537)) | A different sender repeatedly transmitting mission counts could otherwise keep a stalled upload alive beyond the 5-second timeout and block new uploads. |
+| **[lballabio/QuantLib #2980](https://github.com/lballabio/QuantLib/pull/2980)** | A change to avoid duplicate kernel evaluations in QuantLib's KernelInterpolation. | KernelInterpolation::value() reuses each kernel value for both the weighted sum and normalization, reducing evaluations from 2N to N without changing the public API or interpolation formula. | The PR reports that staging builds and interpolation tests passed on Linux, macOS, and Windows, and that the full QuantLib test suite passed on Linux. It also reports benchmark speedups of 1.70x (5 nodes), 1.83x (10), 1.91x (20), and 1.94x (40), using 100,000 evaluations per run and the five-run median. ([source](https://github.com/lballabio/QuantLib/pull/2980)) | Reusing kernel values avoids repeated calculations while preserving the existing interpolation behavior and API. |
+| **[nasa/fprime #6292](https://github.com/nasa/fprime/pull/6292)** | A pull request proposing a fix for aggregate high-water mark tracking in F Prime's PriorityMemQueue. | The change tracks shared queue occupancy across priorities, updates the high-water mark on enqueue and dequeue, checks that total configured capacity fits in U32, and adds regression tests for multiple priorities and concurrent producers. | The author says the existing behavior could report 4 messages when two priorities hold 3 and 4, rather than the aggregate 7. The author reports 7/7 jobs passed in both Framework CI and Reference CI, including TSan and Linux/macOS integration tests, while noting that passing tests do not establish exhaustive concurrency correctness. ([source](https://github.com/nasa/fprime/pull/6292)) | The author says underreporting makes the high-water mark less useful for capacity monitoring; per-priority sampling can also be unreliable when sends and receives overlap. |
+| **[nasa/fprime #6294](https://github.com/nasa/fprime/pull/6294)** | fprime | Svc/FileWorker: Report checksum sidecar write failures | — | — |
 | **[bloomberg/blazingmq #1806](https://github.com/bloomberg/blazingmq/pull/1806)** | Enterprise messaging infrastructure | Separated key-building storage from final canonical-string storage | Most targeted PR2-vs-PR1 comparisons improved in final staged validation | Allocator growth history can create hidden performance cliffs even after obvious temporary allocations are removed |
 | **[bloomberg/blazingmq #1803](https://github.com/bloomberg/blazingmq/pull/1803)** | Enterprise messaging infrastructure | Removed temporary schema-key string construction | 120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation | Temporary allocation on a repeated schema path can dominate otherwise small work |
 | **[finos/FDC3 #2341](https://github.com/finos/FDC3/pull/2341)** | A fix for retrying getAgent() after a failover function rejects. | Clears the cached promise after failover rejection, so a later call can retry. Adds a regression test and updates CHANGELOG.md. | The PR reports a failure-then-success retry test and passing local build, TypeScript, Vitest, and ESLint checks. ([source](https://github.com/finos/FDC3/pull/2341)) | A rejected failover no longer leaves subsequent getAgent() calls blocked by the cached rejected promise. |

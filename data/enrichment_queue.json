@@ -2,6 +2,11 @@
   "deferred": 0,
   "events": [
     {
+      "key": "nasa/fprime#6294",
+      "phase": "initial",
+      "url": "https://github.com/nasa/fprime/pull/6294"
+    },
+    {
       "key": "bloomberg/bde#313",
       "phase": "initial",
       "url": "https://github.com/bloomberg/bde/pull/313"

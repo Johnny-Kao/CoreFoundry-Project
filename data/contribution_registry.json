@@ -101,6 +101,31 @@
       },
       "repo": "Blosc/python-blosc2"
     },
+    "PX4/PX4-Autopilot#29537": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "PX4"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-31T05:04:40Z",
+        "draft": false,
+        "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
+        "merge_commit_sha": "36a69a5a61f1b67e688f3c1fa54c1f9a7bb3c793",
+        "merged_at": null,
+        "number": 29537,
+        "state": "open",
+        "title": "fix(mavlink): ignore foreign mission counts for upload timeout",
+        "updated_at": "2026-10-31T05:34:39Z"
+      },
+      "repo": "PX4/PX4-Autopilot"
+    },
     "apple/container#2292": {
       "enrichment": {
         "initial": "curated"
@@ -292,7 +317,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "14a6ddd425df3ce51bb09b38ca1bf8a25ead07d8",
+        "merge_commit_sha": "20dae40863a875dd32be8339c07b7576539ad5f6",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -317,12 +342,12 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "f60d1791a20e2dee5fa2d8f4b86ee2cc088857fa",
+        "merge_commit_sha": "9c90fa43f0b8956da8d507df53215e335e4f040b",
         "merged_at": null,
         "number": 1806,
         "state": "open",
         "title": "Perf[bmqp]: stabilize schema key growth",
-        "updated_at": "2026-10-29T17:40:04Z"
+        "updated_at": "2026-10-30T08:35:24Z"
       },
       "repo": "bloomberg/blazingmq"
     },
@@ -476,6 +501,79 @@
         "updated_at": "2026-10-29T14:26:14Z"
       },
       "repo": "kjd/idna"
+    },
+    "lballabio/QuantLib#2980": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "lballabio"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-30T14:02:27Z",
+        "draft": false,
+        "html_url": "https://github.com/lballabio/QuantLib/pull/2980",
+        "merge_commit_sha": "59b9d9bfa601100782d5a29e99d927da76325a85",
+        "merged_at": null,
+        "number": 2980,
+        "state": "open",
+        "title": "Avoid duplicate kernel evaluations in KernelInterpolation",
+        "updated_at": "2026-10-30T14:03:06Z"
+      },
+      "repo": "lballabio/QuantLib"
+    },
+    "nasa/fprime#6292": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "nasa"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-30T11:25:23Z",
+        "draft": false,
+        "html_url": "https://github.com/nasa/fprime/pull/6292",
+        "merge_commit_sha": "deba6d1a07e5fc92e95d38e68af9c30891ffe8db",
+        "merged_at": null,
+        "number": 6292,
+        "state": "open",
+        "title": "Os/Generic: Fix aggregate high-water mark tracking in PriorityMemQueue",
+        "updated_at": "2026-10-30T13:03:23Z"
+      },
+      "repo": "nasa/fprime"
+    },
+    "nasa/fprime#6294": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "nasa"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-30T11:35:54Z",
+        "draft": false,
+        "html_url": "https://github.com/nasa/fprime/pull/6294",
+        "merge_commit_sha": "267201c5430ef0401dc7b4c828ffa879b3f6bffb",
+        "merged_at": null,
+        "number": 6294,
+        "state": "open",
+        "title": "Svc/FileWorker: Report checksum sidecar write failures",
+        "updated_at": "2026-10-30T13:03:21Z"
+      },
+      "repo": "nasa/fprime"
     },
     "nginx/nginx#1889": {
       "enrichment": {
