@@ -117,7 +117,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "36a69a5a61f1b67e688f3c1fa54c1f9a7bb3c793",
+        "merge_commit_sha": "43f22642e855852869d3930392ef3b9136f2fe7c",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -142,7 +142,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "f43ffd3d1054061800879328e5010699017b828a",
+        "merge_commit_sha": "a894e9367726f32f3e409b9f918b09b3fdc4585e",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -397,7 +397,7 @@
         "number": 1040,
         "state": "open",
         "title": "Write allocation records with one sink call",
-        "updated_at": "2026-10-05T17:16:48Z"
+        "updated_at": "2026-10-31T19:36:10Z"
       },
       "repo": "bloomberg/memray"
     },
@@ -417,7 +417,7 @@
         "created_at": "2026-10-01T22:37:44Z",
         "draft": false,
         "html_url": "https://github.com/dateutil/dateutil/pull/1590",
-        "merge_commit_sha": "4251ca11a519b5707fdf8a2b98427e18ff0b734e",
+        "merge_commit_sha": "3d24c1aee988e0e16d7a0c376324f96b3f19ca6e",
         "merged_at": null,
         "number": 1590,
         "state": "open",
@@ -498,9 +498,34 @@
         "number": 279,
         "state": "closed",
         "title": "Optimize ordinary ASCII A-label encoding",
-        "updated_at": "2026-10-29T14:26:14Z"
+        "updated_at": "2026-10-31T06:15:19Z"
       },
       "repo": "kjd/idna"
+    },
+    "kokkos/kokkos#9725": {
+      "enrichment": {
+        "initial": "completed"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "kokkos"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-10-31T15:53:12Z",
+        "draft": false,
+        "html_url": "https://github.com/kokkos/kokkos/pull/9725",
+        "merge_commit_sha": "3f9ada80bc6d9ee5cf584fe839628a3fca7cea50",
+        "merged_at": null,
+        "number": 9725,
+        "state": "open",
+        "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
+        "updated_at": "2026-10-31T16:06:49Z"
+      },
+      "repo": "kokkos/kokkos"
     },
     "lballabio/QuantLib#2980": {
       "enrichment": {
@@ -553,7 +578,9 @@
       "repo": "nasa/fprime"
     },
     "nasa/fprime#6294": {
-      "enrichment": {},
+      "enrichment": {
+        "initial": "completed"
+      },
       "pr": {
         "base": {
           "repo": {
@@ -691,7 +718,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "7317b6f5eec68caeb410b6890b5f347352cc7dfa",
+        "merge_commit_sha": "4e62bbec93396927b0a7b812c9d544814cd55ac0",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -716,7 +743,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "920197e5d129a1afc138a3d062a7dabba406fc5a",
+        "merge_commit_sha": "c78186e1d1b21af78183b36c9b56029ac5089222",
         "merged_at": null,
         "number": 30177,
         "state": "open",

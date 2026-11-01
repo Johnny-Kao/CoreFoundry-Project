@@ -406,6 +406,25 @@
       "source_urls": [
         "https://github.com/nasa/fprime/pull/6292"
       ]
+    },
+    "kokkos/kokkos#9725": {
+      "what_it_is": "A pull request to fix integer overflow in the default tile-size recommendation for Kokkos `MDRangePolicy`.",
+      "what_changed": "Changes the limit check to use division instead of multiplication and adds a regression test.",
+      "evidence": "The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with GCC/Clang Serial and GCC OpenMP with UBSan enabled, and say the PR closes #9724.",
+      "why_it_matters": "Avoids integer overflow in the tile-size recommendation calculation.",
+      "source_urls": [
+        "https://github.com/kokkos/kokkos/pull/9725"
+      ]
+    },
+    "nasa/fprime#6294": {
+      "what_it_is": "A proposed F´ change to make FileWorker report failures when writing a file or its .CRC32 checksum sidecar fails.",
+      "what_changed": "The PR says it reports FW_STATUS_FAILED_TO_WRITE if either write fails, corrects the byte count returned to the caller, and handles zero-length writes without changing the file. It adds regression tests for checksum-write failures, read/write round trips, offsets, and zero-length writes.",
+      "evidence": "The PR description identifies the existing issue, describes the behavior change and tests, and notes that a successful data write is not rolled back if the checksum write fails. An automated comment recommends closing the PR until the linked issue receives CCB review; it does not establish that the PR was closed or merged.",
+      "why_it_matters": "Callers can be told when a file's checksum is missing or incomplete rather than receiving a success status. The PR notes that the data file may already have changed in this failure case.",
+      "source_urls": [
+        "https://github.com/nasa/fprime/pull/6294",
+        "https://github.com/nasa/fprime/pull/6294#issuecomment-6522065214"
+      ]
     }
   }
 }
