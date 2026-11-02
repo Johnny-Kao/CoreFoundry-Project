@@ -21,6 +21,23 @@ def pr(repo="upstream/library", number=1, state="open", merged=False, draft=Fals
 
 
 class LedgerTests(unittest.TestCase):
+    def test_public_ledger_is_compact(self):
+        row = sync.row_for("example/lib", pr(), {
+            "what_changed": "Removed redundant allocations",
+            "evidence": "19% lower CPU in a controlled workload",
+            "why_it_matters": "Long narrative not intended for the public table",
+        })
+        self.assertEqual(len(row), 3)
+        self.assertIn("19% lower CPU", row[2])
+        table = sync.render_table([row])
+        self.assertIn("| Engineering contribution | Evidence / impact |", table)
+        self.assertNotIn("Why this matters", table)
+        self.assertNotIn("Long narrative", table)
+
+    def test_compact_cells_are_bounded(self):
+        self.assertLessEqual(len(sync.concise("unnecessarily " * 40, 80)), 81)
+
+
     def test_separate_upstream_integration(self):
         closed = pr(repo="bloomberg/bde", number=315, state="closed")
         meta = {"upstream_integration": {"repo": "bloomberg/bde", "commit": "97e399a397287a6fadf63322983c5fb7a8b012e2"}}
