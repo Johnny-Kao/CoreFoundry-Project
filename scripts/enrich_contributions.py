@@ -78,6 +78,10 @@ def validate(candidate, sources):
     return out
 
 def enrich(event, metadata, registry):
+    record = registry.get("entries", {}).get(event["key"], {})
+    if core.status_of(record.get("pr", {})) == "merged":
+        print(f"Skip frozen merged contribution: {event['key']}")
+        return False
     sources = sources_for(event)
     # Avoid spending credits on PRs with no substantive information yet.
     if sum(len(s["text"].strip()) for s in sources) < 120:
