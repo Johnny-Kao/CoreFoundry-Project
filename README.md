@@ -29,16 +29,16 @@ These are areas of public research or upstream proposals, not claims that every 
 
 ## 🛠️ Selected Outcomes
 
-| Work | Verified result |
-|---|---|
-| [urllib3](https://github.com/urllib3/urllib3/pull/5304) · Python HTTP | **19–23% less CPU** in tested gzip workloads; merged upstream |
-| [Memray](https://github.com/bloomberg/memray/pull/1035) · memory profiling | **Up to 28% lower runtime** under measured high contention; merged upstream |
-| [Blosc2](https://github.com/Blosc/c-blosc2/pull/805) · compression | **35.86 → 2.02 μs** on a targeted small workload; merged upstream |
-| [QuickFIX/J](https://github.com/quickfix-j/quickfixj/pull/1363) · financial messaging | Corrected synchronous write failure reporting; merged upstream |
-| [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) · TLS | Discovered and reported **CVE-2026-115529**; credited by upstream |
-| [CERN ROOT](https://github.com/root-project/root/pull/23940) · scientific data | Reported an RNTuple memory-safety issue; credited in maintainer's fix PR |
+| Project | Function | Contribution | Verified Result |
+|---|---|---|---|
+| 🌐 [urllib3](https://github.com/urllib3/urllib3/pull/5304) | Python HTTP networking | Removed redundant gzip output copying | **19–23% less CPU** in tested workloads · Merged |
+| 🏢 [Memray](https://github.com/bloomberg/memray/pull/1035) | Memory profiling | Reduced synchronization contention | **Up to 28% lower runtime** in high-contention tests · Merged |
+| 🗜️ [Blosc2](https://github.com/Blosc/c-blosc2/pull/805) | Data compression | Avoided unnecessary parallel startup | **35.86 → 2.02 μs** in a targeted small workload · Merged |
+| 💹 [QuickFIX/J](https://github.com/quickfix-j/quickfixj/pull/1363) | Financial messaging | Fixed synchronous write failure reporting | **Correctness fix** · Merged |
+| 🔐 [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) | Network transfers & TLS | Reported a TLS session-resumption vulnerability | **CVE-2026-115529** · Credited |
+| 🔬 [CERN ROOT](https://github.com/root-project/root/pull/23940) | Scientific data analysis | Reported an RNTuple memory-safety issue | **Maintainer fix PR** · Credited |
 
-Results are workload-specific where stated. Reporting credit is not PR authorship.
+Performance results are workload-specific. Reporting credit does not imply PR authorship.
 
 [Complete contribution record](CONTRIBUTIONS.md) · [Security research](SECURITY_RESEARCH.md)
 
