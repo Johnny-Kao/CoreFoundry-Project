@@ -425,6 +425,27 @@
         "https://github.com/nasa/fprime/pull/6294",
         "https://github.com/nasa/fprime/pull/6294#issuecomment-6522065214"
       ]
+    },
+    "rack/rack#2549": {
+      "what_it_is": "A Rack::Static fix for Hash URL mappings that use encoded request paths.",
+      "what_changed": "Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged.",
+      "why_it_matters": "It aligns Hash mapping lookup with the normalized path Rack::Static checks, addressing the described encoded-URL mismatch.",
+      "source_urls": [
+        "https://github.com/rack/rack/pull/2549",
+        "https://github.com/rack/rack/pull/2549#issuecomment-6566112744",
+        "https://github.com/rack/rack/pull/2549#pullrequestreview-5731147143"
+      ]
+    },
+    "pmodels/mpich#8085": {
+      "what_it_is": "A pull request to clean up pending PMI2 node-attribute requests when a Hydra client disconnects.",
+      "what_changed": "Removes the disconnected client’s queued requests without affecting other waiters and adds a PMI2 fault test. Reviewer feedback also led to improved error diagnostics and a CHECK_PMI2 helper in both PMI2 tests.",
+      "evidence": "The PR description reports that the build and targeted PMI tests passed in GitHub Actions. The author confirmed updating test diagnostics in response to reviewer comments.",
+      "why_it_matters": "Prevents Hydra from trying to reply to a client over a closed socket when another process sets the requested attribute.",
+      "source_urls": [
+        "https://github.com/pmodels/mpich/pull/8085",
+        "https://github.com/pmodels/mpich/pull/8085#pullrequestreview-5728745460",
+        "https://github.com/pmodels/mpich/pull/8085#discussion_r4437724334"
+      ]
     }
   }
 }
