@@ -26,6 +26,12 @@ flowchart LR
     C --> E["Closed / lesson retained"]
 ```
 
+## 🔐 Credited security reports (not authored PRs)
+
+| Upstream project / fix | Public attribution | Finding and upstream response | Status / accounting |
+|---|---|---|---|
+| **[CERN ROOT #23940](https://github.com/root-project/root/pull/23940)** — RNTuple mini-file anchor decompression | **Johnny Kao — original security reporter.** Upstream PR explicitly states **“Issue reported by Johnny Kao.”** | Reported a memory-safety issue in mini-file anchor decompression; prior research reproduced heap-buffer-overflow with ASan. ROOT maintainer Jakob acknowledged the report and submitted a fix checking anchor size/length and sizing the input buffer from on-disk size. | **Credited reporter; maintainer-authored fix.** Not counted in authored, open, or merged PR totals. Fix merge status, CVE, severity, and post-fix ASan outcome not asserted. [Research record](SECURITY_RESEARCH.md#cern-root-23940--rntuple-mini-file-anchor-decompression). |
+
 ## 🚀 Merged upstream work
 
 | Project / PR | What it is | What changed | Evidence / impact | Why this matters |
