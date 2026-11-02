@@ -1,6 +1,11 @@
 # Funding
 
-This research program is maintained independently.
+**Initial recurring funding goal: USD 100/month.** This covers baseline AI-assisted research and engineering tooling, not the full cost of the work.
+
+[Support via GitHub Sponsors](https://github.com/sponsors/Johnny-Kao)
+
+
+CoreFoundry is an independent research and engineering program. I welcome recurring sponsorship and institutional collaboration for public upstream-focused work.
 
 Funding does not purchase roadmap control, priority issue handling, private support, or guaranteed work on a particular library.
 

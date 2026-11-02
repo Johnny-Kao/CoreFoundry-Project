@@ -1,78 +1,63 @@
-<p align="center">
-  <img src="assets/corefoundry-readme-banner.jpg" alt="CoreFoundry Project — Independent open-source infrastructure contributions focused on software performance, reliability, cybersecurity, and resilient computing systems." width="100%">
-</p>
+<p align="center"><img src="assets/corefoundry-readme-banner.jpg" alt="CoreFoundry — independent research and upstream engineering" width="100%"></p>
 
-<p align="center">
-  <strong>Improve the foundations before increasing the resources.</strong>
-</p>
+# CoreFoundry
 
-**Status:** Active · **Focus:** Upstream infrastructure · **Approach:** Zero incremental resource · **Funding:** Open
+**Independent research and engineering for open-source infrastructure.**
 
-> **The next phase of AI will demand far more compute, memory, networking, and software infrastructure.**
+I investigate performance bottlenecks, correctness bugs, and security issues—and turn validated findings into upstream contributions. The goal is straightforward: improve software that other systems depend on.
 
-Modern infrastructure was not built for an unlimited increase in agents, models, services, data movement, and online execution.
+## 🔬 Research & Engineering
 
-As AI-scale workloads grow, small inefficiencies compound:
+**⚡ Performance · 🛠️ Correctness · 🔐 Security**
 
-- 🔁 repeated computation;
-- 🧠 unnecessary memory work;
-- 🔒 avoidable synchronization;
-- 🧵 parallel startup costs that cannot be amortized;
-- 🌐 networking and protocol overhead;
-- 🧱 historical architectural assumptions that no longer scale well.
+| Research area | Selected projects |
+|---|---|
+| 🌐 Networking & Web | curl, urllib3, NGINX, Rack, reqwest |
+| 🔐 Cryptography & Security | AWS-LC, curl, CERN ROOT |
+| ☁️ Cloud & Containers | Apple Container |
+| 🔬 Scientific Computing | NumPy, SciPy, CERN ROOT |
+| 🖥️ HPC & Parallel Computing | MPICH, Kokkos |
+| 🏢 Enterprise Infrastructure | Bloomberg BDE, BlazingMQ, Memray |
+| 💹 Financial Infrastructure | QuickFIX/J, QuantLib, FINOS |
+| 🚀 Aerospace & Flight Systems | NASA F´, PX4 |
+| 🗜️ Compression & Data Processing | Blosc2, LZ4, pandas |
+| 🐍 Python Ecosystem | packaging, attrs, dateutil, cffi |
+| 🎥 Computer Vision & Media | OpenCV |
+| ⚙️ Systems & Runtime | Apple Container, cffi |
 
-My view is simple:
+These are areas of public research or upstream proposals, not claims that every proposed change was merged.
 
-> **Before adding more hardware, remove the work that never needed to happen.**
+## 🛠️ Selected Outcomes
 
-```mermaid
-flowchart LR
-    A["🤖 AI & software<br/>scale"] --> B["⚙️ Resource<br/>pressure"]
-    B --> C["📈 Small costs<br/>compound"]
-    C --> D["🧱 Fix the<br/>foundations"]
-    D --> E["🌍 Broad<br/>downstream gain"]
-```
+| Work | Verified result |
+|---|---|
+| [urllib3](https://github.com/urllib3/urllib3/pull/5304) · Python HTTP | **19–23% less CPU** in tested gzip workloads; merged upstream |
+| [Memray](https://github.com/bloomberg/memray/pull/1035) · memory profiling | **Up to 28% lower runtime** under measured high contention; merged upstream |
+| [Blosc2](https://github.com/Blosc/c-blosc2/pull/805) · compression | **35.86 → 2.02 μs** on a targeted small workload; merged upstream |
+| [QuickFIX/J](https://github.com/quickfix-j/quickfixj/pull/1363) · financial messaging | Corrected synchronous write failure reporting; merged upstream |
+| [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) · TLS | Discovered and reported **CVE-2026-115529**; credited by upstream |
+| [CERN ROOT](https://github.com/root-project/root/pull/23940) · scientific data | Reported an RNTuple memory-safety issue; credited in maintainer's fix PR |
 
----
+Results are workload-specific where stated. Reporting credit is not PR authorship.
 
-## 🧭 What I do
+[Complete contribution record](CONTRIBUTIONS.md) · [Security research](SECURITY_RESEARCH.md)
 
-I independently work on lower-level open-source infrastructure where a relatively small upstream change can benefit many downstream workloads.
+## 💚 Support CoreFoundry
 
-My background spans consulting, finance, exchanges, blockchain, data, and software systems. I use that cross-domain perspective to look beyond isolated code paths and ask what a system is **really paying for**.
+**Initial funding goal: USD 100/month.**
 
-```mermaid
-flowchart LR
-    A["Cross-domain<br/>background"] --> B["System-level<br/>cost lens"]
-    B --> C["Low-level<br/>infrastructure"]
-    C --> D["Evidence &<br/>validation"]
-    D --> E["Upstream<br/>change"]
-```
+CoreFoundry is independently funded. This first milestone helps cover baseline AI-assisted research and engineering tools—not the full cost of the work.
 
-I do not only ask **“Can this code run faster?”**
+I welcome recurring sponsorship and institutional research collaboration supporting **public, upstream-focused work**. Funding does not buy roadmap control, priority handling, or guaranteed changes to any project.
 
-I also ask:
+**[GitHub Sponsors](https://github.com/sponsors/Johnny-Kao)** · [Funding principles](FUNDING.md)
 
-- Why does this work exist at all?
-- Who ultimately pays for it?
-- Has the same cost already been paid somewhere else?
-- Does a local optimization create a larger system-level cost?
-- What happens when this inefficiency is multiplied across millions of workloads?
+## 📚 More Detail
 
----
+The technical history is kept below for anyone who wants to examine methods, scope, benchmarks, and attribution. The [contribution ledger](CONTRIBUTIONS.md) continues to update automatically; this homepage does not.
 
-## ❤️ Support CoreFoundry
-
-[Sponsor CoreFoundry](https://github.com/sponsors/Johnny-Kao) · [Share infrastructure priorities](https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal)
-
-If you share this view, there are two useful ways to help:
-
-- **Sponsor the work** — funding increases the time, compute, CI, tooling, and validation capacity available for independent upstream engineering.
-- **Send a priority signal** — tell me the three infrastructure bottlenecks, libraries, or recurring costs your organization thinks deserve more optimization attention.
-
-> Sponsorship supports the broader program. It does not buy roadmap control, priority support, or guaranteed work on a specific request.
-
----
+<details>
+<summary>Measured performance results and attribution</summary>
 
 ## 🚀 Selected high-impact upstream work
 
@@ -90,6 +75,11 @@ If you share this view, there are two useful ways to help:
 
 **idna attribution and evidence:** Johnny Kao proposed and tested the ASCII LDH fast-path idea in [idna #279](https://github.com/kjd/idna/pull/279), including differential, boundary-case, and performance validation. The maintainer's [PR #287](https://github.com/kjd/idna/pull/287) explicitly says it addresses the optimization sought in **#279 and #286**, and was [merged on 2026-10-29](https://github.com/kjd/idna/commit/605884450001cb08c71ab04433c2581f25ca347c). **#287 is the maintainer's separate implementation, not Johnny's code; #279 was closed without merge.** The 79.5–85.1% measurements above are from the #279 candidate on its stated benchmarks, not measured speedups of the merged #287.
 
+</details>
+
+<details>
+<summary>Security vulnerability reports</summary>
+
 ## 🔐 Security vulnerability discoveries
 
 **[CERN ROOT #23940 — RNTuple mini-file anchor decompression](SECURITY_RESEARCH.md#cern-root-23940--rntuple-mini-file-anchor-decompression)** — **Discovered and reported by Johnny Kao.** ROOT maintainer Jakob acknowledged the private security report and submitted [upstream fix PR #23940](https://github.com/root-project/root/pull/23940) on 2026-11-02, explicitly stating **“Issue reported by Johnny Kao.”** The fix addresses invalid anchor size/length combinations and uses the on-disk size for the input buffer. This is **reporter credit, not PR authorship**; merge status and severity are not claimed.
@@ -97,6 +87,11 @@ If you share this view, there are two useful ways to help:
 **[CVE-2026-115529 — curl Schannel TLS session resumption](SECURITY_RESEARCH.md)** — **Originally discovered and reported by Johnny Kao** on 2026-10-22. Johnny provided reproducible Schannel/TLS test evidence and identified the 8.12.0 regression. curl accepted the report, assigned a CVE, and committed a fix with explicit `Reported-by: Johnny Kao` credit. Severity: Low (upstream assessment). The HackerOne report was fully disclosed on 2026-10-26; formal advisory and curl 8.24.0 remain scheduled for 2026-12-09. [Original report](https://hackerone.com/reports/4136767) · [Upstream fix](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) · [Advisory draft](https://github.com/curl/curl-www/pull/665).
 
 ---
+
+</details>
+
+<details>
+<summary>Other selected upstream work</summary>
 
 ## 🧩 Other selected upstream work
 
@@ -107,27 +102,10 @@ If you share this view, there are two useful ways to help:
 | **[SciPy #26225](https://github.com/scipy/scipy/pull/26225)** | Scientific-computing algorithms and numerical methods | Improved bracketing-solver iteration statistics | **More accurate solver accounting** | Better internal accounting improves reliability and makes behavior easier to reason about |
 | **[python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)** | Compressed-array and data infrastructure | Improved free-threaded Python correctness | **Concurrency readiness** | Infrastructure must remain correct as Python moves toward broader free-threaded execution |
 
-<!-- AUTOGENERATED_CONTRIBUTIONS_START -->
-### Live Upstream Activity
+</details>
 
-**Open PRs:** 28 | **Merged PRs:** 14 | **Integrated separately:** 2
-
-Last data change: 2026-11-02 06:20 UTC
-
-#### Recently Active PRs
-
-- [rack/rack #2549: Fix normalized path lookup for static Hash mappings](https://github.com/rack/rack/pull/2549)
-- [kokkos/kokkos #9725: Fix integer overflow in MDRangePolicy tile size recommendation](https://github.com/kokkos/kokkos/pull/9725)
-- [pmodels/mpich #8085: pm/hydra: clean up pending PMI2 requests on client exit](https://github.com/pmodels/mpich/pull/8085)
-- [bloomberg/memray #1040: Write allocation records with one sink call](https://github.com/bloomberg/memray/pull/1040)
-- [PX4/PX4-Autopilot #29537: fix(mavlink): ignore foreign mission counts for upload timeout](https://github.com/PX4/PX4-Autopilot/pull/29537)
-
-[Full Contribution Ledger](CONTRIBUTIONS.md)
-<!-- AUTOGENERATED_CONTRIBUTIONS_END -->
-
-**[View the live contribution ledger →](CONTRIBUTIONS.md)**
-
----
+<details>
+<summary>Research map and infrastructure context</summary>
 
 ## 🗺️ CoreFoundry project map
 
@@ -176,6 +154,11 @@ That is why CoreFoundry deliberately prioritizes foundational infrastructure ins
 
 ---
 
+</details>
+
+<details>
+<summary>Organization-linked work</summary>
+
 ## 🏢 Organization-linked open-source work
 
 Some projects are maintained by companies or foundations. These are grouped separately so infrastructure teams can quickly find work relevant to their ecosystem.
@@ -189,6 +172,11 @@ Some projects are maintained by companies or foundations. These are grouped sepa
 > Listing an organization or project here refers only to public open-source work. It does not imply sponsorship, endorsement, or representation of CoreFoundry.
 
 ---
+
+</details>
+
+<details>
+<summary>Research principles and methodology</summary>
 
 ## 🎯 How I choose what to work on
 
@@ -236,21 +224,8 @@ In practice, that means reducing unnecessary CPU, memory, synchronization, data 
 
 ---
 
-## 🤝 Participate
-
-| If you want to… | The useful action |
-|---|---|
-| Increase independent upstream capacity | **[Sponsor CoreFoundry](https://github.com/sponsors/Johnny-Kao)** |
-| Influence where I look next | **[Share your top three infrastructure priorities](https://github.com/Johnny-Kao/CoreFoundry-Project/issues/new?title=Infrastructure%20priority%20signal)** |
-| Help validate an idea | Point me toward public benchmarks, reproducible workloads, or important open problems |
-
-**Status:** Active · **Focus:** Upstream infrastructure · **Approach:** Zero incremental resource · **Funding:** Open
-
-## Related research
-
-**[AlpenCat](https://github.com/Johnny-Kao/AlpenCat)** is one concrete systems-research project exploring ultra-low-overhead execution routing under constrained compute.
+</details>
 
 ---
 
-**Johnny Kao**  
-[GitHub](https://github.com/Johnny-Kao) · [GitHub Sponsors](https://github.com/sponsors/Johnny-Kao)
+**Johnny Kao** · [GitHub](https://github.com/Johnny-Kao) · [GitHub Sponsors](https://github.com/sponsors/Johnny-Kao)
