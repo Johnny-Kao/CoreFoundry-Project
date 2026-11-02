@@ -132,7 +132,7 @@ def pr_link(repo, pr, meta=None):
     if integration:
         sha = integration["commit"]
         target_repo = integration["repo"]
-        cell += f"<br><sub>[integrated in {target_repo} `{sha[:7]}`](https://github.com/{target_repo}/commit/{sha})</sub>"
+        cell += f"<br><sub>[Upstream integration](https://github.com/{target_repo}/commit/{sha})</sub>"
     extra = (meta or {}).get("related_upstream_commits", [])
     for record in extra:
         if not isinstance(record, dict):
