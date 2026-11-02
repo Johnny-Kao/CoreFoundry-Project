@@ -78,7 +78,7 @@ class LedgerTests(unittest.TestCase):
                 first = (root / "CONTRIBUTIONS.md").read_bytes()
                 self.assertIn(b"integrated in upstream/library", first)
                 self.assertIn(b"Integrated separately:** 1", first)
-                self.assertIn(b"Merged PRs:** 0", first)
+                self.assertIn(b"**Merged:** 0", first)
                 sync.main()
                 self.assertEqual(first, (root / "CONTRIBUTIONS.md").read_bytes())
 
@@ -91,7 +91,7 @@ class LedgerTests(unittest.TestCase):
         }]}
         self.assertEqual(sync.status_of(merged), "merged")
         cell = sync.pr_link("python-attrs/attrs", merged, meta)
-        self.assertIn("merge commit", cell)
+        self.assertNotIn("merge commit", cell)
         self.assertIn("co-authored benchmark", cell)
         self.assertIn("/python-attrs/attrs/commit/0a08cee", cell)
         self.assertEqual(cell.count("co-authored benchmark"), 1)
