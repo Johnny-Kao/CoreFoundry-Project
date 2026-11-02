@@ -58,6 +58,8 @@ Funding supports independent, public-interest engineering. It does not purchase 
 
 ## 📚 More Detail
 
+[Research areas](docs/RESEARCH_AREAS.md) · [Roadmap](docs/ROADMAP.md) · [Current work](docs/CURRENT_WORK.md) · [Publishing process](docs/AUTONOMOUS_PUBLISHING.md) · [Merged impact notes](docs/MERGED_IMPACT.md)
+
 The technical history is kept below for anyone who wants to examine methods, scope, benchmarks, and attribution. The [contribution ledger](CONTRIBUTIONS.md) continues to update automatically; this homepage does not.
 
 <details>
