@@ -40,8 +40,8 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 
 | Project / PR | Engineering contribution | Evidence / impact |
 |---|---|---|
-| **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)**<br><sub>[integrated in bloomberg/bde `76f43d2`](https://github.com/bloomberg/bde/commit/76f43d2b2b6b327095a24ff839277b1c655a1775)</sub> | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
-| **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)**<br><sub>[integrated in bloomberg/bde `97e399a`](https://github.com/bloomberg/bde/commit/97e399a397287a6fadf63322983c5fb7a8b012e2)</sub> | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)**<br><sub>[Upstream integration](https://github.com/bloomberg/bde/commit/76f43d2b2b6b327095a24ff839277b1c655a1775)</sub> | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
+| **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)**<br><sub>[Upstream integration](https://github.com/bloomberg/bde/commit/97e399a397287a6fadf63322983c5fb7a8b012e2)</sub> | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
 
 ## 🟢 Open / in review
 
