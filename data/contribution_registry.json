@@ -192,12 +192,12 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "a5211fea7772afa8431e02f83882bfc24a9a2955",
+        "merge_commit_sha": "7c44db69d27e1a3cb27727c8cb2d249d98520d8a",
         "merged_at": null,
         "number": 3700,
         "state": "open",
         "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
-        "updated_at": "2026-10-27T02:00:33Z"
+        "updated_at": "2026-11-02T19:59:32Z"
       },
       "repo": "aws/aws-lc"
     },
