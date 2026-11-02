@@ -449,6 +449,9 @@
         "https://github.com/pmodels/mpich/pull/8085#pullrequestreview-5728745460",
         "https://github.com/pmodels/mpich/pull/8085#discussion_r4437724334"
       ]
+    },
+    "bloomberg/bde#313": {
+      "include": false
     }
   }
 }
