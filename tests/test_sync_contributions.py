@@ -54,7 +54,7 @@ class LedgerTests(unittest.TestCase):
                     sync, ROOT=root,
                     METADATA_PATH=root / "data" / "contribution_metadata.json",
                     OUTPUT_PATH=root / "CONTRIBUTIONS.md",
-                    README_PATH=root / "README.md",
+
                     REGISTRY_PATH=root / "data" / "contribution_registry.json"
             ), mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
@@ -104,13 +104,13 @@ class LedgerTests(unittest.TestCase):
             (root / "data" / "contribution_registry.json").write_text(json.dumps(registry), encoding="utf-8")
             with mock.patch.multiple(sync, METADATA_PATH=root / "data" / "contribution_metadata.json",
                                      OUTPUT_PATH=root / "CONTRIBUTIONS.md",
-                                     README_PATH=root / "README.md",
+
                                      REGISTRY_PATH=root / "data" / "contribution_registry.json"), \
                  mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 ledger = (root / "CONTRIBUTIONS.md").read_text()
                 self.assertIn("upstream/library #45", ledger)
-                self.assertIn("**Open PRs:** 0 | **Merged PRs:** 0", (root / "README.md").read_text())
+                self.assertEqual(readme, (root / "README.md").read_text())
                 first = {x: (root / x).read_bytes() for x in ("CONTRIBUTIONS.md", "README.md", "data/contribution_registry.json")}
                 sync.main()
                 self.assertEqual(first, {x: (root / x).read_bytes() for x in first})
@@ -134,7 +134,7 @@ class LedgerTests(unittest.TestCase):
                     sync, ROOT=root,
                     METADATA_PATH=root / "data" / "contribution_metadata.json",
                     OUTPUT_PATH=root / "CONTRIBUTIONS.md",
-                    README_PATH=root / "README.md",
+
                     REGISTRY_PATH=root / "data" / "contribution_registry.json"), \
                  mock.patch.object(sync, "discover_prs", return_value=[mock_item]), \
                  mock.patch.object(sync, "fetch_pr", return_value=("upstream/library", fresh or pr())):
