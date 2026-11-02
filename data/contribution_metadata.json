@@ -390,21 +390,23 @@
       ]
     },
     "lballabio/QuantLib#2980": {
-      "what_it_is": "A change to avoid duplicate kernel evaluations in QuantLib's KernelInterpolation.",
-      "what_changed": "KernelInterpolation::value() reuses each kernel value for both the weighted sum and normalization, reducing evaluations from 2N to N without changing the public API or interpolation formula.",
-      "evidence": "The PR reports that staging builds and interpolation tests passed on Linux, macOS, and Windows, and that the full QuantLib test suite passed on Linux. It also reports benchmark speedups of 1.70x (5 nodes), 1.83x (10), 1.91x (20), and 1.94x (40), using 100,000 evaluations per run and the five-run median.",
-      "why_it_matters": "Reusing kernel values avoids repeated calculations while preserving the existing interpolation behavior and API.",
+      "what_it_is": "A QuantLib pull request optimizing KernelInterpolation evaluation.",
+      "what_changed": "KernelInterpolation::value() now calculates each kernel value once and reuses it for the weighted sum and normalization, reducing evaluations from 2N to N without changing the public API or interpolation formula.",
+      "evidence": "The PR reports staging builds and interpolation tests passed on Linux, macOS, and Windows, and the full test suite passed on Linux. It reports benchmark speedups of 1.70x to 1.94x across 5 to 40 nodes; a PR comment congratulates the author on the merged pull request.",
+      "why_it_matters": "Avoiding duplicate kernel calculations reduces work per evaluation while preserving the existing interface and interpolation formula.",
       "source_urls": [
-        "https://github.com/lballabio/QuantLib/pull/2980"
+        "https://github.com/lballabio/QuantLib/pull/2980",
+        "https://github.com/lballabio/QuantLib/pull/2980#issuecomment-6583204108"
       ]
     },
     "nasa/fprime#6292": {
-      "what_it_is": "A pull request proposing a fix for aggregate high-water mark tracking in F Prime's PriorityMemQueue.",
-      "what_changed": "The change tracks shared queue occupancy across priorities, updates the high-water mark on enqueue and dequeue, checks that total configured capacity fits in U32, and adds regression tests for multiple priorities and concurrent producers.",
-      "evidence": "The author says the existing behavior could report 4 messages when two priorities hold 3 and 4, rather than the aggregate 7. The author reports 7/7 jobs passed in both Framework CI and Reference CI, including TSan and Linux/macOS integration tests, while noting that passing tests do not establish exhaustive concurrency correctness.",
-      "why_it_matters": "The author says underreporting makes the high-water mark less useful for capacity monitoring; per-priority sampling can also be unreliable when sends and receives overlap.",
+      "what_it_is": "A pull request proposing a fix for aggregate high-water mark tracking in F Prime’s PriorityMemQueue.",
+      "what_changed": "The proposed change tracks queue occupancy across priorities, updates the high-water mark on enqueue and dequeue, and checks that configured total capacity fits in U32. It also adds regression tests for multiple priorities and concurrent producers.",
+      "evidence": "The author reported 7/7 Framework CI jobs and 7/7 Reference CI jobs passed, including TSan and Linux/macOS integration tests, while noting that passing tests do not establish exhaustive concurrency correctness. The PR was closed because the referenced issue had not yet gone through CCB review; the issue remained open for review.",
+      "why_it_matters": "The author says the existing behavior can underreport total queue usage, reducing the usefulness of the high-water mark for capacity monitoring. The proposed change was not merged, pending CCB review of the referenced issue.",
       "source_urls": [
-        "https://github.com/nasa/fprime/pull/6292"
+        "https://github.com/nasa/fprime/pull/6292",
+        "https://github.com/nasa/fprime/pull/6292#issuecomment-6583078699"
       ]
     },
     "kokkos/kokkos#9725": {
@@ -417,13 +419,14 @@
       ]
     },
     "nasa/fprime#6294": {
-      "what_it_is": "A proposed F´ change to make FileWorker report failures when writing a file or its .CRC32 checksum sidecar fails.",
-      "what_changed": "The PR says it reports FW_STATUS_FAILED_TO_WRITE if either write fails, corrects the byte count returned to the caller, and handles zero-length writes without changing the file. It adds regression tests for checksum-write failures, read/write round trips, offsets, and zero-length writes.",
-      "evidence": "The PR description identifies the existing issue, describes the behavior change and tests, and notes that a successful data write is not rolled back if the checksum write fails. An automated comment recommends closing the PR until the linked issue receives CCB review; it does not establish that the PR was closed or merged.",
-      "why_it_matters": "Callers can be told when a file's checksum is missing or incomplete rather than receiving a success status. The PR notes that the data file may already have changed in this failure case.",
+      "what_it_is": "A proposed change to F´’s Svc/FileWorker addressing cases where a file write succeeds but writing its .CRC32 checksum sidecar fails.",
+      "what_changed": "The PR proposed reporting FW_STATUS_FAILED_TO_WRITE if either write fails, correcting the reported byte count, and handling zero-length writes without changing the file. The author reported adding regression tests for checksum write failures, round trips, offsets, and zero-length writes. The PR was closed because the referenced issue had not yet received CCB review; the sources do not indicate that the change was merged.",
+      "evidence": "The author describes the failure case, proposed behavior, rationale, and regression tests in the PR body. An automated comment says the linked issue had not been approved by the CCB, and a later comment confirms the PR was closed for that reason.",
+      "why_it_matters": "The proposed behavior would let callers know when the checksum sidecar is missing or incomplete rather than treating the operation as successful. The author notes that the data file may already have changed when the checksum write fails; this patch would report the failure but would not roll back that data file.",
       "source_urls": [
         "https://github.com/nasa/fprime/pull/6294",
-        "https://github.com/nasa/fprime/pull/6294#issuecomment-6522065214"
+        "https://github.com/nasa/fprime/pull/6294#issuecomment-6522065214",
+        "https://github.com/nasa/fprime/pull/6294#issuecomment-6583096618"
       ]
     },
     "rack/rack#2549": {
