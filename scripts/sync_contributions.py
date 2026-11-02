@@ -157,27 +157,33 @@ def repo_display(repo):
     return repo.split("/", 1)[1]
 
 
+def concise(value, limit=155):
+    """Keep ledger cells scannable without altering curated source metadata."""
+    import re
+    value = re.sub(r"\s+", " ", str(value or "")).strip()
+    value = re.sub(r"\s*\(\[source\]\(https?://[^)]+\)\)", "", value)
+    if len(value) <= limit:
+        return value
+    cut = value[:limit].rsplit(" ", 1)[0]
+    return (cut or value[:limit]).rstrip(" ,;:") + "…"
+
+
 def row_for(repo, pr, meta):
-    evidence = escape_cell(meta.get("evidence"))
-    refs = meta.get("source_urls") or []
-    if isinstance(refs, list):
-        evidence_ref = next((u for u in refs if isinstance(u, str)
-                             and u.startswith("https://github.com/")), None)
-        if evidence_ref:
-            evidence += f" ([source]({evidence_ref}))"
+    change = concise(meta.get("what_changed") or pr.get("title"), 150)
+    evidence = concise(meta.get("evidence"), 135)
+    if not evidence:
+        evidence = "—"
     return [
         pr_link(repo, pr, meta),
-        escape_cell(meta.get("what_it_is", repo_display(repo))),
-        escape_cell(meta.get("what_changed", pr.get("title"))),
-        evidence,
-        escape_cell(meta.get("why_it_matters")),
+        escape_cell(change),
+        escape_cell(evidence),
     ]
 
 
 def render_table(rows):
     lines = [
-        "| Project / PR | What it is | What changed | Evidence / impact | Why this matters |",
-        "|---|---|---|---:|---|",
+        "| Project / PR | Engineering contribution | Evidence / impact |",
+        "|---|---|---|",
     ]
     for row in rows:
         lines.append("| " + " | ".join(row) + " |")
@@ -290,7 +296,7 @@ def main():
         "",
         f"> **Last synchronized:** {now.strftime('%Y-%m-%d %H:%M UTC')}",
         "",
-        "## Canonical-source policy",
+        "## Record and attribution",
         "",
         "CoreFoundry treats the **upstream pull request as the canonical public record**.",
         "",
