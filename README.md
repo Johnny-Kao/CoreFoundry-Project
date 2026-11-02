@@ -12,18 +12,18 @@ I investigate performance bottlenecks, correctness bugs, and security issues—a
 
 | Research Area | Selected Projects | Upstream Evidence |
 |---|---|---|
-| 🌐 Networking & Web | curl, urllib3, NGINX, Rack, reqwest | [**urllib3: 19–23% less CPU**](https://github.com/urllib3/urllib3/pull/5304) |
-| 🔐 Security & Cryptography | AWS-LC, curl, CERN ROOT | [**curl: CVE-2026-115529**](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9); [**CERN ROOT: RNTuple heap overflow**](https://github.com/root-project/root/pull/23940) |
-| ☁️ Cloud & Containers | Apple Container | [**Apple Container: State recovery**](https://github.com/apple/container/pull/2293) |
-| 🔬 Scientific Computing | NumPy, SciPy, CERN ROOT | [**NumPy: Fixed undefined shifts**](https://github.com/numpy/numpy/pull/32802) |
-| 🖥️ HPC & Parallel Computing | MPICH, Kokkos | [**Kokkos: Fixed tile-size overflow**](https://github.com/kokkos/kokkos/pull/9725); [**MPICH: Resource cleanup**](https://github.com/pmodels/mpich/pull/8085) |
-| 🏢 Enterprise Infrastructure | Bloomberg BDE, BlazingMQ, Memray | [**Memray: Up to 28% faster**](https://github.com/bloomberg/memray/pull/1035); [**Bloomberg BDE: 14–73% lower latency**](https://github.com/bloomberg/bde/pull/317) |
-| 💹 Financial Infrastructure | QuickFIX/J, QuantLib, FINOS | [**QuickFIX/J: Fixed false write success**](https://github.com/quickfix-j/quickfixj/pull/1363) |
-| 🚀 Aerospace & Flight Systems | NASA F´, PX4 | [**PX4: Fixed mission timeout**](https://github.com/PX4/PX4-Autopilot/pull/29537) |
-| 🗜️ Compression & Data | Blosc2, LZ4, pandas | [**Blosc2: 35.86 → 2.02 μs**](https://github.com/Blosc/c-blosc2/pull/805); [**pandas: 17–25% faster conversion**](https://github.com/pandas-dev/pandas/pull/69916) |
-| 🐍 Python Ecosystem | packaging, attrs, dateutil, cffi | [**packaging: Reduced parsing overhead**](https://github.com/pypa/packaging/pull/1429); [**attrs: Faster attribute access**](https://github.com/python-attrs/attrs/pull/1636) |
-| 🎥 Computer Vision & Media | OpenCV | [**OpenCV: macOS BGRA fast path**](https://github.com/opencv/opencv/pull/30177) |
-| ⚙️ Systems & Runtime | Apple Container, cffi | [**Apple Container: Runtime-state safety**](https://github.com/apple/container/pull/2292) |
+| 🌐 Networking & Web | [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9), [urllib3](https://github.com/urllib3/urllib3/pull/5304), [NGINX](https://github.com/nginx/nginx/pull/1889), [Rack](https://github.com/rack/rack/pull/2549), [reqwest](https://github.com/seanmonstar/reqwest/pull/3116)| [**urllib3: 19–23% less CPU**](https://github.com/urllib3/urllib3/pull/5304) |
+| 🔐 Security & Cryptography | [AWS-LC](https://github.com/aws/aws-lc/pull/3700), [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9), [CERN ROOT](https://github.com/root-project/root/pull/23940)| [**curl: CVE-2026-115529**](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9); [**CERN ROOT: RNTuple heap overflow**](https://github.com/root-project/root/pull/23940) |
+| ☁️ Cloud & Containers | [Apple Container](https://github.com/apple/container/pull/2293)| [**Apple Container: State recovery**](https://github.com/apple/container/pull/2293) |
+| 🔬 Scientific Computing | [NumPy](https://github.com/numpy/numpy/pull/32802), [SciPy](https://github.com/scipy/scipy/pull/26225), [CERN ROOT](https://github.com/root-project/root/pull/23940)| [**NumPy: Fixed undefined shifts**](https://github.com/numpy/numpy/pull/32802) |
+| 🖥️ HPC & Parallel Computing | [MPICH](https://github.com/pmodels/mpich/pull/8085), [Kokkos](https://github.com/kokkos/kokkos/pull/9725)| [**Kokkos: Fixed tile-size overflow**](https://github.com/kokkos/kokkos/pull/9725); [**MPICH: Resource cleanup**](https://github.com/pmodels/mpich/pull/8085) |
+| 🏢 Enterprise Infrastructure | [Bloomberg BDE](https://github.com/bloomberg/bde/pull/317), [BlazingMQ](https://github.com/bloomberg/blazingmq/pull/1803), [Memray](https://github.com/bloomberg/memray/pull/1035)| [**Memray: Up to 28% faster**](https://github.com/bloomberg/memray/pull/1035); [**Bloomberg BDE: 14–73% lower latency**](https://github.com/bloomberg/bde/pull/317) |
+| 💹 Financial Infrastructure | [QuickFIX/J](https://github.com/quickfix-j/quickfixj/pull/1363), [QuantLib](https://github.com/lballabio/QuantLib/pull/2980), [FINOS](https://github.com/finos/ai-governance-framework/pull/415)| [**QuickFIX/J: Fixed false write success**](https://github.com/quickfix-j/quickfixj/pull/1363) |
+| 🚀 Aerospace & Flight Systems | [NASA F´](https://github.com/nasa/fprime/pull/6292), [PX4](https://github.com/PX4/PX4-Autopilot/pull/29537)| [**PX4: Fixed mission timeout**](https://github.com/PX4/PX4-Autopilot/pull/29537) |
+| 🗜️ Compression & Data | [Blosc2](https://github.com/Blosc/c-blosc2/pull/805), LZ4, [pandas](https://github.com/pandas-dev/pandas/pull/69916)| [**Blosc2: 35.86 → 2.02 μs**](https://github.com/Blosc/c-blosc2/pull/805); [**pandas: 17–25% faster conversion**](https://github.com/pandas-dev/pandas/pull/69916) |
+| 🐍 Python Ecosystem | [packaging](https://github.com/pypa/packaging/pull/1429), [attrs](https://github.com/python-attrs/attrs/pull/1636), [dateutil](https://github.com/dateutil/dateutil/pull/1590), [cffi](https://github.com/python-cffi/cffi/pull/282)| [**packaging: Reduced parsing overhead**](https://github.com/pypa/packaging/pull/1429); [**attrs: Faster attribute access**](https://github.com/python-attrs/attrs/pull/1636) |
+| 🎥 Computer Vision & Media | [OpenCV](https://github.com/opencv/opencv/pull/30177)| [**OpenCV: macOS BGRA fast path**](https://github.com/opencv/opencv/pull/30177) |
+| ⚙️ Systems & Runtime | [Apple Container](https://github.com/apple/container/pull/2293), [cffi](https://github.com/python-cffi/cffi/pull/282)| [**Apple Container: Runtime-state safety**](https://github.com/apple/container/pull/2292) |
 
 Performance figures are from targeted benchmarks. See linked upstream records for review and integration status.
 
