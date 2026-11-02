@@ -1,5 +1,18 @@
 # Security Research — Confirmed Upstream Findings
 
+## CERN ROOT #23940 — RNTuple mini-file anchor decompression
+
+**Original security issue discoverer and reporter: Johnny Kao.**  
+**Upstream evidence:** [root-project/root PR #23940](https://github.com/root-project/root/pull/23940), authored by a ROOT maintainer, explicitly states **“Issue reported by Johnny Kao.”**  
+**Recognition date:** 2026-11-02 (Jakob's reply acknowledging the report and linking the fix).  
+**Attribution type:** Security vulnerability report / upstream-credited reporter; **not PR author or commit co-author**.
+
+### Finding and disposition
+
+Research identified a memory-safety issue in the RNTuple mini-file anchor decompression/read path and reproduced a heap-buffer-overflow with AddressSanitizer. The maintainer-authored PR addresses invalid anchor size-versus-length combinations and corrects input-buffer sizing to use the on-disk size rather than the decompressed length. The upstream PR body explicitly credits Johnny as reporter.
+
+**Limits:** This record does not assert a CVE assignment, CVSS severity, exploitability, remote code execution, release inclusion, completed merge, or independent post-patch PoC/ASan verification. PR status should be checked separately. Detailed unpublished reproduction material is not included here.
+
 ## CVE-2026-115529 — curl Schannel TLS session resumption
 
 **Original vulnerability discoverer and reporter: Johnny Kao (`johnnykao`).**  
