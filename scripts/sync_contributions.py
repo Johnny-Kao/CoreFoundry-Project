@@ -128,10 +128,6 @@ def pr_link(repo, pr, meta=None):
     number = pr["number"]
     url = pr["html_url"]
     cell = f"**[{repo} #{number}]({url})**"
-    if pr.get("merged_at") and pr.get("merge_commit_sha"):
-        sha = pr["merge_commit_sha"]
-        commit_url = f"https://github.com/{repo}/commit/{sha}"
-        cell += f"<br><sub>[merge commit `{sha[:7]}`]({commit_url})</sub>"
     integration = integrated_upstream(pr, meta or {})
     if integration:
         sha = integration["commit"]
