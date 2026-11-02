@@ -56,8 +56,8 @@
     },
     "pandas-dev/pandas#69916": {
       "what_it_is": "A pandas performance optimization for maybe_convert_numeric that short-circuits the empty-na_values case while preserving the existing behavior for non-empty na_values; reviewer discussion also characterizes the change as a bugfix for an unhashable nested-tuple object case in to_numeric.",
-      "what_changed": "The PR computes a function-local boolean, use_na_values = len(na_values) > 0, and guards the per-element __hash__ + membership check with it so empty sets skip Python-level membership work. The author then adds the required regression test and whatsnew entry after review identified the unhashable nested-tuple case as an improvement and bugfix candidate.",
-      "evidence": "~17–25% faster in targeted maybe_convert_numeric benchmarks",
+      "what_changed": "Skipped unnecessary membership checks during numeric conversion.",
+      "evidence": "17–25% faster in targeted maybe_convert_numeric benchmarks.",
       "why_it_matters": "It removes unnecessary per-element Python object work when na_values is empty, which improves the direct numeric-conversion hot path without changing the conversion rules for non-empty na_values. It also addresses a concrete edge case in object-dtype coercion that review flagged as a bugfix-worthy behavior change.",
       "source_urls": [
         "https://github.com/pandas-dev/pandas/pull/69916",
@@ -152,8 +152,8 @@
     },
     "bloomberg/bde#317": {
       "what_it_is": "A small optimization to BDE's bdls_pathutil mutable path helpers.",
-      "what_changed": "The appendRaw and popLeaf helpers now preserve the path string's known length when calling hasLeaf, rather than passing c_str() and triggering a length rescan. The PR reports no public API or ABI change. Review discussion suggested simplifying the calls by passing the string directly; the author confirmed the length-aware conversion and revised accordingly.",
-      "evidence": "The PR reports median latency reductions of 14–65% for appendRaw and 38–73% for popLeaf across tested path lengths and root modes; these are microbenchmark results, not end-to-end application speedups. It also reports Ubuntu bdls package tests (15/15) and a Windows regression passing. A reviewer asked about passing the string directly, and the author confirmed revising the calls as suggested. A comment says the change was merged via an internal repository.",
+      "what_changed": "Avoided repeated path-length scans in appendRaw and popLeaf.",
+      "evidence": "14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks.",
       "why_it_matters": "Avoiding a redundant path-length scan reduces work in both helpers, with larger reported gains on longer paths. The change also aligns these calls with length-aware parsing and avoids the prior embedded-NUL inconsistency described in the PR.",
       "source_urls": [
         "https://github.com/bloomberg/bde/pull/317",
@@ -173,8 +173,8 @@
     },
     "bloomberg/bde#315": {
       "what_it_is": "A pull request to remove the obsolete AIX semaphore-policy branch from BDE’s bslmt_platform.h.",
-      "what_changed": "The proposed change removes the AIX-specific CountedSemaphore selection and its macros. Darwin and generic POSIX policy selection remain unchanged. The PR reports no behavior change for current supported/generated configurations; manually forcing the removed AIX macro changes policy selection.",
-      "evidence": "The author reports passing Linux and macOS policy, large-count (100,000), and 32-waiter contention checks. Full bslmt tests passed on Linux; macOS full-package failures were reproduced on the unmodified baseline. A comment says the PR will be merged via an internal repository; the supplied sources do not confirm that merge.",
+      "what_changed": "Removed AIX-only semaphore policy macros while retaining other platform policies.",
+      "evidence": "Linux/macOS policy and contention checks reported; separately integrated upstream.",
       "why_it_matters": "The cleanup aligns semaphore policy selection with the removal of AIX detection from bsls_platform and reduces obsolete compatibility logic. The author describes the benefit as maintenance-oriented, not a runtime performance improvement.",
       "upstream_integration": {
         "commit": "97e399a397287a6fadf63322983c5fb7a8b012e2",
@@ -230,17 +230,18 @@
     },
     "opencv/opencv#30177": {
       "what_it_is": "A pull request proposing opt-in zero-copy BGRA retrieval for OpenCV’s macOS AVFoundation video capture path.",
-      "what_changed": "The BGRA path wraps the existing CVPixelBuffer pixels in a cv::Mat and retains the pixel buffer for frame lifetime. Existing BGR/RGB/GRAY/YUYV paths remain unchanged; UMat still copies. After review identified that BGRA retrieval consumed the grabbed frame and broke repeated retrieve() calls, the author updated the implementation to preserve the frame until the next grab and added a regression test.",
+      "what_changed": "Added a macOS BGRA fast path with frame-lifetime handling.",
       "why_it_matters": "Callers that can accept BGRA may avoid the color conversion and extra frame work inside retrieve(). The PR also notes a memory trade-off: retaining pixel buffers while callers keep frames alive can increase memory use.",
       "source_urls": [
         "https://github.com/opencv/opencv/pull/30177",
         "https://github.com/opencv/opencv/pull/30177#discussion_r4228588212"
-      ]
+      ],
+      "evidence": "Regression coverage added for repeated frame retrieval."
     },
     "bloomberg/bde#319": {
       "what_it_is": "A proposed optimization for BDE LoggerManager default-logger lookups: it caches a thread-local negative result ('this thread has no custom logger') so repeated lookups can skip lock-and-map work while preserving the existing fallback path.",
-      "what_changed": "The PR adds a fast path for the case where a thread repeatedly resolves the global default logger and has never set a custom logger. It remembers only the negative condition for the current thread, invalidates it when the thread changes logger or when a manager is recreated, and leaves the public class layout and existing behavior outside that path unchanged.",
-      "evidence": "The PR body says: 'remember a negative lookup for the current thread, reuse it while valid' and 'The cache remembers only that this thread has no custom logger. It never caches a custom Logger*.' It also reports that in the instrumented mixed workload, '55.6% of calls ... used the new fast path' and that paired CPU time was '53–56% lower' on three Ubuntu runners; it explicitly notes these are component-level results and not end-to-end logging performance.",
+      "what_changed": "Cached absence of a thread-local logger, with invalidation on state changes.",
+      "evidence": "53–56% lower component CPU time in reported Ubuntu benchmarks.",
       "why_it_matters": "It targets repeated low-level logger lookup overhead in mixed custom/default workloads without redesigning logger ownership or changing the public API. The author presents it as a focused review proposal rather than a universal optimization, with trade-offs around cache invalidation and extra TLS/atomic state.",
       "source_urls": [
         "https://github.com/bloomberg/bde/pull/319"
@@ -257,7 +258,7 @@
     },
     "numpy/numpy#32895": {
       "what_it_is": "A proposed NumPy optimization for batched `searchsorted` that reuses prior insertion-position information when consecutive query keys have strong locality, with a selector and a conservative activation threshold to avoid paying the added logic cost on less favorable workloads.",
-      "what_changed": "The PR adds a locality-aware fast path to batched `searchsorted`, uses 16 sampled intermediate positions from the existing batched binary-search computation to detect helpful locality, and adds a `Q >= 2^20` gate so the optimization is only used when the author judged the benefit large enough to justify the extra overhead. The author later refined the selector to reject adversarial patterns by comparing each sampled point with the value immediately before it, and added tests covering large-query cases, duplicate keys, NaN/NaT/complex NaN, disordered inputs, and focused ASV checks.",
+      "what_changed": "Added locality-aware batched searchsorted selection with adversarial-case checks.",
       "why_it_matters": "The work is relevant because it targets a real performance opportunity in NumPy's batched `searchsorted` path, but it also treats the problem as a hybrid algorithm with selector risk, machine-specific cost, and maintenance burden. The discussion shows the central tradeoff: a fast path can help strongly local workloads, but maintainers are concerned about degradation risk, the cost of complexity, and the need for broad benchmark and adversarial-case validation before accepting such a path.",
       "source_urls": [
         "https://github.com/numpy/numpy/pull/32895",
@@ -271,7 +272,8 @@
         "https://github.com/numpy/numpy/pull/32895#issuecomment-6035761704",
         "https://github.com/numpy/numpy/pull/32895#issuecomment-6043598608",
         "https://github.com/numpy/numpy/pull/32895#issuecomment-6050943943"
-      ]
+      ],
+      "evidence": "Large-query and dtype edge-case tests added; PR benchmarks require scoped interpretation."
     },
     "bloomberg/memray#1040": {
       "what_it_is": "A Memray pull request that optimizes allocation-record serialization by encoding one logical record into a fixed 32-byte stack buffer and writing it once through Sink::writeAll(), while preserving the existing wire format and behavior.",
@@ -306,8 +308,8 @@
     },
     "serde-rs/json#1356": {
       "what_it_is": "A proposed serde_json change to avoid allocating a temporary String when deserializing i128 and u128 values.",
-      "what_changed": "The author tried parsing by accumulating the value directly with checked arithmetic, aiming to preserve existing parsing behavior, overflow handling, and error positions. The PR notes that it keeps the current negative-zero behavior, which could interact with #1353.",
-      "evidence": "The author reports isolated benchmarks showing ~1.5–2× faster parsing for longer 128-bit integers, zero temporary allocations versus 1–4 previously, and passing existing tests, feature checks, and added regression tests.",
+      "what_changed": "Proposed checked-arithmetic parsing for 128-bit integers, avoiding temporary allocations.",
+      "evidence": "1.5–2× faster on tested long integers; 1–4 allocations → 0.",
       "why_it_matters": "If validated and accepted, the approach could reduce temporary allocations and improve parsing speed for longer 128-bit integers.",
       "source_urls": [
         "https://github.com/serde-rs/json/pull/1356"
@@ -334,8 +336,8 @@
     },
     "nginx/nginx#1889": {
       "what_it_is": "A proposed NGINX change addressing excessive memory allocation when an upstream sends too many HTTP 103 Early Hints responses.",
-      "what_changed": "The PR adds an early return of NGX_HTTP_UPSTREAM_INVALID_HEADER when the configured buffer limit is exceeded, handing the response to existing upstream error handling and retry logic.",
-      "evidence": "The author reports that the official 4,691-test suite and additional boundary and retry tests passed. In the described stress test, the original version showed 183,208 KiB of RSS growth; the patched version showed 44 KiB and stopped after 81 hints. The author notes this is an observed test result, not a universal memory bound.",
+      "what_changed": "Rejected oversized upstream response headers through existing error handling.",
+      "evidence": "Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing.",
       "why_it_matters": "The proposed change aims to stop processing oversized Early Hints responses early, avoiding the continued request-pool allocations described in the PR and improving resilience to unexpected upstream behavior.",
       "source_urls": [
         "https://github.com/nginx/nginx/pull/1889",
@@ -345,8 +347,8 @@
     },
     "aws/aws-lc#3700": {
       "what_it_is": "A pull request proposing a faster Linux fork-generation check in AWS-LC.",
-      "what_changed": "Uses shared C11 atomics on the common Linux fast path, retains the write lock for generation updates, and falls back to the original implementation where the required atomics are not lock-free. The PR says it does not change public APIs, the DRBG, entropy sources, or the underlying fork-detection mechanism.",
-      "evidence": "The author reports 14.5% lower time per operation for RAND_bytes(32) with 4 threads and 94.9% lower time for the fork-generation check with 4 threads, based on the median of seven paired runs on a 4-vCPU Linux runner. AWS-LC Minimal and Go tests, concurrent generation checks, and ThreadSanitizer tests passed in the validated scenarios. The author notes that an uncoordinated multithreaded fork stress test stalled intermittently in both builds and was not counted as passing evidence; testing does not prove every fork/VM-clone interleaving.",
+      "what_changed": "Used lock-free atomics for common fork-generation checks, preserving fallback behavior.",
+      "evidence": "14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests.",
       "why_it_matters": "The proposed change aims to reduce synchronization overhead on a frequently used fork-generation check, including during concurrent RAND_bytes calls.",
       "source_urls": [
         "https://github.com/aws/aws-lc/pull/3700"
@@ -382,8 +384,8 @@
     },
     "PX4/PX4-Autopilot#29537": {
       "what_it_is": "A PX4-Autopilot fix for mission-upload timeout handling.",
-      "what_changed": "The upload timestamp is now updated only after checking that the MISSION_COUNT sender matches the active upload, so rejected counts from another sender do not refresh its timeout.",
-      "evidence": "The PR reports that disarmed PX4 SITL testing on GitHub Actions reproduced the issue before the patch and verified timeout recovery and a new upload afterward.",
+      "what_changed": "Prevented rejected MISSION_COUNT messages from resetting upload timeouts.",
+      "evidence": "PX4 SITL reproduced the issue and validated timeout recovery.",
       "why_it_matters": "A different sender repeatedly transmitting mission counts could otherwise keep a stalled upload alive beyond the 5-second timeout and block new uploads.",
       "source_urls": [
         "https://github.com/PX4/PX4-Autopilot/pull/29537"
@@ -401,8 +403,8 @@
     },
     "nasa/fprime#6292": {
       "what_it_is": "A pull request proposing a fix for aggregate high-water mark tracking in F Prime’s PriorityMemQueue.",
-      "what_changed": "The proposed change tracks queue occupancy across priorities, updates the high-water mark on enqueue and dequeue, and checks that configured total capacity fits in U32. It also adds regression tests for multiple priorities and concurrent producers.",
-      "evidence": "The author reported 7/7 Framework CI jobs and 7/7 Reference CI jobs passed, including TSan and Linux/macOS integration tests, while noting that passing tests do not establish exhaustive concurrency correctness. The PR was closed because the referenced issue had not yet gone through CCB review; the issue remained open for review.",
+      "what_changed": "Proposed corrected cross-priority queue occupancy and high-water tracking.",
+      "evidence": "14/14 reported CI jobs passed; closed pending CCB approval.",
       "why_it_matters": "The author says the existing behavior can underreport total queue usage, reducing the usefulness of the high-water mark for capacity monitoring. The proposed change was not merged, pending CCB review of the referenced issue.",
       "source_urls": [
         "https://github.com/nasa/fprime/pull/6292",
@@ -420,8 +422,8 @@
     },
     "nasa/fprime#6294": {
       "what_it_is": "A proposed change to F´’s Svc/FileWorker addressing cases where a file write succeeds but writing its .CRC32 checksum sidecar fails.",
-      "what_changed": "The PR proposed reporting FW_STATUS_FAILED_TO_WRITE if either write fails, correcting the reported byte count, and handling zero-length writes without changing the file. The author reported adding regression tests for checksum write failures, round trips, offsets, and zero-length writes. The PR was closed because the referenced issue had not yet received CCB review; the sources do not indicate that the change was merged.",
-      "evidence": "The author describes the failure case, proposed behavior, rationale, and regression tests in the PR body. An automated comment says the linked issue had not been approved by the CCB, and a later comment confirms the PR was closed for that reason.",
+      "what_changed": "Proposed correct failure reporting for checksum writes and zero-length operations.",
+      "evidence": "Regression scenarios documented; closed pending CCB approval.",
       "why_it_matters": "The proposed behavior would let callers know when the checksum sidecar is missing or incomplete rather than treating the operation as successful. The author notes that the data file may already have changed when the checksum write fails; this patch would report the failure but would not roll back that data file.",
       "source_urls": [
         "https://github.com/nasa/fprime/pull/6294",
@@ -441,8 +443,8 @@
     },
     "pmodels/mpich#8085": {
       "what_it_is": "A pull request to clean up pending PMI2 node-attribute requests when a Hydra client disconnects.",
-      "what_changed": "Removes the disconnected client’s queued requests without affecting other waiters and adds a PMI2 fault test. Reviewer feedback also led to improved error diagnostics and a CHECK_PMI2 helper in both PMI2 tests.",
-      "evidence": "The PR description reports that the build and targeted PMI tests passed in GitHub Actions. The author confirmed updating test diagnostics in response to reviewer comments.",
+      "what_changed": "Cleared disconnected clients' queued requests without affecting other waiters.",
+      "evidence": "Targeted PMI fault tests and build reported passing.",
       "why_it_matters": "Prevents Hydra from trying to reply to a client over a closed socket when another process sets the requested attribute.",
       "source_urls": [
         "https://github.com/pmodels/mpich/pull/8085",
