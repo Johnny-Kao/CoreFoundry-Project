@@ -12,20 +12,20 @@ I investigate performance bottlenecks, correctness bugs, and security issues—a
 
 | Research Area | Selected Projects | Upstream Evidence |
 |---|---|---|
-| 🌐 Networking & Web | curl, urllib3, NGINX, Rack, reqwest | [urllib3](https://github.com/urllib3/urllib3/pull/5304): **19–23% less CPU** in tested gzip workloads · Merged |
-| 🔐 Security & Cryptography | AWS-LC, curl, CERN ROOT | [curl CVE-2026-115529](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) · Credited; [ROOT](https://github.com/root-project/root/pull/23940) memory-safety report · Credited |
-| ☁️ Cloud & Containers | Apple Container | [Container state recovery](https://github.com/apple/container/pull/2293) · Proposed |
-| 🔬 Scientific Computing | NumPy, SciPy, CERN ROOT | [NumPy correctness fix](https://github.com/numpy/numpy/pull/32802) · Merged |
-| 🖥️ HPC & Parallel Computing | MPICH, Kokkos | [MPICH client cleanup](https://github.com/pmodels/mpich/pull/8085); [Kokkos overflow fix](https://github.com/kokkos/kokkos/pull/9725) · Proposed |
-| 🏢 Enterprise Infrastructure | Bloomberg BDE, BlazingMQ, Memray | [BDE optimization](https://github.com/bloomberg/bde/pull/317) · Integrated; [Memray](https://github.com/bloomberg/memray/pull/1035): **up to 28% lower runtime** · Merged |
-| 💹 Financial Infrastructure | QuickFIX/J, QuantLib, FINOS | [QuickFIX/J reliability fix](https://github.com/quickfix-j/quickfixj/pull/1363) · Merged |
-| 🚀 Aerospace & Flight Systems | NASA F´, PX4 | [PX4 mission timeout handling](https://github.com/PX4/PX4-Autopilot/pull/29537) · Proposed |
-| 🗜️ Compression & Data | Blosc2, LZ4, pandas | [Blosc2](https://github.com/Blosc/c-blosc2/pull/805): **35.86 → 2.02 μs** in targeted tests · Merged |
-| 🐍 Python Ecosystem | packaging, attrs, dateutil, cffi | [packaging](https://github.com/pypa/packaging/pull/1429) and [attrs](https://github.com/python-attrs/attrs/pull/1636) optimizations · Merged |
-| 🎥 Computer Vision & Media | OpenCV | [macOS video capture zero-copy path](https://github.com/opencv/opencv/pull/30177) · Proposed |
-| ⚙️ Systems & Runtime | Apple Container, cffi | [Container runtime-state handling](https://github.com/apple/container/pull/2292) · Proposed |
+| 🌐 Networking & Web | curl, urllib3, NGINX, Rack, reqwest | **19–23% less CPU** · [urllib3 gzip decoding](https://github.com/urllib3/urllib3/pull/5304) |
+| 🔐 Security & Cryptography | AWS-LC, curl, CERN ROOT | [curl CVE-2026-115529](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9); [ROOT](https://github.com/root-project/root/pull/23940) memory-safety report |
+| ☁️ Cloud & Containers | Apple Container | [Container state recovery](https://github.com/apple/container/pull/2293) |
+| 🔬 Scientific Computing | NumPy, SciPy, CERN ROOT | [NumPy correctness fix](https://github.com/numpy/numpy/pull/32802); [pandas](https://github.com/pandas-dev/pandas/pull/69916): **17–25% faster** numeric conversion |
+| 🖥️ HPC & Parallel Computing | MPICH, Kokkos | [MPICH client cleanup](https://github.com/pmodels/mpich/pull/8085); [Kokkos overflow fix](https://github.com/kokkos/kokkos/pull/9725) |
+| 🏢 Enterprise Infrastructure | Bloomberg BDE, BlazingMQ, Memray | **Up to 28% lower runtime** · [Memray](https://github.com/bloomberg/memray/pull/1035); [BDE optimization](https://github.com/bloomberg/bde/pull/317) |
+| 💹 Financial Infrastructure | QuickFIX/J, QuantLib, FINOS | [QuickFIX/J reliability fix](https://github.com/quickfix-j/quickfixj/pull/1363) |
+| 🚀 Aerospace & Flight Systems | NASA F´, PX4 | [PX4 mission timeout handling](https://github.com/PX4/PX4-Autopilot/pull/29537) |
+| 🗜️ Compression & Data | Blosc2, LZ4, pandas | **35.86 → 2.02 μs** · [Blosc2 small workloads](https://github.com/Blosc/c-blosc2/pull/805) |
+| 🐍 Python Ecosystem | packaging, attrs, dateutil, cffi | [packaging](https://github.com/pypa/packaging/pull/1429) and [attrs](https://github.com/python-attrs/attrs/pull/1636) optimizations |
+| 🎥 Computer Vision & Media | OpenCV | [macOS video capture zero-copy path](https://github.com/opencv/opencv/pull/30177) |
+| ⚙️ Systems & Runtime | Apple Container, cffi | [Container runtime-state handling](https://github.com/apple/container/pull/2292) |
 
-Results are workload-specific. Proposed work is not presented as merged; security reporting credit is not PR authorship.
+Performance figures are from targeted benchmarks. See linked upstream records for review and integration status.
 
 [Complete contribution record](CONTRIBUTIONS.md) · [Security research](SECURITY_RESEARCH.md)
 
