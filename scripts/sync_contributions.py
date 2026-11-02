@@ -248,17 +248,17 @@ def main():
         old = historic.get(key)
         enrichment = current[key]["enrichment"]
         has_curated_text = bool(meta.get("what_changed") and meta.get("why_it_matters"))
-        if not old and has_curated_text:
-            # Imported manual descriptions are not re-enriched during migration.
-            enrichment["initial"] = "curated"
-        elif not old or (not enrichment.get("initial") and not has_curated_text):
-            triggers.append({"key": key, "phase": "initial", "url": pr["html_url"]})
-        terminal_revision = pr.get("merged_at") if phase == "merged" else pr.get("closed_at") if phase == "closed" else None
-        if old and terminal_revision and old["pr"].get("merged_at") != pr.get("merged_at") or (
-            old and terminal_revision and old["pr"].get("closed_at") != pr.get("closed_at")
-        ):
-            if enrichment.get("terminal_revision") != terminal_revision:
-                triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"], "revision": terminal_revision})
+        # Merged results are frozen for AI: only GitHub status keeps syncing.
+        # Previously curated descriptions are never silently overwritten.
+        if phase != "merged":
+            if not old and has_curated_text:
+                enrichment["initial"] = "curated"
+            elif not old or (not enrichment.get("initial") and not has_curated_text):
+                triggers.append({"key": key, "phase": "initial", "url": pr["html_url"]})
+            if phase == "closed" and old and pr.get("closed_at") != old["pr"].get("closed_at"):
+                revision = pr.get("closed_at")
+                if revision and enrichment.get("terminal_revision") != revision:
+                    triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"], "revision": revision})
         buckets["integrated" if integrated_upstream(pr, meta) else phase].append((repo, pr, meta))
 
     if errors:
