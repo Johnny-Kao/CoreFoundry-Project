@@ -92,6 +92,8 @@ If you share this view, there are two useful ways to help:
 
 ## 🔐 Security vulnerability discoveries
 
+**[CERN ROOT #23940 — RNTuple mini-file anchor decompression](SECURITY_RESEARCH.md#cern-root-23940--rntuple-mini-file-anchor-decompression)** — **Discovered and reported by Johnny Kao.** ROOT maintainer Jakob acknowledged the private security report and submitted [upstream fix PR #23940](https://github.com/root-project/root/pull/23940) on 2026-11-02, explicitly stating **“Issue reported by Johnny Kao.”** The fix addresses invalid anchor size/length combinations and uses the on-disk size for the input buffer. This is **reporter credit, not PR authorship**; merge status and severity are not claimed.
+
 **[CVE-2026-115529 — curl Schannel TLS session resumption](SECURITY_RESEARCH.md)** — **Originally discovered and reported by Johnny Kao** on 2026-10-22. Johnny provided reproducible Schannel/TLS test evidence and identified the 8.12.0 regression. curl accepted the report, assigned a CVE, and committed a fix with explicit `Reported-by: Johnny Kao` credit. Severity: Low (upstream assessment). The HackerOne report was fully disclosed on 2026-10-26; formal advisory and curl 8.24.0 remain scheduled for 2026-12-09. [Original report](https://hackerone.com/reports/4136767) · [Upstream fix](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) · [Advisory draft](https://github.com/curl/curl-www/pull/665).
 
 ---
