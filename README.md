@@ -31,26 +31,30 @@ These are areas of public research or upstream proposals, not claims that every 
 
 | Project | Function | Contribution | Verified Result |
 |---|---|---|---|
-| 🌐 [urllib3](https://github.com/urllib3/urllib3/pull/5304) | Python HTTP networking | Removed redundant gzip output copying | **19–23% less CPU** in tested workloads · Merged |
-| 🏢 [Memray](https://github.com/bloomberg/memray/pull/1035) | Memory profiling | Reduced synchronization contention | **Up to 28% lower runtime** in high-contention tests · Merged |
-| 🗜️ [Blosc2](https://github.com/Blosc/c-blosc2/pull/805) | Data compression | Avoided unnecessary parallel startup | **35.86 → 2.02 μs** in a targeted small workload · Merged |
-| 💹 [QuickFIX/J](https://github.com/quickfix-j/quickfixj/pull/1363) | Financial messaging | Fixed synchronous write failure reporting | **Correctness fix** · Merged |
-| 🔐 [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) | Network transfers & TLS | Reported a TLS session-resumption vulnerability | **CVE-2026-115529** · Credited |
-| 🔬 [CERN ROOT](https://github.com/root-project/root/pull/23940) | Scientific data analysis | Reported an RNTuple memory-safety issue | **Maintainer fix PR** · Credited |
+| 🌐 [urllib3](https://github.com/urllib3/urllib3/pull/5304) | HTTP networking | Removed redundant gzip decompression copies | **19–23% less CPU** in tested workloads · Merged |
+| 🐍 [pandas](https://github.com/pandas-dev/pandas/pull/69916) | Data processing | Reduced numeric conversion overhead | **17–25% faster** in targeted benchmarks · Merged |
+| 🏢 [Bloomberg Memray](https://github.com/bloomberg/memray/pull/1035) | Memory profiling | Reduced synchronization contention | **Up to 28% lower runtime** under high contention · Merged |
+| 💹 [QuickFIX/J](https://github.com/quickfix-j/quickfixj/pull/1363) | Financial messaging | Fixed false success reporting on failed writes | **Correctness fix** · Merged |
+| 🔐 [curl](https://github.com/curl/curl/commit/12ab9f50d7c358b44188fe972cc15ba068901de9) | Networking & TLS | Reported TLS session-resumption security issue | **CVE-2026-115529** · Credited |
+| 🔬 [CERN ROOT](https://github.com/root-project/root/pull/23940) | Scientific data analysis | Reported RNTuple memory-safety issue | **Maintainer fix PR** · Credited |
 
 Performance results are workload-specific. Reporting credit does not imply PR authorship.
 
 [Complete contribution record](CONTRIBUTIONS.md) · [Security research](SECURITY_RESEARCH.md)
 
-## 💚 Support CoreFoundry
+## 💚 Support Independent Upstream Engineering
 
-**Initial funding goal: USD 100/month.**
+**Better open-source infrastructure benefits everyone building on it.**
 
-CoreFoundry is independently funded. This first milestone helps cover baseline AI-assisted research and engineering tools—not the full cost of the work.
+CoreFoundry independently investigates performance, correctness, and security issues in widely used software, with findings and improvements contributed upstream.
 
-I welcome recurring sponsorship and institutional research collaboration supporting **public, upstream-focused work**. Funding does not buy roadmap control, priority handling, or guaranteed changes to any project.
+**Initial funding goal: USD 100/month** — to cover baseline AI-assisted research and engineering tools.
 
-**[GitHub Sponsors](https://github.com/sponsors/Johnny-Kao)** · [Funding principles](FUNDING.md)
+Corporate sponsorships and institutional research collaborations are welcome.
+
+Funding supports independent, public-interest engineering. It does not purchase roadmap control, priority fixes, or guaranteed outcomes.
+
+**[Become a Sponsor](https://github.com/sponsors/Johnny-Kao)** · [Funding Principles](FUNDING.md)
 
 ## 📚 More Detail
 
