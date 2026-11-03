@@ -28,6 +28,7 @@ class LedgerTests(unittest.TestCase):
             "why_it_matters": "Long narrative not intended for the public table",
         })
         self.assertEqual(len(row), 4)
+        self.assertEqual(row[1], "🟢 Open")
         self.assertIn("19% lower CPU", row[3])
         table = sync.render_table([row])
         self.assertIn("| Status | Engineering contribution | Evidence / impact |", table)
@@ -45,7 +46,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIsNotNone(sync.integrated_upstream(closed, meta))
         cell = sync.pr_link("bloomberg/bde", closed, meta)
         self.assertNotIn("integrated in bloomberg/bde", cell)
-        self.assertEqual(sync.row_for("bloomberg/bde", closed, meta)[1], "Integrated")
+        self.assertEqual(sync.row_for("bloomberg/bde", closed, meta)[1], "✅ Integrated")
         self.assertNotIn("merge commit", cell)
         self.assertIsNone(sync.integrated_upstream(pr(), meta))
         self.assertIsNone(sync.integrated_upstream(closed, {"upstream_integration": {"commit": "bad"}}))
@@ -76,7 +77,7 @@ class LedgerTests(unittest.TestCase):
             ), mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 first = (root / "CONTRIBUTIONS.md").read_bytes()
-                self.assertIn(b"| Integrated |", first)
+                self.assertIn("| ✅ Integrated |", first.decode("utf-8"))
                 self.assertIn(b"Integrated separately:** 1", first)
                 self.assertIn(b"**Merged:** 0", first)
                 sync.main()
@@ -91,7 +92,7 @@ class LedgerTests(unittest.TestCase):
                     "commit": "0a08cee06960e415f735dec4cf2fb91d669e2433",
                     "label": "co-authored benchmark"}]}
         row = sync.row_for("python-attrs/attrs", merged, meta)
-        self.assertEqual(row[1], "Merged")
+        self.assertEqual(row[1], "✅ Merged")
         self.assertNotIn("co-authored benchmark", " ".join(row))
         self.assertIn("1.76x faster", row[3])
 
@@ -100,6 +101,15 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(sync.status_of(pr(draft=True)), "draft")
         self.assertEqual(sync.status_of(pr()), "open")
         self.assertEqual(sync.status_of(pr(state="closed")), "closed")
+
+    def test_status_labels(self):
+        self.assertEqual(sync.row_for("upstream/library", pr(draft=True), {})[1], "🟡 Draft")
+        self.assertEqual(sync.row_for("upstream/library", pr(state="closed"), {})[1], "⚪ Closed")
+        self.assertEqual(sync.row_for("upstream/library", pr(merged=True), {})[1], "✅ Merged")
+
+    def test_new_terminal_pr_does_not_queue_copilot(self):
+        self.assertEqual(self.check_queue(fresh=pr(merged=True)), [])
+        self.assertEqual(self.check_queue(fresh=pr(state="closed")), [])
 
     def test_closed_retained_and_personal_excluded(self):
         self.assertTrue(sync.should_include("upstream/library", pr(state="closed"), {}))
@@ -180,7 +190,7 @@ class LedgerTests(unittest.TestCase):
             "enrichment": {"initial": "completed"}}}
         closed = pr(state="closed")
         closed["closed_at"] = "2026-10-09T00:00:00Z"
-        self.assertEqual(self.check_queue(previous=previous, fresh=closed)[0]["phase"], "terminal")
+        self.assertEqual(self.check_queue(previous=previous, fresh=closed), [])
 
     def test_curated_import_does_not_use_copilot(self):
         meta = {"upstream/library#1": {
