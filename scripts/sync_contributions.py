@@ -125,28 +125,28 @@ def integrated_upstream(pr, meta):
 
 
 def pr_link(repo, pr, meta=None):
-    number = pr["number"]
-    url = pr["html_url"]
-    cell = f"**[{repo} #{number}]({url})**"
-    integration = integrated_upstream(pr, meta or {})
+    return f"**[{repo} #{pr['number']}]({pr['html_url']})**"
+
+
+def supporting_links(repo, pr, meta):
+    links = []
+    integration = integrated_upstream(pr, meta)
     if integration:
-        sha = integration["commit"]
-        target_repo = integration["repo"]
-        cell += f"<br><sub>[Upstream integration](https://github.com/{target_repo}/commit/{sha})</sub>"
-    extra = (meta or {}).get("related_upstream_commits", [])
-    for record in extra:
+        record = integration
+        links.append(f"[Upstream integration](https://github.com/{record['repo']}/commit/{record['commit']})")
+    for record in meta.get("related_upstream_commits", []):
         if not isinstance(record, dict):
             continue
         target_repo, sha = record.get("repo"), record.get("commit")
         if (not isinstance(target_repo, str) or len(target_repo.split("/")) != 2
-                or any(not part or not all(ch.isalnum() or ch in "-_." for ch in part)
+                or any(not part or not all(ch.isalnum() or ch in "-_.")
                        for part in target_repo.split("/"))
                 or not isinstance(sha, str) or len(sha) != 40
                 or any(ch not in "0123456789abcdef" for ch in sha)):
             continue
-        label = escape_cell(record.get("label", "related upstream commit"))
-        cell += f"<br><sub>[{label} in {target_repo} `{sha[:7]}`](https://github.com/{target_repo}/commit/{sha})</sub>"
-    return cell
+        label = escape_cell(record.get("label", "Related upstream work"))
+        links.append(f"[{label}](https://github.com/{target_repo}/commit/{sha})")
+    return links
 
 
 def repo_display(repo):
@@ -165,12 +165,15 @@ def concise(value, limit=155):
 
 
 def row_for(repo, pr, meta):
+    status = "Integrated" if integrated_upstream(pr, meta) else status_of(pr).capitalize()
     change = concise(meta.get("what_changed") or pr.get("title"), 150)
     evidence = concise(meta.get("evidence"), 135)
-    if not evidence:
-        evidence = "—"
+    links = supporting_links(repo, pr, meta)
+    if links:
+        evidence = (evidence + " · " if evidence else "") + " · ".join(links)
     return [
         pr_link(repo, pr, meta),
+        status,
         escape_cell(change),
         escape_cell(evidence),
     ]
@@ -178,8 +181,8 @@ def row_for(repo, pr, meta):
 
 def render_table(rows):
     lines = [
-        "| Project / PR | Engineering contribution | Evidence / impact |",
-        "|---|---|---|",
+        "| Project / PR | Status | Engineering contribution | Evidence / impact |",
+        "|---|---|---|---|",
     ]
     for row in rows:
         lines.append("| " + " | ".join(row) + " |")
@@ -295,7 +298,7 @@ def main():
         "CoreFoundry treats the **upstream pull request as the canonical public record**.",
         "",
         "- upstream PR links are always primary;",
-        "- merged entries link to their upstream PR; separately integrated work retains direct commit evidence;",
+        "- status reflects GitHub PR state, except independently integrated work labeled Integrated;",
         "- contributor forks, local branches, staging repositories, and research harnesses are never required to reconstruct the public record;",
         "- narrative metadata is curated, while PR state is synchronized automatically from GitHub.",
         "- closed PRs integrated via another upstream commit are tracked separately, not counted as merged PRs.",
@@ -303,23 +306,11 @@ def main():
         "",
     ]
 
-    sections = [
-        ("merged", "🚀 Merged upstream work"),
-        ("integrated", "🔗 Integrated upstream via separate commit (original PR closed)"),
-        ("open", "🟢 Open / in review"),
-        ("draft", "🟡 Draft / validating"),
-        ("closed", "⚪ Closed / lessons retained"),
-    ]
-
-    for key, title in sections:
-        lines.append(f"## {title}")
-        lines.append("")
-        if buckets[key]:
-            rows = [row_for(*entry) for entry in buckets[key]]
-            lines.append(render_table(rows))
-        else:
-            lines.append("_No tracked entries in this state._")
-        lines.append("")
+    lines.extend(["## Upstream contributions", ""])
+    rows = [row_for(*entry) for key in ("merged", "integrated", "open", "draft", "closed")
+            for entry in buckets[key]]
+    lines.append(render_table(rows) if rows else "_No tracked entries._")
+    lines.append("")
 
     lines.extend(
         [
