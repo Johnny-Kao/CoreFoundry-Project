@@ -144,7 +144,14 @@ def concise(value, limit=155):
 
 
 def row_for(repo, pr, meta):
-    status = "Integrated" if integrated_upstream(pr, meta) else status_of(pr).capitalize()
+    phase = "integrated" if integrated_upstream(pr, meta) else status_of(pr)
+    status = {
+        "merged": "✅ Merged",
+        "integrated": "✅ Integrated",
+        "open": "🟢 Open",
+        "draft": "🟡 Draft",
+        "closed": "⚪ Closed",
+    }[phase]
     change = concise(meta.get("what_changed") or pr.get("title"), 150)
     evidence = concise(meta.get("evidence"), 135)
     return [
@@ -223,17 +230,13 @@ def main():
         old = historic.get(key)
         enrichment = current[key]["enrichment"]
         has_curated_text = bool(meta.get("what_changed") and meta.get("why_it_matters"))
-        # Merged results are frozen for AI: only GitHub status keeps syncing.
-        # Previously curated descriptions are never silently overwritten.
-        if phase != "merged":
-            if not old and has_curated_text:
+        # GitHub status always refreshes. Copilot only supplies initial copy for
+        # active PRs; terminal (merged/integrated/closed) text remains untouched.
+        if phase in {"open", "draft"}:
+            if has_curated_text and (not old or not enrichment.get("initial")):
                 enrichment["initial"] = "curated"
-            elif not old or (not enrichment.get("initial") and not has_curated_text):
+            elif not enrichment.get("initial") and not has_curated_text:
                 triggers.append({"key": key, "phase": "initial", "url": pr["html_url"]})
-            if phase == "closed" and old and pr.get("closed_at") != old["pr"].get("closed_at"):
-                revision = pr.get("closed_at")
-                if revision and enrichment.get("terminal_revision") != revision:
-                    triggers.append({"key": key, "phase": "terminal", "url": pr["html_url"], "revision": revision})
         buckets["integrated" if integrated_upstream(pr, meta) else phase].append((repo, pr, meta))
 
     if errors:
@@ -276,7 +279,7 @@ def main():
         "- upstream PR links are always primary;",
         "- status reflects GitHub PR state, except independently integrated work labeled Integrated;",
         "- contributor forks, local branches, staging repositories, and research harnesses are never required to reconstruct the public record;",
-        "- narrative metadata is curated, while PR state is synchronized automatically from GitHub.",
+        "- GitHub PR status is synchronized automatically; Copilot only drafts active PR descriptions, while terminal records are frozen.",
         "- closed PRs integrated via another upstream commit are tracked separately, not counted as merged PRs.",
         "",
         "",
