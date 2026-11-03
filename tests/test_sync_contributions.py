@@ -45,7 +45,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIsNotNone(sync.integrated_upstream(closed, meta))
         cell = sync.pr_link("bloomberg/bde", closed, meta)
         self.assertNotIn("integrated in bloomberg/bde", cell)
-        self.assertIn("Upstream integration", " ".join(sync.supporting_links("bloomberg/bde", closed, meta)))
+        self.assertEqual(sync.row_for("bloomberg/bde", closed, meta)[1], "Integrated")
         self.assertNotIn("merge commit", cell)
         self.assertIsNone(sync.integrated_upstream(pr(), meta))
         self.assertIsNone(sync.integrated_upstream(closed, {"upstream_integration": {"commit": "bad"}}))
@@ -76,25 +76,24 @@ class LedgerTests(unittest.TestCase):
             ), mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 first = (root / "CONTRIBUTIONS.md").read_bytes()
-                self.assertIn(b"Upstream integration", first)
+                self.assertIn(b"| Integrated |", first)
                 self.assertIn(b"Integrated separately:** 1", first)
                 self.assertIn(b"**Merged:** 0", first)
                 sync.main()
                 self.assertEqual(first, (root / "CONTRIBUTIONS.md").read_bytes())
 
-    def test_related_coauthored_commit_on_merged_pr(self):
+    def test_related_commits_do_not_clutter_merged_row(self):
         merged = pr(repo="python-attrs/attrs", number=1636, merged=True)
-        meta = {"related_upstream_commits": [{
-            "repo": "python-attrs/attrs",
-            "commit": "0a08cee06960e415f735dec4cf2fb91d669e2433",
-            "label": "co-authored benchmark"
-        }]}
-        self.assertEqual(sync.status_of(merged), "merged")
-        cell = sync.pr_link("python-attrs/attrs", merged, meta)
-        self.assertNotIn("merge commit", cell)
-        self.assertIn("co-authored benchmark", " ".join(sync.supporting_links("python-attrs/attrs", merged, meta)))
-        self.assertIn("/python-attrs/attrs/commit/0a08cee", " ".join(sync.supporting_links("python-attrs/attrs", merged, meta)))
-        self.assertEqual(" ".join(sync.supporting_links("python-attrs/attrs", merged, meta)).count("co-authored benchmark"), 1)
+        meta = {"what_changed": "Skipped redundant detection",
+                "evidence": "1.76x faster in tested workloads",
+                "related_upstream_commits": [{
+                    "repo": "python-attrs/attrs",
+                    "commit": "0a08cee06960e415f735dec4cf2fb91d669e2433",
+                    "label": "co-authored benchmark"}]}
+        row = sync.row_for("python-attrs/attrs", merged, meta)
+        self.assertEqual(row[1], "Merged")
+        self.assertNotIn("co-authored benchmark", " ".join(row))
+        self.assertIn("1.76x faster", row[3])
 
     def test_state_classification(self):
         self.assertEqual(sync.status_of(pr(merged=True)), "merged")
