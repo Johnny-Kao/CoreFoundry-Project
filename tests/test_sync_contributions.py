@@ -172,8 +172,8 @@ class LedgerTests(unittest.TestCase):
             "repo": "upstream/library", "pr": pr(),
             "enrichment": {"initial": "completed"}}}
         events = self.check_queue(previous=previous, fresh=pr(merged=True))
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["phase"], "terminal")
+        # Merged contributions are frozen and no longer trigger Copilot.
+        self.assertEqual(events, [])
 
     def test_closed_without_merge_triggers_final(self):
         previous = {"upstream/library#1": {
