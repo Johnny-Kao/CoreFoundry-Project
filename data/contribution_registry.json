@@ -197,32 +197,9 @@
         "number": 3700,
         "state": "open",
         "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
-        "updated_at": "2026-11-02T19:59:32Z"
+        "updated_at": "2026-11-02T21:38:09Z"
       },
       "repo": "aws/aws-lc"
-    },
-    "bloomberg/bde#313": {
-      "enrichment": {},
-      "pr": {
-        "base": {
-          "repo": {
-            "owner": {
-              "login": "bloomberg"
-            }
-          }
-        },
-        "closed_at": "2026-10-03T18:15:50Z",
-        "created_at": "2026-10-03T18:11:31Z",
-        "draft": false,
-        "html_url": "https://github.com/bloomberg/bde/pull/313",
-        "merge_commit_sha": "eaec2c3a1efd3bac9e60bf25ab82867c13d1a97f",
-        "merged_at": null,
-        "number": 313,
-        "state": "closed",
-        "title": "Opened by mistake",
-        "updated_at": "2026-10-03T18:18:47Z"
-      },
-      "repo": "bloomberg/bde"
     },
     "bloomberg/bde#315": {
       "enrichment": {
@@ -467,7 +444,7 @@
         "created_at": "2026-10-17T04:36:15Z",
         "draft": false,
         "html_url": "https://github.com/finos/ai-governance-framework/pull/415",
-        "merge_commit_sha": "6267bde32c9a576af26f1b5effb4dd5e66015c72",
+        "merge_commit_sha": "74046351d8efb9a5e41b33498126e8f07ee857c4",
         "merged_at": null,
         "number": 415,
         "state": "open",
@@ -646,7 +623,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "6970fc0716fae7c8aa1e1beba3b949b79877418b",
+        "merge_commit_sha": "dddf04889cf62979d78952d32dee3b0e2efa6649",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -721,7 +698,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "f0897bf10e92c27526e5caa478895bb6e56832e0",
+        "merge_commit_sha": "74b2ee13f36f8e6ba18276075431f8aed9ea11a1",
         "merged_at": null,
         "number": 32895,
         "state": "open",

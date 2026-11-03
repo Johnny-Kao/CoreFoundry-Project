@@ -1,11 +1,5 @@
 {
   "deferred": 0,
-  "events": [
-    {
-      "key": "bloomberg/bde#313",
-      "phase": "initial",
-      "url": "https://github.com/bloomberg/bde/pull/313"
-    }
-  ],
+  "events": [],
   "schema_version": 1
 }
