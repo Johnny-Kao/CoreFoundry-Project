@@ -79,8 +79,11 @@ def validate(candidate, sources):
 
 def enrich(event, metadata, registry):
     record = registry.get("entries", {}).get(event["key"], {})
-    if core.status_of(record.get("pr", {})) == "merged":
-        print(f"Skip frozen merged contribution: {event['key']}")
+    if core.status_of(record.get("pr", {})) in {"merged", "closed"}:
+        print(f"Skip frozen terminal contribution: {event['key']}")
+        return False
+    if event.get("phase") != "initial":
+        print(f"Skip non-initial Copilot event: {event['key']}")
         return False
     sources = sources_for(event)
     # Avoid spending credits on PRs with no substantive information yet.
