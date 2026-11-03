@@ -93,8 +93,8 @@
     },
     "kjd/idna#279": {
       "what_it_is": "A proposal to speed up ordinary ASCII domain-label encoding in kjd/idna.",
-      "what_changed": "The PR adds a fast path in alabel() for non-ACE ASCII labels containing only letters, digits, and hyphens, with length and hyphen checks. Other labels continue through the existing validation path.",
-      "evidence": "The author reports 79.5–85.1% lower execution time on two ordinary ASCII encode workloads and no behavioral mismatches in differential testing. The maintainer said they would not accept this PR as-is, describing it as overly complicated, and implemented the underlying concept in #287.",
+      "what_changed": "Proposed a fast path for ordinary ASCII domain labels.",
+      "evidence": "79.5–85.1% lower execution time in two tested ASCII encoding workloads.",
       "why_it_matters": "The proposal aims to avoid unnecessary Unicode validation for ordinary ASCII labels while preserving the existing path for ACE, Unicode, and other inputs. The maintainer's response indicates the concept was carried forward in a separate implementation.",
       "include_closed": true,
       "source_urls": [
