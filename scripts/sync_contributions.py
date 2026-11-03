@@ -128,27 +128,6 @@ def pr_link(repo, pr, meta=None):
     return f"**[{repo} #{pr['number']}]({pr['html_url']})**"
 
 
-def supporting_links(repo, pr, meta):
-    links = []
-    integration = integrated_upstream(pr, meta)
-    if integration:
-        record = integration
-        links.append(f"[Upstream integration](https://github.com/{record['repo']}/commit/{record['commit']})")
-    for record in meta.get("related_upstream_commits", []):
-        if not isinstance(record, dict):
-            continue
-        target_repo, sha = record.get("repo"), record.get("commit")
-        if (not isinstance(target_repo, str) or len(target_repo.split("/")) != 2
-                or any(not part or not all(ch.isalnum() or ch in "-_." for ch in part)
-                       for part in target_repo.split("/"))
-                or not isinstance(sha, str) or len(sha) != 40
-                or any(ch not in "0123456789abcdef" for ch in sha)):
-            continue
-        label = escape_cell(record.get("label", "Related upstream work"))
-        links.append(f"[{label}](https://github.com/{target_repo}/commit/{sha})")
-    return links
-
-
 def repo_display(repo):
     return repo.split("/", 1)[1]
 
@@ -168,9 +147,6 @@ def row_for(repo, pr, meta):
     status = "Integrated" if integrated_upstream(pr, meta) else status_of(pr).capitalize()
     change = concise(meta.get("what_changed") or pr.get("title"), 150)
     evidence = concise(meta.get("evidence"), 135)
-    links = supporting_links(repo, pr, meta)
-    if links:
-        evidence = (evidence + " · " if evidence else "") + " · ".join(links)
     return [
         pr_link(repo, pr, meta),
         status,
