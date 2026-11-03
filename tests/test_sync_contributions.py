@@ -27,10 +27,10 @@ class LedgerTests(unittest.TestCase):
             "evidence": "19% lower CPU in a controlled workload",
             "why_it_matters": "Long narrative not intended for the public table",
         })
-        self.assertEqual(len(row), 3)
-        self.assertIn("19% lower CPU", row[2])
+        self.assertEqual(len(row), 4)
+        self.assertIn("19% lower CPU", row[3])
         table = sync.render_table([row])
-        self.assertIn("| Engineering contribution | Evidence / impact |", table)
+        self.assertIn("| Status | Engineering contribution | Evidence / impact |", table)
         self.assertNotIn("Why this matters", table)
         self.assertNotIn("Long narrative", table)
 
@@ -44,8 +44,8 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(sync.status_of(closed), "closed")
         self.assertIsNotNone(sync.integrated_upstream(closed, meta))
         cell = sync.pr_link("bloomberg/bde", closed, meta)
-        self.assertIn("integrated in bloomberg/bde", cell)
-        self.assertIn("97e399a", cell)
+        self.assertNotIn("integrated in bloomberg/bde", cell)
+        self.assertIn("Upstream integration", " ".join(sync.supporting_links("bloomberg/bde", closed, meta)))
         self.assertNotIn("merge commit", cell)
         self.assertIsNone(sync.integrated_upstream(pr(), meta))
         self.assertIsNone(sync.integrated_upstream(closed, {"upstream_integration": {"commit": "bad"}}))
@@ -76,7 +76,7 @@ class LedgerTests(unittest.TestCase):
             ), mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 first = (root / "CONTRIBUTIONS.md").read_bytes()
-                self.assertIn(b"integrated in upstream/library", first)
+                self.assertIn(b"Upstream integration", first)
                 self.assertIn(b"Integrated separately:** 1", first)
                 self.assertIn(b"**Merged:** 0", first)
                 sync.main()
@@ -92,9 +92,9 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(sync.status_of(merged), "merged")
         cell = sync.pr_link("python-attrs/attrs", merged, meta)
         self.assertNotIn("merge commit", cell)
-        self.assertIn("co-authored benchmark", cell)
-        self.assertIn("/python-attrs/attrs/commit/0a08cee", cell)
-        self.assertEqual(cell.count("co-authored benchmark"), 1)
+        self.assertIn("co-authored benchmark", " ".join(sync.supporting_links("python-attrs/attrs", merged, meta)))
+        self.assertIn("/python-attrs/attrs/commit/0a08cee", " ".join(sync.supporting_links("python-attrs/attrs", merged, meta)))
+        self.assertEqual(" ".join(sync.supporting_links("python-attrs/attrs", merged, meta)).count("co-authored benchmark"), 1)
 
     def test_state_classification(self):
         self.assertEqual(sync.status_of(pr(merged=True)), "merged")
