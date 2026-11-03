@@ -80,24 +80,49 @@ jobs:
           python scripts/enrich_contributions.py
           python scripts/sync_contributions.py
 
-      - name: Commit ledger changes
+      - name: Publish regenerated ledger safely
         if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR_TO_TRACK: Johnny-Kao
         run: |
-          if [ -z "$(git status --porcelain -- CONTRIBUTIONS.md data/contribution_registry.json data/contribution_metadata.json data/enrichment_queue.json)" ]; then
-            echo "Contribution ledger is already current."
-            exit 0
-          fi
-
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CONTRIBUTIONS.md data/contribution_registry.json data/contribution_metadata.json data/enrichment_queue.json
-          git commit -m "chore: sync contribution ledger"
-          git status --short
+
+          # Save only Copilot's curated metadata changes. Regenerated ledger and
+          # registry are deliberately rebuilt from the latest upstream main.
+          metadata_patch="$RUNNER_TEMP/contribution-metadata.patch"
+          git diff --binary -- data/contribution_metadata.json > "$metadata_patch"
+
           for attempt in 1 2 3; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
+            git fetch origin main
+            # This is an ephemeral Actions checkout, not the user's workspace.
+            git reset --hard origin/main
+
+            if [ -s "$metadata_patch" ]; then
+              # A concurrent edit to the same metadata must fail closed:
+              # do not overwrite newer human-curated contributions.
+              if ! git apply --3way "$metadata_patch"; then
+                echo "Concurrent metadata change needs review; not overwriting it." >&2
+                exit 1
+              fi
+            fi
+
+            python scripts/sync_contributions.py
+            git add CONTRIBUTIONS.md data/contribution_registry.json data/contribution_metadata.json data/enrichment_queue.json
+            if git diff --cached --quiet; then
+              echo "Contribution ledger already current on main."
               exit 0
             fi
+
+            git commit -m "chore: sync contribution ledger"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Main moved during publish (attempt $attempt); regenerating from latest main." >&2
             sleep $((attempt * 2))
           done
-          echo "Unable to publish after 3 attempts" >&2
+
+          echo "Unable to publish after 3 fresh regenerations." >&2
           exit 1
