@@ -45,6 +45,20 @@ class NegativeGateTests(unittest.TestCase):
             self.assertFalse(agent.enrich(event, metadata, registry))
         self.assertEqual(metadata["entries"]["example/lib#1"]["what_changed"], "Curated final summary")
 
+    def test_closed_entry_skips_copilot_and_source_fetch(self):
+        from unittest import mock
+        event = {"key": "example/lib#2", "phase": "initial",
+                 "url": "https://github.com/example/lib/pull/2"}
+        registry = {"entries": {"example/lib#2": {
+            "pr": {"merged_at": None, "state": "closed"}}}}
+        metadata = {"entries": {"example/lib#2": {
+            "what_changed": "Final reviewed description"}}}
+        with mock.patch.object(agent, "sources_for",
+                               side_effect=AssertionError("should not fetch")):
+            self.assertFalse(agent.enrich(event, metadata, registry))
+        self.assertEqual(metadata["entries"]["example/lib#2"]["what_changed"],
+                         "Final reviewed description")
+
     def test_invalid_json_type_rejected(self):
         self.assertIsNone(agent.validate(["not a record"], [{"url": "https://example.com", "text": "x"}]))
 
