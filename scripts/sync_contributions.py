@@ -139,7 +139,7 @@ def supporting_links(repo, pr, meta):
             continue
         target_repo, sha = record.get("repo"), record.get("commit")
         if (not isinstance(target_repo, str) or len(target_repo.split("/")) != 2
-                or any(not part or not all(ch.isalnum() or ch in "-_.")
+                or any(not part or not all(ch.isalnum() or ch in "-_." for ch in part)
                        for part in target_repo.split("/"))
                 or not isinstance(sha, str) or len(sha) != 40
                 or any(ch not in "0123456789abcdef" for ch in sha)):
