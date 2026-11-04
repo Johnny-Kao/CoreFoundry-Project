@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 15 · **Integrated separately:** 2 · **Open:** 25 · **Draft:** 0 · **Closed:** 6
+**Merged:** 15 · **Integrated separately:** 2 · **Open:** 25 · **Draft:** 0 · **Closed:** 7
 
-> **Last synchronized:** 2026-11-03 04:54 UTC
+> **Last synchronized:** 2026-11-04 06:39 UTC
 
 ## Record and attribution
 
@@ -38,8 +38,9 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
-| **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
+| **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | 🟢 Open | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a… | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check… |
+| **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | 🟢 Open | Cleared disconnected clients' queued requests without affecting other waiters. | Targeted PMI fault tests and build reported passing. |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | 🟢 Open | The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It… | — |
@@ -49,7 +50,6 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[finos/FDC3 #2341](https://github.com/finos/FDC3/pull/2341)** | 🟢 Open | Clears the cached promise after failover rejection, so a later call can retry. Adds a regression test and updates CHANGELOG.md. | The PR reports a failure-then-success retry test and passing local build, TypeScript, Vitest, and ESLint checks. |
 | **[scionproto/scion #5011](https://github.com/scionproto/scion/pull/5011)** | 🟢 Open | Replaces a temporary slice with a fixed-size stack buffer while retaining CRC64 hashing and path selection. | The author reports controlled encoder tests reduced allocations from 4 to 1 per packet and wall time by about 9–11% across tested… |
 | **[opencv/opencv #30177](https://github.com/opencv/opencv/pull/30177)** | 🟢 Open | Added a macOS BGRA fast path with frame-lifetime handling. | Regression coverage added for repeated frame retrieval. |
-| **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | 🟢 Open | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a… | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check… |
 | **[dateutil/dateutil #1590](https://github.com/dateutil/dateutil/pull/1590)** | 🟢 Open | Used binary search for deep queries over already-ordered completed recurrence caches | ~4,500–5,700× faster on tested deep 200k-cache queries |
 | **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | 🟢 Open | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14… |
@@ -63,6 +63,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | 🟢 Open | The PR adds article content that focuses on reusing information from prior searches, deciding when locality is useful, the 8 / 16 / 32 observation… | — |
 | **[scipy/scipy #26226](https://github.com/scipy/scipy/pull/26226)** | 🟢 Open | Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure | Correctness fix; targeted tests passed |
 | **[apple/container #2293](https://github.com/apple/container/pull/2293)** | 🟢 Open | Reconciled persisted container state with still-running runtimes after apiserver restart | End-to-end state recovery and stop/kill behavior validated on macOS |
+| **[seL4/seL4 #1843](https://github.com/seL4/seL4/pull/1843)** | ⚪ Closed | tools: fix region alignment for unaligned addresses | — |
 | **[nasa/fprime #6294](https://github.com/nasa/fprime/pull/6294)** | ⚪ Closed | Proposed correct failure reporting for checksum writes and zero-length operations. | Regression scenarios documented; closed pending CCB approval. |
 | **[nasa/fprime #6292](https://github.com/nasa/fprime/pull/6292)** | ⚪ Closed | Proposed corrected cross-priority queue occupancy and high-water tracking. | 14/14 reported CI jobs passed; closed pending CCB approval. |
 | **[kjd/idna #279](https://github.com/kjd/idna/pull/279)** | ⚪ Closed | Proposed a fast path for ordinary ASCII domain labels. | 79.5–85.1% lower execution time in two tested ASCII encoding workloads. |

@@ -117,7 +117,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "52d855bc56f3175cb0d6ceb0caaf5bf5c46846a5",
+        "merge_commit_sha": "4dd1375fad2b472780162274239b9c76e5c015ea",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -192,7 +192,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "7c44db69d27e1a3cb27727c8cb2d249d98520d8a",
+        "merge_commit_sha": "47132236087e41f05f06986c49b0ff4586f1a302",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -269,7 +269,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "6b5978cbaddf82cbdfaaa4655416005c84fa99f5",
+        "merge_commit_sha": "ce006a7a77aa90fbd0a69507624b73096c50eff6",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -294,7 +294,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "cc7cd15b6a611151c385834c075ae4c5ab2a5520",
+        "merge_commit_sha": "45229471d6e197e7c9061f91d40108ed754f1e45",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -319,7 +319,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "677317cff8b4a2c7053105cbc1b0fc31f808a6ea",
+        "merge_commit_sha": "3a6eca953752c203e56c9cbd6d01d2e19a96c16c",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -419,7 +419,7 @@
         "created_at": "2026-10-29T06:42:07Z",
         "draft": false,
         "html_url": "https://github.com/finos/FDC3/pull/2341",
-        "merge_commit_sha": "f3af223e02a689ae089898cc7debeb9d589da57a",
+        "merge_commit_sha": "82cb47bc1782dba49e7c04075949bdb49bf72142",
         "merged_at": null,
         "number": 2341,
         "state": "open",
@@ -449,7 +449,7 @@
         "number": 415,
         "state": "open",
         "title": "docs(mi-24): Clarify fail-closed behavior for ungated actions",
-        "updated_at": "2026-10-27T05:13:08Z"
+        "updated_at": "2026-11-03T09:15:16Z"
       },
       "repo": "finos/ai-governance-framework"
     },
@@ -495,12 +495,12 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "2b2c88404155bebb6c4b66e301a7ba1477c6febf",
+        "merge_commit_sha": "513659a791b6ccbd065be9eeff929975bba78ac3",
         "merged_at": null,
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-02T10:52:26Z"
+        "updated_at": "2026-11-03T13:50:59Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -623,7 +623,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "dddf04889cf62979d78952d32dee3b0e2efa6649",
+        "merge_commit_sha": "47abec321532b3df3fe3b9ba672b2eb7e5ee5816",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -698,7 +698,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "74b2ee13f36f8e6ba18276075431f8aed9ea11a1",
+        "merge_commit_sha": "a0e1af806239a949fa0fbd9efc170cb86fd0a4f1",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -723,7 +723,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "0c738004e1df4b429d3aef975b5c488f5d5ce896",
+        "merge_commit_sha": "b6d5f403699d3ccdbb845c6a5c9e803bac29b7d3",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -799,7 +799,7 @@
         "created_at": "2026-11-01T13:50:39Z",
         "draft": false,
         "html_url": "https://github.com/pmodels/mpich/pull/8085",
-        "merge_commit_sha": "4df3b1c0bea1c0e9f2692dd5c5c0d88e71674ff6",
+        "merge_commit_sha": "456f253c908217141061b23f75242943d5e9c4dc",
         "merged_at": null,
         "number": 8085,
         "state": "open",
@@ -1101,7 +1101,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "c14f7cd9f1d00ac3ec1114785560c0ca3c8968d7",
+        "merge_commit_sha": "13356dc82da288b2ae08d20737f9ff332a7bee40",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1109,6 +1109,29 @@
         "updated_at": "2026-10-01T19:00:15Z"
       },
       "repo": "scipy/scipy"
+    },
+    "seL4/seL4#1843": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "seL4"
+            }
+          }
+        },
+        "closed_at": "2026-11-03T10:33:35Z",
+        "created_at": "2026-11-03T09:09:15Z",
+        "draft": true,
+        "html_url": "https://github.com/seL4/seL4/pull/1843",
+        "merge_commit_sha": "c8cd7630a37646e3196c7d74ed99b516671184d5",
+        "merged_at": null,
+        "number": 1843,
+        "state": "closed",
+        "title": "tools: fix region alignment for unaligned addresses",
+        "updated_at": "2026-11-03T10:36:28Z"
+      },
+      "repo": "seL4/seL4"
     },
     "seanmonstar/reqwest#3116": {
       "enrichment": {
