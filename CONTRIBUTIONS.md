@@ -4,7 +4,7 @@ A live public record of upstream open-source work tracked by CoreFoundry.
 
 **Merged:** 15 · **Integrated separately:** 2 · **Open:** 25 · **Draft:** 0 · **Closed:** 7
 
-> **Last synchronized:** 2026-11-04 06:39 UTC
+> **Last synchronized:** 2026-11-05 06:58 UTC
 
 ## Record and attribution
 
@@ -38,9 +38,9 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | 🟢 Open | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a… | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check… |
-| **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | 🟢 Open | Cleared disconnected clients' queued requests without affecting other waiters. | Targeted PMI fault tests and build reported passing. |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | 🟢 Open | The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It… | — |
