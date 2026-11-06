@@ -117,7 +117,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "64cf65d9f22a218e32868ff3dc4886c165b89da6",
+        "merge_commit_sha": "d41543bc45bfd0b8dbc86a9964f7ee2960bbace7",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -142,7 +142,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "8a4ab404a4b1fc6f4f6c77914028f58131b460af",
+        "merge_commit_sha": "d4f4ee7b45013ad324f51fe93b15c0cfec0fcf28",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -167,7 +167,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "7becdd01f5ba6ba8f3a7d8dee6a3ece96578a87f",
+        "merge_commit_sha": "2da0e0813c5bdd4a00cedbf4d8ad5ead2ad608f7",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -192,12 +192,12 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "c1998b40f17979ea4a3676cc593d6c821750e8c1",
+        "merge_commit_sha": "f3df0a0545a353c0fa58a1f027b4a8c9788f1428",
         "merged_at": null,
         "number": 3700,
         "state": "open",
         "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
-        "updated_at": "2026-11-04T18:32:30Z"
+        "updated_at": "2026-11-06T01:56:01Z"
       },
       "repo": "aws/aws-lc"
     },
@@ -294,7 +294,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "c03e81d84968c9b297eb9b49fc62d58c767edb6f",
+        "merge_commit_sha": "0b4d5f197cbcbd88d6258b4a96850d4c8808f510",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -319,7 +319,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "729147e71a6335f403fdb0bac6bf86a3f0371345",
+        "merge_commit_sha": "ab72d9146d8081d2fe9bba849e8caa2ee7377ab5",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -453,6 +453,31 @@
       },
       "repo": "finos/ai-governance-framework"
     },
+    "interuss/dss#1914": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "interuss"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-05T08:39:37Z",
+        "draft": false,
+        "html_url": "https://github.com/interuss/dss/pull/1914",
+        "merge_commit_sha": "246a60adb2a6ce61d6a06bb7f28c3fd2abf400ba",
+        "merged_at": null,
+        "number": 1914,
+        "state": "open",
+        "title": "[geo] Fix circle covering that can miss overlapping areas",
+        "updated_at": "2026-11-05T11:18:04Z"
+      },
+      "repo": "interuss/dss"
+    },
     "kjd/idna#279": {
       "enrichment": {
         "initial": "curated",
@@ -495,12 +520,12 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "513659a791b6ccbd065be9eeff929975bba78ac3",
+        "merge_commit_sha": "f27c5adf81b1568e114e243c982cf6f82730fa40",
         "merged_at": null,
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-04T08:16:17Z"
+        "updated_at": "2026-11-05T16:20:04Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -598,7 +623,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "7aa48de360f87eafc85332fb553c3bf0a162cb98",
+        "merge_commit_sha": "ab7cc6e0f17db1ce5a27d04d5a31d5ba82e67224",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -623,7 +648,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "64fd04d11ffc98d38dd20af4f95b0a1f120d8100",
+        "merge_commit_sha": "fd8f412d7973f50202cf0ef6ed65280634c6d0e9",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -698,7 +723,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "d31bdcef42394fd020599ed2798bb53a217bf4f7",
+        "merge_commit_sha": "45e054cdc37fab5e64714aaa7fb28d26c1a4fbec",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -723,7 +748,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "af97f2e3a149919cbbfade5a2e908f6e742a0d77",
+        "merge_commit_sha": "62f88528bef96ef40522bd16ed4e1a5aea3dbf00",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1051,7 +1076,7 @@
         "created_at": "2026-10-28T22:23:02Z",
         "draft": false,
         "html_url": "https://github.com/scionproto/scion/pull/5011",
-        "merge_commit_sha": "70f68fdf31ebadecbda4867dd59464609e82155f",
+        "merge_commit_sha": "0d5ab7465c74b867c45f2ee826255e35d3f3802c",
         "merged_at": null,
         "number": 5011,
         "state": "open",
@@ -1101,7 +1126,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "7c4e1f310dbc23b4db8bb2810e5a1017093d0eb6",
+        "merge_commit_sha": "2e27a9cb50c278f247dbc43cbef81952f8898758",
         "merged_at": null,
         "number": 26226,
         "state": "open",
