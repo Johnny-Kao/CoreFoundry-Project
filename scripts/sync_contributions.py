@@ -261,7 +261,11 @@ def main():
         values.sort(key=sort_key, reverse=True)
 
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
+    # Manually verified upstream integrations submitted by another author.
+    # Curated records persist across sync and do not affect authored-PR counts.
+    credited = metadata_doc.get("credited_integrations", [])
     counts = {k: len(v) for k, v in buckets.items()}
+    counts["integrated"] += len(credited)
 
     lines = [
         "# CoreFoundry Contribution Ledger",
@@ -288,6 +292,13 @@ def main():
     lines.extend(["## Upstream contributions", ""])
     rows = [row_for(*entry) for key in ("merged", "integrated", "open", "draft", "closed")
             for entry in buckets[key]]
+    for item in credited:
+        rows.append([
+            f"**[{item['repo']} #{item['number']}]({item['url']})**",
+            "✅ Integrated",
+            escape_cell(concise(item["what_changed"], 150)),
+            escape_cell(concise(item["evidence"], 135)),
+        ])
     lines.append(render_table(rows) if rows else "_No tracked entries._")
     lines.append("")
 
@@ -301,7 +312,7 @@ def main():
             "",
             "1. public upstream PR state from GitHub;",
             "2. curated display metadata in `data/contribution_metadata.json`;",
-            "3. separately integrated upstream commit evidence.",
+            "3. separately integrated upstream commit evidence and curated credited integrations.",
             "",
             "New public upstream PRs authored by the tracked contributor are discovered automatically. "
             "Closed-but-unmerged work remains visible unless explicitly excluded in metadata.",
