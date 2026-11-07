@@ -1,5 +1,30 @@
 {
   "entries": {
+    "ArduPilot/pymavlink#1329": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "ArduPilot"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-06T13:48:44Z",
+        "draft": false,
+        "html_url": "https://github.com/ArduPilot/pymavlink/pull/1329",
+        "merge_commit_sha": "f80b60895b34aab8633a5f7d141fc3b836e058bb",
+        "merged_at": null,
+        "number": 1329,
+        "state": "open",
+        "title": "mavgen_javascript: fix signing replay timestamp updates",
+        "updated_at": "2026-11-06T14:06:07Z"
+      },
+      "repo": "ArduPilot/pymavlink"
+    },
     "Blosc/blogsite#18": {
       "enrichment": {
         "initial": "completed",
@@ -101,6 +126,31 @@
       },
       "repo": "Blosc/python-blosc2"
     },
+    "OpenEMS/openems#4117": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "OpenEMS"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-06T18:15:07Z",
+        "draft": true,
+        "html_url": "https://github.com/OpenEMS/openems/pull/4117",
+        "merge_commit_sha": "7957c76c0cfdda07d8698547c0e9be00bd5b72cf",
+        "merged_at": null,
+        "number": 4117,
+        "state": "open",
+        "title": "Fix V2 BALANCE distribution exceeding a feasible cluster power target",
+        "updated_at": "2026-11-06T19:58:19Z"
+      },
+      "repo": "OpenEMS/openems"
+    },
     "PX4/PX4-Autopilot#29537": {
       "enrichment": {
         "initial": "completed"
@@ -117,12 +167,12 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "d41543bc45bfd0b8dbc86a9964f7ee2960bbace7",
+        "merge_commit_sha": "31ac6090d1f75c052316b41b2a87e2be98ea1364",
         "merged_at": null,
         "number": 29537,
         "state": "open",
         "title": "fix(mavlink): ignore foreign mission counts for upload timeout",
-        "updated_at": "2026-10-31T05:34:39Z"
+        "updated_at": "2026-11-06T11:38:03Z"
       },
       "repo": "PX4/PX4-Autopilot"
     },
@@ -142,7 +192,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "d4f4ee7b45013ad324f51fe93b15c0cfec0fcf28",
+        "merge_commit_sha": "aa096aa46408bb2591821818f938d611dd667d9b",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -167,7 +217,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "2da0e0813c5bdd4a00cedbf4d8ad5ead2ad608f7",
+        "merge_commit_sha": "c8d38173b6cb5cd5fcc6572769be910258399e8c",
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -192,12 +242,12 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "f3df0a0545a353c0fa58a1f027b4a8c9788f1428",
+        "merge_commit_sha": "1a388c7683ab0ecdeaeade9cafd0f0af735cc15f",
         "merged_at": null,
         "number": 3700,
         "state": "open",
         "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
-        "updated_at": "2026-11-06T01:56:01Z"
+        "updated_at": "2026-11-06T12:51:16Z"
       },
       "repo": "aws/aws-lc"
     },
@@ -269,7 +319,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "9d19de50a996411dcb8b83a7ff7e48c9ed0db066",
+        "merge_commit_sha": "00172f5e07b5d5761791bd17fb6abe32bb68383e",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -294,7 +344,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "0b4d5f197cbcbd88d6258b4a96850d4c8808f510",
+        "merge_commit_sha": "fbc47b0998ca684d85dec4259746e4721cf0d13c",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -319,7 +369,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "ab72d9146d8081d2fe9bba849e8caa2ee7377ab5",
+        "merge_commit_sha": "ef50030a903cb5d3acb463c949fc17291b8c5f17",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -469,7 +519,7 @@
         "created_at": "2026-11-05T08:39:37Z",
         "draft": false,
         "html_url": "https://github.com/interuss/dss/pull/1914",
-        "merge_commit_sha": "246a60adb2a6ce61d6a06bb7f28c3fd2abf400ba",
+        "merge_commit_sha": "78a01e5a6ca8787f17ecbf91ac95848e8d4f64d8",
         "merged_at": null,
         "number": 1914,
         "state": "open",
@@ -520,12 +570,12 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "f27c5adf81b1568e114e243c982cf6f82730fa40",
+        "merge_commit_sha": "7daa4cea22bc6140d286b76b0f21103104e17ec7",
         "merged_at": null,
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-05T16:20:04Z"
+        "updated_at": "2026-11-06T12:47:43Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -623,7 +673,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "ab7cc6e0f17db1ce5a27d04d5a31d5ba82e67224",
+        "merge_commit_sha": "974bb0ca7f8f8130b4632e83eb40d0e909542a38",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -648,7 +698,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "fd8f412d7973f50202cf0ef6ed65280634c6d0e9",
+        "merge_commit_sha": "61b54f62889885ce93f5bbbf25ba5a12ee374991",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -723,7 +773,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "45e054cdc37fab5e64714aaa7fb28d26c1a4fbec",
+        "merge_commit_sha": "eaa23b9f485ae8cd5269cd4f054615dc786e7bf1",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -748,7 +798,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "62f88528bef96ef40522bd16ed4e1a5aea3dbf00",
+        "merge_commit_sha": "9156a8f62269c9c1dc28c6df2ea9f32fc246e0cb",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -824,7 +874,7 @@
         "created_at": "2026-11-01T13:50:39Z",
         "draft": false,
         "html_url": "https://github.com/pmodels/mpich/pull/8085",
-        "merge_commit_sha": "e4a9e713093b8037df3e7533be2077a1f6a1aebb",
+        "merge_commit_sha": "5e8ec254dae79aebb99c25ef95c0ebe2f73edbfe",
         "merged_at": null,
         "number": 8085,
         "state": "open",
@@ -1126,7 +1176,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "2e27a9cb50c278f247dbc43cbef81952f8898758",
+        "merge_commit_sha": "7d0f6920c6a0057fc2315b18f8022d2dae4e80bc",
         "merged_at": null,
         "number": 26226,
         "state": "open",
