@@ -483,5 +483,18 @@
         "https://github.com/ArduPilot/pymavlink/pull/1329"
       ]
     }
-  }
+  },
+  "credited_integrations": [
+    {
+      "repo": "lz4/lz4",
+      "number": 1927,
+      "url": "https://github.com/lz4/lz4/pull/1927",
+      "what_changed": "Original zero-length fwrite fix proposed in issue #1858; submitted by another contributor and merged upstream.",
+      "evidence": "10–25% faster tested small buffered writes; PR author publicly confirmed Johnny Kao's code and benchmarks.",
+      "source_urls": [
+        "https://github.com/lz4/lz4/issues/1858",
+        "https://github.com/lz4/lz4/pull/1927#issuecomment-6409651206"
+      ]
+    }
+  ]
 }
