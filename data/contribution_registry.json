@@ -126,6 +126,31 @@
       },
       "repo": "Blosc/python-blosc2"
     },
+    "OpenCPN/OpenCPN#5522": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "OpenCPN"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-07T11:56:58Z",
+        "draft": false,
+        "html_url": "https://github.com/OpenCPN/OpenCPN/pull/5522",
+        "merge_commit_sha": "168ba7322b2bf887231c07aed0529e3e69230505",
+        "merged_at": null,
+        "number": 5522,
+        "state": "open",
+        "title": "NMEA 2000: Ignore invalid GNSS fixes in PGN 129029",
+        "updated_at": "2026-11-07T11:59:58Z"
+      },
+      "repo": "OpenCPN/OpenCPN"
+    },
     "OpenEMS/openems#4117": {
       "enrichment": {
         "initial": "curated"
@@ -142,7 +167,7 @@
         "created_at": "2026-11-06T18:15:07Z",
         "draft": true,
         "html_url": "https://github.com/OpenEMS/openems/pull/4117",
-        "merge_commit_sha": "7957c76c0cfdda07d8698547c0e9be00bd5b72cf",
+        "merge_commit_sha": "103ff06c11972206c4288cb707b0b27eeeacdd83",
         "merged_at": null,
         "number": 4117,
         "state": "open",
@@ -167,7 +192,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "31ac6090d1f75c052316b41b2a87e2be98ea1364",
+        "merge_commit_sha": "97ae2b0550f9f0a591ff57fb0152cc53dacb7e94",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -798,7 +823,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "9156a8f62269c9c1dc28c6df2ea9f32fc246e0cb",
+        "merge_commit_sha": "51aa6d6ae1aff8dba632d083412f3f954eb7e591",
         "merged_at": null,
         "number": 30177,
         "state": "open",

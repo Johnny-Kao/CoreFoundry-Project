@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 15 · **Integrated separately:** 3 · **Open:** 27 · **Draft:** 1 · **Closed:** 7
+**Merged:** 15 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 1 · **Closed:** 7
 
-> **Last synchronized:** 2026-11-07 06:12 UTC
+> **Last synchronized:** 2026-11-07 17:36 UTC
 
 ## Record and attribution
 
@@ -36,9 +36,9 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[numpy/numpy #32802](https://github.com/numpy/numpy/pull/32802)** | ✅ Merged | Fixed undefined shift behavior in the rational test dtype | Correctness fix |
 | **[Blosc/python-blosc2 #713](https://github.com/Blosc/python-blosc2/pull/713)** | ✅ Merged | Fixed two NDArray thread-safety bugs blocking free-threaded Python support | Concurrency correctness / free-threading readiness |
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
-| **[lz4/lz4 #1927](https://github.com/lz4/lz4/pull/1927)** | ✅ Integrated | Original zero-length `fwrite()` fix proposed in [issue #1858](https://github.com/lz4/lz4/issues/1858); merged through another contributor's PR. | 10–25% faster in tested small buffered writes; [PR author confirmed Johnny Kao's code and benchmarks](https://github.com/lz4/lz4/pull/1927#issuecomment-6409651206). |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
 | **[ArduPilot/pymavlink #1329](https://github.com/ArduPilot/pymavlink/pull/1329)** | 🟢 Open | Proposed moving signing timestamp updates until after successful signature verification. | Regression tests passed; staging also passed 2,983 Mocha tests and existing JS/C integration tests. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
@@ -74,6 +74,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[numpy/numpy #32869](https://github.com/numpy/numpy/pull/32869)** | ⚪ Closed | Added a locality-aware fast path to typed searchsorted | ~5.3–5.8× faster on tested strong-locality workloads |
 | **[pypa/packaging #1431](https://github.com/pypa/packaging/pull/1431)** | ⚪ Closed | Hardened the marker fast-path invariants | ~9.5% faster than baseline while retaining stronger defensive checks |
 | **[pandas-dev/pandas #69776](https://github.com/pandas-dev/pandas/pull/69776)** | ⚪ Closed | Investigated preservation of the distinction between pd.NA and IEEE NaN across parser paths | Closed / unmerged |
+| **[lz4/lz4 #1927](https://github.com/lz4/lz4/pull/1927)** | ✅ Integrated | Original zero-length fwrite fix proposed in issue #1858; submitted by another contributor and merged upstream. | 10–25% faster tested small buffered writes; PR author publicly confirmed Johnny Kao's code and benchmarks. |
 
 ---
 

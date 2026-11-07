@@ -482,6 +482,15 @@
       "source_urls": [
         "https://github.com/ArduPilot/pymavlink/pull/1329"
       ]
+    },
+    "OpenCPN/OpenCPN#5522": {
+      "what_it_is": "OpenCPN's NMEA 2000 PGN 129029 GNSS position decoder",
+      "what_changed": "Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable.",
+      "evidence": "Regression tests verified on Linux, including with AddressSanitizer.",
+      "why_it_matters": "Prevents coordinates from invalid GNSS fixes being accepted as positions.",
+      "source_urls": [
+        "https://github.com/OpenCPN/OpenCPN/pull/5522"
+      ]
     }
   },
   "credited_integrations": [
