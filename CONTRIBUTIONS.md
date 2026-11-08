@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 15 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 1 · **Closed:** 7
+**Merged:** 15 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 1 · **Closed:** 7
 
-> **Last synchronized:** 2026-11-07 17:36 UTC
+> **Last synchronized:** 2026-11-08 06:17 UTC
 
 ## Record and attribution
 
@@ -38,6 +38,8 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | 🟢 Open | Cleared disconnected clients' queued requests without affecting other waiters. | Targeted PMI fault tests and build reported passing. |
+| **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | 🟢 Open | Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge. | Author reports reauth succeeded for both entries; regression test added; 365 tests passed. |
 | **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
 | **[ArduPilot/pymavlink #1329](https://github.com/ArduPilot/pymavlink/pull/1329)** | 🟢 Open | Proposed moving signing timestamp updates until after successful signature verification. | Regression tests passed; staging also passed 2,983 Mocha tests and existing JS/C integration tests. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
@@ -46,7 +48,6 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[interuss/dss #1914](https://github.com/interuss/dss/pull/1914)** | 🟢 Open | Proposes using S2 Cap coverings instead of inscribed 20-sided polygons for circles. | An in-memory test reproduced overlapping circles with no shared S2 cells and a missed intent. |
 | **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | 🟢 Open | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a… | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check… |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
-| **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | 🟢 Open | Cleared disconnected clients' queued requests without affecting other waiters. | Targeted PMI fault tests and build reported passing. |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | 🟢 Open | The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It… | — |
 | **[bloomberg/blazingmq #1806](https://github.com/bloomberg/blazingmq/pull/1806)** | 🟢 Open | Separated key-building storage from final canonical-string storage | Most targeted PR2-vs-PR1 comparisons improved in final staged validation |
 | **[bloomberg/blazingmq #1803](https://github.com/bloomberg/blazingmq/pull/1803)** | 🟢 Open | Removed temporary schema-key string construction | 120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation |

@@ -491,6 +491,15 @@
       "source_urls": [
         "https://github.com/OpenCPN/OpenCPN/pull/5522"
       ]
+    },
+    "al-one/hass-xiaomi-miot#3041": {
+      "what_it_is": "Xiaomi Miot account reauthentication in Home Assistant",
+      "what_changed": "Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge.",
+      "evidence": "Author reports reauth succeeded for both entries; regression test added; 365 tests passed.",
+      "why_it_matters": "Users can respond to an available CAPTCHA instead of being sent back to the password screen.",
+      "source_urls": [
+        "https://github.com/al-one/hass-xiaomi-miot/pull/3041"
+      ]
     }
   },
   "credited_integrations": [
