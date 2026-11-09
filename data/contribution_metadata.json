@@ -442,14 +442,15 @@
       ]
     },
     "pmodels/mpich#8085": {
-      "what_it_is": "A pull request to clean up pending PMI2 node-attribute requests when a Hydra client disconnects.",
-      "what_changed": "Cleared disconnected clients' queued requests without affecting other waiters.",
-      "evidence": "Targeted PMI fault tests and build reported passing.",
-      "why_it_matters": "Prevents Hydra from trying to reply to a client over a closed socket when another process sets the requested attribute.",
+      "what_it_is": "A merged MPICH Hydra correctness fix for the lifetime of deferred PMI2 node-attribute requests.",
+      "what_changed": "Removed queued requests owned by disconnected PMI2 clients while preserving other ranks' pending requests; added normal and forced-exit regression tests.",
+      "evidence": "Merged upstream by hzhou on 2026-11-09 (merge 31a45abc8e8a); two focused commits, seven files. Official Jenkins unit, warnings, whitespace, spelling and contributor authorship checks all passed.",
+      "why_it_matters": "Prevents a dead rank's queued PMI2 reply from triggering a write to a closed socket and disrupting surviving MPI processes.",
       "source_urls": [
         "https://github.com/pmodels/mpich/pull/8085",
-        "https://github.com/pmodels/mpich/pull/8085#pullrequestreview-5728745460",
-        "https://github.com/pmodels/mpich/pull/8085#discussion_r4437724334"
+        "https://github.com/pmodels/mpich/commit/31a45abc8e8a4f4b4fb7e541257561bfb82c6beb",
+        "https://github.com/pmodels/mpich/pull/8085#pullrequestreview-5821095211",
+        "https://github.com/pmodels/mpich/pull/8085#issuecomment-6728883331"
       ]
     },
     "bloomberg/bde#313": {
