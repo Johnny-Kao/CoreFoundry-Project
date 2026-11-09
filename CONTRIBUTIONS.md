@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 15 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 1 · **Closed:** 7
+**Merged:** 16 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 1 · **Closed:** 7
 
-> **Last synchronized:** 2026-11-08 06:17 UTC
+> **Last synchronized:** 2026-11-09 03:02 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | ✅ Merged | Removed queued requests owned by disconnected PMI2 clients while preserving other ranks' pending requests; added normal and forced-exit regression… | Merged upstream by hzhou on 2026-11-09 (merge 31a45abc8e8a); two focused commits, seven files. Official Jenkins unit, warnings… |
 | **[lballabio/QuantLib #2980](https://github.com/lballabio/QuantLib/pull/2980)** | ✅ Merged | Reused kernel evaluations in interpolation, reducing calls from 2N to N. | 1.70–1.94× faster across 5–40 nodes in reported benchmarks. |
 | **[quickfix-j/quickfixj #1363](https://github.com/quickfix-j/quickfixj/pull/1363)** | ✅ Merged | Prevented failed synchronous writes from being reported as successful. | Regression-tested failed-write handling; merged upstream. |
 | **[seanmonstar/reqwest #3116](https://github.com/seanmonstar/reqwest/pull/3116)** | ✅ Merged | Eliminated an unnecessary HTTP request-header map clone during dispatch. | 2–3% higher throughput on tested x86-64 workloads; up to 8.5% on ARM64. |
@@ -38,7 +39,6 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
-| **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | 🟢 Open | Cleared disconnected clients' queued requests without affecting other waiters. | Targeted PMI fault tests and build reported passing. |
 | **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | 🟢 Open | Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge. | Author reports reauth succeeded for both entries; regression test added; 365 tests passed. |
 | **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
 | **[ArduPilot/pymavlink #1329](https://github.com/ArduPilot/pymavlink/pull/1329)** | 🟢 Open | Proposed moving signing timestamp updates until after successful signature verification. | Regression tests passed; staging also passed 2,983 Mocha tests and existing JS/C integration tests. |
