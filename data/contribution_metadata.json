@@ -501,6 +501,16 @@
       "source_urls": [
         "https://github.com/al-one/hass-xiaomi-miot/pull/3041"
       ]
+    },
+    "MISP/MISP#11278": {
+      "what_it_is": "MISP sightings REST search organization filtering",
+      "what_changed": "Propose handling numeric IDs directly and resetting UUID lookup state for each organization.",
+      "evidence": "Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters.",
+      "why_it_matters": "Would prevent searches from missing sightings when organization filters mix numeric IDs and UUIDs.",
+      "source_urls": [
+        "https://github.com/MISP/MISP/pull/11278",
+        "https://github.com/MISP/MISP/pull/11278#issuecomment-6754048423"
+      ]
     }
   },
   "credited_integrations": [

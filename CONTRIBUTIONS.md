@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 16 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 1 · **Closed:** 7
+**Merged:** 16 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 1 · **Closed:** 8
 
-> **Last synchronized:** 2026-11-09 03:02 UTC
+> **Last synchronized:** 2026-11-10 07:31 UTC
 
 ## Record and attribution
 
@@ -39,6 +39,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
 | **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | 🟢 Open | Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge. | Author reports reauth succeeded for both entries; regression test added; 365 tests passed. |
 | **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
 | **[ArduPilot/pymavlink #1329](https://github.com/ArduPilot/pymavlink/pull/1329)** | 🟢 Open | Proposed moving signing timestamp updates until after successful signature verification. | Regression tests passed; staging also passed 2,983 Mocha tests and existing JS/C integration tests. |
@@ -68,6 +69,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26226](https://github.com/scipy/scipy/pull/26226)** | 🟢 Open | Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure | Correctness fix; targeted tests passed |
 | **[apple/container #2293](https://github.com/apple/container/pull/2293)** | 🟢 Open | Reconciled persisted container state with still-running runtimes after apiserver restart | End-to-end state recovery and stop/kill behavior validated on macOS |
 | **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | 🟡 Draft | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
+| **[MISP/MISP #11275](https://github.com/MISP/MISP/pull/11275)** | ⚪ Closed | Improve Cache Speed | — |
 | **[seL4/seL4 #1843](https://github.com/seL4/seL4/pull/1843)** | ⚪ Closed | tools: fix region alignment for unaligned addresses | — |
 | **[nasa/fprime #6294](https://github.com/nasa/fprime/pull/6294)** | ⚪ Closed | Proposed correct failure reporting for checksum writes and zero-length operations. | Regression scenarios documented; closed pending CCB approval. |
 | **[nasa/fprime #6292](https://github.com/nasa/fprime/pull/6292)** | ⚪ Closed | Proposed corrected cross-priority queue occupancy and high-water tracking. | 14/14 reported CI jobs passed; closed pending CCB approval. |

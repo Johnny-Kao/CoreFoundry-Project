@@ -126,6 +126,54 @@
       },
       "repo": "Blosc/python-blosc2"
     },
+    "MISP/MISP#11275": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "MISP"
+            }
+          }
+        },
+        "closed_at": "2026-11-09T09:27:04Z",
+        "created_at": "2026-11-09T09:24:35Z",
+        "draft": true,
+        "html_url": "https://github.com/MISP/MISP/pull/11275",
+        "merge_commit_sha": "17bac0dac195efc0800439692c8a805902c4aa5f",
+        "merged_at": null,
+        "number": 11275,
+        "state": "closed",
+        "title": "Improve Cache Speed",
+        "updated_at": "2026-11-09T09:29:23Z"
+      },
+      "repo": "MISP/MISP"
+    },
+    "MISP/MISP#11278": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "MISP"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-09T23:12:23Z",
+        "draft": false,
+        "html_url": "https://github.com/MISP/MISP/pull/11278",
+        "merge_commit_sha": "064fa48f026014a738a179de1856bbb0720228a7",
+        "merged_at": null,
+        "number": 11278,
+        "state": "open",
+        "title": "fix: [sighting] Fix org_id filtering in restSearch",
+        "updated_at": "2026-11-09T23:15:27Z"
+      },
+      "repo": "MISP/MISP"
+    },
     "OpenCPN/OpenCPN#5522": {
       "enrichment": {
         "initial": "curated"
@@ -192,7 +240,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "75175d4f17cda5599c53d01e8346a0c983297900",
+        "merge_commit_sha": "d1cfc90f9840c3a0b25d3259ea080b80c0d522bb",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -217,7 +265,7 @@
         "created_at": "2026-11-07T17:51:15Z",
         "draft": false,
         "html_url": "https://github.com/al-one/hass-xiaomi-miot/pull/3041",
-        "merge_commit_sha": "da24e2c4f8abb2e9898f9a0911b9e342554fdaf2",
+        "merge_commit_sha": null,
         "merged_at": null,
         "number": 3041,
         "state": "open",
@@ -242,7 +290,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "aa096aa46408bb2591821818f938d611dd667d9b",
+        "merge_commit_sha": "8ca36f998da97bd53edfbfd6709fcc68cd897db7",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -267,7 +315,7 @@
         "created_at": "2026-09-21T13:16:37Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2293",
-        "merge_commit_sha": "c8d38173b6cb5cd5fcc6572769be910258399e8c",
+        "merge_commit_sha": null,
         "merged_at": null,
         "number": 2293,
         "state": "open",
@@ -292,7 +340,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "1a388c7683ab0ecdeaeade9cafd0f0af735cc15f",
+        "merge_commit_sha": "edc5a715d70a1c136b4622355ecfd07dcd3b5a8c",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -369,7 +417,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "00172f5e07b5d5761791bd17fb6abe32bb68383e",
+        "merge_commit_sha": "95947ee86fcde01e01d67697e7d6113fc667cd0d",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -394,7 +442,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "fbc47b0998ca684d85dec4259746e4721cf0d13c",
+        "merge_commit_sha": "37a5ff54b7448db00f307ef41afae337d86da147",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -419,7 +467,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "ef50030a903cb5d3acb463c949fc17291b8c5f17",
+        "merge_commit_sha": "ca74262d415922ecb55178b32a5a53f2b115901b",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -569,7 +617,7 @@
         "created_at": "2026-11-05T08:39:37Z",
         "draft": false,
         "html_url": "https://github.com/interuss/dss/pull/1914",
-        "merge_commit_sha": "78a01e5a6ca8787f17ecbf91ac95848e8d4f64d8",
+        "merge_commit_sha": "2e0bd8114c0ce47dc2dc1777be2cc31fb4773432",
         "merged_at": null,
         "number": 1914,
         "state": "open",
@@ -620,7 +668,7 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "7daa4cea22bc6140d286b76b0f21103104e17ec7",
+        "merge_commit_sha": "69aaed7e6b9c4caaffb3b55dd5f7fdadafa23e3b",
         "merged_at": null,
         "number": 9725,
         "state": "open",
@@ -723,7 +771,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "974bb0ca7f8f8130b4632e83eb40d0e909542a38",
+        "merge_commit_sha": "543970505a97e0a6e71af675b1c45557b04b3c55",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -748,7 +796,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "870c69771c05ccac3c3264d088ed87f7b8001181",
+        "merge_commit_sha": "3e8843739a3d4d57e1b58979a127d4874c199dfc",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -823,7 +871,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "a0c21b83baf632183b48deb5dc77557cc196c9bb",
+        "merge_commit_sha": "d2d25f6aa91ef26b19c1fa5e065d01103d40756f",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -848,7 +896,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "0db4ead49d10bf411acce31eaad59c95c9700ef1",
+        "merge_commit_sha": "c02237becebfbb6faa3b619438b1420cb2481f1e",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -929,7 +977,7 @@
         "number": 8085,
         "state": "closed",
         "title": "pm/hydra: clean up pending PMI2 requests on client exit",
-        "updated_at": "2026-11-09T02:44:02Z"
+        "updated_at": "2026-11-09T23:18:23Z"
       },
       "repo": "pmodels/mpich"
     },
@@ -1226,7 +1274,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "f7a9afd77c321cc3d8b95b8618020d0ae581e4ab",
+        "merge_commit_sha": "33876a91639ab0b5c0cd44385c89997a965459e5",
         "merged_at": null,
         "number": 26226,
         "state": "open",
