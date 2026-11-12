@@ -16,7 +16,7 @@
         "created_at": "2026-11-06T13:48:44Z",
         "draft": false,
         "html_url": "https://github.com/ArduPilot/pymavlink/pull/1329",
-        "merge_commit_sha": "0ad7b3607c4b2535dc41d9be22afce9eebe2cbec",
+        "merge_commit_sha": "f69fed4d2b57546fbeb239baf5fb3ef8cc08f25a",
         "merged_at": null,
         "number": 1329,
         "state": "open",
@@ -190,7 +190,7 @@
         "created_at": "2026-11-07T11:56:58Z",
         "draft": false,
         "html_url": "https://github.com/OpenCPN/OpenCPN/pull/5522",
-        "merge_commit_sha": "168ba7322b2bf887231c07aed0529e3e69230505",
+        "merge_commit_sha": "243fa0f494c55fbce86d793dfbeccc5ef605fccc",
         "merged_at": null,
         "number": 5522,
         "state": "open",
@@ -220,7 +220,7 @@
         "number": 4117,
         "state": "open",
         "title": "Fix V2 BALANCE distribution exceeding a feasible cluster power target",
-        "updated_at": "2026-11-10T11:07:08Z"
+        "updated_at": "2026-11-11T12:21:16Z"
       },
       "repo": "OpenEMS/openems"
     },
@@ -240,7 +240,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "5c337cf05b341e0d6a0ee410cb7876259bcbb991",
+        "merge_commit_sha": "2b0f2dded85979268e68572f355cfca5b68b4ff9",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -290,7 +290,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "41278325e7f52bbdc03a8ac375f03846e213f02f",
+        "merge_commit_sha": "7b97e3c377530d67446ae293dbcecea883ef6d52",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -340,7 +340,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "6160f44fc2c618ce639bb96b899225f724577bea",
+        "merge_commit_sha": "c374527321ab616182418453a3c6fc8cb48aa6f5",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -417,7 +417,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "967465494080a85624a614c983e6886467e7bf5f",
+        "merge_commit_sha": "97b2126582d076a534abb3f2ecb17da539cd8ee5",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -563,16 +563,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-11T17:11:32Z",
         "created_at": "2026-10-29T06:42:07Z",
         "draft": false,
         "html_url": "https://github.com/finos/FDC3/pull/2341",
-        "merge_commit_sha": "876a6e12d61b64a976685b630d41c1960f845f43",
-        "merged_at": null,
+        "merge_commit_sha": "470623ea173534ccd4fdd7e2fc554a6bcebbbf29",
+        "merged_at": "2026-11-11T17:11:32Z",
         "number": 2341,
-        "state": "open",
+        "state": "closed",
         "title": "fix(get-agent): allow retry after failover rejection",
-        "updated_at": "2026-10-29T07:02:43Z"
+        "updated_at": "2026-11-11T22:41:24Z"
       },
       "repo": "finos/FDC3"
     },
@@ -613,18 +613,43 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-11T07:36:47Z",
         "created_at": "2026-11-05T08:39:37Z",
         "draft": false,
         "html_url": "https://github.com/interuss/dss/pull/1914",
-        "merge_commit_sha": "4e8323e050f9391a07400c9f55355e25b558d755",
-        "merged_at": null,
+        "merge_commit_sha": "c54a40b0fb67802459b59c5ed154cd7993863098",
+        "merged_at": "2026-11-11T07:36:46Z",
         "number": 1914,
-        "state": "open",
+        "state": "closed",
         "title": "[geo] Fix circle covering that can miss overlapping areas",
-        "updated_at": "2026-11-10T22:24:12Z"
+        "updated_at": "2026-11-12T01:31:41Z"
       },
       "repo": "interuss/dss"
+    },
+    "interuss/monitoring#1911": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "interuss"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-11T22:35:56Z",
+        "draft": false,
+        "html_url": "https://github.com/interuss/monitoring/pull/1911",
+        "merge_commit_sha": "1dcbacd6294398735c761303bcfbf1e4e794ff77",
+        "merged_at": null,
+        "number": 1911,
+        "state": "open",
+        "title": "[uss_qualifier] Add circular OIR overlap regression test",
+        "updated_at": "2026-11-12T07:21:43Z"
+      },
+      "repo": "interuss/monitoring"
     },
     "kjd/idna#279": {
       "enrichment": {
@@ -668,12 +693,12 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "9ed9807178670e2444afb2c216fefca0232b28b7",
+        "merge_commit_sha": "1c32e228fab8b8353ef371f662ee356112bdc8f4",
         "merged_at": null,
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-06T12:47:43Z"
+        "updated_at": "2026-11-11T22:27:19Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -776,7 +801,7 @@
         "number": 1889,
         "state": "open",
         "title": "Upstream: reject early hints beyond the configured buffer",
-        "updated_at": "2026-10-22T02:39:12Z"
+        "updated_at": "2026-11-12T06:44:05Z"
       },
       "repo": "nginx/nginx"
     },
@@ -796,7 +821,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "e3d421945a2b824de506ecf12a2144ae8c5e2077",
+        "merge_commit_sha": "43f28a150014aef304b82d2088420844f218c013",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -871,7 +896,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "6fb38e8e7397b84623eaacc9a5d1bf3e92a845e3",
+        "merge_commit_sha": "91014b8a5dd64416471fb4e8f77989e3e6ce4807",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -1098,7 +1123,7 @@
         "created_at": "2026-10-01T00:16:30Z",
         "draft": false,
         "html_url": "https://github.com/python-cffi/cffi/pull/282",
-        "merge_commit_sha": "bf169c33b4338194cc3b1c1f4caefd565d69f0cf",
+        "merge_commit_sha": "de85ea937606dea715602d3e87c7a0d4f1a0cdab",
         "merged_at": null,
         "number": 282,
         "state": "open",

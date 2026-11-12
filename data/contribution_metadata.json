@@ -511,6 +511,15 @@
         "https://github.com/MISP/MISP/pull/11278",
         "https://github.com/MISP/MISP/pull/11278#issuecomment-6754048423"
       ]
+    },
+    "interuss/monitoring#1911": {
+      "what_it_is": "A regression scenario for DSS operational intent reference search",
+      "what_changed": "Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries.",
+      "evidence": "Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed.",
+      "why_it_matters": "Checks for omitted OIRs through the DSS API, not only in covering-code tests.",
+      "source_urls": [
+        "https://github.com/interuss/monitoring/pull/1911"
+      ]
     }
   },
   "credited_integrations": [
