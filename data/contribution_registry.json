@@ -16,7 +16,7 @@
         "created_at": "2026-11-06T13:48:44Z",
         "draft": false,
         "html_url": "https://github.com/ArduPilot/pymavlink/pull/1329",
-        "merge_commit_sha": "f69fed4d2b57546fbeb239baf5fb3ef8cc08f25a",
+        "merge_commit_sha": "98619f1ffe490ddddf316f1f6232d38fb25ff784",
         "merged_at": null,
         "number": 1329,
         "state": "open",
@@ -240,7 +240,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "2b0f2dded85979268e68572f355cfca5b68b4ff9",
+        "merge_commit_sha": "b6a301da712b38ccf7208247493a5d3df4764663",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -261,16 +261,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-13T06:39:02Z",
         "created_at": "2026-11-07T17:51:15Z",
         "draft": false,
         "html_url": "https://github.com/al-one/hass-xiaomi-miot/pull/3041",
         "merge_commit_sha": null,
         "merged_at": null,
         "number": 3041,
-        "state": "open",
+        "state": "closed",
         "title": "Show CAPTCHA challenge when reauth login reports captcha rejected",
-        "updated_at": "2026-11-07T17:53:40Z"
+        "updated_at": "2026-11-13T06:56:57Z"
       },
       "repo": "al-one/hass-xiaomi-miot"
     },
@@ -340,7 +340,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "c374527321ab616182418453a3c6fc8cb48aa6f5",
+        "merge_commit_sha": "92e56c560ad9cb94e5fbb84de0ffd2d0b086bf1f",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -417,7 +417,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "97b2126582d076a534abb3f2ecb17da539cd8ee5",
+        "merge_commit_sha": "b5e946e9081379428e5586da679a86d1f3dc5648",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -442,7 +442,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "164bf20961138b9bd27d017b9e8056e71187a44d",
+        "merge_commit_sha": "9230dd4f8abeba80a98b7193fd47eb05fde08374",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -467,7 +467,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "9dfc6f9291ded1520f1de8d6977f21090cf953d9",
+        "merge_commit_sha": "b442a34cf999322ba8229db6bf6e1e78bc483801",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -517,7 +517,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "cfbe9c47e493239c3508ff1d419f9c72458ba5b4",
+        "merge_commit_sha": "82cf6031c6e43cb2a6f93e0fa68591fd85554546",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -642,7 +642,7 @@
         "created_at": "2026-11-11T22:35:56Z",
         "draft": false,
         "html_url": "https://github.com/interuss/monitoring/pull/1911",
-        "merge_commit_sha": "1dcbacd6294398735c761303bcfbf1e4e794ff77",
+        "merge_commit_sha": "73275d505f0cbb23a19dda3d5ba2212f965deab7",
         "merged_at": null,
         "number": 1911,
         "state": "open",
@@ -698,7 +698,7 @@
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-11T22:27:19Z"
+        "updated_at": "2026-11-12T15:17:21Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -821,7 +821,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "43f28a150014aef304b82d2088420844f218c013",
+        "merge_commit_sha": "2d0fbca17f6e15a157c3b0f76c87d66fd0aa214a",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -896,7 +896,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "91014b8a5dd64416471fb4e8f77989e3e6ce4807",
+        "merge_commit_sha": "a1190f6fdecb05edacfacd1e0e2860b170a1964e",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -921,7 +921,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "134c18cddc998e93ffc76ac5a904740019a32228",
+        "merge_commit_sha": "9252f50f8e213c3a484b1c7e60ce9f5479b5b793",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1299,7 +1299,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "1fe492494625801d6ddc5860e16ceca32e9d7d84",
+        "merge_commit_sha": "a5a1f80efe35feab33dc7fb5155408c9760d583f",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1431,6 +1431,31 @@
         "updated_at": "2026-10-19T04:22:31Z"
       },
       "repo": "urllib3/urllib3"
+    },
+    "vulnerability-lookup/vulnerability-lookup#792": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "vulnerability-lookup"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-12T11:41:33Z",
+        "draft": false,
+        "html_url": "https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792",
+        "merge_commit_sha": "caeb60e36a1b6159e285d1efcb372167db6f4edf",
+        "merged_at": null,
+        "number": 792,
+        "state": "open",
+        "title": "Fix stale indexes when updating CNA CVE IDs",
+        "updated_at": "2026-11-12T15:55:28Z"
+      },
+      "repo": "vulnerability-lookup/vulnerability-lookup"
     }
   },
   "schema_version": 1

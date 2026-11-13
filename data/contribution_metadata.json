@@ -520,6 +520,16 @@
       "source_urls": [
         "https://github.com/interuss/monitoring/pull/1911"
       ]
+    },
+    "vulnerability-lookup/vulnerability-lookup#792": {
+      "what_it_is": "CNA CVE-ID update endpoint",
+      "what_changed": "Route CVE-ID updates through the GNA service to synchronize indexes.",
+      "evidence": "Regression tests added; updated test suite (excluding test_web.py) and Ruff passed.",
+      "why_it_matters": "Keeps CVE-ID state and modified-time indexes aligned with record updates.",
+      "source_urls": [
+        "https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792",
+        "https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792#issuecomment-6828560212"
+      ]
     }
   },
   "credited_integrations": [
