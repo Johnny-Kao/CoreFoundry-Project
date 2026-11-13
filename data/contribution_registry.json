@@ -240,7 +240,7 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "b6a301da712b38ccf7208247493a5d3df4764663",
+        "merge_commit_sha": "23045f4be3e52116c5ec4699c88f40e8c0781a6f",
         "merged_at": null,
         "number": 29537,
         "state": "open",
@@ -248,6 +248,31 @@
         "updated_at": "2026-11-06T11:38:03Z"
       },
       "repo": "PX4/PX4-Autopilot"
+    },
+    "TNO-Quantum/communication.qkd_key_rate#7": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "TNO-Quantum"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-13T09:29:10Z",
+        "draft": false,
+        "html_url": "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7",
+        "merge_commit_sha": "28486dc0b666317b49b13722a8ca6be7a4163d75",
+        "merged_at": null,
+        "number": 7,
+        "state": "open",
+        "title": "Fix incorrect error rate in finite BB84 key calculation",
+        "updated_at": "2026-11-13T09:32:06Z"
+      },
+      "repo": "TNO-Quantum/communication.qkd_key_rate"
     },
     "al-one/hass-xiaomi-miot#3041": {
       "enrichment": {
@@ -290,7 +315,7 @@
         "created_at": "2026-09-21T12:52:36Z",
         "draft": false,
         "html_url": "https://github.com/apple/container/pull/2292",
-        "merge_commit_sha": "7b97e3c377530d67446ae293dbcecea883ef6d52",
+        "merge_commit_sha": "3f35a6b34f80a485a5d073b993eb261ce7b5b28d",
         "merged_at": null,
         "number": 2292,
         "state": "open",
@@ -572,7 +597,7 @@
         "number": 2341,
         "state": "closed",
         "title": "fix(get-agent): allow retry after failover rejection",
-        "updated_at": "2026-11-11T22:41:24Z"
+        "updated_at": "2026-11-13T06:58:29Z"
       },
       "repo": "finos/FDC3"
     },
@@ -642,7 +667,7 @@
         "created_at": "2026-11-11T22:35:56Z",
         "draft": false,
         "html_url": "https://github.com/interuss/monitoring/pull/1911",
-        "merge_commit_sha": "73275d505f0cbb23a19dda3d5ba2212f965deab7",
+        "merge_commit_sha": "d2f76a14bb27ea75aa802cb0d4c27c751672d1f7",
         "merged_at": null,
         "number": 1911,
         "state": "open",
@@ -693,7 +718,7 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "1c32e228fab8b8353ef371f662ee356112bdc8f4",
+        "merge_commit_sha": "cfa024507d830032b3e646be1481f0551ead9994",
         "merged_at": null,
         "number": 9725,
         "state": "open",
@@ -801,7 +826,7 @@
         "number": 1889,
         "state": "open",
         "title": "Upstream: reject early hints beyond the configured buffer",
-        "updated_at": "2026-11-12T06:44:05Z"
+        "updated_at": "2026-11-13T07:08:16Z"
       },
       "repo": "nginx/nginx"
     },
@@ -921,7 +946,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "9252f50f8e213c3a484b1c7e60ce9f5479b5b793",
+        "merge_commit_sha": "d91b5479ccf375aaebdee38db1457759b8c2c044",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1123,7 +1148,7 @@
         "created_at": "2026-10-01T00:16:30Z",
         "draft": false,
         "html_url": "https://github.com/python-cffi/cffi/pull/282",
-        "merge_commit_sha": "de85ea937606dea715602d3e87c7a0d4f1a0cdab",
+        "merge_commit_sha": "7c3685685c7b52b82e4bd9f1915e8eaa5e7e0740",
         "merged_at": null,
         "number": 282,
         "state": "open",
@@ -1207,6 +1232,31 @@
         "updated_at": "2026-11-02T01:06:05Z"
       },
       "repo": "rack/rack"
+    },
+    "root-project/root#24147": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "root-project"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-13T17:01:06Z",
+        "draft": false,
+        "html_url": "https://github.com/root-project/root/pull/24147",
+        "merge_commit_sha": "e3dcd0a67c55fa395a03984ce5edc748c943f3bd",
+        "merged_at": null,
+        "number": 24147,
+        "state": "open",
+        "title": "[ntuple] Fix page checksum handling during recompression",
+        "updated_at": "2026-11-13T17:13:48Z"
+      },
+      "repo": "root-project/root"
     },
     "scientific-python/blog.scientific-python.org#277": {
       "enrichment": {
@@ -1444,16 +1494,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-13T07:59:27Z",
         "created_at": "2026-11-12T11:41:33Z",
         "draft": false,
         "html_url": "https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792",
-        "merge_commit_sha": "caeb60e36a1b6159e285d1efcb372167db6f4edf",
-        "merged_at": null,
+        "merge_commit_sha": "7cb98990621e878fc19b03d1e0b8a1868e968409",
+        "merged_at": "2026-11-13T07:59:27Z",
         "number": 792,
-        "state": "open",
+        "state": "closed",
         "title": "Fix stale indexes when updating CNA CVE IDs",
-        "updated_at": "2026-11-12T15:55:28Z"
+        "updated_at": "2026-11-13T13:19:29Z"
       },
       "repo": "vulnerability-lookup/vulnerability-lookup"
     }

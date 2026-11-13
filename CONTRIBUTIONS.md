@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 18 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 9
+**Merged:** 19 · **Integrated separately:** 3 · **Open:** 30 · **Draft:** 0 · **Closed:** 9
 
-> **Last synchronized:** 2026-11-13 06:58 UTC
+> **Last synchronized:** 2026-11-13 17:33 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[vulnerability-lookup/vulnerability-lookup #792](https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792)** | ✅ Merged | Route CVE-ID updates through the GNA service to synchronize indexes. | Regression tests added; updated test suite (excluding test_web.py) and Ruff passed. |
 | **[finos/FDC3 #2341](https://github.com/finos/FDC3/pull/2341)** | ✅ Merged | Clears the cached promise after failover rejection, so a later call can retry. Adds a regression test and updates CHANGELOG.md. | The PR reports a failure-then-success retry test and passing local build, TypeScript, Vitest, and ESLint checks. |
 | **[interuss/dss #1914](https://github.com/interuss/dss/pull/1914)** | ✅ Merged | Proposes using S2 Cap coverings instead of inscribed 20-sided polygons for circles. | An in-memory test reproduced overlapping circles with no shared S2 cells and a missed intent. |
 | **[pmodels/mpich #8085](https://github.com/pmodels/mpich/pull/8085)** | ✅ Merged | Removed queued requests owned by disconnected PMI2 clients while preserving other ranks' pending requests; added normal and forced-exit regression… | Merged upstream by hzhou on 2026-11-09 (merge 31a45abc8e8a); two focused commits, seven files. Official Jenkins unit, warnings… |
@@ -41,10 +42,11 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
-| **[vulnerability-lookup/vulnerability-lookup #792](https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792)** | 🟢 Open | Route CVE-ID updates through the GNA service to synchronize indexes. | Regression tests added; updated test suite (excluding test_web.py) and Ruff passed. |
+| **[root-project/root #24147](https://github.com/root-project/root/pull/24147)** | 🟢 Open | Propose keeping recompressed-page checksum sizing consistent with the source page. | On ROOT 6.43.01, 6/12 cases failed before; all 12 passed after. TFileMerger checked 260 entries per source order. |
+| **[TNO-Quantum/communication.qkd_key_rate #7](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7)** | 🟢 Open | Proposed replacing the single-photon error count with its rate in privacy amplification | At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905. |
+| **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | 🟢 Open | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
-| **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | 🟢 Open | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
@@ -70,7 +72,7 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | 🟢 Open | The PR adds article content that focuses on reusing information from prior searches, deciding when locality is useful, the 8 / 16 / 32 observation… | — |
 | **[scipy/scipy #26226](https://github.com/scipy/scipy/pull/26226)** | 🟢 Open | Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure | Correctness fix; targeted tests passed |
 | **[apple/container #2293](https://github.com/apple/container/pull/2293)** | 🟢 Open | Reconciled persisted container state with still-running runtimes after apiserver restart | End-to-end state recovery and stop/kill behavior validated on macOS |
-| **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | ⚪ Closed — independently validated; superseded | Identified and reproduced a Xiaomi Miot CAPTCHA reauthentication bug, proposed a small fix, and added regression coverage. | The [maintainer confirmed the diagnosis and thanked the contributor](https://github.com/al-one/hass-xiaomi-miot/pull/3041#issuecomment-6846120931). An equivalent fix had already merged via [#3016](https://github.com/al-one/hass-xiaomi-miot/pull/3016), so #3041 closed unmerged to avoid duplicate work. 365 tests passed locally; live reauth succeeded with additional local fixes. |
+| **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | ⚪ Closed | Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge. | Author reports reauth succeeded for both entries; regression test added; 365 tests passed. |
 | **[MISP/MISP #11275](https://github.com/MISP/MISP/pull/11275)** | ⚪ Closed | Improve Cache Speed | — |
 | **[seL4/seL4 #1843](https://github.com/seL4/seL4/pull/1843)** | ⚪ Closed | tools: fix region alignment for unaligned addresses | — |
 | **[nasa/fprime #6294](https://github.com/nasa/fprime/pull/6294)** | ⚪ Closed | Proposed correct failure reporting for checksum writes and zero-length operations. | Regression scenarios documented; closed pending CCB approval. |
@@ -80,6 +82,14 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[pypa/packaging #1431](https://github.com/pypa/packaging/pull/1431)** | ⚪ Closed | Hardened the marker fast-path invariants | ~9.5% faster than baseline while retaining stronger defensive checks |
 | **[pandas-dev/pandas #69776](https://github.com/pandas-dev/pandas/pull/69776)** | ⚪ Closed | Investigated preservation of the distinction between pd.NA and IEEE NaN across parser paths | Closed / unmerged |
 | **[lz4/lz4 #1927](https://github.com/lz4/lz4/pull/1927)** | ✅ Integrated | Original zero-length fwrite fix proposed in issue #1858; submitted by another contributor and merged upstream. | 10–25% faster tested small buffered writes; PR author publicly confirmed Johnny Kao's code and benchmarks. |
+
+## Reported findings resolved upstream
+
+Original upstream issue reports independently validated by the contributor; fixes were authored and merged by upstream maintainers.
+
+| Project / PR | Status | Engineering contribution | Evidence / impact |
+|---|---|---|---|
+| **[root-project/root #24018](https://github.com/root-project/root/issues/24018)** | Fixed upstream | Reported that hadd aborted when merging valid RNTuples with page checksums disabled; the ROOT maintainer fixed the same-page merging guard in #24085. | Reproduced on official ROOT 6.42.00-rc1: checksum ON+ON passed (260/260); OFF+ON and OFF+OFF aborted. GitHub Actions independently reproduced additional mixed-order… |
 
 ---
 

@@ -530,6 +530,24 @@
         "https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792",
         "https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792#issuecomment-6828560212"
       ]
+    },
+    "root-project/root#24147": {
+      "what_it_is": "ROOT RNTuple page recompression during merging",
+      "what_changed": "Propose keeping recompressed-page checksum sizing consistent with the source page.",
+      "evidence": "On ROOT 6.43.01, 6/12 cases failed before; all 12 passed after. TFileMerger checked 260 entries per source order.",
+      "why_it_matters": "Could prevent aborts or crashes when recompressing merged pages with differing checksum settings.",
+      "source_urls": [
+        "https://github.com/root-project/root/pull/24147"
+      ]
+    },
+    "TNO-Quantum/communication.qkd_key_rate#7": {
+      "what_it_is": "Finite BB84 key-rate calculation",
+      "what_changed": "Proposed replacing the single-photon error count with its rate in privacy amplification",
+      "evidence": "At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905.",
+      "why_it_matters": "Using the error probability avoids an inflated key-rate calculation.",
+      "source_urls": [
+        "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7"
+      ]
     }
   },
   "credited_integrations": [
