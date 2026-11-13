@@ -544,5 +544,23 @@
         "https://github.com/lz4/lz4/pull/1927#issuecomment-6409651206"
       ]
     }
+  ],
+  "credited_findings": [
+    {
+      "repo": "root-project/root",
+      "number": 24018,
+      "url": "https://github.com/root-project/root/issues/24018",
+      "fix_url": "https://github.com/root-project/root/pull/24085",
+      "type": "reported_issue",
+      "status": "fixed_upstream",
+      "credit": "Original issue report and independent public reproducer by Johnny Kao; remediation authored and merged by ROOT maintainers.",
+      "what_changed": "Reported that hadd aborted when merging valid RNTuples with page checksums disabled; the ROOT maintainer fixed the same-page merging guard in #24085.",
+      "evidence": "Reproduced on official ROOT 6.42.00-rc1: checksum ON+ON passed (260/260); OFF+ON and OFF+OFF aborted. GitHub Actions independently reproduced additional mixed-order cases.",
+      "source_urls": [
+        "https://github.com/root-project/root/issues/24018",
+        "https://github.com/Johnny-Kao/root-rntuple-hadd-reproducer/actions/runs/42122803975",
+        "https://github.com/root-project/root/pull/24085"
+      ]
+    }
   ]
 }

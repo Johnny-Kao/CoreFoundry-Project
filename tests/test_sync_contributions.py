@@ -83,6 +83,35 @@ class LedgerTests(unittest.TestCase):
                 sync.main()
                 self.assertEqual(first, (root / "CONTRIBUTIONS.md").read_bytes())
 
+    def test_reported_issue_credit_survives_sync_without_inflating_pr_counts(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "data").mkdir()
+            finding = {
+                "repo": "root-project/root", "number": 24018,
+                "url": "https://github.com/root-project/root/issues/24018",
+                "status": "fixed_upstream",
+                "what_changed": "Reported checksum-disabled hadd abort, fixed by maintainer",
+                "evidence": "Official release binary reproduced the abort",
+            }
+            (root / "data" / "contribution_metadata.json").write_text(
+                json.dumps({"entries": {}, "credited_findings": [finding]}))
+            with mock.patch.multiple(
+                    sync, ROOT=root,
+                    METADATA_PATH=root / "data" / "contribution_metadata.json",
+                    OUTPUT_PATH=root / "CONTRIBUTIONS.md",
+                    REGISTRY_PATH=root / "data" / "contribution_registry.json"), \
+                 mock.patch.object(sync, "discover_prs", return_value=[]):
+                sync.main()
+                data = (root / "CONTRIBUTIONS.md").read_text()
+                self.assertIn("Reported findings resolved upstream", data)
+                self.assertIn("root-project/root #24018", data)
+                self.assertIn("Fixed upstream", data)
+                self.assertIn("**Merged:** 0", data)
+                self.assertIn("**Integrated separately:** 0", data)
+                sync.main()
+                self.assertEqual(data, (root / "CONTRIBUTIONS.md").read_text())
+
     def test_related_commits_do_not_clutter_merged_row(self):
         merged = pr(repo="python-attrs/attrs", number=1636, merged=True)
         meta = {"what_changed": "Skipped redundant detection",

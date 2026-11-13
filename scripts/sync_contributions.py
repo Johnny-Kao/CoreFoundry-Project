@@ -264,6 +264,7 @@ def main():
     # Manually verified upstream integrations submitted by another author.
     # Curated records persist across sync and do not affect authored-PR counts.
     credited = metadata_doc.get("credited_integrations", [])
+    findings = metadata_doc.get("credited_findings", [])
     counts = {k: len(v) for k, v in buckets.items()}
     counts["integrated"] += len(credited)
 
@@ -301,6 +302,22 @@ def main():
         ])
     lines.append(render_table(rows) if rows else "_No tracked entries._")
     lines.append("")
+
+    # Curated issue discoveries are distinct from authored PRs and merged counts.
+    if findings:
+        lines.extend(["## Reported findings resolved upstream", "",
+                      "Original upstream issue reports independently validated by the contributor; "
+                      "fixes were authored and merged by upstream maintainers.", ""])
+        finding_rows = []
+        for finding in findings:
+            finding_rows.append([
+                f"**[{finding['repo']} #{finding['number']}]({finding['url']})**",
+                "Fixed upstream" if finding.get("status") == "fixed_upstream" else "Reported",
+                escape_cell(concise(finding.get("what_changed"), 190)),
+                escape_cell(concise(finding.get("evidence"), 170)),
+            ])
+        lines.append(render_table(finding_rows))
+        lines.append("")
 
     lines.extend(
         [
