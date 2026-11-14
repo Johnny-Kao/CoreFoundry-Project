@@ -306,8 +306,8 @@ def main():
     # Curated issue discoveries are distinct from authored PRs and merged counts.
     if findings:
         lines.extend(["## Reported findings resolved upstream", "",
-                      "Original upstream issue reports independently validated by the contributor; "
-                      "fixes were authored and merged by upstream maintainers.", ""])
+                      "Validated issue reports, research, tests and code-review findings adopted upstream; "
+                      "fixes were authored and merged by upstream maintainers, not counted as contributor-authored PRs.", ""])
         finding_rows = []
         for finding in findings:
             finding_rows.append([
