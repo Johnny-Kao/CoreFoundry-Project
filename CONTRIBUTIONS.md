@@ -4,7 +4,7 @@ A live public record of upstream open-source work tracked by CoreFoundry.
 
 **Merged:** 19 · **Integrated separately:** 3 · **Open:** 30 · **Draft:** 0 · **Closed:** 9
 
-> **Last synchronized:** 2026-11-13 17:33 UTC
+> **Last synchronized:** 2026-11-14 03:37 UTC
 
 ## Record and attribution
 
@@ -85,11 +85,12 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 
 ## Reported findings resolved upstream
 
-Original upstream issue reports independently validated by the contributor; fixes were authored and merged by upstream maintainers.
+Validated issue reports, research, tests and code-review findings adopted upstream; fixes were authored and merged by upstream maintainers, not counted as contributor-authored PRs.
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
 | **[root-project/root #24018](https://github.com/root-project/root/issues/24018)** | Fixed upstream | Reported that hadd aborted when merging valid RNTuples with page checksums disabled; the ROOT maintainer fixed the same-page merging guard in #24085. | Reproduced on official ROOT 6.42.00-rc1: checksum ON+ON passed (260/260); OFF+ON and OFF+OFF aborted. GitHub Actions independently reproduced additional mixed-order… |
+| **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #232](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232)** | Fixed upstream | Identified disconnected MATSim routes across multi-segment tracks; maintainer incorporated route-validation and converging-segment tests. Review findings led to NODE_CONFLICT checks for… | PR #235 merged 2026-11-13 23:29 UTC (635114c). Maintainer confirmed both review fixes, added reusedSegmentWithANodeAtAnotherCoordinate regression, and documented… |
 
 ---
 
