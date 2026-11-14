@@ -585,16 +585,18 @@
       "number": 232,
       "url": "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232",
       "fix_url": "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235",
-      "type": "reported_issue_and_adopted_review",
+      "type": "original_discovery_validated_fix_and_adopted_review",
       "status": "fixed_upstream",
-      "credit": "Johnny Kao reported the route-continuity defect, supplied independent MATSim validation and converging-segment tests, and identified two further review gaps. Maintainer munterfi authored and merged the fix as PR #235, expressly crediting the research; Johnny is not the PR author.",
-      "what_changed": "Identified disconnected MATSim routes across multi-segment tracks; maintainer incorporated route-validation and converging-segment tests. Review findings led to NODE_CONFLICT checks for reused junctions and SEGMENT_CONFLICT checks for inconsistent segment lengths and link attributes.",
-      "evidence": "PR #235 merged 2026-11-13 23:29 UTC (635114c). Maintainer confirmed both review fixes, added reusedSegmentWithANodeAtAnotherCoordinate regression, and documented InfrastructureRepository#getTrack consistency requirements. No independent post-merge run.",
+      "credit": "Original defect discovered by Johnny Kao, who independently developed and tested a working candidate correction and MATSim regression coverage, then uncovered two additional segment-consistency defects during review. The maintainer authored and merged the final implementation in PR #235, explicitly crediting Johnny's research and tests; Johnny is not the PR submitter.",
+      "what_changed": "Originally discovered the multi-segment route-connectivity defect; independently developed a CI-validated corrective approach and route-validation/converging-track tests. Subsequent review discoveries led to NODE_CONFLICT and SEGMENT_CONFLICT checks in the maintainer's final patch.",
+      "evidence": "Original Research RED→GREEN: full Maven build and 90 library tests passed on candidate correction; later coordinate-conflict RED and order-dependence tests informed review. Maintainer PR #235 merged 2026-11-13 UTC with explicit credit, regression test and documented segment identity contract. Final merged code not independently rerun.",
       "source_urls": [
         "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232",
         "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235",
         "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235#discussion_r4569780058",
-        "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235#issuecomment-6867431677"
+        "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235#issuecomment-6867431677",
+        "https://github.com/Johnny-Kao/netzgrafik-matsim-topology-research/actions/runs/41860682605",
+        "https://github.com/Johnny-Kao/netzgrafik-matsim-topology-research/actions/runs/43484828646"
       ]
     }
   ]
