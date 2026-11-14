@@ -25,7 +25,16 @@ I investigate performance bottlenecks, correctness bugs, and security issues—a
 | 🎥 Computer Vision & Media | [OpenCV](https://github.com/opencv/opencv/pull/30177)| [**OpenCV: macOS BGRA fast path**](https://github.com/opencv/opencv/pull/30177) |
 | ⚙️ Systems & Runtime | [Apple Container](https://github.com/apple/container/pull/2293), [cffi](https://github.com/python-cffi/cffi/pull/282)| [**Apple Container: Runtime-state safety**](https://github.com/apple/container/pull/2292) |
 
-**Credited upstream research and reviews.** CoreFoundry also tracks findings and regression tests adopted into maintainer-authored fixes, separately from PRs I authored. For example, [SBB MATSim converter #235](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235) merged route-connectivity repairs and additional segment-consistency validation following my [issue report and code review](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232). The maintainer explicitly credited the research and authored the fix. These outcomes appear in the [contribution ledger](CONTRIBUTIONS.md) without inflating authored-PR counts.
+## Engineering Contributions
+
+I contribute through **original bug discovery, root-cause analysis, tested fixes, regression tests, performance work, security research, and upstream design/code review**. The engineering contribution matters independently of who submits the final pull request. Each record distinguishes **my work** from **the upstream integration method**, with evidence and attribution.
+
+- **Original discoveries & validated fixes:** [SBB MATSim converter #232 → #235](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235) — I identified a multi-segment route-topology defect, developed and tested a working correction and regression cases, then uncovered two further segment-consistency gaps during code review. The maintainer incorporated the findings and tests, authored the final implementation, and explicitly credited my research.
+- **Original fixes integrated by other contributors:** [LZ4 #1858 → #1927](https://github.com/lz4/lz4/pull/1927) — I proposed the original one-line fix and benchmarks; another contributor submitted the merged PR with attribution.
+- **Original issue research resolved by maintainers:** [CERN ROOT #24018 → #24085](https://github.com/root-project/root/issues/24018) — I reported and reproduced the checksum-free RNTuple merge failure; the maintainer implemented the fix.
+- **Direct code contributions:** The [contribution ledger](CONTRIBUTIONS.md) tracks my own submitted upstream PRs and their actual merge/review state.
+
+**Attribution rule:** A maintainer-authored PR is not represented as an authored PR. Likewise, original discoveries, validated solutions and accepted testing are not downgraded to incidental review simply because someone else integrated the final patch.
 
 Performance figures are from targeted benchmarks. See linked upstream records for review and integration status.
 
