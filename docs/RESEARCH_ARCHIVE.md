@@ -41,6 +41,10 @@ Detailed research history, measured results, attribution, and engineering method
 
 ## 🧩 Other selected upstream work
 
+**SBB MATSim converter — [Issue #232](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232) → [maintainer PR #235](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235) (merged 2026-11-13 UTC):** Identified disconnected routes for multi-segment tracks and independently developed MATSim route-validity and converging-segment regression coverage. While reviewing the maintainer's solution, reproduced a cached-node coordinate conflict and exposed first-seen-wins behavior for inconsistent segment lengths. The maintainer adopted both findings, added `NODE_CONFLICT` / `SEGMENT_CONFLICT` checks, documented the repository identity contract, and expressly credited Johnny Kao. **Maintainer-authored fix; research and review credit, not PR authorship.**
+
+
+
 | Project / PR | What it is | What changed | Measured / practical impact | Why this matters |
 |---|---|---|---:|---|
 | **[QuickFIX/J #1363](https://github.com/quickfix-j/quickfixj/pull/1363)** | FIX financial-messaging transport | Corrected synchronous `IoSessionResponder.send()` to distinguish a completed MINA `WriteFuture` from a successfully written one | **Merged correctness fix**; regression coverage and **9/9 fork CI jobs passed** (Java 8/11/21 × Linux/Windows/macOS) | Prevents completed-but-failed synchronous writes from being reported as successful, without changing asynchronous or timeout behavior |
