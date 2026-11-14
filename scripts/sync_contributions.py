@@ -279,9 +279,9 @@ def main():
         "",
         "## Record and attribution",
         "",
-        "CoreFoundry treats the **upstream pull request as the canonical public record**.",
+        "CoreFoundry records **original engineering work and verified upstream outcomes**, including bug discoveries, validated fixes, tests, performance, security research and design/code review. Final PR authorship is a separate attribution fact, not a ranking of contribution value.",
         "",
-        "- upstream PR links are always primary;",
+        "- upstream issues, PRs, regression tests, maintainer replies and merge commits are public evidence;",
         "- status reflects GitHub PR state, except independently integrated work labeled Integrated;",
         "- contributor forks, local branches, staging repositories, and research harnesses are never required to reconstruct the public record;",
         "- GitHub PR status is synchronized automatically; Copilot only drafts active PR descriptions, while terminal records are frozen.",
@@ -290,7 +290,7 @@ def main():
         "",
     ]
 
-    lines.extend(["## Upstream contributions", ""])
+    lines.extend(["## Direct upstream PR contributions", ""])
     rows = [row_for(*entry) for key in ("merged", "integrated", "open", "draft", "closed")
             for entry in buckets[key]]
     for item in credited:
@@ -305,9 +305,9 @@ def main():
 
     # Curated issue discoveries are distinct from authored PRs and merged counts.
     if findings:
-        lines.extend(["## Reported findings resolved upstream", "",
-                      "Validated issue reports, research, tests and code-review findings adopted upstream; "
-                      "fixes were authored and merged by upstream maintainers, not counted as contributor-authored PRs.", ""])
+        lines.extend(["## Original discoveries, validated research & upstream-integrated findings", "",
+                      "Original discoveries, tested solutions, regression coverage and reviews adopted upstream; "
+                      "final implementation and PR authorship are recorded separately from research credit.", ""])
         finding_rows = []
         for finding in findings:
             finding_rows.append([
@@ -329,7 +329,7 @@ def main():
             "",
             "1. public upstream PR state from GitHub;",
             "2. curated display metadata in `data/contribution_metadata.json`;",
-            "3. separately integrated upstream commit evidence and curated credited integrations.",
+            "3. curated independently discovered bugs, validated solutions, credited integrations and review findings.",
             "",
             "New public upstream PRs authored by the tracked contributor are discovered automatically. "
             "Closed-but-unmerged work remains visible unless explicitly excluded in metadata.",
