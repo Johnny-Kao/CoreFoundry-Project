@@ -25,6 +25,8 @@ I investigate performance bottlenecks, correctness bugs, and security issues—a
 | 🎥 Computer Vision & Media | [OpenCV](https://github.com/opencv/opencv/pull/30177)| [**OpenCV: macOS BGRA fast path**](https://github.com/opencv/opencv/pull/30177) |
 | ⚙️ Systems & Runtime | [Apple Container](https://github.com/apple/container/pull/2293), [cffi](https://github.com/python-cffi/cffi/pull/282)| [**Apple Container: Runtime-state safety**](https://github.com/apple/container/pull/2292) |
 
+**Credited upstream research and reviews.** CoreFoundry also tracks findings and regression tests adopted into maintainer-authored fixes, separately from PRs I authored. For example, [SBB MATSim converter #235](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/235) merged route-connectivity repairs and additional segment-consistency validation following my [issue report and code review](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232). The maintainer explicitly credited the research and authored the fix. These outcomes appear in the [contribution ledger](CONTRIBUTIONS.md) without inflating authored-PR counts.
+
 Performance figures are from targeted benchmarks. See linked upstream records for review and integration status.
 
 [Complete contribution record](CONTRIBUTIONS.md) · [Security research](SECURITY_RESEARCH.md)
