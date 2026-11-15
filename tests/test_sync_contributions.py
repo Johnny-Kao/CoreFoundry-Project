@@ -104,7 +104,7 @@ class LedgerTests(unittest.TestCase):
                  mock.patch.object(sync, "discover_prs", return_value=[]):
                 sync.main()
                 data = (root / "CONTRIBUTIONS.md").read_text()
-                self.assertIn("Reported findings resolved upstream", data)
+                self.assertIn("Original discoveries, validated research & upstream-integrated findings", data)
                 self.assertIn("root-project/root #24018", data)
                 self.assertIn("Fixed upstream", data)
                 self.assertIn("**Merged:** 0", data)
