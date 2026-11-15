@@ -2,25 +2,26 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 19 · **Integrated separately:** 3 · **Open:** 30 · **Draft:** 0 · **Closed:** 9
+**Merged:** 20 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 9
 
-> **Last synchronized:** 2026-11-14 03:37 UTC
+> **Last synchronized:** 2026-11-15 14:36 UTC
 
 ## Record and attribution
 
-CoreFoundry treats the **upstream pull request as the canonical public record**.
+CoreFoundry records **original engineering work and verified upstream outcomes**, including bug discoveries, validated fixes, tests, performance, security research and design/code review. Final PR authorship is a separate attribution fact, not a ranking of contribution value.
 
-- upstream PR links are always primary;
+- upstream issues, PRs, regression tests, maintainer replies and merge commits are public evidence;
 - status reflects GitHub PR state, except independently integrated work labeled Integrated;
 - contributor forks, local branches, staging repositories, and research harnesses are never required to reconstruct the public record;
 - GitHub PR status is synchronized automatically; Copilot only drafts active PR descriptions, while terminal records are frozen.
 - closed PRs integrated via another upstream commit are tracked separately, not counted as merged PRs.
 
 
-## Upstream contributions
+## Direct upstream PR contributions
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | ✅ Merged | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
 | **[vulnerability-lookup/vulnerability-lookup #792](https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792)** | ✅ Merged | Route CVE-ID updates through the GNA service to synchronize indexes. | Regression tests added; updated test suite (excluding test_web.py) and Ruff passed. |
 | **[finos/FDC3 #2341](https://github.com/finos/FDC3/pull/2341)** | ✅ Merged | Clears the cached promise after failover rejection, so a later call can retry. Adds a regression test and updates CHANGELOG.md. | The PR reports a failure-then-success retry test and passing local build, TypeScript, Vitest, and ESLint checks. |
 | **[interuss/dss #1914](https://github.com/interuss/dss/pull/1914)** | ✅ Merged | Proposes using S2 Cap coverings instead of inscribed 20-sided polygons for circles. | An in-memory test reproduced overlapping circles with no shared S2 cells and a missed intent. |
@@ -47,7 +48,6 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | 🟢 Open | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
-| **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | 🟢 Open | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
 | **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
@@ -83,14 +83,15 @@ CoreFoundry treats the **upstream pull request as the canonical public record**.
 | **[pandas-dev/pandas #69776](https://github.com/pandas-dev/pandas/pull/69776)** | ⚪ Closed | Investigated preservation of the distinction between pd.NA and IEEE NaN across parser paths | Closed / unmerged |
 | **[lz4/lz4 #1927](https://github.com/lz4/lz4/pull/1927)** | ✅ Integrated | Original zero-length fwrite fix proposed in issue #1858; submitted by another contributor and merged upstream. | 10–25% faster tested small buffered writes; PR author publicly confirmed Johnny Kao's code and benchmarks. |
 
-## Reported findings resolved upstream
+## Original discoveries, validated research & upstream-integrated findings
 
-Validated issue reports, research, tests and code-review findings adopted upstream; fixes were authored and merged by upstream maintainers, not counted as contributor-authored PRs.
+Original discoveries, tested solutions, regression coverage and reviews adopted upstream; final implementation and PR authorship are recorded separately from research credit.
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
 | **[root-project/root #24018](https://github.com/root-project/root/issues/24018)** | Fixed upstream | Reported that hadd aborted when merging valid RNTuples with page checksums disabled; the ROOT maintainer fixed the same-page merging guard in #24085. | Reproduced on official ROOT 6.42.00-rc1: checksum ON+ON passed (260/260); OFF+ON and OFF+OFF aborted. GitHub Actions independently reproduced additional mixed-order… |
-| **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #232](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232)** | Fixed upstream | Identified disconnected MATSim routes across multi-segment tracks; maintainer incorporated route-validation and converging-segment tests. Review findings led to NODE_CONFLICT checks for… | PR #235 merged 2026-11-13 23:29 UTC (635114c). Maintainer confirmed both review fixes, added reusedSegmentWithANodeAtAnotherCoordinate regression, and documented… |
+| **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #232](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/issues/232)** | Fixed upstream | Originally discovered the multi-segment route-connectivity defect; independently developed a CI-validated corrective approach and route-validation/converging-track tests. Subsequent review… | Original Research RED→GREEN: full Maven build and 90 library tests passed on candidate correction; later coordinate-conflict RED and order-dependence tests informed… |
+| **[evcc-io/evcc #36184](https://github.com/evcc-io/evcc/issues/36184)** | Fixed upstream | Discovered that a phase-power read failure could bypass the circuit's stale-current timeout protection; reproduced the control path to a mock charger, authored and CI-validated a minimal… | Original 16 A circuit / stale 10 A reading allowed another 6 A after timeout in the reproducer; a production loadpoint path reached mock-charger limit/enable calls.… |
 
 ---
 
@@ -100,7 +101,7 @@ This file is generated by `.github/workflows/sync-contributions.yml` from:
 
 1. public upstream PR state from GitHub;
 2. curated display metadata in `data/contribution_metadata.json`;
-3. separately integrated upstream commit evidence and curated credited integrations.
+3. curated independently discovered bugs, validated solutions, credited integrations and review findings.
 
 New public upstream PRs authored by the tracked contributor are discovered automatically. Closed-but-unmerged work remains visible unless explicitly excluded in metadata.
 
