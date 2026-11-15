@@ -598,6 +598,22 @@
         "https://github.com/Johnny-Kao/netzgrafik-matsim-topology-research/actions/runs/41860682605",
         "https://github.com/Johnny-Kao/netzgrafik-matsim-topology-research/actions/runs/43484828646"
       ]
+    },
+    {
+      "repo": "evcc-io/evcc",
+      "number": 36184,
+      "url": "https://github.com/evcc-io/evcc/issues/36184",
+      "fix_url": "https://github.com/evcc-io/evcc/pull/36185",
+      "type": "original_discovery_independently_authored_fix_upstream_resolved",
+      "status": "fixed_upstream",
+      "credit": "Johnny Kao originally discovered the missing phase-power failure timeout guard, performed root-cause analysis, independently authored a minimal one-line corrective patch and regression tests, and validated a staging implementation. The upstream project resolved the contributor-filed issue via bot-authored PR #36185 using a different fallback implementation. Johnny is not the upstream PR or merged-commit author; the original engineering contribution remains independently documented.",
+      "what_changed": "Discovered that a phase-power read failure could bypass the circuit's stale-current timeout protection; reproduced the control path to a mock charger, authored and CI-validated a minimal corrective patch and regressions. The upstream project merged its own alternative fix in #36185.",
+      "evidence": "Original 16 A circuit / stale 10 A reading allowed another 6 A after timeout in the reproducer; a production loadpoint path reached mock-charger limit/enable calls. Independent source and staging CI passed. Bot-authored PR #36185 was merged 2026-11-15 (0075cdb8), resolving #36184. No hardware overload or complete safety certification claimed.",
+      "source_urls": [
+        "https://github.com/evcc-io/evcc/issues/36184",
+        "https://github.com/evcc-io/evcc/pull/36185",
+        "https://github.com/evcc-io/evcc/commit/0075cdb8c7e6d3ea17cdcf032c96b8b4fa6a25cb"
+      ]
     }
   ]
 }
