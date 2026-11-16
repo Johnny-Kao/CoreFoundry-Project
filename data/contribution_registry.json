@@ -220,7 +220,7 @@
         "number": 4117,
         "state": "closed",
         "title": "Fix V2 BALANCE distribution exceeding a feasible cluster power target",
-        "updated_at": "2026-11-15T12:00:42Z"
+        "updated_at": "2026-11-15T15:27:46Z"
       },
       "repo": "OpenEMS/openems"
     },
@@ -240,12 +240,12 @@
         "created_at": "2026-10-31T05:04:40Z",
         "draft": false,
         "html_url": "https://github.com/PX4/PX4-Autopilot/pull/29537",
-        "merge_commit_sha": "d3786d9fb3550f75e439e20ddeb4e6f6df8a870d",
+        "merge_commit_sha": "5830719476e77ececf03d1b0def6835236ee3a08",
         "merged_at": null,
         "number": 29537,
         "state": "open",
         "title": "fix(mavlink): ignore foreign mission counts for upload timeout",
-        "updated_at": "2026-11-06T11:38:03Z"
+        "updated_at": "2026-11-15T23:51:18Z"
       },
       "repo": "PX4/PX4-Autopilot"
     },
@@ -667,12 +667,12 @@
         "created_at": "2026-11-11T22:35:56Z",
         "draft": false,
         "html_url": "https://github.com/interuss/monitoring/pull/1911",
-        "merge_commit_sha": "d2f76a14bb27ea75aa802cb0d4c27c751672d1f7",
+        "merge_commit_sha": "f7e11229e503ec8cf35bf72be4737130d29ad266",
         "merged_at": null,
         "number": 1911,
         "state": "open",
         "title": "[uss_qualifier] Add circular OIR overlap regression test",
-        "updated_at": "2026-11-12T07:21:43Z"
+        "updated_at": "2026-11-15T17:47:33Z"
       },
       "repo": "interuss/monitoring"
     },
@@ -846,7 +846,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "f6db2c3ae4843b639fecc0a270729711b043dd06",
+        "merge_commit_sha": "1b1e8110c8e9269213b5dc65870e235cb6b20471",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -921,7 +921,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "c1fe2d73ca83646b657469ac376479e74966a7f6",
+        "merge_commit_sha": "dcb5d57cbc4034404cfa3d1b861b3e94ca35dbb7",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -946,7 +946,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "9a8ff1ab95e96b45c491b36e989d8739cec0bcab",
+        "merge_commit_sha": "6c2601078e22c39df947b3d0629055ec0bcd3bb3",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1249,7 +1249,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "8ed233929e5fdc8db6faa871b6070055fa78e079",
+        "merge_commit_sha": "dcea2317ab1ce59216300445e6f159336012f31e",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1349,7 +1349,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "801abc62fda46059e69055077a32d38568bb8788",
+        "merge_commit_sha": "3751906357553c966abbc1ead7b046d73328da14",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1423,7 +1423,7 @@
         "created_at": "2026-10-16T09:37:44Z",
         "draft": false,
         "html_url": "https://github.com/serde-rs/json/pull/1356",
-        "merge_commit_sha": "b7a32cb257db54e1135a4cda6bdcf5d6438254a1",
+        "merge_commit_sha": "8042f66960bdb2a88225cada91488c7d9e2565e2",
         "merged_at": null,
         "number": 1356,
         "state": "open",
