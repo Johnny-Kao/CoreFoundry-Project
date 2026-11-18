@@ -245,7 +245,7 @@
         "number": 29537,
         "state": "closed",
         "title": "fix(mavlink): ignore foreign mission counts for upload timeout",
-        "updated_at": "2026-11-17T23:33:37Z"
+        "updated_at": "2026-11-18T02:40:18Z"
       },
       "repo": "PX4/PX4-Autopilot"
     },
@@ -667,7 +667,7 @@
         "created_at": "2026-11-11T22:35:56Z",
         "draft": false,
         "html_url": "https://github.com/interuss/monitoring/pull/1911",
-        "merge_commit_sha": "524e8b195dd5ae473c56b943fdf21a84314d216f",
+        "merge_commit_sha": "14bc7074be5d5cb3e64b031f2570ca33e0746689",
         "merged_at": null,
         "number": 1911,
         "state": "open",
@@ -946,7 +946,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "3de9436275d7a33fa73f49bfa28906f4a6f3cdd8",
+        "merge_commit_sha": "b122747a265486ed4927414ed8d6a09d5775af66",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1148,7 +1148,7 @@
         "created_at": "2026-10-01T00:16:30Z",
         "draft": false,
         "html_url": "https://github.com/python-cffi/cffi/pull/282",
-        "merge_commit_sha": "7c3685685c7b52b82e4bd9f1915e8eaa5e7e0740",
+        "merge_commit_sha": "e7b9cccf906caffeb23f32ba94f593295723de41",
         "merged_at": null,
         "number": 282,
         "state": "open",
