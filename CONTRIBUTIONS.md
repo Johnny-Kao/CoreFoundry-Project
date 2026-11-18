@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 20 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 9
+**Merged:** 21 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 9
 
-> **Last synchronized:** 2026-11-17 08:05 UTC
+> **Last synchronized:** 2026-11-18 00:14 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[PX4/PX4-Autopilot #29537](https://github.com/PX4/PX4-Autopilot/pull/29537)** | ✅ Merged | Authored and merged a minimal MAVLink mission-upload timeout correctness fix: reject foreign MISSION_COUNT before renewing the active transfer's… | Merged 2026-11-17 23:33 UTC (483f73d), direct authored code adoption; baseline/patched disarmed PX4 SITL proved timeout recovery.… |
 | **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | ✅ Merged | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
 | **[vulnerability-lookup/vulnerability-lookup #792](https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792)** | ✅ Merged | Route CVE-ID updates through the GNA service to synchronize indexes. | Regression tests added; updated test suite (excluding test_web.py) and Ruff passed. |
 | **[finos/FDC3 #2341](https://github.com/finos/FDC3/pull/2341)** | ✅ Merged | Clears the cached promise after failover rejection, so a later call can retry. Adds a regression test and updates CHANGELOG.md. | The PR reports a failure-then-success retry test and passing local build, TypeScript, Vitest, and ESLint checks. |
@@ -43,11 +44,10 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
-| **[PX4/PX4-Autopilot #29537](https://github.com/PX4/PX4-Autopilot/pull/29537)** | 🟢 Open | Prevented rejected MISSION_COUNT messages from resetting upload timeouts. | PX4 SITL reproduced the issue and validated timeout recovery. |
-| **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[root-project/root #24147](https://github.com/root-project/root/pull/24147)** | 🟢 Open | Propose keeping recompressed-page checksum sizing consistent with the source page. | On ROOT 6.43.01, 6/12 cases failed before; all 12 passed after. TFileMerger checked 260 entries per source order. |
-| **[TNO-Quantum/communication.qkd_key_rate #7](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7)** | 🟢 Open | Proposed replacing the single-photon error count with its rate in privacy amplification | At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905. |
 | **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | 🟢 Open | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
+| **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
+| **[TNO-Quantum/communication.qkd_key_rate #7](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7)** | 🟢 Open | Proposed replacing the single-photon error count with its rate in privacy amplification | At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905. |
 | **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
