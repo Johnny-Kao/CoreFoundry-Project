@@ -384,9 +384,9 @@
     },
     "PX4/PX4-Autopilot#29537": {
       "what_it_is": "A PX4-Autopilot fix for mission-upload timeout handling.",
-      "what_changed": "Prevented rejected MISSION_COUNT messages from resetting upload timeouts.",
-      "evidence": "PX4 SITL reproduced the issue and validated timeout recovery.",
-      "why_it_matters": "A different sender repeatedly transmitting mission counts could otherwise keep a stalled upload alive beyond the 5-second timeout and block new uploads.",
+      "what_changed": "Authored and merged a minimal MAVLink mission-upload timeout correctness fix: reject foreign MISSION_COUNT before renewing the active transfer's liveness clock.",
+      "evidence": "Merged 2026-11-17 23:33 UTC (483f73d), direct authored code adoption; baseline/patched disarmed PX4 SITL proved timeout recovery. Final-head SITL workflow had a ThreadSanitizer failure; its relation to the patch was not independently excluded.",
+      "why_it_matters": "Rejected packets from another ground station could keep a stalled upload alive beyond its five-second timeout, blocking a new upload. The one-statement correction preserves transfer-partner ownership of liveness renewal.",
       "source_urls": [
         "https://github.com/PX4/PX4-Autopilot/pull/29537"
       ]
