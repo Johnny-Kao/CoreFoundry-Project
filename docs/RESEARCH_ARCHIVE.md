@@ -36,6 +36,10 @@ Detailed research history, measured results, attribution, and engineering method
 
 </details>
 
+## PX4 — MAVLink mission-upload timeout correctness (merged)
+
+**[PX4/PX4-Autopilot #29537](https://github.com/PX4/PX4-Autopilot/pull/29537)** — **authored and merged code by Johnny Kao**, integrated 2026-11-17 23:33:37 UTC ([merge commit `483f73d`](https://github.com/PX4/PX4-Autopilot/commit/483f73d19dfdec9e31e43216ee516631d4ef84af)). The mission upload handler used to refresh the current transfer's last-received timestamp on a foreign sender's `MISSION_COUNT` before rejecting it. Repeated rejected traffic could therefore keep an abandoned upload alive beyond the five-second timeout and block a new upload. The upstream patch moves the timestamp assignment after the existing system/component identity check: **one source file, +2/-2**, direct adoption of the author's fix. Original-versus-patched disarmed PX4 SITL replay demonstrated timeout and recovery; no physical-flight validation is claimed. Latest-head CI had ten successful workflow families and one failed SITL Tests workflow, with a ThreadSanitizer race suspected unrelated but not baseline-proven independent; upstream merge is not equivalent to all CI checks passing.
+
 <details>
 <summary>Other selected upstream work</summary>
 
