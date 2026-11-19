@@ -548,6 +548,24 @@
       "source_urls": [
         "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7"
       ]
+    },
+    "teslamotors/fleet-telemetry#590": {
+      "what_it_is": "MQTT vehicle-record validation before publishing",
+      "what_changed": "Proposes rejecting missing or empty vehicle datum fields before MQTT publishing",
+      "evidence": "Seven regression tests cover malformed fields; stated make and race/vet checks pass.",
+      "why_it_matters": "Prevents malformed MQTT records from triggering reliable acknowledgments or publication.",
+      "source_urls": [
+        "https://github.com/teslamotors/fleet-telemetry/pull/590"
+      ]
+    },
+    "TNO-Quantum/communication.qkd_key_rate#8": {
+      "what_it_is": "Quantum key-distribution protocol calculations",
+      "what_changed": "Proposed four correctness fixes for detector, BBM92, Winnow, and finite-BB84 calculations.",
+      "evidence": "45 focused tests passed on each Python 3.11, 3.12, 3.13; zero new failures.",
+      "why_it_matters": "Separates formula and validity fixes that could otherwise produce incorrect key-rate results.",
+      "source_urls": [
+        "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8"
+      ]
     }
   },
   "credited_integrations": [

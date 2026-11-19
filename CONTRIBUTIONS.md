@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 21 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 9
+**Merged:** 21 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 10
 
-> **Last synchronized:** 2026-11-18 00:14 UTC
+> **Last synchronized:** 2026-11-19 07:38 UTC
 
 ## Record and attribution
 
@@ -44,10 +44,11 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[teslamotors/fleet-telemetry #590](https://github.com/teslamotors/fleet-telemetry/pull/590)** | 🟢 Open | Proposes rejecting missing or empty vehicle datum fields before MQTT publishing | Seven regression tests cover malformed fields; stated make and race/vet checks pass. |
+| **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
+| **[TNO-Quantum/communication.qkd_key_rate #8](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8)** | 🟢 Open | Proposed four correctness fixes for detector, BBM92, Winnow, and finite-BB84 calculations. | 45 focused tests passed on each Python 3.11, 3.12, 3.13; zero new failures. |
 | **[root-project/root #24147](https://github.com/root-project/root/pull/24147)** | 🟢 Open | Propose keeping recompressed-page checksum sizing consistent with the source page. | On ROOT 6.43.01, 6/12 cases failed before; all 12 passed after. TFileMerger checked 260 entries per source order. |
 | **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | 🟢 Open | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
-| **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
-| **[TNO-Quantum/communication.qkd_key_rate #7](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7)** | 🟢 Open | Proposed replacing the single-photon error count with its rate in privacy amplification | At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905. |
 | **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
@@ -72,6 +73,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | 🟢 Open | The PR adds article content that focuses on reusing information from prior searches, deciding when locality is useful, the 8 / 16 / 32 observation… | — |
 | **[scipy/scipy #26226](https://github.com/scipy/scipy/pull/26226)** | 🟢 Open | Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure | Correctness fix; targeted tests passed |
 | **[apple/container #2293](https://github.com/apple/container/pull/2293)** | 🟢 Open | Reconciled persisted container state with still-running runtimes after apiserver restart | End-to-end state recovery and stop/kill behavior validated on macOS |
+| **[TNO-Quantum/communication.qkd_key_rate #7](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7)** | ⚪ Closed | Proposed replacing the single-photon error count with its rate in privacy amplification | At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905. |
 | **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | ⚪ Closed | Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge. | Author reports reauth succeeded for both entries; regression test added; 365 tests passed. |
 | **[MISP/MISP #11275](https://github.com/MISP/MISP/pull/11275)** | ⚪ Closed | Improve Cache Speed | — |
 | **[seL4/seL4 #1843](https://github.com/seL4/seL4/pull/1843)** | ⚪ Closed | tools: fix region alignment for unaligned addresses | — |

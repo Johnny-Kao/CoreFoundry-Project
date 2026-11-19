@@ -16,7 +16,7 @@
         "created_at": "2026-11-06T13:48:44Z",
         "draft": false,
         "html_url": "https://github.com/ArduPilot/pymavlink/pull/1329",
-        "merge_commit_sha": "81905e527f3645fca65ed75db326b292d984c47f",
+        "merge_commit_sha": "5e384c96711fe0bfd058d712bc6f499712b3f3c1",
         "merged_at": null,
         "number": 1329,
         "state": "open",
@@ -165,7 +165,7 @@
         "created_at": "2026-11-09T23:12:23Z",
         "draft": false,
         "html_url": "https://github.com/MISP/MISP/pull/11278",
-        "merge_commit_sha": "064fa48f026014a738a179de1856bbb0720228a7",
+        "merge_commit_sha": null,
         "merged_at": null,
         "number": 11278,
         "state": "open",
@@ -190,7 +190,7 @@
         "created_at": "2026-11-07T11:56:58Z",
         "draft": false,
         "html_url": "https://github.com/OpenCPN/OpenCPN/pull/5522",
-        "merge_commit_sha": "cd470df93d66276578e2e2c9a9ab6b67461fb68e",
+        "merge_commit_sha": "c0b9f8b3f0c679f43e54a20d2f3555d03a270c8f",
         "merged_at": null,
         "number": 5522,
         "state": "open",
@@ -261,16 +261,41 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-18T15:15:53Z",
         "created_at": "2026-11-13T09:29:10Z",
         "draft": false,
         "html_url": "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7",
-        "merge_commit_sha": "28486dc0b666317b49b13722a8ca6be7a4163d75",
+        "merge_commit_sha": null,
         "merged_at": null,
         "number": 7,
-        "state": "open",
+        "state": "closed",
         "title": "Fix incorrect error rate in finite BB84 key calculation",
-        "updated_at": "2026-11-16T10:23:09Z"
+        "updated_at": "2026-11-18T15:15:53Z"
+      },
+      "repo": "TNO-Quantum/communication.qkd_key_rate"
+    },
+    "TNO-Quantum/communication.qkd_key_rate#8": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "TNO-Quantum"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-18T20:04:11Z",
+        "draft": false,
+        "html_url": "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8",
+        "merge_commit_sha": "69884215a3b9621e819176f77024a68315a22710",
+        "merged_at": null,
+        "number": 8,
+        "state": "open",
+        "title": "Fix correctness issues in Detector, BBM92, Winnow, and finite BB84",
+        "updated_at": "2026-11-18T20:04:11Z"
       },
       "repo": "TNO-Quantum/communication.qkd_key_rate"
     },
@@ -365,7 +390,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "ea816a0da5402eb4650124ecb51a122c2cddf433",
+        "merge_commit_sha": "8633798557c6d52882b04c8bcfd479af9e6f27a4",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -442,7 +467,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "50f934d5aed27a1fc701b2afabafdf1537c1c299",
+        "merge_commit_sha": "34e4764fbb6938e9dc12c92be200cbed3986f76a",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -467,7 +492,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "b55c06ab51053a5cac7505b3818ca766c0c3d397",
+        "merge_commit_sha": "ac7125b2c99c1d648385e9a8bb2741f506fdc732",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -492,7 +517,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "5591c9a7f8ae9d6d1afb4756c1e65f729824ab5b",
+        "merge_commit_sha": "52f02668c555656101aeb0d652aba16d88fa8da1",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -617,7 +642,7 @@
         "created_at": "2026-10-17T04:36:15Z",
         "draft": false,
         "html_url": "https://github.com/finos/ai-governance-framework/pull/415",
-        "merge_commit_sha": "74046351d8efb9a5e41b33498126e8f07ee857c4",
+        "merge_commit_sha": "06598c092894f363bc7ea8a17c711c711a04f842",
         "merged_at": null,
         "number": 415,
         "state": "open",
@@ -667,7 +692,7 @@
         "created_at": "2026-11-11T22:35:56Z",
         "draft": false,
         "html_url": "https://github.com/interuss/monitoring/pull/1911",
-        "merge_commit_sha": "14bc7074be5d5cb3e64b031f2570ca33e0746689",
+        "merge_commit_sha": "fa1cbb5e2f54ce50f499cd900a4e9bee578697c1",
         "merged_at": null,
         "number": 1911,
         "state": "open",
@@ -723,7 +748,7 @@
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-16T16:56:20Z"
+        "updated_at": "2026-11-18T22:34:37Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -821,7 +846,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "543970505a97e0a6e71af675b1c45557b04b3c55",
+        "merge_commit_sha": "85c90c6061a01405f15a43383f597050f461ad47",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -846,7 +871,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "4443082d5dfdd62e75a4092749880ea5e53cce8b",
+        "merge_commit_sha": "4e69ccdf970ef3d70335f70cfaf6bf4677aef108",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -921,7 +946,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "f3295a1ab4567c8e1dbe9f5df57fd3ebaeae7892",
+        "merge_commit_sha": "7635c0aa84205735f5b5451acce8ae9b178a1248",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -946,7 +971,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "b122747a265486ed4927414ed8d6a09d5775af66",
+        "merge_commit_sha": "228bc84bad5664d461d32b7daaaed5fb734c3abb",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1148,7 +1173,7 @@
         "created_at": "2026-10-01T00:16:30Z",
         "draft": false,
         "html_url": "https://github.com/python-cffi/cffi/pull/282",
-        "merge_commit_sha": "e7b9cccf906caffeb23f32ba94f593295723de41",
+        "merge_commit_sha": "e5d4e8f710dfc037de89671d9f9c52a5bf9e9c61",
         "merged_at": null,
         "number": 282,
         "state": "open",
@@ -1249,7 +1274,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "2a7a3e67f08269475f580c1f97f2634fd2f28804",
+        "merge_commit_sha": "d29606366f4c693001afaf2393107882f276e56a",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1299,7 +1324,7 @@
         "created_at": "2026-10-28T22:23:02Z",
         "draft": false,
         "html_url": "https://github.com/scionproto/scion/pull/5011",
-        "merge_commit_sha": "ba0674ab3f0f0c1724ac5ccd8f63bcc0e55543af",
+        "merge_commit_sha": "1effffbb7e1cc0a2be3d7e5d51d7d8ad000a4481",
         "merged_at": null,
         "number": 5011,
         "state": "open",
@@ -1349,7 +1374,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "deb56d1399a93fb03150747889c1fb8691519474",
+        "merge_commit_sha": "37045c12397a797e9c9e10c95cfb32d4b2be9e59",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1431,6 +1456,31 @@
         "updated_at": "2026-10-16T14:23:50Z"
       },
       "repo": "serde-rs/json"
+    },
+    "teslamotors/fleet-telemetry#590": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "teslamotors"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-18T23:28:47Z",
+        "draft": false,
+        "html_url": "https://github.com/teslamotors/fleet-telemetry/pull/590",
+        "merge_commit_sha": "001e5a225ffc6efbdca462a43950591bc75c791d",
+        "merged_at": null,
+        "number": 590,
+        "state": "open",
+        "title": "mqtt: reject missing vehicle field values before publishing",
+        "updated_at": "2026-11-18T23:35:27Z"
+      },
+      "repo": "teslamotors/fleet-telemetry"
     },
     "urllib3/urllib3#5287": {
       "enrichment": {
