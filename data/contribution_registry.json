@@ -165,12 +165,12 @@
         "created_at": "2026-11-09T23:12:23Z",
         "draft": false,
         "html_url": "https://github.com/MISP/MISP/pull/11278",
-        "merge_commit_sha": null,
+        "merge_commit_sha": "a3115ee7a50edfcc16df6f4f57bb9d99a7ae3160",
         "merged_at": null,
         "number": 11278,
         "state": "open",
         "title": "fix: [sighting] Fix org_id filtering in restSearch",
-        "updated_at": "2026-11-09T23:15:27Z"
+        "updated_at": "2026-11-19T15:36:06Z"
       },
       "repo": "MISP/MISP"
     },
@@ -295,7 +295,7 @@
         "number": 8,
         "state": "open",
         "title": "Fix correctness issues in Detector, BBM92, Winnow, and finite BB84",
-        "updated_at": "2026-11-18T20:04:11Z"
+        "updated_at": "2026-11-19T08:25:17Z"
       },
       "repo": "TNO-Quantum/communication.qkd_key_rate"
     },
@@ -390,12 +390,12 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "8633798557c6d52882b04c8bcfd479af9e6f27a4",
+        "merge_commit_sha": "7ff880d116a3ea43684d269c1675d93ad264f27d",
         "merged_at": null,
         "number": 3700,
         "state": "open",
         "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
-        "updated_at": "2026-11-11T02:20:09Z"
+        "updated_at": "2026-11-19T17:14:01Z"
       },
       "repo": "aws/aws-lc"
     },
@@ -492,7 +492,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "ac7125b2c99c1d648385e9a8bb2741f506fdc732",
+        "merge_commit_sha": "2b20224f1252f3f66c10434c59fb65b348761b17",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -517,7 +517,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "52f02668c555656101aeb0d652aba16d88fa8da1",
+        "merge_commit_sha": "27a02d54041560354c64ff66185d326505dd5404",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -692,12 +692,12 @@
         "created_at": "2026-11-11T22:35:56Z",
         "draft": false,
         "html_url": "https://github.com/interuss/monitoring/pull/1911",
-        "merge_commit_sha": "fa1cbb5e2f54ce50f499cd900a4e9bee578697c1",
+        "merge_commit_sha": "df6c0cf6d063c213ee2966c457568c44ecda252e",
         "merged_at": null,
         "number": 1911,
         "state": "open",
         "title": "[uss_qualifier] Add circular OIR overlap regression test",
-        "updated_at": "2026-11-17T13:31:35Z"
+        "updated_at": "2026-11-19T15:57:05Z"
       },
       "repo": "interuss/monitoring"
     },
@@ -743,12 +743,12 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "e92d41bbf003969f3244a477e2209e70863ef93b",
+        "merge_commit_sha": "d3a411f9a5d71cc000d6f6c0f8d5741bc6b3ca21",
         "merged_at": null,
         "number": 9725,
         "state": "open",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-18T22:34:37Z"
+        "updated_at": "2026-11-19T17:28:13Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -871,7 +871,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "4e69ccdf970ef3d70335f70cfaf6bf4677aef108",
+        "merge_commit_sha": "0588dd74126f5f272815a895987157f787466ebf",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -946,7 +946,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "7635c0aa84205735f5b5451acce8ae9b178a1248",
+        "merge_commit_sha": "8e7d78d560882fdbf6db2499482d35c386b9d6f4",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -971,7 +971,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "228bc84bad5664d461d32b7daaaed5fb734c3abb",
+        "merge_commit_sha": "dee3242763ccaaa608761c6407491dea9a93e5c7",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1148,12 +1148,12 @@
         "created_at": "2026-10-20T02:35:17Z",
         "draft": false,
         "html_url": "https://github.com/python-attrs/attrs/pull/1646",
-        "merge_commit_sha": "e5398fa3c3404baf60a985b5be3da3c710100358",
+        "merge_commit_sha": "77daf9708680015d31429503c8cc9fb6d588a408",
         "merged_at": null,
         "number": 1646,
         "state": "open",
         "title": "Improve astuple performance for atomic dictionary keys and values",
-        "updated_at": "2026-10-20T02:42:55Z"
+        "updated_at": "2026-11-19T13:51:19Z"
       },
       "repo": "python-attrs/attrs"
     },
@@ -1274,7 +1274,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "d29606366f4c693001afaf2393107882f276e56a",
+        "merge_commit_sha": "0503da4ff79224e1e3dafbf00fe976475eb77a27",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1320,16 +1320,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-19T14:46:52Z",
         "created_at": "2026-10-28T22:23:02Z",
         "draft": false,
         "html_url": "https://github.com/scionproto/scion/pull/5011",
         "merge_commit_sha": "1effffbb7e1cc0a2be3d7e5d51d7d8ad000a4481",
         "merged_at": null,
         "number": 5011,
-        "state": "open",
+        "state": "closed",
         "title": "gateway: avoid allocations in packet flow hashing",
-        "updated_at": "2026-10-28T23:31:35Z"
+        "updated_at": "2026-11-19T14:46:53Z"
       },
       "repo": "scionproto/scion"
     },
@@ -1374,7 +1374,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "37045c12397a797e9c9e10c95cfb32d4b2be9e59",
+        "merge_commit_sha": "3819884f83f548c68a7027bc268dee63a4d06c5f",
         "merged_at": null,
         "number": 26226,
         "state": "open",
