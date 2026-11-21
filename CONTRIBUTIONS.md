@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 21 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 11
+**Merged:** 22 · **Integrated separately:** 3 · **Open:** 27 · **Draft:** 0 · **Closed:** 11
 
-> **Last synchronized:** 2026-11-20 07:28 UTC
+> **Last synchronized:** 2026-11-21 07:22 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | ✅ Merged | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
 | **[PX4/PX4-Autopilot #29537](https://github.com/PX4/PX4-Autopilot/pull/29537)** | ✅ Merged | Authored and merged a minimal MAVLink mission-upload timeout correctness fix: reject foreign MISSION_COUNT before renewing the active transfer's… | Merged 2026-11-17 23:33 UTC (483f73d), direct authored code adoption; baseline/patched disarmed PX4 SITL proved timeout recovery.… |
 | **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | ✅ Merged | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
 | **[vulnerability-lookup/vulnerability-lookup #792](https://github.com/vulnerability-lookup/vulnerability-lookup/pull/792)** | ✅ Merged | Route CVE-ID updates through the GNA service to synchronize indexes. | Regression tests added; updated test suite (excluding test_web.py) and Ruff passed. |
@@ -44,9 +45,9 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
-| **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | 🟢 Open | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
 | **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | 🟢 Open | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14… |
 | **[TNO-Quantum/communication.qkd_key_rate #8](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8)** | 🟢 Open | Proposed four correctness fixes for detector, BBM92, Winnow, and finite-BB84 calculations. | 45 focused tests passed on each Python 3.11, 3.12, 3.13; zero new failures. |
@@ -56,7 +57,6 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
 | **[ArduPilot/pymavlink #1329](https://github.com/ArduPilot/pymavlink/pull/1329)** | 🟢 Open | Proposed moving signing timestamp updates until after successful signature verification. | Regression tests passed; staging also passed 2,983 Mocha tests and existing JS/C integration tests. |
 | **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | 🟢 Open | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a… | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check… |
-| **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | 🟢 Open | The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It… | — |
 | **[bloomberg/blazingmq #1806](https://github.com/bloomberg/blazingmq/pull/1806)** | 🟢 Open | Separated key-building storage from final canonical-string storage | Most targeted PR2-vs-PR1 comparisons improved in final staged validation |
 | **[bloomberg/blazingmq #1803](https://github.com/bloomberg/blazingmq/pull/1803)** | 🟢 Open | Removed temporary schema-key string construction | 120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation |
