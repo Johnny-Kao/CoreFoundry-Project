@@ -566,6 +566,24 @@
       "source_urls": [
         "https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8"
       ]
+    },
+    "teksi/wastewater#1253": {
+      "what_it_is": "Import of SWMM hydraulic load results into TEKSI",
+      "what_changed": "Proposed updating the import to target hydraulic_load_current and correct flow-load rounding.",
+      "evidence": "A real SWMM report's reported 2% load was stored correctly after the change.",
+      "why_it_matters": "Aligns imports with the current database schema and avoids incorrect load percentages.",
+      "source_urls": [
+        "https://github.com/teksi/wastewater/pull/1253"
+      ]
+    },
+    "SchweizerischeBundesbahnen/netzgrafik-editor-converter#242": {
+      "what_it_is": "Converting trainruns with gaps into GTFS or MATSim",
+      "what_changed": "Proposes processing disconnected trainrun sections separately for GTFS and MATSim.",
+      "evidence": "Regression tests for gaps, round trips, and section order pass; Maven build is green.",
+      "why_it_matters": "Preserves both remaining service segments in exported transit data.",
+      "source_urls": [
+        "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242"
+      ]
     }
   },
   "credited_integrations": [

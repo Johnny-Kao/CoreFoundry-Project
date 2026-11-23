@@ -190,7 +190,7 @@
         "created_at": "2026-11-07T11:56:58Z",
         "draft": false,
         "html_url": "https://github.com/OpenCPN/OpenCPN/pull/5522",
-        "merge_commit_sha": "631593f093ad8bead5fc0720b09ca8a84ed1778a",
+        "merge_commit_sha": "2fcbb0b065d23a096055af0db77bfee1cfad8269",
         "merged_at": null,
         "number": 5522,
         "state": "open",
@@ -248,6 +248,31 @@
         "updated_at": "2026-11-18T02:40:18Z"
       },
       "repo": "PX4/PX4-Autopilot"
+    },
+    "SchweizerischeBundesbahnen/netzgrafik-editor-converter#242": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "SchweizerischeBundesbahnen"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-22T20:25:45Z",
+        "draft": false,
+        "html_url": "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242",
+        "merge_commit_sha": "6757ca89a39a42b98085679bdb54c2ec1fbf91b4",
+        "merged_at": null,
+        "number": 242,
+        "state": "open",
+        "title": "fix(converter): preserve disconnected trainrun sections",
+        "updated_at": "2026-11-22T20:37:09Z"
+      },
+      "repo": "SchweizerischeBundesbahnen/netzgrafik-editor-converter"
     },
     "TNO-Quantum/communication.qkd_key_rate#7": {
       "enrichment": {
@@ -871,7 +896,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "a265bd385d8f3f86c93218b2eebdbe2a4de3d2c9",
+        "merge_commit_sha": "0d357965ce0d2e57b7c4ff18f3cfb1c6e329ec1a",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -946,7 +971,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "0ad9111642abdc4884bcd55e9ba729e0e4918420",
+        "merge_commit_sha": "22eb6b6ff54be8517bfd639addf0e8a769d7ac1d",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -971,7 +996,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "8d005980aefaa7a39fe06b3c0aa079ba789d823e",
+        "merge_commit_sha": "420dc368786a056f4de8162b397a67d4df3344a3",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1148,12 +1173,12 @@
         "created_at": "2026-10-20T02:35:17Z",
         "draft": false,
         "html_url": "https://github.com/python-attrs/attrs/pull/1646",
-        "merge_commit_sha": "77daf9708680015d31429503c8cc9fb6d588a408",
+        "merge_commit_sha": "d1004b8cea5de80c56b46d3a6bd12cc0a7e5bde7",
         "merged_at": null,
         "number": 1646,
         "state": "open",
         "title": "Improve astuple performance for atomic dictionary keys and values",
-        "updated_at": "2026-11-19T13:51:19Z"
+        "updated_at": "2026-11-22T15:09:14Z"
       },
       "repo": "python-attrs/attrs"
     },
@@ -1374,7 +1399,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "a4f80d7f5fd8dd95323af4439880024e0fdc7394",
+        "merge_commit_sha": "776e9cbe7ebf24a7aca19e0176f8cc1f30adb273",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1456,6 +1481,31 @@
         "updated_at": "2026-10-16T14:23:50Z"
       },
       "repo": "serde-rs/json"
+    },
+    "teksi/wastewater#1253": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "teksi"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-23T05:31:49Z",
+        "draft": false,
+        "html_url": "https://github.com/teksi/wastewater/pull/1253",
+        "merge_commit_sha": "8f751754067ccd6d82941c88076b652d9375aefb",
+        "merged_at": null,
+        "number": 1253,
+        "state": "open",
+        "title": "Fix SWMM hydraulic load results import",
+        "updated_at": "2026-11-23T05:38:00Z"
+      },
+      "repo": "teksi/wastewater"
     },
     "teslamotors/fleet-telemetry#590": {
       "enrichment": {

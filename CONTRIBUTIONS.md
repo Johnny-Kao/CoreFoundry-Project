@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 22 · **Integrated separately:** 3 · **Open:** 27 · **Draft:** 0 · **Closed:** 11
+**Merged:** 22 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 11
 
-> **Last synchronized:** 2026-11-21 07:22 UTC
+> **Last synchronized:** 2026-11-23 07:53 UTC
 
 ## Record and attribution
 
@@ -45,11 +45,13 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[teksi/wastewater #1253](https://github.com/teksi/wastewater/pull/1253)** | 🟢 Open | Proposed updating the import to target hydraulic_load_current and correct flow-load rounding. | A real SWMM report's reported 2% load was stored correctly after the change. |
+| **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #242](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242)** | 🟢 Open | Proposes processing disconnected trainrun sections separately for GTFS and MATSim. | Regression tests for gaps, round trips, and section order pass; Maven build is green. |
+| **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | 🟢 Open | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14… |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
-| **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | 🟢 Open | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14… |
 | **[TNO-Quantum/communication.qkd_key_rate #8](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8)** | 🟢 Open | Proposed four correctness fixes for detector, BBM92, Winnow, and finite-BB84 calculations. | 45 focused tests passed on each Python 3.11, 3.12, 3.13; zero new failures. |
 | **[teslamotors/fleet-telemetry #590](https://github.com/teslamotors/fleet-telemetry/pull/590)** | 🟢 Open | Proposes rejecting missing or empty vehicle datum fields before MQTT publishing | Seven regression tests cover malformed fields; stated make and race/vet checks pass. |
 | **[root-project/root #24147](https://github.com/root-project/root/pull/24147)** | 🟢 Open | Propose keeping recompressed-page checksum sizing consistent with the source page. | On ROOT 6.43.01, 6/12 cases failed before; all 12 passed after. TFileMerger checked 260 entries per source order. |
