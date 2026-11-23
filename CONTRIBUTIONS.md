@@ -4,7 +4,7 @@ A live public record of upstream open-source work tracked by CoreFoundry.
 
 **Merged:** 23 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 11
 
-> **Last synchronized:** 2026-11-23 16:45 UTC
+> **Last synchronized:** 2026-11-23 (attrs #1646 merge status verified via GitHub API)
 
 ## Record and attribution
 
