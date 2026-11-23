@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 22 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 11
+**Merged:** 23 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 11
 
-> **Last synchronized:** 2026-11-23 07:53 UTC
+> **Last synchronized:** 2026-11-23 16:45 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | ✅ Merged | Removed unnecessary has() checks for exact-atomic dictionary keys and values in astuple(), without public API changes. | Paired CPython 3.14 atomic-dict benchmark: 2.62× faster; separate CodSpeed nested-dict benchmark: 3.2×. Merged 2026-11-23 ([319c53cc](https://github.com/python-attrs/attrs/commit/319c53cc178afe980362c1bd59d8109019e344bd)). |
 | **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | ✅ Merged | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
 | **[PX4/PX4-Autopilot #29537](https://github.com/PX4/PX4-Autopilot/pull/29537)** | ✅ Merged | Authored and merged a minimal MAVLink mission-upload timeout correctness fix: reject foreign MISSION_COUNT before renewing the active transfer's… | Merged 2026-11-17 23:33 UTC (483f73d), direct authored code adoption; baseline/patched disarmed PX4 SITL proved timeout recovery.… |
 | **[OpenEMS/openems #4117](https://github.com/OpenEMS/openems/pull/4117)** | ✅ Merged | Proposed redistributing remaining active power within ESS limits in V2 TreeSolver. | With ESS B requiring +4,000 W, an achievable +5,000 W target could be assigned as +6,500 W. |
@@ -47,7 +48,6 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
 | **[teksi/wastewater #1253](https://github.com/teksi/wastewater/pull/1253)** | 🟢 Open | Proposed updating the import to target hydraulic_load_current and correct flow-load rounding. | A real SWMM report's reported 2% load was stored correctly after the change. |
 | **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #242](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242)** | 🟢 Open | Proposes processing disconnected trainrun sections separately for GTFS and MATSim. | Regression tests for gaps, round trips, and section order pass; Maven build is green. |
-| **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | 🟢 Open | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14… |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | 🟢 Open | Changes the limit check to use division instead of multiplication and adds a regression test. | The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with… |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
