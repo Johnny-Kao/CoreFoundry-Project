@@ -165,7 +165,7 @@
         "created_at": "2026-11-09T23:12:23Z",
         "draft": false,
         "html_url": "https://github.com/MISP/MISP/pull/11278",
-        "merge_commit_sha": "8d033ca75ca3f1ec266e34e430690f5a4e417b61",
+        "merge_commit_sha": "75c5ff346b219c0fb1d4de723378bbb36a5b167f",
         "merged_at": null,
         "number": 11278,
         "state": "open",
@@ -190,7 +190,7 @@
         "created_at": "2026-11-07T11:56:58Z",
         "draft": false,
         "html_url": "https://github.com/OpenCPN/OpenCPN/pull/5522",
-        "merge_commit_sha": "2fcbb0b065d23a096055af0db77bfee1cfad8269",
+        "merge_commit_sha": "2cb77103ed0e3b14bef67a0ce9972ccdfe61e07f",
         "merged_at": null,
         "number": 5522,
         "state": "open",
@@ -764,16 +764,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-24T17:36:43Z",
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "8917e07bd5d8815e50f740e5e2fbdcdc15b967df",
-        "merged_at": null,
+        "merge_commit_sha": "a89ae19ae296fae859428a90f2797080802f172b",
+        "merged_at": "2026-11-24T17:36:43Z",
         "number": 9725,
-        "state": "open",
+        "state": "closed",
         "title": "Fix integer overflow in MDRangePolicy tile size recommendation",
-        "updated_at": "2026-11-19T17:28:13Z"
+        "updated_at": "2026-11-24T17:36:43Z"
       },
       "repo": "kokkos/kokkos"
     },
@@ -896,7 +896,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "b5ad00ea37661d7a6f822ac9d168897fb4a72321",
+        "merge_commit_sha": "171f2ff2aa77c302f60931035a947867990d9c31",
         "merged_at": null,
         "number": 1889,
         "state": "open",
