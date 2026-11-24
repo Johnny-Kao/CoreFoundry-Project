@@ -412,12 +412,14 @@
       ]
     },
     "kokkos/kokkos#9725": {
-      "what_it_is": "A pull request to fix integer overflow in the default tile-size recommendation for Kokkos `MDRangePolicy`.",
-      "what_changed": "Changes the limit check to use division instead of multiplication and adds a regression test.",
-      "evidence": "The author says the calculation could overflow near `INT_MAX`, even when tile sizes were provided explicitly. They report testing with GCC/Clang Serial and GCC OpenMP with UBSan enabled, and say the PR closes #9724.",
-      "why_it_matters": "Avoids integer overflow in the tile-size recommendation calculation.",
+      "what_it_is": "Portable parallel computing infrastructure for scientific and high-performance computing.",
+      "what_changed": "Fixed signed integer overflow in MDRangePolicy tile-size recommendation and related tile-product guards; added native regression tests.",
+      "evidence": "Upstream PR merged 2026-11-24 (contributor-confirmed notification). Historical staging: four native CPU UBSan configurations and clang-format 16, 5/5 jobs passed.",
+      "why_it_matters": "Protects core parallel iteration policy arithmetic from undefined behavior near integer limits.",
       "source_urls": [
-        "https://github.com/kokkos/kokkos/pull/9725"
+        "https://github.com/kokkos/kokkos/pull/9725",
+        "https://github.com/kokkos/kokkos/pull/9725#event-37160715942",
+        "https://github.com/Johnny-Kao/kokkos/actions/runs/42203107839"
       ]
     },
     "nasa/fprime#6294": {
