@@ -165,7 +165,7 @@
         "created_at": "2026-11-09T23:12:23Z",
         "draft": false,
         "html_url": "https://github.com/MISP/MISP/pull/11278",
-        "merge_commit_sha": "0e458118ceaa7377119d346270f4fc03fa0ea967",
+        "merge_commit_sha": "8d033ca75ca3f1ec266e34e430690f5a4e417b61",
         "merged_at": null,
         "number": 11278,
         "state": "open",
@@ -265,7 +265,7 @@
         "created_at": "2026-11-22T20:25:45Z",
         "draft": false,
         "html_url": "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242",
-        "merge_commit_sha": "6757ca89a39a42b98085679bdb54c2ec1fbf91b4",
+        "merge_commit_sha": "98cdf62efc36eb83eef2393db22f2e53fec457f7",
         "merged_at": null,
         "number": 242,
         "state": "open",
@@ -415,12 +415,12 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "12379c679d677cf7a7a0b0721e5779b915d146ee",
+        "merge_commit_sha": "d4c811003c772d4bee5ab8294d5dead26832fb87",
         "merged_at": null,
         "number": 3700,
         "state": "open",
         "title": "crypto: Avoid read locks on the Linux fork-generation fast path",
-        "updated_at": "2026-11-19T17:14:01Z"
+        "updated_at": "2026-11-23T14:28:12Z"
       },
       "repo": "aws/aws-lc"
     },
@@ -492,7 +492,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "34e4764fbb6938e9dc12c92be200cbed3986f76a",
+        "merge_commit_sha": "53b200c30c1b816e1cec04a77ccb56e911141d58",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -517,7 +517,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "3ce263244c881c5eee38cb6f1a6bbcce6f73daeb",
+        "merge_commit_sha": "8721e4c490a61d9b9a9a3817265a9df2f97bd016",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -542,7 +542,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "adcd7345f76bd30a5919e5eb8e5aaf6d2da5a2a6",
+        "merge_commit_sha": "f40d8b7282c2216135b5cac4fce02462465e2364",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -592,7 +592,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "b3e1a8d285174fcc0d8af16121ad496ccc66aac7",
+        "merge_commit_sha": "4ab65079f3ecf3a3a977ee69dacbefe9d6bf72f0",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -768,7 +768,7 @@
         "created_at": "2026-10-31T15:53:12Z",
         "draft": false,
         "html_url": "https://github.com/kokkos/kokkos/pull/9725",
-        "merge_commit_sha": "d3a411f9a5d71cc000d6f6c0f8d5741bc6b3ca21",
+        "merge_commit_sha": "8917e07bd5d8815e50f740e5e2fbdcdc15b967df",
         "merged_at": null,
         "number": 9725,
         "state": "open",
@@ -855,6 +855,31 @@
       },
       "repo": "nasa/fprime"
     },
+    "netbox-community/netbox-operator#675": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "netbox-community"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-23T15:17:52Z",
+        "draft": false,
+        "html_url": "https://github.com/netbox-community/netbox-operator/pull/675",
+        "merge_commit_sha": "d88373b70a800fbccac24a11b95c1dd35dc6224a",
+        "merged_at": null,
+        "number": 675,
+        "state": "open",
+        "title": "fix: prevent Claim cleanup from deleting unrelated resources",
+        "updated_at": "2026-11-23T15:25:17Z"
+      },
+      "repo": "netbox-community/netbox-operator"
+    },
     "nginx/nginx#1889": {
       "enrichment": {
         "initial": "completed"
@@ -871,7 +896,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "85c90c6061a01405f15a43383f597050f461ad47",
+        "merge_commit_sha": "b5ad00ea37661d7a6f822ac9d168897fb4a72321",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -896,7 +921,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "0d357965ce0d2e57b7c4ff18f3cfb1c6e329ec1a",
+        "merge_commit_sha": "a9484fb7a0dd142862989f08ab09d2c23215f0f0",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -971,7 +996,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "22eb6b6ff54be8517bfd639addf0e8a769d7ac1d",
+        "merge_commit_sha": "083cec0dc8c559d7d60e43c9d26354f1d8c1a178",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -996,7 +1021,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "420dc368786a056f4de8162b397a67d4df3344a3",
+        "merge_commit_sha": "6ce0dcfc2a9cd279cb444566ffb2a9a65790c286",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1169,16 +1194,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-23T12:21:58Z",
         "created_at": "2026-10-20T02:35:17Z",
         "draft": false,
         "html_url": "https://github.com/python-attrs/attrs/pull/1646",
-        "merge_commit_sha": "d1004b8cea5de80c56b46d3a6bd12cc0a7e5bde7",
-        "merged_at": null,
+        "merge_commit_sha": "319c53cc178afe980362c1bd59d8109019e344bd",
+        "merged_at": "2026-11-23T12:21:57Z",
         "number": 1646,
-        "state": "open",
+        "state": "closed",
         "title": "Improve astuple performance for atomic dictionary keys and values",
-        "updated_at": "2026-11-22T15:09:14Z"
+        "updated_at": "2026-11-23T12:21:58Z"
       },
       "repo": "python-attrs/attrs"
     },
@@ -1299,7 +1324,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "6089eb914efd1a8031e78730f9c0e590fcbb491a",
+        "merge_commit_sha": "da1c51ff596b7f1f6e4c382f812cac2c8357fe81",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1399,7 +1424,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "776e9cbe7ebf24a7aca19e0176f8cc1f30adb273",
+        "merge_commit_sha": "28b5be2955ea7fb888047db4c209c938549c7604",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1498,12 +1523,12 @@
         "created_at": "2026-11-23T05:31:49Z",
         "draft": false,
         "html_url": "https://github.com/teksi/wastewater/pull/1253",
-        "merge_commit_sha": "8f751754067ccd6d82941c88076b652d9375aefb",
+        "merge_commit_sha": "af92ec431295d386e1f26f3f4a54b323a5256d78",
         "merged_at": null,
         "number": 1253,
         "state": "open",
         "title": "Fix SWMM hydraulic load results import",
-        "updated_at": "2026-11-23T05:38:00Z"
+        "updated_at": "2026-11-23T15:04:44Z"
       },
       "repo": "teksi/wastewater"
     },

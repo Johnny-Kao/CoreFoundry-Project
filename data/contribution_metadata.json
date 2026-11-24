@@ -584,6 +584,15 @@
       "source_urls": [
         "https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242"
       ]
+    },
+    "netbox-community/netbox-operator#675": {
+      "what_it_is": "Claim cleanup in the NetBox Kubernetes operator",
+      "what_changed": "Proposes ownership checks before VlanClaim, L2VPNClaim, and IpRangeClaim deletion.",
+      "evidence": "Regression tests cover owned deletion and unrelated-resource preservation.",
+      "why_it_matters": "Prevents Kubernetes restarts from deleting replacements for same-named resources.",
+      "source_urls": [
+        "https://github.com/netbox-community/netbox-operator/pull/675"
+      ]
     }
   },
   "credited_integrations": [
