@@ -595,6 +595,15 @@
       "source_urls": [
         "https://github.com/netbox-community/netbox-operator/pull/675"
       ]
+    },
+    "Geant4/geant4#143": {
+      "what_it_is": "Cubic spline interpolation in G4PhysicsVector",
+      "what_changed": "Proposes corrected not-a-knot and fixed-edge spline curvature calculations",
+      "evidence": "Adds polynomial regressions; x=1.25 y=x² changed from 1.867305 toward 1.5625",
+      "why_it_matters": "Documents a scoped upstream engineering change.",
+      "source_urls": [
+        "https://github.com/Geant4/geant4/pull/143"
+      ]
     }
   },
   "credited_integrations": [

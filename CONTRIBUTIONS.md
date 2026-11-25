@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 24 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 11
+**Merged:** 26 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 11
 
-> **Last synchronized:** 2026-11-24 18:23 UTC
+> **Last synchronized:** 2026-11-25 08:50 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,8 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[teksi/wastewater #1253](https://github.com/teksi/wastewater/pull/1253)** | ✅ Merged | Proposed updating the import to target hydraulic_load_current and correct flow-load rounding. | A real SWMM report's reported 2% load was stored correctly after the change. |
+| **[spedas/pyspedas #1588](https://github.com/spedas/pyspedas/pull/1588)** | ✅ Merged | Fix incorrect azimuth calculation in cart2spc | — |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | ✅ Merged | Fixed signed integer overflow in MDRangePolicy tile-size recommendation and related tile-product guards; added native regression tests. | Upstream PR merged 2026-11-24 (contributor-confirmed notification). Historical staging: four native CPU UBSan configurations and… |
 | **[python-attrs/attrs #1646](https://github.com/python-attrs/attrs/pull/1646)** | ✅ Merged | The change skips unnecessary has() checks for dictionary keys and values. The author reports no behavior or public API changes. | The PR reports a 2.62× speedup for 1,000 atomic dictionary entries (164.8 µs to 62.9 µs), 48 passing differential tests, and 14/14… |
 | **[interuss/monitoring #1911](https://github.com/interuss/monitoring/pull/1911)** | ✅ Merged | Proposes a `dss_probing` scenario for small-circle searches overlapping circular OIR boundaries. | Author reports old DSS missed overlaps in all five planning areas; fixed DSS passed. |
@@ -47,8 +49,8 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[Geant4/geant4 #143](https://github.com/Geant4/geant4/pull/143)** | 🟢 Open | Proposes corrected not-a-knot and fixed-edge spline curvature calculations | Adds polynomial regressions; x=1.25 y=x² changed from 1.867305 toward 1.5625 |
 | **[netbox-community/netbox-operator #675](https://github.com/netbox-community/netbox-operator/pull/675)** | 🟢 Open | Proposes ownership checks before VlanClaim, L2VPNClaim, and IpRangeClaim deletion. | Regression tests cover owned deletion and unrelated-resource preservation. |
-| **[teksi/wastewater #1253](https://github.com/teksi/wastewater/pull/1253)** | 🟢 Open | Proposed updating the import to target hydraulic_load_current and correct flow-load rounding. | A real SWMM report's reported 2% load was stored correctly after the change. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #242](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242)** | 🟢 Open | Proposes processing disconnected trainrun sections separately for GTFS and MATSim. | Regression tests for gaps, round trips, and section order pass; Maven build is green. |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |

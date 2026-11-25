@@ -126,6 +126,31 @@
       },
       "repo": "Blosc/python-blosc2"
     },
+    "Geant4/geant4#143": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Geant4"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-25T05:32:53Z",
+        "draft": false,
+        "html_url": "https://github.com/Geant4/geant4/pull/143",
+        "merge_commit_sha": "f607c01412a9e4afef151872d5c5e93266aed41e",
+        "merged_at": null,
+        "number": 143,
+        "state": "open",
+        "title": "G4PhysicsVector: fix incorrect cubic spline interpolation",
+        "updated_at": "2026-11-25T07:48:13Z"
+      },
+      "repo": "Geant4/geant4"
+    },
     "MISP/MISP#11275": {
       "enrichment": {},
       "pr": {
@@ -492,7 +517,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "53b200c30c1b816e1cec04a77ccb56e911141d58",
+        "merge_commit_sha": "95e857560fc3aa52c3f14579486ed38238ba6084",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -517,7 +542,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "8721e4c490a61d9b9a9a3817265a9df2f97bd016",
+        "merge_commit_sha": "e9fd29bf2fdb12c14ea299e675952f4e7702ea1a",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -542,7 +567,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "f40d8b7282c2216135b5cac4fce02462465e2364",
+        "merge_commit_sha": "2113af9ba1ad8067ebd1da0234a3de471429de98",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -592,7 +617,7 @@
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "4ab65079f3ecf3a3a977ee69dacbefe9d6bf72f0",
+        "merge_commit_sha": "2846056cbaa7b44774105cf387af928f5a18a054",
         "merged_at": null,
         "number": 1040,
         "state": "open",
@@ -921,7 +946,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "a9484fb7a0dd142862989f08ab09d2c23215f0f0",
+        "merge_commit_sha": "755a5512af4b948d1629240586ceeedf644e8399",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -996,7 +1021,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "083cec0dc8c559d7d60e43c9d26354f1d8c1a178",
+        "merge_commit_sha": "1a1fe87a57b82ab474a4d4c408f4df51e68c25e7",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -1021,7 +1046,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "6ce0dcfc2a9cd279cb444566ffb2a9a65790c286",
+        "merge_commit_sha": "99974cba57782f8abda134b8ee5d873755826e3a",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1324,7 +1349,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "da1c51ff596b7f1f6e4c382f812cac2c8357fe81",
+        "merge_commit_sha": "f535a81643fb4fe573c855293682e7ba8e7d91c4",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1507,6 +1532,29 @@
       },
       "repo": "serde-rs/json"
     },
+    "spedas/pyspedas#1588": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "spedas"
+            }
+          }
+        },
+        "closed_at": "2026-11-25T01:05:00Z",
+        "created_at": "2026-11-24T19:56:51Z",
+        "draft": false,
+        "html_url": "https://github.com/spedas/pyspedas/pull/1588",
+        "merge_commit_sha": "5b6ce24e5440795f9712bf7277af1f7404daeb63",
+        "merged_at": "2026-11-25T01:04:59Z",
+        "number": 1588,
+        "state": "closed",
+        "title": "Fix incorrect azimuth calculation in cart2spc",
+        "updated_at": "2026-11-25T05:50:35Z"
+      },
+      "repo": "spedas/pyspedas"
+    },
     "teksi/wastewater#1253": {
       "enrichment": {
         "initial": "curated"
@@ -1519,16 +1567,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-25T08:15:19Z",
         "created_at": "2026-11-23T05:31:49Z",
         "draft": false,
         "html_url": "https://github.com/teksi/wastewater/pull/1253",
-        "merge_commit_sha": "af92ec431295d386e1f26f3f4a54b323a5256d78",
-        "merged_at": null,
+        "merge_commit_sha": "7687eec9260c22200a8c44d6794c362593fd1cbe",
+        "merged_at": "2026-11-25T08:15:19Z",
         "number": 1253,
-        "state": "open",
+        "state": "closed",
         "title": "Fix SWMM hydraulic load results import",
-        "updated_at": "2026-11-23T15:04:44Z"
+        "updated_at": "2026-11-25T08:16:13Z"
       },
       "repo": "teksi/wastewater"
     },
@@ -1548,7 +1596,7 @@
         "created_at": "2026-11-18T23:28:47Z",
         "draft": false,
         "html_url": "https://github.com/teslamotors/fleet-telemetry/pull/590",
-        "merge_commit_sha": "001e5a225ffc6efbdca462a43950591bc75c791d",
+        "merge_commit_sha": "2ca662760d5a17da391c389f73eee92f2957c947",
         "merged_at": null,
         "number": 590,
         "state": "open",
