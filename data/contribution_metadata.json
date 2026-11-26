@@ -604,6 +604,25 @@
       "source_urls": [
         "https://github.com/Geant4/geant4/pull/143"
       ]
+    },
+    "geodynamics/aspect#7485": {
+      "what_it_is": "Zero-solubility model water mass conservation",
+      "what_changed": "Proposes correcting bound/free water summation and updating regression test reference outputs.",
+      "evidence": "Existing #6486 test: water 0.0166890→0.0166221; porosity 0.0248263→0.0247276.",
+      "why_it_matters": "Keeps fluid-release calculations consistent with the solid-relative bound-water mass balance.",
+      "source_urls": [
+        "https://github.com/geodynamics/aspect/pull/7485"
+      ]
+    },
+    "Geant4/geant4#144": {
+      "what_it_is": "G4SPSEneDistribution arbitrary momentum spectrum sampling",
+      "what_changed": "Propose preserving momentum coordinates through interpolation and sampling.",
+      "evidence": "test27 electron spectrum exposed a mismatch in the sampled distribution.",
+      "why_it_matters": "Avoids coordinate mismatches and zero-momentum conversion for massive particles.",
+      "source_urls": [
+        "https://github.com/Geant4/geant4/pull/144",
+        "https://github.com/Geant4/geant4/pull/144#issuecomment-7163763709"
+      ]
     }
   },
   "credited_integrations": [

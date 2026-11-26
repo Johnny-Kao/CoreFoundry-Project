@@ -147,7 +147,32 @@
         "number": 143,
         "state": "open",
         "title": "G4PhysicsVector: fix incorrect cubic spline interpolation",
-        "updated_at": "2026-11-25T07:48:13Z"
+        "updated_at": "2026-11-25T13:25:32Z"
+      },
+      "repo": "Geant4/geant4"
+    },
+    "Geant4/geant4#144": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "Geant4"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-25T11:04:02Z",
+        "draft": false,
+        "html_url": "https://github.com/Geant4/geant4/pull/144",
+        "merge_commit_sha": "caefdcc87b33cc1a1615fa6e1ca345658570b3e5",
+        "merged_at": null,
+        "number": 144,
+        "state": "open",
+        "title": "G4SPSEneDistribution: preserve arbitrary momentum spectra",
+        "updated_at": "2026-11-25T13:25:46Z"
       },
       "repo": "Geant4/geant4"
     },
@@ -190,7 +215,7 @@
         "created_at": "2026-11-09T23:12:23Z",
         "draft": false,
         "html_url": "https://github.com/MISP/MISP/pull/11278",
-        "merge_commit_sha": "75c5ff346b219c0fb1d4de723378bbb36a5b167f",
+        "merge_commit_sha": "3b8284d7e7eed8c28ef727f04c31ea45dddfa945",
         "merged_at": null,
         "number": 11278,
         "state": "open",
@@ -345,7 +370,7 @@
         "number": 8,
         "state": "open",
         "title": "Fix correctness issues in Detector, BBM92, Winnow, and finite BB84",
-        "updated_at": "2026-11-19T08:25:17Z"
+        "updated_at": "2026-11-25T12:13:37Z"
       },
       "repo": "TNO-Quantum/communication.qkd_key_rate"
     },
@@ -440,7 +465,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "d4c811003c772d4bee5ab8294d5dead26832fb87",
+        "merge_commit_sha": "8bd36cad926ed906048ee73698fd130ad4a82018",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -517,7 +542,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "95e857560fc3aa52c3f14579486ed38238ba6084",
+        "merge_commit_sha": "a22522798421c5b901f26c698abee6a05f010891",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -542,7 +567,7 @@
         "created_at": "2026-10-03T19:54:28Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1803",
-        "merge_commit_sha": "e9fd29bf2fdb12c14ea299e675952f4e7702ea1a",
+        "merge_commit_sha": "9ab946b33b90effdaf99517c7fff9f95acd54311",
         "merged_at": null,
         "number": 1803,
         "state": "open",
@@ -567,7 +592,7 @@
         "created_at": "2026-10-03T20:11:57Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/blazingmq/pull/1806",
-        "merge_commit_sha": "2113af9ba1ad8067ebd1da0234a3de471429de98",
+        "merge_commit_sha": "462c8622bfec264f30d6f04b4c41100d7c4fa5e8",
         "merged_at": null,
         "number": 1806,
         "state": "open",
@@ -613,16 +638,16 @@
             }
           }
         },
-        "closed_at": null,
+        "closed_at": "2026-11-26T01:30:40Z",
         "created_at": "2026-10-05T15:50:52Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/memray/pull/1040",
-        "merge_commit_sha": "2846056cbaa7b44774105cf387af928f5a18a054",
+        "merge_commit_sha": "7c3ef65889d47f38627d8955af44bfc99e68d526",
         "merged_at": null,
         "number": 1040,
-        "state": "open",
+        "state": "closed",
         "title": "Write allocation records with one sink call",
-        "updated_at": "2026-10-31T19:36:10Z"
+        "updated_at": "2026-11-26T06:35:32Z"
       },
       "repo": "bloomberg/memray"
     },
@@ -700,6 +725,31 @@
         "updated_at": "2026-11-03T09:15:16Z"
       },
       "repo": "finos/ai-governance-framework"
+    },
+    "geodynamics/aspect#7485": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "geodynamics"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-25T16:39:06Z",
+        "draft": false,
+        "html_url": "https://github.com/geodynamics/aspect/pull/7485",
+        "merge_commit_sha": "7f28c0f95de2bc3a59d62df2be2e4346707e8e61",
+        "merged_at": null,
+        "number": 7485,
+        "state": "open",
+        "title": "Fix water mass conservation in the zero solubility model",
+        "updated_at": "2026-11-25T16:55:10Z"
+      },
+      "repo": "geodynamics/aspect"
     },
     "interuss/dss#1914": {
       "enrichment": {
@@ -896,12 +946,12 @@
         "created_at": "2026-11-23T15:17:52Z",
         "draft": false,
         "html_url": "https://github.com/netbox-community/netbox-operator/pull/675",
-        "merge_commit_sha": "d88373b70a800fbccac24a11b95c1dd35dc6224a",
+        "merge_commit_sha": "e78fbb1dc7ff358c10ed914fce11935443711cc6",
         "merged_at": null,
         "number": 675,
         "state": "open",
         "title": "fix: prevent Claim cleanup from deleting unrelated resources",
-        "updated_at": "2026-11-23T15:25:17Z"
+        "updated_at": "2026-11-25T09:58:16Z"
       },
       "repo": "netbox-community/netbox-operator"
     },
@@ -921,7 +971,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "171f2ff2aa77c302f60931035a947867990d9c31",
+        "merge_commit_sha": "099740cc2c88e751765ead272e590b18dfc56525",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -946,7 +996,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "755a5512af4b948d1629240586ceeedf644e8399",
+        "merge_commit_sha": "51a95279a5e193c9647082656bc77e678d9e128f",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -1021,7 +1071,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "1a1fe87a57b82ab474a4d4c408f4df51e68c25e7",
+        "merge_commit_sha": "6c7f45d1a5da82010a0687c721abe1cf2c4146df",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -1046,7 +1096,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "99974cba57782f8abda134b8ee5d873755826e3a",
+        "merge_commit_sha": "b5c03257ef4f1fae0d28e44227e640ef084777e1",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1349,7 +1399,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "f535a81643fb4fe573c855293682e7ba8e7d91c4",
+        "merge_commit_sha": "690d9d6ff0819906be3d6929db0f24881b26a13f",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1449,7 +1499,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "28b5be2955ea7fb888047db4c209c938549c7604",
+        "merge_commit_sha": "0b03232d3add32328053477e3f07f9fab7408ba8",
         "merged_at": null,
         "number": 26226,
         "state": "open",

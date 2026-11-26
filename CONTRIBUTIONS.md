@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 26 · **Integrated separately:** 3 · **Open:** 28 · **Draft:** 0 · **Closed:** 11
+**Merged:** 26 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 12
 
-> **Last synchronized:** 2026-11-25 08:50 UTC
+> **Last synchronized:** 2026-11-26 08:35 UTC
 
 ## Record and attribution
 
@@ -49,20 +49,21 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[geodynamics/aspect #7485](https://github.com/geodynamics/aspect/pull/7485)** | 🟢 Open | Proposes correcting bound/free water summation and updating regression test reference outputs. | Existing #6486 test: water 0.0166890→0.0166221; porosity 0.0248263→0.0247276. |
+| **[Geant4/geant4 #144](https://github.com/Geant4/geant4/pull/144)** | 🟢 Open | Propose preserving momentum coordinates through interpolation and sampling. | test27 electron spectrum exposed a mismatch in the sampled distribution. |
 | **[Geant4/geant4 #143](https://github.com/Geant4/geant4/pull/143)** | 🟢 Open | Proposes corrected not-a-knot and fixed-edge spline curvature calculations | Adds polynomial regressions; x=1.25 y=x² changed from 1.867305 toward 1.5625 |
+| **[TNO-Quantum/communication.qkd_key_rate #8](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8)** | 🟢 Open | Proposed four correctness fixes for detector, BBM92, Winnow, and finite-BB84 calculations. | 45 focused tests passed on each Python 3.11, 3.12, 3.13; zero new failures. |
 | **[netbox-community/netbox-operator #675](https://github.com/netbox-community/netbox-operator/pull/675)** | 🟢 Open | Proposes ownership checks before VlanClaim, L2VPNClaim, and IpRangeClaim deletion. | Regression tests cover owned deletion and unrelated-resource preservation. |
 | **[aws/aws-lc #3700](https://github.com/aws/aws-lc/pull/3700)** | 🟢 Open | Used lock-free atomics for common fork-generation checks, preserving fallback behavior. | 14.5% lower RAND_bytes(32) time; 94.9% lower fork-check time in 4-thread tests. |
 | **[SchweizerischeBundesbahnen/netzgrafik-editor-converter #242](https://github.com/SchweizerischeBundesbahnen/netzgrafik-editor-converter/pull/242)** | 🟢 Open | Proposes processing disconnected trainrun sections separately for GTFS and MATSim. | Regression tests for gaps, round trips, and section order pass; Maven build is green. |
 | **[rack/rack #2549](https://github.com/rack/rack/pull/2549)** | 🟢 Open | Hash lookups now use the normalized request path, with a regression test added. Array mappings and index handling remain unchanged. | — |
 | **[MISP/MISP #11278](https://github.com/MISP/MISP/pull/11278)** | 🟢 Open | Propose handling numeric IDs directly and resetting UUID lookup state for each organization. | Adds 4 regression tests with 15 assertions for numeric, UUID, mixed, and negated filters. |
-| **[TNO-Quantum/communication.qkd_key_rate #8](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/8)** | 🟢 Open | Proposed four correctness fixes for detector, BBM92, Winnow, and finite-BB84 calculations. | 45 focused tests passed on each Python 3.11, 3.12, 3.13; zero new failures. |
 | **[teslamotors/fleet-telemetry #590](https://github.com/teslamotors/fleet-telemetry/pull/590)** | 🟢 Open | Proposes rejecting missing or empty vehicle datum fields before MQTT publishing | Seven regression tests cover malformed fields; stated make and race/vet checks pass. |
 | **[root-project/root #24147](https://github.com/root-project/root/pull/24147)** | 🟢 Open | Propose keeping recompressed-page checksum sizing consistent with the source page. | On ROOT 6.43.01, 6/12 cases failed before; all 12 passed after. TFileMerger checked 260 entries per source order. |
 | **[nginx/nginx #1889](https://github.com/nginx/nginx/pull/1889)** | 🟢 Open | Rejected oversized upstream response headers through existing error handling. | Stress test RSS growth: 183,208 KiB → 44 KiB; 4,691 suite tests reported passing. |
 | **[OpenCPN/OpenCPN #5522](https://github.com/OpenCPN/OpenCPN/pull/5522)** | 🟢 Open | Proposes rejecting positions with GNSS methods No GNSS, Error, or Unavailable. | Regression tests verified on Linux, including with AddressSanitizer. |
 | **[ArduPilot/pymavlink #1329](https://github.com/ArduPilot/pymavlink/pull/1329)** | 🟢 Open | Proposed moving signing timestamp updates until after successful signature verification. | Regression tests passed; staging also passed 2,983 Mocha tests and existing JS/C integration tests. |
 | **[finos/ai-governance-framework #415](https://github.com/finos/ai-governance-framework/pull/415)** | 🟢 Open | Distinguishes a successful evaluation with no matching gating rule (baseline mi-18 authorization applies; mi-24 approval is not required) from a… | The PR describes a one-bullet change in mi-24, with no schema, runtime, or control-model changes. It reports that git diff --check… |
-| **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | 🟢 Open | The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It… | — |
 | **[bloomberg/blazingmq #1806](https://github.com/bloomberg/blazingmq/pull/1806)** | 🟢 Open | Separated key-building storage from final canonical-string storage | Most targeted PR2-vs-PR1 comparisons improved in final staged validation |
 | **[bloomberg/blazingmq #1803](https://github.com/bloomberg/blazingmq/pull/1803)** | 🟢 Open | Removed temporary schema-key string construction | 120/120 controlled hot-path comparisons faster; median CPU ~61% lower in final validation |
 | **[opencv/opencv #30177](https://github.com/opencv/opencv/pull/30177)** | 🟢 Open | Added a macOS BGRA fast path with frame-lifetime handling. | Regression coverage added for repeated frame retrieval. |
@@ -77,6 +78,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scientific-python/blog.scientific-python.org #277](https://github.com/scientific-python/blog.scientific-python.org/pull/277)** | 🟢 Open | The PR adds article content that focuses on reusing information from prior searches, deciding when locality is useful, the 8 / 16 / 32 observation… | — |
 | **[scipy/scipy #26226](https://github.com/scipy/scipy/pull/26226)** | 🟢 Open | Handled single-coefficient cspline1d_eval/qspline1d_eval without recursive failure | Correctness fix; targeted tests passed |
 | **[apple/container #2293](https://github.com/apple/container/pull/2293)** | 🟢 Open | Reconciled persisted container state with still-running runtimes after apiserver restart | End-to-end state recovery and stop/kill behavior validated on macOS |
+| **[bloomberg/memray #1040](https://github.com/bloomberg/memray/pull/1040)** | ⚪ Closed | The production change is limited to src/memray/_memray/record_writer.cpp, tests/integration/test_record_writer.py, and news/1039.feature.rst. It… | — |
 | **[scionproto/scion #5011](https://github.com/scionproto/scion/pull/5011)** | ⚪ Closed | Replaces a temporary slice with a fixed-size stack buffer while retaining CRC64 hashing and path selection. | The author reports controlled encoder tests reduced allocations from 4 to 1 per packet and wall time by about 9–11% across tested… |
 | **[TNO-Quantum/communication.qkd_key_rate #7](https://github.com/TNO-Quantum/communication.qkd_key_rate/pull/7)** | ⚪ Closed | Proposed replacing the single-photon error count with its rate in privacy amplification | At 10^12 pulses and 0.2 dB attenuation, calculated rate changed from 0.03480129 to 0.02943905. |
 | **[al-one/hass-xiaomi-miot #3041](https://github.com/al-one/hass-xiaomi-miot/pull/3041)** | ⚪ Closed | Proposes showing the existing CAPTCHA step when reauthentication reports a rejected CAPTCHA challenge. | Author reports reauth succeeded for both entries; regression test added; 365 tests passed. |
