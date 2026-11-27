@@ -726,6 +726,29 @@
       },
       "repo": "finos/ai-governance-framework"
     },
+    "gem/oq-engine#12195": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "gem"
+            }
+          }
+        },
+        "closed_at": "2026-11-27T05:27:28Z",
+        "created_at": "2026-11-26T09:59:17Z",
+        "draft": false,
+        "html_url": "https://github.com/gem/oq-engine/pull/12195",
+        "merge_commit_sha": "33152a45782554e625226fa578c5baaa133cb31f",
+        "merged_at": "2026-11-27T05:27:28Z",
+        "number": 12195,
+        "state": "closed",
+        "title": "Fix aggregate loss curve statistics for missing realizations",
+        "updated_at": "2026-11-27T05:27:28Z"
+      },
+      "repo": "gem/oq-engine"
+    },
     "geodynamics/aspect#7485": {
       "enrichment": {
         "initial": "curated"
@@ -742,12 +765,12 @@
         "created_at": "2026-11-25T16:39:06Z",
         "draft": false,
         "html_url": "https://github.com/geodynamics/aspect/pull/7485",
-        "merge_commit_sha": "7f28c0f95de2bc3a59d62df2be2e4346707e8e61",
+        "merge_commit_sha": "c7f7233bd8c25031c5e652879cb7fede13d0096f",
         "merged_at": null,
         "number": 7485,
         "state": "open",
         "title": "Fix water mass conservation in the zero solubility model",
-        "updated_at": "2026-11-25T16:55:10Z"
+        "updated_at": "2026-11-26T12:42:25Z"
       },
       "repo": "geodynamics/aspect"
     },
@@ -971,7 +994,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "099740cc2c88e751765ead272e590b18dfc56525",
+        "merge_commit_sha": "84b105e010f827c790d81ea77b868ae2e99167a5",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -996,7 +1019,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "51a95279a5e193c9647082656bc77e678d9e128f",
+        "merge_commit_sha": "ffbd192db1243408463be5a5c81779a485896f8e",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -1071,7 +1094,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "6c7f45d1a5da82010a0687c721abe1cf2c4146df",
+        "merge_commit_sha": "878838a3d4edf6df01660a9a8aab09347d2bd04a",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -1096,7 +1119,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "b5c03257ef4f1fae0d28e44227e640ef084777e1",
+        "merge_commit_sha": "2ffdd2d3fe90c08e76f5a793ccef5ef35acad117",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1399,7 +1422,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "690d9d6ff0819906be3d6929db0f24881b26a13f",
+        "merge_commit_sha": "3e406b397e99c57461214026be342832dfb4dc7f",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1499,7 +1522,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "0b03232d3add32328053477e3f07f9fab7408ba8",
+        "merge_commit_sha": "63dd88c65543cca38c9ea4d22f5eef38918d34b4",
         "merged_at": null,
         "number": 26226,
         "state": "open",
@@ -1627,6 +1650,31 @@
         "state": "closed",
         "title": "Fix SWMM hydraulic load results import",
         "updated_at": "2026-11-25T08:16:13Z"
+      },
+      "repo": "teksi/wastewater"
+    },
+    "teksi/wastewater#1257": {
+      "enrichment": {
+        "initial": "curated"
+      },
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "teksi"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-26T12:14:18Z",
+        "draft": false,
+        "html_url": "https://github.com/teksi/wastewater/pull/1257",
+        "merge_commit_sha": "e4324cd1b5772b39259a410b3bae3bd900c0e56c",
+        "merged_at": null,
+        "number": 1257,
+        "state": "open",
+        "title": "Fix outdated field references and expressions in the QGIS project",
+        "updated_at": "2026-11-26T15:45:26Z"
       },
       "repo": "teksi/wastewater"
     },

@@ -623,6 +623,16 @@
         "https://github.com/Geant4/geant4/pull/144",
         "https://github.com/Geant4/geant4/pull/144#issuecomment-7163763709"
       ]
+    },
+    "teksi/wastewater#1257": {
+      "what_it_is": "QGIS project field bindings and hydraulic expressions",
+      "what_changed": "Correct proposed field references and remove 749 obsolete settings.",
+      "evidence": "69 regression executions passed across 3 database configurations.",
+      "why_it_matters": "Keeps QGIS forms and hydraulic expressions aligned with current schemas.",
+      "source_urls": [
+        "https://github.com/teksi/wastewater/pull/1257",
+        "https://github.com/teksi/wastewater/pull/1257#issuecomment-7192734647"
+      ]
     }
   },
   "credited_integrations": [

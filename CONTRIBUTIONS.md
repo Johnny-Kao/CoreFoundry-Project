@@ -2,9 +2,9 @@
 
 A live public record of upstream open-source work tracked by CoreFoundry.
 
-**Merged:** 26 · **Integrated separately:** 3 · **Open:** 29 · **Draft:** 0 · **Closed:** 12
+**Merged:** 27 · **Integrated separately:** 3 · **Open:** 30 · **Draft:** 0 · **Closed:** 12
 
-> **Last synchronized:** 2026-11-26 08:35 UTC
+> **Last synchronized:** 2026-11-27 08:48 UTC
 
 ## Record and attribution
 
@@ -21,6 +21,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 
 | Project / PR | Status | Engineering contribution | Evidence / impact |
 |---|---|---|---|
+| **[gem/oq-engine #12195](https://github.com/gem/oq-engine/pull/12195)** | ✅ Merged | Fix aggregate loss curve statistics for missing realizations | — |
 | **[teksi/wastewater #1253](https://github.com/teksi/wastewater/pull/1253)** | ✅ Merged | Proposed updating the import to target hydraulic_load_current and correct flow-load rounding. | A real SWMM report's reported 2% load was stored correctly after the change. |
 | **[spedas/pyspedas #1588](https://github.com/spedas/pyspedas/pull/1588)** | ✅ Merged | Fix incorrect azimuth calculation in cart2spc | — |
 | **[kokkos/kokkos #9725](https://github.com/kokkos/kokkos/pull/9725)** | ✅ Merged | Fixed signed integer overflow in MDRangePolicy tile-size recommendation and related tile-product guards; added native regression tests. | Upstream PR merged 2026-11-24 (contributor-confirmed notification). Historical staging: four native CPU UBSan configurations and… |
@@ -49,6 +50,7 @@ CoreFoundry records **original engineering work and verified upstream outcomes**
 | **[scipy/scipy #26225](https://github.com/scipy/scipy/pull/26225)** | ✅ Merged | Initialized bracketing-solver iteration counts on early-return paths | Correct zero-iteration solver statistics |
 | **[bloomberg/bde #317](https://github.com/bloomberg/bde/pull/317)** | ✅ Integrated | Avoided repeated path-length scans in appendRaw and popLeaf. | 14–65% lower appendRaw latency; 38–73% lower popLeaf latency in microbenchmarks. |
 | **[bloomberg/bde #315](https://github.com/bloomberg/bde/pull/315)** | ✅ Integrated | Removed AIX-only semaphore policy macros while retaining other platform policies. | Linux/macOS policy and contention checks reported; separately integrated upstream. |
+| **[teksi/wastewater #1257](https://github.com/teksi/wastewater/pull/1257)** | 🟢 Open | Correct proposed field references and remove 749 obsolete settings. | 69 regression executions passed across 3 database configurations. |
 | **[geodynamics/aspect #7485](https://github.com/geodynamics/aspect/pull/7485)** | 🟢 Open | Proposes correcting bound/free water summation and updating regression test reference outputs. | Existing #6486 test: water 0.0166890→0.0166221; porosity 0.0248263→0.0247276. |
 | **[Geant4/geant4 #144](https://github.com/Geant4/geant4/pull/144)** | 🟢 Open | Propose preserving momentum coordinates through interpolation and sampling. | test27 electron spectrum exposed a mismatch in the sampled distribution. |
 | **[Geant4/geant4 #143](https://github.com/Geant4/geant4/pull/143)** | 🟢 Open | Proposes corrected not-a-knot and fixed-edge spline curvature calculations | Adds polynomial regressions; x=1.25 y=x² changed from 1.867305 toward 1.5625 |
