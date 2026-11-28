@@ -465,7 +465,7 @@
         "created_at": "2026-10-27T01:29:36Z",
         "draft": false,
         "html_url": "https://github.com/aws/aws-lc/pull/3700",
-        "merge_commit_sha": "8bd36cad926ed906048ee73698fd130ad4a82018",
+        "merge_commit_sha": "7d061e2d367d2e43341e3d447e555b0e8cdb95a5",
         "merged_at": null,
         "number": 3700,
         "state": "open",
@@ -542,7 +542,7 @@
         "created_at": "2026-10-08T19:48:23Z",
         "draft": false,
         "html_url": "https://github.com/bloomberg/bde/pull/319",
-        "merge_commit_sha": "a22522798421c5b901f26c698abee6a05f010891",
+        "merge_commit_sha": "149e842499810727c14e26288362e05091b28bbf",
         "merged_at": null,
         "number": 319,
         "state": "open",
@@ -994,7 +994,7 @@
         "created_at": "2026-10-22T02:34:41Z",
         "draft": false,
         "html_url": "https://github.com/nginx/nginx/pull/1889",
-        "merge_commit_sha": "84b105e010f827c790d81ea77b868ae2e99167a5",
+        "merge_commit_sha": "cc74b2c9eed1726ddd1c26e9c7e262bfd1ec0d9f",
         "merged_at": null,
         "number": 1889,
         "state": "open",
@@ -1019,7 +1019,7 @@
         "created_at": "2026-09-25T06:41:05Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32787",
-        "merge_commit_sha": "ffbd192db1243408463be5a5c81779a485896f8e",
+        "merge_commit_sha": "b4d0e0b5c369576d150e2850520d688e3b43b19a",
         "merged_at": null,
         "number": 32787,
         "state": "open",
@@ -1094,7 +1094,7 @@
         "created_at": "2026-10-06T00:05:56Z",
         "draft": false,
         "html_url": "https://github.com/numpy/numpy/pull/32895",
-        "merge_commit_sha": "878838a3d4edf6df01660a9a8aab09347d2bd04a",
+        "merge_commit_sha": "8de0aa6a273dc4eef0b3997a91d19ca355378bac",
         "merged_at": null,
         "number": 32895,
         "state": "open",
@@ -1119,7 +1119,7 @@
         "created_at": "2026-10-07T16:29:38Z",
         "draft": false,
         "html_url": "https://github.com/opencv/opencv/pull/30177",
-        "merge_commit_sha": "2ffdd2d3fe90c08e76f5a793ccef5ef35acad117",
+        "merge_commit_sha": "84a90af55516daf4b6528b8d83853b2ed307109f",
         "merged_at": null,
         "number": 30177,
         "state": "open",
@@ -1406,6 +1406,29 @@
       },
       "repo": "rack/rack"
     },
+    "rdkit/rdkit#9932": {
+      "enrichment": {},
+      "pr": {
+        "base": {
+          "repo": {
+            "owner": {
+              "login": "rdkit"
+            }
+          }
+        },
+        "closed_at": null,
+        "created_at": "2026-11-28T06:29:44Z",
+        "draft": false,
+        "html_url": "https://github.com/rdkit/rdkit/pull/9932",
+        "merge_commit_sha": "72ab1230837f1380c7789a87c376ff0155f99e98",
+        "merged_at": null,
+        "number": 9932,
+        "state": "open",
+        "title": "Fix aromaticity-dependent prefiltering in tautomer scoring",
+        "updated_at": "2026-11-28T06:36:07Z"
+      },
+      "repo": "rdkit/rdkit"
+    },
     "root-project/root#24147": {
       "enrichment": {
         "initial": "curated"
@@ -1422,7 +1445,7 @@
         "created_at": "2026-11-13T17:01:06Z",
         "draft": false,
         "html_url": "https://github.com/root-project/root/pull/24147",
-        "merge_commit_sha": "3e406b397e99c57461214026be342832dfb4dc7f",
+        "merge_commit_sha": "dff0fbf34559997f10ae8975f9eec970f7a263c6",
         "merged_at": null,
         "number": 24147,
         "state": "open",
@@ -1522,7 +1545,7 @@
         "created_at": "2026-09-21T17:16:56Z",
         "draft": false,
         "html_url": "https://github.com/scipy/scipy/pull/26226",
-        "merge_commit_sha": "63dd88c65543cca38c9ea4d22f5eef38918d34b4",
+        "merge_commit_sha": "17085c1153a7d4cda5cfbd9372ec02ddfd1313ad",
         "merged_at": null,
         "number": 26226,
         "state": "open",

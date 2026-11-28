@@ -1,5 +1,11 @@
 {
   "deferred": 0,
-  "events": [],
+  "events": [
+    {
+      "key": "rdkit/rdkit#9932",
+      "phase": "initial",
+      "url": "https://github.com/rdkit/rdkit/pull/9932"
+    }
+  ],
   "schema_version": 1
 }
